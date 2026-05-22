@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>安安總召的串燒基地</title>
+<meta name="description" content="安勤之——社會學者、翻譯者、讀書會總召。把閱讀與思考的過程攤開來，讓別人看得到怎麼做、可以接著做、也可以說哪裡做錯了。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f9f5ee;
+  --paper: #f3ede3;
+  --ink: #2a1f14;
+  --ink-light: #5c4a3a;
+  --ember: #c0582e;
+  --ember-glow: #e8764a;
+  --charcoal: #3d3028;
+  --ash: #a89888;
+  --smoke: #d4cabb;
+  --skewer: #8b6e4e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Zen Kaku Gothic New', 'Noto Serif TC', serif;
+  background: var(--cream); color: var(--ink);
+  line-height: 1.85; font-size: 17px;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(249,245,238,0.92); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--smoke);
+  padding: 0.6rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 0.88rem;
+}
+nav .brand {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 900; font-size: 1.05rem; color: var(--ember);
+}
+nav .links { display: flex; gap: 1.6rem; flex-wrap: wrap; }
+nav .links a { color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+nav .links a:hover { color: var(--ember); }
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start;
+  padding: 8rem 2rem 4rem; max-width: 900px; margin: 0 auto;
+  position: relative;
+}
+.hero::before {
+  content: '串'; position: absolute; right: -2rem; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Noto Serif TC', serif;
+  font-size: 18rem; font-weight: 900;
+  color: var(--smoke); opacity: 0.25; pointer-events: none; line-height: 1;
+}
+.hero h1 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 3.2rem; font-weight: 900; line-height: 1.25; margin-bottom: 1rem;
+}
+.hero h1 span { color: var(--ember); }
+.hero .subtitle {
+  font-size: 1.15rem; color: var(--ink-light);
+  max-width: 600px; margin-bottom: 2.5rem;
+}
+.hero .tagline {
+  font-family: 'Noto Serif TC', serif; font-size: 1rem; color: var(--ash);
+  border-left: 3px solid var(--ember); padding-left: 1rem; margin-bottom: 2rem;
+}
+.hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-links a {
+  display: inline-block; padding: 0.55rem 1.4rem;
+  border: 1.5px solid var(--charcoal); color: var(--charcoal);
+  text-decoration: none; font-size: 0.9rem; transition: all 0.25s;
+}
+.hero-links a:hover { background: var(--ember); color: var(--cream); border-color: var(--ember); }
+.hero-links a.primary { background: var(--charcoal); color: var(--cream); }
+.hero-links a.primary:hover { background: var(--ember); border-color: var(--ember); }
+section { max-width: 820px; margin: 0 auto; padding: 5rem 2rem; }
+section + section { border-top: 1px solid var(--smoke); }
+h2 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.8rem; font-weight: 900; margin-bottom: 1.5rem;
+  position: relative; display: inline-block;
+}
+h2::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 2.5rem; height: 3px; background: var(--ember);
+}
+h3 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.2rem; font-weight: 700; color: var(--ember);
+  margin-top: 2rem; margin-bottom: 0.6rem;
+}
+p { margin-bottom: 1rem; }
+a { color: var(--ember); }
+a:hover { color: var(--ember-glow); }
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem; margin-top: 1.5rem;
+}
+.card {
+  background: var(--paper); padding: 1.5rem;
+  border-left: 3px solid var(--skewer); transition: border-color 0.2s;
+}
+.card:hover { border-color: var(--ember); }
+.card .card-title {
+  font-family: 'Noto Serif TC', serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.4rem;
+}
+.card .card-desc { font-size: 0.9rem; color: var(--ink-light); line-height: 1.7; }
+.progress-list { list-style: none; margin-top: 1.5rem; }
+.progress-list li {
+  padding: 0.7rem 0 0.7rem 2rem; position: relative;
+  border-left: 2px solid var(--smoke); font-size: 0.95rem;
+}
+.progress-list li::before {
+  content: ''; position: absolute; left: -6px; top: 1rem;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--ash); border: 2px solid var(--cream);
+}
+.progress-list li.done::before { background: var(--ember); }
+.progress-list li.active::before {
+  background: var(--ember-glow); box-shadow: 0 0 0 3px rgba(232,118,74,0.25);
+}
+.progress-list li .status {
+  display: inline-block; font-size: 0.75rem;
+  padding: 0.1rem 0.5rem; margin-left: 0.5rem; border-radius: 2px;
+}
+.progress-list li.done .status { background: #e8ddd0; color: var(--skewer); }
+.progress-list li.active .status { background: #fde8db; color: var(--ember); }
+footer {
+  background: var(--charcoal); color: var(--smoke);
+  padding: 3rem 2rem; text-align: center; font-size: 0.88rem; line-height: 2;
+}
+footer a { color: var(--ember-glow); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer .footer-links {
+  display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+}
+@media (max-width: 700px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero::before { font-size: 10rem; right: -1rem; }
+  nav { padding: 0.5rem 1rem; }
+  nav .links { gap: 0.8rem; font-size: 0.8rem; }
+  section { padding: 3.5rem 1.2rem; }
+  .card-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">串燒基地</div>
+  <div class="links">
+    <a href="#about">關於我</a>
+    <a href="#nodes">工作節點</a>
+    <a href="#reading">讀書會</a>
+    <a href="#nietzsche">尼采計畫</a>
+    <a href="#writing">寫作</a>
+    <a href="#ai">AI 協作</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="tagline">我寫筆記、做翻譯、跟 AI 一起讀書——然後把過程都放上網。</div>
+  <h1><span>安安總召</span>的<br>串燒基地</h1>
+  <p class="subtitle">安勤之｜國立陽明交通大學百川學位學程教師｜台大社會學博士。研究領域：文化社會學、醫療社會學、STS（科技與社會研究）。</p>
+  <div class="hero-links">
+    <a href="#reading" class="primary">加入讀書會</a>
+    <a href="https://r94325005.blogspot.com/" target="_blank">部落格</a>
+    <a href="https://www.youtube.com/channel/UC3oJs4ZIqqM28EKAulXJH8Q" target="_blank">YouTube</a>
+  </div>
+</div>
+
+<section id="about">
+  <h2>關於我</h2>
+  <p>頭銜講不出我在做什麼。簡單說，我最常做的是：<strong>追問一個東西怎麼變成「那個東西」的。</strong></p>
+  <p>博論研究靈芝——同一朵菇，在中、日、韓、台被歸類為藥、食品、保健品、文化遺產，完全不同的東西。物的分類史就是一部記憶與權力的歷史。</p>
+  <p>過去兩年，我把 AI 當作共同研究者——不是讓它替我寫，而是讓它跟我一起讀。重要的是學會與它共同工作，並把工作過程公開，讓人可以接續、可以批判。</p>
+  <p>我同時經營三個平台：<a href="https://r94325005.blogspot.com/" target="_blank">部落格</a>是文字工作檯，<a href="https://www.youtube.com/channel/UC3oJs4ZIqqM28EKAulXJH8Q" target="_blank">YouTube 頻道</a>是口語工作檯，<a href="#reading">讀書會社群</a>是圓桌。三個平台合起來就是我的學術實踐生態系。</p>
+  <p>信箱：<a href="mailto:anccc@nycu.edu.tw">anccc@nycu.edu.tw</a></p>
+</section>
+
+<section id="nodes">
+  <h2>四個工作節點</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">① 與 AI 一起慢讀尼采</div>
+      <div class="card-desc">2024 年啟動，目標是讀完尼采全部出版著作。每本書逐節慢讀，製作德英中中對照讀本，錄影存檔於 YouTube，討論紀錄經 AI 整理後公開在部落格上。至今已完成六部著作。AI 在這裡不是代讀，而是協助製作對照本、生成討論問題、整理逐字稿——把一個人做不完的苦工變成可持續的長期計畫。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">② 翻譯作為在地連結的通道</div>
+      <div class="card-desc">在部落格上持續翻譯當代批判理論的核心文本，但翻譯不只是語言轉換。每篇翻譯都附帶脈絡說明，把理論拉回臺灣的問題意識。AI 讓翻譯產能大幅提升，但選什麼來譯、怎麼為臺灣讀者重新框定脈絡，這些判斷仍然是人的工作。部落格從 2010 年寫到現在，250 篇以上，就是這條翻譯通道的累積。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">③ AI 的反身性探索：映照與工夫</div>
+      <div class="card-desc">我不只「使用」AI，也把 AI 當成一面鏡子來追問：我們在跟誰說話？誰在設計這場對話？我們是使用者還是工人？正在寫的四卷書《鏡像的惡魔》，處理的就是這個問題：當 AI 越來越會模仿學術論述，人的寫作——以及人的自我認識——要怎麼辦？</div>
+    </div>
+    <div class="card">
+      <div class="card-title">④ 串燒基地：正在長出來的知識共同體</div>
+      <div class="card-desc">2023 年 9 月開始經營開放式線上讀書會社群。兩年半下來，累計讀過四十多本書，橫跨社會學、哲學、人類學、STS、原住民研究、藝術場域、數位行動主義。社群開始自己長東西——成員自發揪讀書會、整理書單、分享展覽、在群裡辯論。這個基地不只是我帶大家讀書，而是大家一起把書變成可以串起不同的人、開展各自事業的平台。</div>
+    </div>
+  </div>
+</section>
+
+<section id="reading">
+  <h2>讀書會社群</h2>
+  <p>以 Google Meet 線上進行，錄影上傳 YouTube，討論紀錄公開在部落格上。成員涵蓋學生、研究者、藝術工作者、業界人士等多元背景。所有讀書會皆自由開放參加。</p>
+  <p>有興趣的朋友歡迎加入：<a href="https://line.me/ti/g2/QPY6UQPr-YJSuS7mlGhdIzMJKbmLhHun-Subdw" target="_blank">LINE OpenChat 讀書會社群</a></p>
+
+  <h3>哲學</h3>
+  <p>尼采七部著作（詳見尼采計畫）、維根斯坦《哲學研究》、Huizinga《遊戲人》、Carse《有限與無限的遊戲》</p>
+
+  <h3>社會學經典</h3>
+  <p>布爾迪厄《國家菁英》、Goffman《污名》、葉啟政《超越資本主義的異托邦》、小坂井敏晶《民族的虛構》、bell hooks《關於愛的一切》、《何苦為男》</p>
+
+  <h3>STS／人類學</h3>
+  <p>拉圖《科學在行動》、Lisa Stevenson《生命之側》、Tim Ingold、《創新之後》</p>
+
+  <h3>記憶、轉型正義與政治</h3>
+  <p>鄂蘭《人的條件》、Graeber《債的歷史》、Bashir & Goldberg <em>The Holocaust and the Nakba</em>、小熊英二《1968》</p>
+
+  <h3>臺灣議題</h3>
+  <p>邱寶琳博論（原住民土地解殖民）、黃瀚嶢《沒口之河》、蔡潔妮《書寫一部台灣美術史》、李梅君《沒有人的運動》（g0v）</p>
+
+  <h3>AI 與數位文化</h3>
+  <p>Harari《連結》、串流音樂推薦書</p>
+
+  <h3>教育、階級與身體</h3>
+  <p>姜以琳《學神》、Becker 學術寫作、Lepecki <em>Exhausting Dance</em></p>
+</section>
+
+<section id="nietzsche">
+  <h2>尼采全集閱讀計畫</h2>
+  <p>2024 年 2 月啟動，目標是讀完尼采全部出版著作。每本書逐節慢讀，製作德英中中對照讀本，錄影存檔於 YouTube。</p>
+  <ul class="progress-list">
+    <li class="done">《悲劇的誕生》全本（2024.2–2024.7）<span class="status">完讀</span></li>
+    <li class="done">《不合時宜的考察》一〈大衛史特勞斯〉（2024.7–2024.8）<span class="status">完讀</span></li>
+    <li class="done">《不合時宜的考察》三〈作為教師的叔本華〉（2024.10–2024.12）<span class="status">完讀</span></li>
+    <li class="done">《不合時宜的考察》四〈華格納在拜羅伊特〉（2025.1–2025.2）<span class="status">完讀</span></li>
+    <li class="done">《希臘悲劇時代的哲學》全本（2025.3–2025.6）<span class="status">完讀</span></li>
+    <li class="done">〈非道德意義上的真與謊〉（2025.6–2025.7）<span class="status">完讀</span></li>
+    <li class="active">《人性的，太人性的》（2025.7–）<span class="status">進行中</span></li>
+    <li class="active">《查拉圖斯特拉如是說》卷一至卷四（課程，2025–2026）<span class="status">進行中</span></li>
+    <li class="active">《道德系譜學》（課程，2025.9–）<span class="status">進行中</span></li>
+  </ul>
+  <p style="margin-top:1.5rem"><a href="https://www.youtube.com/channel/UC3oJs4ZIqqM28EKAulXJH8Q" target="_blank">→ YouTube 頻道播放清單</a></p>
+</section>
+
+<section id="writing">
+  <h2>翻譯與寫作</h2>
+
+  <h3>部落格｜日常生活實作筆記</h3>
+  <p><a href="https://r94325005.blogspot.com/" target="_blank">r94325005.blogspot.com</a>｜2010 年至今，250+ 篇。翻譯、摘要、理論筆記、AI 實驗、中醫身體論、讀書會紀錄——全部是進行中的工作，全部標明出處和工具，全部開放取用。</p>
+
+  <h3>遊戲之作｜《鏡像的惡魔》</h3>
+  <p>四卷書，約 35 萬字。AI 認識論批判、暴力的基礎設施、台灣的殖民與半邊陲位置、具身實踐的工夫論。</p>
+</section>
+
+<section id="ai">
+  <h2>AI 協作方法</h2>
+  <p>我的立場：AI 不能逃避，也不能崇拜。重要的是學會與它共同工作，並把工作過程公開。</p>
+
+  <h3>標註透明原則</h3>
+  <p>所有 AI 輔助的文章都標明使用了哪個工具。翻譯標明原文出處與譯者身分。摘要標明頁碼。讀書會紀錄標明 AI 整理的流程與步驟。</p>
+
+  <h3>核心觀點</h3>
+  <p>「人類有限，讓機器提供選擇，我們再來做出選擇，我們再修正，然後機器來評價我們的選擇，然後再建議我們選擇，然後我們再重新選擇。」</p>
+  <p>「問題應該在怎麼把這些書當平台，而不再只是當資料了。也就是，串起不同的人，成為每個人的工具箱，開展自己的事業。」</p>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://r94325005.blogspot.com/" target="_blank">部落格</a>
+    <a href="https://www.youtube.com/channel/UC3oJs4ZIqqM28EKAulXJH8Q" target="_blank">YouTube</a>
+    <a href="https://line.me/ti/g2/QPY6UQPr-YJSuS7mlGhdIzMJKbmLhHun-Subdw" target="_blank">LINE 讀書會</a>
+    <a href="mailto:anccc@nycu.edu.tw">信箱</a>
+  </div>
+  <p>安勤之｜安安總召的串燒基地</p>
+  <p style="color: #6b5d4f; font-size: 0.8rem; margin-top: 0.5rem;">把閱讀與思考的過程攤開來，讓別人看得到怎麼做、可以接著做、也可以說哪裡做錯了。</p>
+</footer>
+
+</body>
+</html>
