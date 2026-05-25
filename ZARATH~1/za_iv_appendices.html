@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Za IV ｜ 補強包 ｜ 四個附錄</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0908;
+    --bg-soft: #14110d;
+    --bg-card: #1a1612;
+    --ink: #f5efe1;
+    --ink-soft: #c8c0ab;
+    --ink-dim: #8a8378;
+    --ink-faint: #5a5550;
+    --rule: #2a2723;
+    --rule-soft: #1f1d19;
+
+    /* 四個附錄各自的顏色 */
+    --app-a: #6a8db8;   /* 藍 - 數列 */
+    --app-b: #b86a52;   /* 朱紅 - 食物 */
+    --app-c: #7a9d6a;   /* 苔綠 - 笑 */
+    --app-d: #c9a352;   /* 金 - 老鷹 */
+
+    --app-a-faint: rgba(106, 141, 184, 0.1);
+    --app-b-faint: rgba(184, 106, 82, 0.1);
+    --app-c-faint: rgba(122, 157, 106, 0.1);
+    --app-d-faint: rgba(201, 163, 82, 0.1);
+
+    --serif-de: 'Iowan Old Style', 'Georgia', 'Palatino Linotype', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+            'PingFang TC', 'Microsoft JhengHei', '微軟正黑體',
+            'Noto Sans CJK TC', sans-serif;
+    --mono: 'SF Mono', 'Menlo', 'Consolas', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.75;
+    padding: 60px 24px 120px;
+    min-height: 100vh;
+  }
+  .lecture { max-width: 960px; margin: 0 auto; }
+
+  /* Header */
+  .chapter-header {
+    padding: 48px 0 60px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .meta-tag {
+    display: inline-block;
+    color: var(--ink-dim);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding: 6px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    font-family: var(--mono);
+  }
+  h1.chapter-title-de {
+    font-family: var(--serif-de);
+    font-size: 52px;
+    font-weight: normal;
+    color: var(--ink);
+    margin-bottom: 14px;
+    font-style: italic;
+    line-height: 1.1;
+  }
+  .chapter-title-zh {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .subtitle {
+    color: var(--ink-dim);
+    font-size: 15px;
+    margin-bottom: 36px;
+    font-style: italic;
+    font-family: var(--serif-de);
+  }
+  .chapter-positioning {
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 26px 32px;
+    border-left: 3px solid var(--ink-dim);
+    text-align: left;
+    background: var(--bg-soft);
+  }
+  .chapter-positioning strong { color: var(--ink); font-weight: 500; }
+  .chapter-positioning em { color: var(--ink); font-style: italic; }
+
+  /* Sticky nav */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(10, 9, 8, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 0 -24px 60px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .nav a {
+    text-decoration: none;
+    font-family: var(--serif-de);
+    font-style: italic;
+    padding: 12px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    background: var(--bg-soft);
+    text-align: center;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .nav a:hover { transform: translateY(-2px); }
+  .nav a .letter {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .nav a .label {
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-style: normal;
+    font-family: var(--sans);
+    letter-spacing: 0.05em;
+  }
+  .nav a.a { border-color: var(--app-a); }
+  .nav a.a .letter { color: var(--app-a); }
+  .nav a.b { border-color: var(--app-b); }
+  .nav a.b .letter { color: var(--app-b); }
+  .nav a.c { border-color: var(--app-c); }
+  .nav a.c .letter { color: var(--app-c); }
+  .nav a.d { border-color: var(--app-d); }
+  .nav a.d .letter { color: var(--app-d); }
+
+  /* Appendix base */
+  .appendix {
+    margin-bottom: 120px;
+    scroll-margin-top: 100px;
+  }
+  .appendix-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+  .appendix-letter {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 60px;
+    line-height: 1;
+    font-weight: normal;
+  }
+  .appendix-titles {
+    flex: 1;
+    min-width: 240px;
+  }
+  .appendix-titles .ts {
+    font-family: var(--serif-de);
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .appendix-titles h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .appendix-de {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-dim);
+  }
+
+  .appendix-lead {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    padding: 22px 28px;
+    background: var(--bg-soft);
+    border-radius: 4px;
+  }
+  .appendix-lead strong { color: var(--ink); font-weight: 500; }
+  .appendix-lead em { font-style: italic; }
+
+  h3 {
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 36px 0 16px;
+  }
+  p { color: var(--ink-soft); margin-bottom: 14px; line-height: 1.8; }
+  p strong { color: var(--ink); font-weight: 500; }
+  p em { color: var(--ink); font-style: italic; }
+  .de {
+    font-family: var(--serif-de);
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* Per-appendix color */
+  .appendix.a .appendix-letter { color: var(--app-a); }
+  .appendix.a .appendix-titles .ts { color: var(--app-a); }
+  .appendix.a .appendix-lead { border-left: 3px solid var(--app-a); }
+  .appendix.a p em { color: var(--app-a); }
+
+  .appendix.b .appendix-letter { color: var(--app-b); }
+  .appendix.b .appendix-titles .ts { color: var(--app-b); }
+  .appendix.b .appendix-lead { border-left: 3px solid var(--app-b); }
+  .appendix.b p em { color: var(--app-b); }
+
+  .appendix.c .appendix-letter { color: var(--app-c); }
+  .appendix.c .appendix-titles .ts { color: var(--app-c); }
+  .appendix.c .appendix-lead { border-left: 3px solid var(--app-c); }
+  .appendix.c p em { color: var(--app-c); }
+
+  .appendix.d .appendix-letter { color: var(--app-d); }
+  .appendix.d .appendix-titles .ts { color: var(--app-d); }
+  .appendix.d .appendix-lead { border-left: 3px solid var(--app-d); }
+  .appendix.d p em { color: var(--app-d); }
+
+  /* ===== Appendix A: 數列比較表 ===== */
+  .device-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 32px 0;
+  }
+  .device-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--app-a);
+    border-radius: 4px;
+    padding: 22px 18px;
+  }
+  .device-card .device-num {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 42px;
+    color: var(--app-a);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .device-card .device-name {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .device-card .device-zh {
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  .device-card .device-ch {
+    color: var(--ink-dim);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .device-card .device-fn-label {
+    color: var(--app-a);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: var(--serif-de);
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .device-card .device-fn {
+    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .device-card .device-origin {
+    color: var(--ink-dim);
+    font-size: 12px;
+    line-height: 1.6;
+    font-style: italic;
+    padding-top: 10px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  /* ===== Appendix B: gender table ===== */
+  .gender-axis {
+    margin: 32px 0;
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 32px 28px;
+  }
+  .gender-axis-header {
+    text-align: center;
+    margin-bottom: 28px;
+    color: var(--app-b);
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .gender-poles {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .gender-pole {
+    padding: 20px 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .gender-pole.left { border-left: 3px solid var(--app-b); }
+  .gender-pole.right { border-left: 3px solid var(--app-d); }
+  .gender-pole .pole-label {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .gender-pole.left .pole-label { color: var(--app-b); }
+  .gender-pole.right .pole-label { color: var(--app-d); }
+  .gender-pole .pole-title {
+    font-family: var(--serif-de);
+    font-style: italic;
+    color: var(--ink);
+    font-size: 22px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .gender-pole .pole-desc {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .gender-vs {
+    text-align: center;
+    color: var(--ink-dim);
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 18px;
+  }
+
+  /* ===== Appendix C: laugh table ===== */
+  .laugh-table {
+    margin: 32px 0;
+  }
+  .laugh-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 200px;
+    gap: 18px;
+    align-items: stretch;
+    margin-bottom: 14px;
+  }
+  .laugh-ch {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif-de);
+    font-style: italic;
+    color: var(--app-c);
+    font-size: 20px;
+  }
+  .laugh-content {
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 16px 20px;
+  }
+  .laugh-content .de-line {
+    font-family: var(--serif-de);
+    font-style: italic;
+    color: var(--ink);
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .laugh-content .zh-line {
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+  .laugh-strategy {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--app-c);
+    border-radius: 4px;
+    padding: 14px 18px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+  }
+  .laugh-strategy strong { color: var(--app-c); font-weight: 500; }
+
+  /* ===== Appendix D: eagle call ===== */
+  .eagle-sequence {
+    margin: 32px 0;
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 36px 28px;
+  }
+  .eagle-step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 22px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .eagle-step:last-child { border-bottom: none; }
+  .eagle-step-num {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--app-d);
+    text-align: center;
+    line-height: 1.1;
+  }
+  .eagle-step h4 {
+    color: var(--ink);
+    font-size: 17px;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .eagle-step .de-line {
+    font-family: var(--serif-de);
+    font-style: italic;
+    color: var(--app-d);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .eagle-step p {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  /* ===== Closing card ===== */
+  .closing {
+    margin-top: 60px;
+    padding: 32px 28px;
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .closing .label {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .closing p {
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .closing p:last-child { margin-bottom: 0; }
+  .closing strong { color: var(--ink); font-weight: 500; }
+  .closing em { font-style: italic; }
+
+  .appendix.a .closing { border-left: 3px solid var(--app-a); }
+  .appendix.a .closing .label { color: var(--app-a); }
+  .appendix.a .closing em { color: var(--app-a); }
+  .appendix.b .closing { border-left: 3px solid var(--app-b); }
+  .appendix.b .closing .label { color: var(--app-b); }
+  .appendix.b .closing em { color: var(--app-b); }
+  .appendix.c .closing { border-left: 3px solid var(--app-c); }
+  .appendix.c .closing .label { color: var(--app-c); }
+  .appendix.c .closing em { color: var(--app-c); }
+  .appendix.d .closing { border-left: 3px solid var(--app-d); }
+  .appendix.d .closing .label { color: var(--app-d); }
+  .appendix.d .closing em { color: var(--app-d); }
+
+  /* ===== Final closing ===== */
+  .final-closing {
+    margin-top: 96px;
+    padding: 64px 32px;
+    text-align: center;
+    background: linear-gradient(180deg,
+      var(--bg-soft) 0%,
+      rgba(20, 17, 13, 0.6) 100%);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .final-closing .marker {
+    color: var(--ink-dim);
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .final-closing p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.85;
+    margin-bottom: 14px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  .final-closing strong { color: var(--ink); font-weight: 500; }
+  .final-closing .signoff {
+    margin-top: 32px;
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-dim);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 720px) {
+    body { padding: 40px 16px 80px; font-size: 16px; }
+    h1.chapter-title-de { font-size: 38px; }
+    .chapter-title-zh { font-size: 22px; }
+    .nav-inner { grid-template-columns: repeat(2, 1fr); }
+    .device-grid { grid-template-columns: 1fr 1fr; }
+    .gender-poles { grid-template-columns: 1fr; }
+    .gender-vs { padding: 8px 0; }
+    .laugh-row { grid-template-columns: 40px 1fr; }
+    .laugh-strategy { grid-column: 1 / -1; }
+    .appendix-letter { font-size: 42px; }
+    .appendix-titles h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lecture">
+
+  <!-- HEADER -->
+  <header class="chapter-header">
+    <div class="meta-tag">Also sprach Zarathustra · IV · die Anhänge</div>
+    <h1 class="chapter-title-de">Vier Anhänge</h1>
+    <div class="chapter-title-zh">四個附錄</div>
+    <div class="subtitle">— 補強包 · Za IV 隱藏結構之後的四個細微鑽探 —</div>
+    <div class="chapter-positioning">
+      五章教材講完了「<strong>事件</strong>」；隱藏結構講完了「<strong>共振</strong>」。<br><br>
+      這四個附錄要做的更細：<em>四個獨立的鑽探點</em>，每個都針對原文裡一個學生第一次讀不會注意、但對整套教材的論證有<strong>決定性貢獻</strong>的細節。<br><br>
+      Appendix A：四種「數列裝置」的並排比較<br>
+      Appendix B：「男人食物 vs 女性精神」的隱藏性別焦慮<br>
+      Appendix C：第六章〈笑作為武器〉的論點與五章的對位<br>
+      Appendix D：老鷹的呼喚——徵兆不是被收到的，是被呼喚的<br><br>
+      不必依序讀。哪個吸引你就看哪個。
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="a" href="#a">
+        <span class="letter">A</span>
+        <span class="label">數列裝置</span>
+      </a>
+      <a class="b" href="#b">
+        <span class="letter">B</span>
+        <span class="label">男人食物</span>
+      </a>
+      <a class="c" href="#c">
+        <span class="letter">C</span>
+        <span class="label">笑作為武器</span>
+      </a>
+      <a class="d" href="#d">
+        <span class="letter">D</span>
+        <span class="label">老鷹的呼喚</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================== -->
+  <!-- APPENDIX A: 四種數列裝置 -->
+  <!-- ============================== -->
+  <section class="appendix a" id="a">
+    <div class="appendix-header">
+      <div class="appendix-letter">A</div>
+      <div class="appendix-titles">
+        <div class="ts">Anhang A · 附錄一</div>
+        <h2>四種數列裝置 ｜ 7 · 8 · 12 · 5</h2>
+      </div>
+      <div class="appendix-de">die vier Zahl-Muster</div>
+    </div>
+
+    <div class="appendix-lead">
+      Za IV 後五章每一章都有一個<strong>用「數」來組織的詩學裝置</strong>。學生讀第一次只覺得「漂亮」；但這四個數其實<em>不是裝飾</em>——它們是尼采對「言說秩序」的四種實驗。每個數列對應一種<em>讓秩序顯露</em>的方式。
+    </div>
+
+    <div class="device-grid">
+      <div class="device-card">
+        <div class="device-num">7</div>
+        <div class="device-name">Sela</div>
+        <div class="device-zh">影子的自反性標記</div>
+        <div class="device-ch">IV-16 沙漠女兒</div>
+        <div class="device-fn-label">功能</div>
+        <div class="device-fn">在自己詩裡<em>標記</em>「我知道我在做什麼」——但<strong>不停下來</strong>。標記＝越說越多。</div>
+        <div class="device-origin">希伯來詩篇傳統。Luther 譯本保留。意義未定，可能是「停頓」或「強調」。</div>
+      </div>
+
+      <div class="device-card">
+        <div class="device-num">8</div>
+        <div class="device-name">I-A</div>
+        <div class="device-zh">驢子的應答</div>
+        <div class="device-ch">IV-17 喚醒</div>
+        <div class="device-fn-label">功能</div>
+        <div class="device-fn">禮拜的應答結構——司祭唱讚詞、會眾以「I-A」回應。<strong>不能說不的「是」</strong>。</div>
+        <div class="device-origin">中世紀 Festum Asinorum（驢子節）禮拜的擬聲。德語 I-A ≈ Ja（是）的同音雙關。</div>
+      </div>
+
+      <div class="device-card">
+        <div class="device-num">12</div>
+        <div class="device-name">Glocken</div>
+        <div class="device-zh">午夜鐘聲</div>
+        <div class="device-ch">IV-19 夢遊者之歌</div>
+        <div class="device-fn-label">功能</div>
+        <div class="device-fn">十一聲帶詩、第十二聲<strong>沉默</strong>。詩的盡頭歸還鐘自己的聲音。</div>
+        <div class="device-origin">午夜的鐘聲。對應一日完整循環的十二小時。永恆回歸的最佳音樂隱喻。</div>
+      </div>
+
+      <div class="device-card">
+        <div class="device-num">5</div>
+        <div class="device-name">Ringschliessung</div>
+        <div class="device-zh">環形閉合</div>
+        <div class="device-ch">IV-20 徵兆</div>
+        <div class="device-fn-label">功能</div>
+        <div class="device-fn">Vorrede 的五個句子在 Zeichen 一字不差被引用，但意義<strong>反過來</strong>。</div>
+        <div class="device-origin">古典史詩的環形結構（Ringkomposition）。但這裡的「閉合」<em>同時是逆轉</em>。</div>
+      </div>
+    </div>
+
+    <h3>為什麼是 7、8、12、5？</h3>
+    <p>
+      四個數，每個都帶有<em>神學重量</em>：
+    </p>
+    <p>
+      <strong>7</strong> = 創世日（創世記 1）、聖數。但影子用了 7 個 Sela 並沒有完成創世——他只是繞了一圈回到「沙漠在成長」。<em>失敗的創世</em>。<br>
+      <strong>8</strong> = 復活日（第八日，超越七）。但驢子的八段禱文是<em>對死神復活的戲仿</em>——上帝<u>被</u>復活，不是<u>復活</u>。<br>
+      <strong>12</strong> = 完整時間（一日的時辰、十二門徒、十二支派）。但第十二響沒有詩——<em>完整即沉默</em>。<br>
+      <strong>5</strong> = 摩西五經、聖傷五個（耶穌身上）。但 IV-20 的五個引用不是「教義五書」，是<em>同樣的話、相反的意義</em>。
+    </p>
+
+    <h3>四個裝置共同的事</h3>
+    <p>
+      四種數列不是「文學技巧」——它們是尼采對<strong>四種「讓秩序顯露」的方法</strong>的實驗：
+    </p>
+    <p>
+      Sela：<em>用標記</em>讓秩序顯露 ——「我做標記，所以你看到我在做什麼」。<br>
+      I-A：<em>用重複</em>讓秩序顯露 ——「每一段都接同一個回應，所以你聽到結構」。<br>
+      鐘聲：<em>用時間</em>讓秩序顯露 ——「鐘一聲一聲走，你被迫聽見每一刻」。<br>
+      環形閉合：<em>用引用</em>讓秩序顯露 ——「我說過的話再說一次，你發現它變了」。
+    </p>
+    <p>
+      把這四種方法合起來，就是 Za IV 教給讀者的「<strong>四種讓世界自己顯露</strong>」的技巧。<em>不是發明秩序，是讓既有秩序變得可見</em>。
+    </p>
+
+    <div class="closing">
+      <span class="label">— 對台灣教學 · 一個應用 —</span>
+      <p>給學生一個課堂練習：選一首他們喜歡的台語歌、Hip-hop 歌、或文學作品——找出裡面的「<em>數列裝置</em>」（重複幾次的疊句、結構分幾段、特定數字的意義）。然後問：這個數列<em>讓什麼秩序顯露</em>？</p>
+      <p>學生會發現——他們最愛的作品裡，<strong>都有這四種方法之一</strong>。尼采的洞察不是哲學專屬，是<em>所有偉大作品的共同技藝</em>。</p>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- APPENDIX B: 男人食物 -->
+  <!-- ============================== -->
+  <section class="appendix b" id="b">
+    <div class="appendix-header">
+      <div class="appendix-letter">B</div>
+      <div class="appendix-titles">
+        <div class="ts">Anhang B · 附錄二</div>
+        <h2>男人食物 ｜ Manns-Kost 與女性精神的焦慮</h2>
+      </div>
+      <div class="appendix-de">die Manns-Kost-Angst</div>
+    </div>
+
+    <div class="appendix-lead">
+      整套 Za IV 後五章開場第一個請求，是影子說的——「<strong>不要讓我們飯後又被柔弱的女性精神襲擊</strong>」。<em>整套教材的入口，是一個性別焦慮</em>。沒有人注意這個。但讀懂了這個，整套食物隱喻才完整。
+    </div>
+
+    <h3>原文錨點</h3>
+    <p>影子對查拉的第一個請求（IV-16 開場）：</p>
+    <p style="padding: 18px 24px; background: var(--bg-soft); border-left: 3px solid var(--app-b); border-radius: 4px; margin: 16px 0;" class="de">
+      Du nährtest uns mit starker Manns-Kost und kräftigen Sprüchen: lass es nicht zu, dass uns zum Nachtisch die weichlichen weiblichen Geister wieder anfallen!
+    </p>
+    <p style="padding: 14px 24px; color: var(--ink-soft); font-size: 15px; margin-bottom: 24px;">
+      你用<strong>強壯的男人食物</strong>和有力的話語滋養我們：不要讓<strong>柔弱的女性精神</strong>飯後又襲擊我們！
+    </p>
+
+    <h3>這句話做了三件事</h3>
+    <p>
+      <em>第一</em>：把「教學」定義為<strong>食物</strong>（這是 Manns-Kost 隱喻鏈的源頭，後續貫穿五章）。<br>
+      <em>第二</em>：把食物<strong>性別化</strong>——有「男人食物」（強壯），就必然有「女性食物」（柔弱）。<br>
+      <em>第三</em>：把「女性精神」設定為<strong>外部敵人</strong>（會「襲擊」——anfallen，攻擊性動詞）。
+    </p>
+
+    <h3>整套後五章的隱藏性別軸</h3>
+
+    <div class="gender-axis">
+      <div class="gender-axis-header">— Geschlechter-Achse · 性別軸 —</div>
+
+      <div class="gender-poles">
+        <div class="gender-pole left">
+          <div class="pole-label">— Pol I · 焦慮的對象 —</div>
+          <div class="pole-title">weibliche Geister</div>
+          <div class="pole-desc">柔弱、女性的精神<br>＝被軟化、被同情、被「香氛蠟燭化」<br>＝失去戰鬥力</div>
+        </div>
+        <div class="gender-vs">vs.</div>
+        <div class="gender-pole right">
+          <div class="pole-label">— Pol II · 渴望的對象 —</div>
+          <div class="pole-title">Manns-Kost</div>
+          <div class="pole-desc">男人食物、戰士食物、征服者食物<br>＝硬、強壯、有力<br>＝保持戰鬥姿態</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px; text-align: center; color: var(--ink-dim); font-style: italic; font-size: 14px; padding: 0 24px;">
+        這條軸線貫穿整個 Za IV——影子求 Manns-Kost（IV-16）→ 查拉自誇 Manns-Kost（IV-17）→ 高等人「Männer sind wir worden」我們已經是男子漢（IV-18）
+      </p>
+    </div>
+
+    <h3>但是——這個性別軸在 IV-19、IV-20 突然消失</h3>
+    <p>
+      仔細看：「Manns-Kost」、「weibliche Geister」、「Männer sind wir worden」這些詞，<em>只在 IV-16-18 出現</em>。到了 IV-19 夢遊者之歌、IV-20 徵兆——這些詞<strong>全部消失</strong>。
+    </p>
+    <p>
+      取代它們的是什麼？<br>
+      IV-19：「<em>tiefer als Herzeleid</em>」（比心痛更深）、「<em>Lust will Ewigkeit</em>」（愉悅要永恆）——<strong>沒有性別的辯證</strong>。<br>
+      IV-20：「<em>meine Kinder sind nahe</em>」（我的孩子們近了）、「<em>Wolke der Liebe</em>」（愛的雲）——<strong>沒有性別的隸屬</strong>。
+    </p>
+    <p>
+      換句話說：<strong>查拉從性別焦慮裡走出來了</strong>。當他真正接近偉大正午的時候，「男人食物」這個概念已經不再需要。<em>真正的力量不需要性別標籤</em>。
+    </p>
+
+    <div class="closing">
+      <span class="label">— 對台灣 · 一個應用 —</span>
+      <p>「男人食物」在 21 世紀台灣有<strong>無數變體</strong>：硬科學 vs 軟科學、理性 vs 感性、商業 vs 文青、工程 vs 人文、競爭力 vs 同理心、KPI vs 情緒勞動——這些對立都帶著「Manns-Kost vs weibliche Geister」的影子。</p>
+      <p>影子用了這個對立來要求查拉的教導，<strong>結果他們崇拜了一頭什麼都吃的驢</strong>。性別焦慮的結局，不是更硬，是<em>更荒謬</em>。</p>
+      <p>尼采的洞察：<em>真正成熟的姿態，不需要靠對立面來定義自己</em>。當你還在說「我要硬、不要軟」的時候，你還沒走出洞穴。</p>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- APPENDIX C: 笑作為武器 -->
+  <!-- ============================== -->
+  <section class="appendix c" id="c">
+    <div class="appendix-header">
+      <div class="appendix-letter">C</div>
+      <div class="appendix-titles">
+        <div class="ts">Anhang C · 附錄三</div>
+        <h2>笑作為武器 ｜ 第六章與五章的對位</h2>
+      </div>
+      <div class="appendix-de">Lachen als Waffe</div>
+    </div>
+
+    <div class="appendix-lead">
+      你專案中第六章〈笑作為武器〉的核心命題——查拉的笑是<em>「批判但不譴責、距離但不離場、承擔但不沉重」</em>——這個三重姿態，在 IV-16 到 IV-20 五個位置都被測試過。<strong>每一個笑的位置，都對應一種「武器策略」</strong>。但只有最後一個是真的。
+    </div>
+
+    <div class="laugh-table">
+
+      <div class="laugh-row">
+        <div class="laugh-ch">16</div>
+        <div class="laugh-content">
+          <div class="de-line">Tugend-Geheul ... moralisch brüllen!</div>
+          <div class="zh-line">影子：把笑偽裝成「德性的吼叫」</div>
+        </div>
+        <div class="laugh-strategy">
+          <div><strong>偽裝武器</strong>　笑成了道德的代用品。批判，但<em>譴責</em>。</div>
+        </div>
+      </div>
+
+      <div class="laugh-row">
+        <div class="laugh-ch">17</div>
+        <div class="laugh-content">
+          <div class="de-line">über sich selber lachen</div>
+          <div class="zh-line">查拉誤判：以為他們學會了自我嘲笑</div>
+        </div>
+        <div class="laugh-strategy">
+          <div><strong>幻覺武器</strong>　他以為他教會了笑——其實聽到的是宗教狂熱。</div>
+        </div>
+      </div>
+
+      <div class="laugh-row">
+        <div class="laugh-ch">18</div>
+        <div class="laugh-content">
+          <div class="de-line">durch Lachen tödtet man</div>
+          <div class="zh-line">最醜：用笑殺，反過來用笑復活上帝</div>
+        </div>
+        <div class="laugh-strategy">
+          <div><strong>反向武器</strong>　查拉的武器被回收，<em>不離場但已改邊</em>。</div>
+        </div>
+      </div>
+
+      <div class="laugh-row">
+        <div class="laugh-ch">19</div>
+        <div class="laugh-content">
+          <div class="de-line">im Traume lacht ... die Mitternacht</div>
+          <div class="zh-line">午夜在夢中笑——非人類的笑</div>
+        </div>
+        <div class="laugh-strategy">
+          <div><strong>非人武器</strong>　笑離開主體，<em>時間自己笑</em>——已不可武器化。</div>
+        </div>
+      </div>
+
+      <div class="laugh-row">
+        <div class="laugh-ch">20</div>
+        <div class="laugh-content">
+          <div class="de-line">der Löwe ... lachte dazu</div>
+          <div class="zh-line">獅子也笑了——動物的笑</div>
+        </div>
+        <div class="laugh-strategy">
+          <div><strong>成熟之笑</strong>　最終位置——<em>批判但不譴責、距離但不離場、承擔但不沉重</em>。</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>第六章的三重判準，在 IV-20 才同時成立</h3>
+    <p>
+      你的第六章定義「成熟之笑」三個特徵——<em>批判但不譴責、距離但不離場、承擔但不沉重</em>。對照五個笑的位置，<strong>只有 IV-20 笑獅同時滿足三個判準</strong>：
+    </p>
+    <p style="padding: 18px 22px; background: var(--bg-soft); border-left: 3px solid var(--app-c); border-radius: 4px; margin: 16px 0;">
+      <strong>批判但不譴責</strong>：獅子咆哮（批判），但獅子<em>溫柔長久</em>（不譴責）。<br>
+      <strong>距離但不離場</strong>：高等人被嚇跑（距離），但獅子<em>留在查拉身邊</em>（不離場）。<br>
+      <strong>承擔但不沉重</strong>：查拉哭了（承擔），但獅子<em>舔他的淚</em>（不沉重）。
+    </p>
+
+    <h3>從影子到笑獅：笑的成熟弧線</h3>
+    <p>
+      <em>影子的笑</em>是<strong>偽裝</strong>——把笑變成德性的吼叫。<br>
+      <em>查拉誤聽的笑</em>是<strong>幻覺</strong>——把宗教狂熱當作自我嘲笑。<br>
+      <em>最醜之人的笑</em>是<strong>反擊</strong>——把武器轉到對手手裡。<br>
+      <em>午夜的笑</em>是<strong>遠離</strong>——笑離開人類進入時間。<br>
+      <em>笑獅的笑</em>是<strong>到達</strong>——笑回到主體，但不再是「武器」，是<u>存在的姿態</u>。
+    </p>
+
+    <p>
+      這就是你第六章的核心命題在五章中的<em>完整實現</em>：<strong>笑要先經過「不真」、「誤」、「反擊」、「遠離」，才能成為「成熟之笑」</strong>。沒有經過前四步的，不會直接走到第五步。
+    </p>
+
+    <div class="closing">
+      <span class="label">— 對台灣政治笑話的應用 —</span>
+      <p>你的書處理「台灣政治笑話」傳統——從黨外時期、到 BBS、到 PTT、到 IG 圖文。<strong>這五個位置剛好對應五種笑</strong>：</p>
+      <p>
+        黨外笑話＝<em>德性的吼叫</em>（影子型——用笑代替譴責）<br>
+        BBS 早期幹話＝<em>自我嘲笑的幻覺</em>（IV-17 型——以為大家在笑，其實在儀式化）<br>
+        PTT 鄉民笑＝<em>反擊性的笑</em>（IV-18 型——武器化，但有時打到自己人）<br>
+        當代 IG 梗圖＝<em>遠離的笑</em>（IV-19 型——笑離開了主體，由演算法製造）<br>
+        ──然後第五個位置：<em>還沒到</em>。
+      </p>
+      <p>第六章最深的提問：<strong>台灣的政治笑話傳統，能不能走到第五個位置？</strong>能不能有一種笑既批判又溫柔、既保持距離又願意留下？這個問題不是修辭——是公共生活的真實課題。</p>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- APPENDIX D: 老鷹的呼喚 -->
+  <!-- ============================== -->
+  <section class="appendix d" id="d">
+    <div class="appendix-header">
+      <div class="appendix-letter">D</div>
+      <div class="appendix-titles">
+        <div class="ts">Anhang D · 附錄四</div>
+        <h2>老鷹的呼喚 ｜ 徵兆不是被收到的，是被呼喚的</h2>
+      </div>
+      <div class="appendix-de">der Ruf des Adlers</div>
+    </div>
+
+    <div class="appendix-lead">
+      所有講 IV-20 的人都講「<strong>笑獅來了</strong>」。但很少有人注意一件事：在笑獅來之前，<em>老鷹先呼叫了</em>。徵兆不是降臨在被動的查拉身上——<strong>是查拉的驕傲動物先呼叫，然後查拉宣告缺乏，然後徵兆才到達</strong>。整個徵兆的結構是<em>被呼喚出來的</em>。
+    </div>
+
+    <h3>原文的精確順序</h3>
+
+    <div class="eagle-sequence">
+      <div class="eagle-step">
+        <div class="eagle-step-num">i</div>
+        <div>
+          <h4>老鷹先呼叫</h4>
+          <div class="de-line">er hörte über sich den scharfen Ruf seines Adlers</div>
+          <p>查拉在洞外對自己心說話。突然「<strong>他聽到頭頂上老鷹尖銳的呼叫</strong>」。注意關鍵字：<em>scharf</em>（尖銳）——這不是溫柔的呼叫，是<strong>警報式的呼叫</strong>。老鷹召喚查拉的注意。</p>
+        </div>
+      </div>
+
+      <div class="eagle-step">
+        <div class="eagle-step-num">ii</div>
+        <div>
+          <h4>查拉回應老鷹</h4>
+          <div class="de-line">Meine Thiere sind wach, denn ich bin wach. Mein Adler ist wach und ehrt gleich mir die Sonne.</div>
+          <p>「我的動物醒了，因為我醒了。我的<strong>老鷹</strong>醒了，他像我一樣<em>尊敬太陽</em>。」——查拉確認了老鷹的呼叫，並用老鷹確認自己（「他像我一樣」）。<strong>老鷹是查拉的鏡子</strong>。</p>
+        </div>
+      </div>
+
+      <div class="eagle-step">
+        <div class="eagle-step-num">iii</div>
+        <div>
+          <h4>查拉宣告缺乏</h4>
+          <div class="de-line">Aber noch fehlen mir meine rechten Menschen!</div>
+          <p>「<strong>但我還缺真正的人類！</strong>」——這是<em>呼喚徵兆的關鍵句</em>。老鷹的呼叫讓查拉<strong>意識到自己還缺什麼</strong>。沒有老鷹的呼叫，他不會說出這句話。沒有這句話，徵兆就不會來。</p>
+        </div>
+      </div>
+
+      <div class="eagle-step">
+        <div class="eagle-step-num">iv</div>
+        <div>
+          <h4>徵兆立刻來</h4>
+          <div class="de-line">da aber geschah es, dass er sich plötzlich wie von unzähligen Vögeln umschwärmt und umflattert hörte</div>
+          <p>「就在這時——突然他發現自己被無數鳥群包圍。」<strong>鴿子的雲</strong>立刻到。然後獅子。<em>呼喚與到達之間，沒有時間差</em>——好像它們<u>一直在等他說出這句話</u>。</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>老鷹的雙重身分</h3>
+    <p>
+      老鷹在 Za 中是查拉的<strong>驕傲動物</strong>（蛇是智慧動物）——這個搭配從 Za I 序言 10 就確立：「<em>查拉圖斯特拉渴望鷹的驕傲與蛇的聰明</em>」。但在 Za I 序言 10 的同一段，查拉立刻判斷：「<em>Unmögliches bitte ich da</em>」（我要求的是不可能的）。
+    </p>
+    <p>
+      <strong>五年後的 IV-20 ——這個不可能的事，發生了</strong>。老鷹真的呼叫了。而且<em>它的呼叫帶來了徵兆</em>。Za I 的「不可能」，在 Za IV-20 變成「正在發生」。
+    </p>
+
+    <h3>蛇為什麼沒發聲？</h3>
+    <p>
+      整段裡，<strong>蛇沒有發聲</strong>。只有老鷹呼叫，獅子咆哮，鴿子飛舞——蛇<em>缺席</em>。為什麼？
+    </p>
+    <p>
+      一個可能的解讀：<em>智慧（蛇）在這個瞬間不能說話</em>。徵兆的到來不需要智慧的調度——它需要的是<strong>驕傲的呼喚</strong>（老鷹）和<strong>愛的擁抱</strong>（鴿子+獅子）。智慧的位置，<em>在事後</em>——查拉接下來認出「同情是最後的罪」的那一刻，<u>那才是蛇</u>。
+    </p>
+
+    <h3>「徵兆」三度的最終解讀</h3>
+    <p>
+      回到 Hidden Structure 的暗線⑤——徵兆三度：<strong>前兩次徵兆是查拉自己宣稱的</strong>（感恩、驢子節），第三次徵兆<em>來</em>。但這個「來」的條件是什麼？
+    </p>
+    <p>
+      <strong>條件是：你必須先有一個願意為你呼叫的他者</strong>。老鷹替查拉呼叫了。沒有這個呼叫，查拉不會說出「我還缺真正的人類」。沒有這句話，徵兆不會來。<em>徵兆需要驕傲的呼喚，才會降臨</em>。
+    </p>
+
+    <div class="closing">
+      <span class="label">— 對台灣 · 一個應用 —</span>
+      <p>「等徵兆」這件事，21 世紀台灣人都會做——等對的工作、對的伴侶、對的時刻、對的政治機會、對的學術轉折。我們以為徵兆會自己來。但 IV-20 告訴我們：<strong>徵兆只在被呼喚之後才會來</strong>。</p>
+      <p>而且呼喚的不是你自己——是<em>你的「老鷹」</em>。你生命裡的「老鷹」是誰／是什麼？那個會在你還沒準備好的時候，<em>尖銳地呼叫</em>你的——可能是某個老師、某個朋友、某個事件、某本書、某個失敗。沒有老鷹，你不會宣告自己缺什麼。沒有宣告，徵兆不會來。</p>
+      <p>所以——<strong>你今天需要做的，不是等徵兆，是找到你的老鷹</strong>。或者——成為別人的老鷹。</p>
+    </div>
+  </section>
+
+  <!-- FINAL CLOSING -->
+  <section class="final-closing">
+    <div class="marker">— Schluss aller Anhänge · 全附錄終 —</div>
+    <p>
+      四個附錄寫完，整套 Za IV 教材的<strong>三層構造</strong>就完成了：
+    </p>
+    <p style="padding-left: 20px; line-height: 2; font-size: 15.5px;">
+      <strong>第一層 ｜ 事件</strong>——五份視覺化教材，每章一個獨立故事<br>
+      <strong>第二層 ｜ 共振</strong>——隱藏結構，五條暗線橫貫五章<br>
+      <strong>第三層 ｜ 鑽探</strong>——四個附錄，每個是一個獨立的細節爆炸點
+    </p>
+    <p>
+      讀懂這三層，學生就不只是「讀完了尼采」——他學會了一套<em>讀偉大文本</em>的方法：先看事件、再看共振、最後在細節裡找鑽探點。
+    </p>
+    <p>
+      這套方法可以用一輩子。<strong>讀莊子、讀紅樓夢、讀馬克思、讀波蘭尼、讀任何<u>值得讀第二遍的東西</u>，都是同樣的三層</strong>。尼采只是材料——方法才是課程真正的禮物。
+    </p>
+    <div class="signoff">
+      Vier Anhänge, fünf Linien, fünf Kapitel.<br>
+      四個附錄、五條線、五章。<br>
+      你的學生會記得這套課，比他們自己以為的更久。
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

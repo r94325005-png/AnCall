@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Za IV ｜ 隱藏結構 ｜ 五條暗線</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0908;
+    --bg-soft: #14110d;
+    --bg-card: #1a1612;
+    --ink: #f5efe1;
+    --ink-soft: #c8c0ab;
+    --ink-dim: #8a8378;
+    --ink-faint: #5a5550;
+    --rule: #2a2723;
+    --rule-soft: #1f1d19;
+
+    /* 五條暗線各自的顏色 */
+    --thread-1: #c4602f;  /* 食物 - 橘 */
+    --thread-2: #c9a352;  /* 獅子 - 金 */
+    --thread-3: #8b9dc4;  /* 笑 - 月光藍 */
+    --thread-4: #7a9d6a;  /* 康復者 - 苔綠 */
+    --thread-5: #b87fb0;  /* 徵兆 - 紫 */
+
+    --thread-1-faint: rgba(196, 96, 47, 0.12);
+    --thread-2-faint: rgba(201, 163, 82, 0.12);
+    --thread-3-faint: rgba(139, 157, 196, 0.12);
+    --thread-4-faint: rgba(122, 157, 106, 0.12);
+    --thread-5-faint: rgba(184, 127, 176, 0.12);
+
+    --serif-de: 'Iowan Old Style', 'Georgia', 'Palatino Linotype', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+            'PingFang TC', 'Microsoft JhengHei', '微軟正黑體',
+            'Noto Sans CJK TC', sans-serif;
+    --mono: 'SF Mono', 'Menlo', 'Consolas', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.75;
+    padding: 60px 24px 120px;
+    min-height: 100vh;
+  }
+  .lecture { max-width: 960px; margin: 0 auto; }
+
+  /* ===== Header ===== */
+  .chapter-header {
+    padding: 48px 0 60px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 80px;
+    text-align: center;
+  }
+  .meta-tag {
+    display: inline-block;
+    color: var(--ink-dim);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding: 6px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    font-family: var(--mono);
+  }
+  h1.chapter-title-de {
+    font-family: var(--serif-de);
+    font-size: 52px;
+    font-weight: normal;
+    color: var(--ink);
+    margin-bottom: 14px;
+    font-style: italic;
+    line-height: 1.1;
+  }
+  .chapter-title-zh {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .subtitle {
+    color: var(--ink-dim);
+    font-size: 15px;
+    margin-bottom: 36px;
+    font-style: italic;
+    font-family: var(--serif-de);
+  }
+  .chapter-positioning {
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 26px 32px;
+    border-left: 3px solid var(--ink-dim);
+    text-align: left;
+    background: var(--bg-soft);
+  }
+  .chapter-positioning strong { color: var(--ink); font-weight: 500; }
+  .chapter-positioning em { color: var(--ink); font-style: italic; }
+
+  /* ===== Five threads overview SVG ===== */
+  .threads-map-wrapper {
+    margin: 56px 0 80px;
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 48px 32px 36px;
+  }
+  .threads-map-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .threads-map-header .label {
+    color: var(--ink-dim);
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .threads-map-header .title {
+    color: var(--ink);
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 24px;
+  }
+  .threads-map-caption {
+    color: var(--ink-dim);
+    font-size: 14px;
+    margin-top: 24px;
+    line-height: 1.7;
+    text-align: center;
+    font-style: italic;
+    font-family: var(--serif-de);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ===== Thread section ===== */
+  .thread {
+    margin-bottom: 100px;
+    scroll-margin-top: 40px;
+  }
+  .thread-header {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+  .thread-num {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+  }
+  .thread-de {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-dim);
+    margin-left: auto;
+  }
+  h2.thread-title {
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .thread-lead {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    padding: 22px 28px;
+    background: var(--bg-soft);
+    border-radius: 4px;
+  }
+  .thread-lead strong { color: var(--ink); font-weight: 500; }
+  .thread-lead em { font-style: italic; }
+
+  /* === Echo chain === */
+  .echo-chain {
+    position: relative;
+    margin: 32px 0;
+  }
+  .echo-chain::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    bottom: 30px;
+    width: 2px;
+    border-radius: 1px;
+  }
+  .echo-step {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .echo-marker {
+    text-align: center;
+    padding-top: 4px;
+  }
+  .echo-marker .ch {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+  .echo-dot {
+    width: 100px;
+    text-align: center;
+  }
+  .echo-dot .circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif-de);
+    font-size: 11px;
+    font-style: italic;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+  }
+  .echo-content {
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .echo-content .de {
+    font-family: var(--serif-de);
+    font-style: italic;
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+  .echo-content .zh {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .echo-content .gloss {
+    color: var(--ink-dim);
+    font-size: 13px;
+    line-height: 1.7;
+    padding-top: 8px;
+    border-top: 1px dashed var(--rule);
+  }
+  .echo-content .gloss strong { color: var(--ink-soft); font-weight: 500; }
+  .echo-content .gloss em { font-style: italic; }
+
+  /* Thread-specific colors */
+  .thread.t1 .echo-chain::before { background: var(--thread-1); }
+  .thread.t1 .echo-dot .circle { border: 2px solid var(--thread-1); color: var(--thread-1); }
+  .thread.t1 h2.thread-title { color: var(--thread-1); }
+  .thread.t1 .thread-num { color: var(--thread-1); }
+  .thread.t1 .thread-lead { border-left: 3px solid var(--thread-1); }
+  .thread.t1 .echo-content .gloss em { color: var(--thread-1); }
+
+  .thread.t2 .echo-chain::before { background: var(--thread-2); }
+  .thread.t2 .echo-dot .circle { border: 2px solid var(--thread-2); color: var(--thread-2); }
+  .thread.t2 h2.thread-title { color: var(--thread-2); }
+  .thread.t2 .thread-num { color: var(--thread-2); }
+  .thread.t2 .thread-lead { border-left: 3px solid var(--thread-2); }
+  .thread.t2 .echo-content .gloss em { color: var(--thread-2); }
+
+  .thread.t3 .echo-chain::before { background: var(--thread-3); }
+  .thread.t3 .echo-dot .circle { border: 2px solid var(--thread-3); color: var(--thread-3); }
+  .thread.t3 h2.thread-title { color: var(--thread-3); }
+  .thread.t3 .thread-num { color: var(--thread-3); }
+  .thread.t3 .thread-lead { border-left: 3px solid var(--thread-3); }
+  .thread.t3 .echo-content .gloss em { color: var(--thread-3); }
+
+  .thread.t4 .echo-chain::before { background: var(--thread-4); }
+  .thread.t4 .echo-dot .circle { border: 2px solid var(--thread-4); color: var(--thread-4); }
+  .thread.t4 h2.thread-title { color: var(--thread-4); }
+  .thread.t4 .thread-num { color: var(--thread-4); }
+  .thread.t4 .thread-lead { border-left: 3px solid var(--thread-4); }
+  .thread.t4 .echo-content .gloss em { color: var(--thread-4); }
+
+  .thread.t5 .echo-chain::before { background: var(--thread-5); }
+  .thread.t5 .echo-dot .circle { border: 2px solid var(--thread-5); color: var(--thread-5); }
+  .thread.t5 h2.thread-title { color: var(--thread-5); }
+  .thread.t5 .thread-num { color: var(--thread-5); }
+  .thread.t5 .thread-lead { border-left: 3px solid var(--thread-5); }
+  .thread.t5 .echo-content .gloss em { color: var(--thread-5); }
+
+  .thread-reading {
+    margin-top: 28px;
+    padding: 24px 28px;
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .thread-reading .label {
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .thread-reading p {
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+  .thread-reading p:last-child { margin-bottom: 0; }
+  .thread-reading strong { color: var(--ink); font-weight: 500; }
+  .thread-reading em { font-style: italic; }
+
+  .thread.t1 .thread-reading { border-left: 3px solid var(--thread-1); }
+  .thread.t1 .thread-reading .label { color: var(--thread-1); }
+  .thread.t1 .thread-reading em { color: var(--thread-1); }
+  .thread.t2 .thread-reading { border-left: 3px solid var(--thread-2); }
+  .thread.t2 .thread-reading .label { color: var(--thread-2); }
+  .thread.t2 .thread-reading em { color: var(--thread-2); }
+  .thread.t3 .thread-reading { border-left: 3px solid var(--thread-3); }
+  .thread.t3 .thread-reading .label { color: var(--thread-3); }
+  .thread.t3 .thread-reading em { color: var(--thread-3); }
+  .thread.t4 .thread-reading { border-left: 3px solid var(--thread-4); }
+  .thread.t4 .thread-reading .label { color: var(--thread-4); }
+  .thread.t4 .thread-reading em { color: var(--thread-4); }
+  .thread.t5 .thread-reading { border-left: 3px solid var(--thread-5); }
+  .thread.t5 .thread-reading .label { color: var(--thread-5); }
+  .thread.t5 .thread-reading em { color: var(--thread-5); }
+
+  /* ===== Closing ===== */
+  .closing {
+    margin-top: 96px;
+    padding: 64px 32px;
+    background: linear-gradient(180deg,
+      var(--bg-soft) 0%,
+      rgba(20, 17, 13, 0.6) 100%);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    text-align: center;
+  }
+  .closing .marker {
+    color: var(--ink-dim);
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .closing h2 {
+    color: var(--ink);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+  .closing p {
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.85;
+    margin-bottom: 16px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  .closing p strong { color: var(--ink); font-weight: 500; }
+  .closing p em { color: var(--ink); font-style: italic; }
+  .closing .signoff {
+    margin-top: 36px;
+    font-family: var(--serif-de);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-dim);
+    line-height: 1.6;
+  }
+
+  /* ===== Sticky nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(10, 9, 8, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 0 -24px 60px;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--rule);
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .nav a {
+    color: var(--ink-dim);
+    text-decoration: none;
+    font-size: 13px;
+    font-family: var(--serif-de);
+    font-style: italic;
+    padding: 6px 12px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .nav a:hover {
+    color: var(--ink);
+    background: var(--bg-soft);
+  }
+  .nav a.t1 { color: var(--thread-1); }
+  .nav a.t2 { color: var(--thread-2); }
+  .nav a.t3 { color: var(--thread-3); }
+  .nav a.t4 { color: var(--thread-4); }
+  .nav a.t5 { color: var(--thread-5); }
+
+  @media (max-width: 720px) {
+    body { padding: 40px 16px 80px; font-size: 16px; }
+    h1.chapter-title-de { font-size: 38px; }
+    .chapter-title-zh { font-size: 22px; }
+    h2.thread-title { font-size: 22px; }
+    .echo-step { grid-template-columns: 60px 1fr; gap: 12px; }
+    .echo-dot { width: 60px; }
+    .echo-chain::before { left: 30px; }
+    .closing h2 { font-size: 22px; }
+    .threads-map-wrapper { padding: 28px 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lecture">
+
+  <!-- HEADER -->
+  <header class="chapter-header">
+    <div class="meta-tag">Also sprach Zarathustra · IV · die fünf Linien</div>
+    <h1 class="chapter-title-de">Die verborgenen Linien</h1>
+    <div class="chapter-title-zh">五條暗線</div>
+    <div class="subtitle">— 整套 Za IV 隱藏的共振結構 · 進階閱讀的鑰匙 —</div>
+    <div class="chapter-positioning">
+      讀完 IV-16 到 IV-20 五章之後，學生會以為自己讀完了。<strong>沒有</strong>。<br><br>
+      尼采的文本不是線性敘事，是<em>共振裝置</em>。同樣的詞、同樣的隱喻、同樣的形象，在五章之間反覆出現——每次出現，意義都微調一點。讀第一遍只看到事件；讀第二遍才看到<strong>那些把五章編在一起的暗線</strong>。<br><br>
+      下面五條暗線，<em>每一條都橫貫所有五章</em>。掌握了它們，整套教材會從「五個房間」變成「一個共振腔」。這是給好學生與備課老師的進階鑰匙。
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="t1" href="#t1">① 男人食物</a>
+      <a class="t2" href="#t2">② 三個獅子</a>
+      <a class="t3" href="#t3">③ 笑的演化</a>
+      <a class="t4" href="#t4">④ 康復者</a>
+      <a class="t5" href="#t5">⑤ 徵兆三度</a>
+    </div>
+  </nav>
+
+  <!-- THREADS MAP SVG -->
+  <div class="threads-map-wrapper">
+    <div class="threads-map-header">
+      <div class="label">— Übersicht · 全圖 —</div>
+      <div class="title">五條暗線 × 五章 的共振圖</div>
+    </div>
+
+    <svg width="100%" viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg">
+      <!-- 五章標題列 -->
+      <g font-family="Georgia, serif" font-style="italic">
+        <text x="120" y="38" text-anchor="middle" fill="#c8c0ab" font-size="13">IV-16</text>
+        <text x="120" y="56" text-anchor="middle" fill="#8a8378" font-size="11">沙漠女兒</text>
+        <text x="280" y="38" text-anchor="middle" fill="#c8c0ab" font-size="13">IV-17</text>
+        <text x="280" y="56" text-anchor="middle" fill="#8a8378" font-size="11">喚醒</text>
+        <text x="440" y="38" text-anchor="middle" fill="#c8c0ab" font-size="13">IV-18</text>
+        <text x="440" y="56" text-anchor="middle" fill="#8a8378" font-size="11">驢子節</text>
+        <text x="600" y="38" text-anchor="middle" fill="#c8c0ab" font-size="13">IV-19</text>
+        <text x="600" y="56" text-anchor="middle" fill="#8a8378" font-size="11">夢遊者之歌</text>
+        <text x="760" y="38" text-anchor="middle" fill="#c8c0ab" font-size="13">IV-20</text>
+        <text x="760" y="56" text-anchor="middle" fill="#8a8378" font-size="11">徵兆</text>
+      </g>
+
+      <!-- 五條垂直分隔線 -->
+      <g stroke="#2a2723" stroke-width="0.5" stroke-dasharray="2,4">
+        <line x1="120" y1="68" x2="120" y2="440"/>
+        <line x1="280" y1="68" x2="280" y2="440"/>
+        <line x1="440" y1="68" x2="440" y2="440"/>
+        <line x1="600" y1="68" x2="600" y2="440"/>
+        <line x1="760" y1="68" x2="760" y2="440"/>
+      </g>
+
+      <!-- ① 男人食物（橘） -->
+      <g>
+        <path d="M 120 110 Q 200 95, 280 110 Q 360 125, 440 110 Q 520 95, 600 130 Q 680 145, 760 140"
+              fill="none" stroke="#c4602f" stroke-width="2.2" opacity="0.9"/>
+        <circle cx="120" cy="110" r="5" fill="#c4602f"/>
+        <circle cx="280" cy="110" r="5" fill="#c4602f"/>
+        <circle cx="440" cy="110" r="5" fill="#c4602f"/>
+        <circle cx="600" cy="130" r="5" fill="#c4602f"/>
+        <circle cx="760" cy="140" r="4" fill="#c4602f" opacity="0.5"/>
+        <text x="40" y="115" fill="#c4602f" font-family="-apple-system,sans-serif" font-size="12" font-weight="500">① 食物</text>
+        <text x="120" y="92" text-anchor="middle" fill="#c4602f" font-size="9.5" font-family="Georgia, serif" font-style="italic">Manns-Kost</text>
+        <text x="280" y="92" text-anchor="middle" fill="#c4602f" font-size="9.5" font-family="Georgia, serif" font-style="italic">Krieger-Kost</text>
+        <text x="440" y="92" text-anchor="middle" fill="#c4602f" font-size="9.5" font-family="Georgia, serif" font-style="italic">kein Kostverächter</text>
+        <text x="600" y="112" text-anchor="middle" fill="#c4602f" font-size="9.5" font-family="Georgia, serif" font-style="italic">Wein zu trinken</text>
+        <text x="760" y="122" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(餵養終結)</text>
+      </g>
+
+      <!-- ② 獅子（金） -->
+      <g>
+        <path d="M 120 175 Q 200 175, 280 180 Q 360 185, 440 175 Q 520 165, 600 195 Q 680 225, 760 200"
+              fill="none" stroke="#c9a352" stroke-width="2.2" opacity="0.9"/>
+        <circle cx="120" cy="175" r="5" fill="#c9a352"/>
+        <circle cx="280" cy="180" r="4" fill="#c9a352" opacity="0.4"/>
+        <circle cx="440" cy="175" r="4" fill="#c9a352" opacity="0.4"/>
+        <circle cx="600" cy="195" r="4" fill="#c9a352" opacity="0.5"/>
+        <circle cx="760" cy="200" r="6" fill="#c9a352"/>
+        <text x="40" y="180" fill="#c9a352" font-family="-apple-system,sans-serif" font-size="12" font-weight="500">② 獅子</text>
+        <text x="120" y="157" text-anchor="middle" fill="#c9a352" font-size="9.5" font-family="Georgia, serif" font-style="italic">moralischer Löwe</text>
+        <text x="280" y="162" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(伏線)</text>
+        <text x="440" y="157" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(伏線)</text>
+        <text x="600" y="177" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(午夜)</text>
+        <text x="760" y="182" text-anchor="middle" fill="#c9a352" font-size="9.5" font-family="Georgia, serif" font-style="italic">Löwen-Brüllen</text>
+      </g>
+
+      <!-- ③ 笑（月光藍） -->
+      <g>
+        <path d="M 120 245 Q 200 240, 280 250 Q 360 260, 440 245 Q 520 230, 600 255 Q 680 280, 760 265"
+              fill="none" stroke="#8b9dc4" stroke-width="2.2" opacity="0.9"/>
+        <circle cx="120" cy="245" r="5" fill="#8b9dc4"/>
+        <circle cx="280" cy="250" r="5" fill="#8b9dc4"/>
+        <circle cx="440" cy="245" r="5" fill="#8b9dc4"/>
+        <circle cx="600" cy="255" r="5" fill="#8b9dc4"/>
+        <circle cx="760" cy="265" r="5" fill="#8b9dc4"/>
+        <text x="40" y="250" fill="#8b9dc4" font-family="-apple-system,sans-serif" font-size="12" font-weight="500">③ 笑</text>
+        <text x="120" y="227" text-anchor="middle" fill="#8b9dc4" font-size="9.5" font-family="Georgia, serif" font-style="italic">moralisch brüllen</text>
+        <text x="280" y="232" text-anchor="middle" fill="#8b9dc4" font-size="9.5" font-family="Georgia, serif" font-style="italic">über sich lachen</text>
+        <text x="440" y="227" text-anchor="middle" fill="#8b9dc4" font-size="9.5" font-family="Georgia, serif" font-style="italic">durch Lachen tödten</text>
+        <text x="600" y="237" text-anchor="middle" fill="#8b9dc4" font-size="9.5" font-family="Georgia, serif" font-style="italic">im Traume lacht</text>
+        <text x="760" y="247" text-anchor="middle" fill="#8b9dc4" font-size="9.5" font-family="Georgia, serif" font-style="italic">der Löwe lachte</text>
+      </g>
+
+      <!-- ④ 康復者（苔綠） -->
+      <g>
+        <path d="M 120 320 Q 200 325, 280 315 Q 360 305, 440 310 Q 520 315, 600 325 Q 680 335, 760 330"
+              fill="none" stroke="#7a9d6a" stroke-width="2.2" opacity="0.9"/>
+        <circle cx="120" cy="320" r="4" fill="#7a9d6a" opacity="0.3"/>
+        <circle cx="280" cy="315" r="6" fill="#7a9d6a"/>
+        <circle cx="440" cy="310" r="6" fill="#7a9d6a"/>
+        <circle cx="600" cy="325" r="4" fill="#7a9d6a" opacity="0.4"/>
+        <circle cx="760" cy="330" r="4" fill="#7a9d6a" opacity="0.4"/>
+        <text x="40" y="325" fill="#7a9d6a" font-family="-apple-system,sans-serif" font-size="12" font-weight="500">④ 康復</text>
+        <text x="120" y="302" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(求救聲)</text>
+        <text x="280" y="297" text-anchor="middle" fill="#7a9d6a" font-size="9.5" font-family="Georgia, serif" font-style="italic">Es sind Genesende</text>
+        <text x="440" y="292" text-anchor="middle" fill="#7a9d6a" font-size="9.5" font-family="Georgia, serif" font-style="italic">erfinden Genesende</text>
+        <text x="600" y="307" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(肯定)</text>
+        <text x="760" y="312" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(超越)</text>
+      </g>
+
+      <!-- ⑤ 徵兆（紫） -->
+      <g>
+        <path d="M 120 395 Q 200 400, 280 385 Q 360 370, 440 380 Q 520 390, 600 400 Q 680 410, 760 380"
+              fill="none" stroke="#b87fb0" stroke-width="2.2" opacity="0.9"/>
+        <circle cx="120" cy="395" r="4" fill="#b87fb0" opacity="0.3"/>
+        <circle cx="280" cy="385" r="5" fill="#b87fb0"/>
+        <circle cx="440" cy="380" r="5" fill="#b87fb0"/>
+        <circle cx="600" cy="400" r="4" fill="#b87fb0" opacity="0.4"/>
+        <circle cx="760" cy="380" r="7" fill="#b87fb0"/>
+        <text x="40" y="400" fill="#b87fb0" font-family="-apple-system,sans-serif" font-size="12" font-weight="500">⑤ 徵兆</text>
+        <text x="120" y="377" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(伏線)</text>
+        <text x="280" y="367" text-anchor="middle" fill="#b87fb0" font-size="9.5" font-family="Georgia, serif" font-style="italic">bestes Zeichen</text>
+        <text x="440" y="362" text-anchor="middle" fill="#b87fb0" font-size="9.5" font-family="Georgia, serif" font-style="italic">gutes Wahrzeichen</text>
+        <text x="600" y="382" text-anchor="middle" fill="#8a8378" font-size="9.5" font-family="Georgia, serif" font-style="italic">(午夜呼喚)</text>
+        <text x="760" y="362" text-anchor="middle" fill="#b87fb0" font-size="10" font-family="Georgia, serif" font-style="italic" font-weight="bold">Das Zeichen kommt!</text>
+      </g>
+    </svg>
+
+    <div class="threads-map-caption">
+      五條暗線沿著五章橫向穿越。實心圓點 = 強出現；半透明圓 = 預示或迴響。<br>
+      注意：所有五條暗線在 <strong style="color:#f5efe1">IV-20</strong> 都同時收束——徵兆來了的瞬間，是五條線的<em>共同高潮</em>。
+    </div>
+  </div>
+
+  <!-- ===== THREAD 1: MANNS-KOST ===== -->
+  <section class="thread t1" id="t1">
+    <div class="thread-header">
+      <span class="thread-num">①</span>
+      <h2 class="thread-title">Manns-Kost ｜ 男人食物的隱喻鏈</h2>
+      <span class="thread-de">die Kost-Linie</span>
+    </div>
+
+    <div class="thread-lead">
+      整套 Za IV 是一齣<strong>進食的詩</strong>。從影子要求「男人食物」、查拉自誇「戰士食物」、禱文裡的「不挑食的驢」、到最醜之人把酒灌進驢嘴——<em>「教學」這件事，從頭到尾被當作餵養來處理</em>。但餵養的內容慢慢變了。
+    </div>
+
+    <div class="echo-chain">
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">16</div></div>
+        <div class="echo-content">
+          <div class="de">Du nährtest uns mit starker Manns-Kost und kräftigen Sprüchen: lass es nicht zu, dass uns zum Nachtisch die weichlichen weiblichen Geister wieder anfallen!</div>
+          <div class="zh">你用<strong>強壯的男人食物</strong>和有力的話語滋養我們：不要讓飯後又有柔弱的女性精神襲擊我們！</div>
+          <div class="gloss">影子<em>請求</em>男人食物，並把它與「女性精神」對立。整套食物隱喻從這個性別焦慮開始。影子怕的不是飢餓——是<strong>軟弱</strong>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">17</div></div>
+        <div class="echo-content">
+          <div class="de">Meine Manns-Kost wirkt, mein Saft- und Kraft-Spruch: und wahrlich, ich nährte sie nicht mit Bläh-Gemüsen! Sondern mit Krieger-Kost, mit Eroberer-Kost.</div>
+          <div class="zh">我的<strong>男人食物</strong>起作用了，我的精力之言：我不是用脹氣的蔬菜餵他們！而是用<strong>戰士食物、征服者食物</strong>。</div>
+          <div class="gloss">查拉<em>自誇</em>。他以為他餵了戰士食物——但他正在誤判，因為下一秒高等人就會跪在驢子前。<strong>正確的食物，沒能餵出正確的學生</strong>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">17</div></div>
+        <div class="echo-content">
+          <div class="de">Du liebst Eselinnen und frische Feigen, du bist kein Kostverächter. Eine Distel kitzelt dir das Herz.</div>
+          <div class="zh">你愛母驢與新鮮無花果，你<strong>不挑食</strong>。一根薊草搔得你的心發癢。</div>
+          <div class="gloss">禱文第八段——驢子的德性<em>正是</em>不挑食。但「不挑食」翻譯：<em>什麼都吞</em>。Za IV 的諷刺結構在這裡達到頂峰——影子求男人食物，結果他們崇拜的對象是<strong>什麼都吃的動物</strong>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">19</div></div>
+        <div class="echo-content">
+          <div class="de">der hässlichste Mensch, der immer noch auf dem Boden lag, den Arm zu dem Esel emporhebend (er gab ihm nämlich Wein zu trinken).</div>
+          <div class="zh">最醜之人仍躺在地上，舉起手臂朝向驢子（<strong>他剛剛給驢喝了酒</strong>）。</div>
+          <div class="gloss">食物鏈的最後一站。從<em>男人食物</em>到<em>戰士食物</em>到<em>不挑食</em>，最終是<strong>把酒灌進動物的嘴</strong>。「教師餵養學生」這個隱喻，墮落為「人類灌醉動物」。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">20</div></div>
+        <div class="echo-content">
+          <div class="de">Ich trachte nach meinem Werke!</div>
+          <div class="zh">我追求的是<strong>我的事業</strong>！</div>
+          <div class="gloss">食物隱喻結束。查拉最後說的不是「我要餵養他們」，是「我有我的事業」。<em>不再餵養</em>——這就是「同情有過它的時候」的真實意義：<strong>停止餵養</strong>。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thread-reading">
+      <span class="label">— Lesart · 解讀 —</span>
+      <p>整套 Za IV 的「教學」被用<em>進食</em>來處理。但你越仔細追蹤，越會發現——<strong>沒有一種食物能餵出正確的學生</strong>。男人食物、戰士食物、不挑食、酒——食物等級越走越高貴或越荒謬，<em>結果都一樣：學生不是查拉真正的同伴</em>。</p>
+      <p>對台灣的教學現場：你能不能停止把教學想成「餵養」？老師不是廚師，學生不是嘴。<em>查拉最後選的不是更好的食物，是不再餵養</em>——這是 IV-20 「我追求我的事業」的真正力量。</p>
+    </div>
+  </section>
+
+  <!-- ===== THREAD 2: LIONS ===== -->
+  <section class="thread t2" id="t2">
+    <div class="thread-header">
+      <span class="thread-num">②</span>
+      <h2 class="thread-title">三個獅子 ｜ 從道德吼到笑</h2>
+      <span class="thread-de">die Löwen-Linie</span>
+    </div>
+
+    <div class="thread-lead">
+      Za 全書最隱密的對應：<strong>IV-16 影子的詩裡，已經出現了「獅子」</strong>——但是諷刺的、道德的、咆哮的獅子。IV-20 笑獅來時，<em>是這頭假獅的真正版本</em>。沒有人讀第一遍會看到這個。
+    </div>
+
+    <div class="echo-chain">
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">16</div></div>
+        <div class="echo-content">
+          <div class="de">Ha! Feierlich!... Eines Löwen würdig, Oder eines moralischen Brüllaffen.</div>
+          <div class="zh">哈！莊嚴！配得上一頭<strong>獅子</strong>，或者一隻<strong>道德的吼猴</strong>。</div>
+          <div class="gloss">影子自嘲自己詩的開頭氣勢——「沙漠在成長！」——像獅子吼。但他立刻轉折：<em>或者像道德的吼猴</em>。獅子在這裡是<strong>諷刺對象</strong>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">16</div></div>
+        <div class="echo-content">
+          <div class="de">Als moralischer Löwe vor den Töchtern der Wüste brüllen!</div>
+          <div class="zh">作為<strong>道德的獅子</strong>，在沙漠女兒面前吼叫！</div>
+          <div class="gloss">影子第二次提到獅子——這次更清楚：他<em>把自己</em>定位為「道德的獅子」。整首東方主義詩，是「歐洲道德獅子的吼叫」。<strong>影子的獅子是表演的</strong>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">16</div></div>
+        <div class="echo-content">
+          <div class="de">In Furcht vielleicht vor einem Grimmen gelben blondgelockten Löwen-Unthiere?</div>
+          <div class="zh">也許牠（舞者的另一條腿）正在害怕一頭<strong>陰森的、金黃色、金色鬃毛的獅子怪獸</strong>？</div>
+          <div class="gloss">影子詩中第三個獅子——是想像中威脅東方土地的<em>暴力獅子</em>。注意關鍵詞：<strong>gelb（黃）、blondgelockt（金色鬃毛）</strong>——這正是 IV-20 笑獅的描述（gelbes mächtiges Gethier）。<em>影子在預演笑獅，但他不知道</em>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">20</div></div>
+        <div class="echo-content">
+          <div class="de">— ein sanftes langes Löwen-Brüllen. «Das Zeichen kommt», sprach Zarathustra... da lag ihm ein gelbes mächtiges Gethier zu Füssen.</div>
+          <div class="zh">——一聲<strong>溫柔長久的獅子咆哮</strong>。「徵兆來了，」查拉圖斯特拉說……一頭<strong>金黃色的、強壯的野獸</strong>躺在他腳邊。</div>
+          <div class="gloss">真正的笑獅。<em>gelbes mächtiges Gethier</em>——和影子詩裡那頭「想像中的陰森黃獅」是同一個顏色、同一個物種，但<strong>本性完全相反</strong>：影子的獅子吼叫、咆哮、威脅；查拉的獅子<em>溫柔、長久、舔人手</em>。從「道德的吼叫」到「徵兆的咆哮」——同一頭獅子，<strong>剝掉道德外殼</strong>。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thread-reading">
+      <span class="label">— Lesart · 解讀 —</span>
+      <p><strong>影子的詩裡，已經有了笑獅的雛形——但是反過來的</strong>。影子的「道德獅子」是<em>表演的、人造的、用來嚇人的</em>。IV-20 的笑獅是<em>溫柔的、自然的、來舔人的</em>。</p>
+      <p>同一個動物。同一個顏色。完全相反的姿態。<em>道德把獅子變成怪物；徵兆把獅子變回獅子</em>。這是 Za IV 對「德性」最深的批判——德性不會讓野獸變得溫柔，<strong>它只會讓溫柔的野獸偽裝成怪物</strong>。</p>
+      <p>對台灣讀者：你用「道德」描述自己的時候，你變的是更兇還是更柔？查拉的答案：通常更兇。<em>真正的溫柔，不需要道德</em>。</p>
+    </div>
+  </section>
+
+  <!-- ===== THREAD 3: LAUGHTER ===== -->
+  <section class="thread t3" id="t3">
+    <div class="thread-header">
+      <span class="thread-num">③</span>
+      <h2 class="thread-title">笑的演化 ｜ 從偽裝到動物</h2>
+      <span class="thread-de">die Lachen-Linie</span>
+    </div>
+
+    <div class="thread-lead">
+      笑是整套 Za IV 最複雜的概念。它出現在五章每一章——但<em>每一次出現，「笑」的位置都更遠離人類</em>。從影子的「道德吼叫」開始，最後落腳在<strong>會笑的獅子</strong>。
+    </div>
+
+    <div class="echo-chain">
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">16</div></div>
+        <div class="echo-content">
+          <div class="de">Tugend-Geheul, Ihr allerliebsten Mädchen, Ist mehr als Alles Europäer-Inbrunst, Europäer-Heisshunger!... Moralisch brüllen!</div>
+          <div class="zh"><strong>德性的吼叫</strong>，你們這些最可愛的女孩，超過一切歐洲的熱情、歐洲的飢渴！……<strong>道德地咆哮！</strong></div>
+          <div class="gloss">笑的最低形式——<em>偽裝成道德吼叫的笑</em>。影子在自嘲，但他的自嘲本身是一種<strong>無能力真笑</strong>的徵候。他用德性的吼叫代替笑。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">17</div></div>
+        <div class="echo-content">
+          <div class="de">Schon lernen sie über sich selber lachen: höre ich recht?</div>
+          <div class="zh">他們已經學會<strong>自我嘲笑</strong>：我沒聽錯吧？</div>
+          <div class="gloss">查拉以為他教會了高等人笑——他<em>誤判</em>了。他聽到的笑聲，其實是宗教狂熱的笑（驢子崇拜的笑）。<strong>「自我嘲笑」與「集體狂熱」聽起來一樣</strong>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">18</div></div>
+        <div class="echo-content">
+          <div class="de">Nicht durch Zorn, sondern durch Lachen tödtet man — so sprachst du einst. Oh Zarathustra, du Vernichter ohne Zorn.</div>
+          <div class="zh">不是用憤怒，而是<strong>用笑來殺</strong>——你以前是這麼說的。哦查拉圖斯特拉，你不帶憤怒的毀滅者。</div>
+          <div class="gloss">最醜之人引用查拉自己的話，<em>反過來打擊查拉</em>。笑被武器化了——但更深的反諷是：<strong>查拉教的「用笑殺死」，被最醜之人用來「用笑復活上帝」</strong>。同一個動作，相反的方向。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">19</div></div>
+        <div class="echo-content">
+          <div class="de">die alte tiefe tiefe Mitternacht!... ach! ach! wie sie seufzt! wie sie im Traume lacht!</div>
+          <div class="zh">古老的、深的、深的午夜！……啊！她嘆息！她<strong>在夢中笑</strong>！</div>
+          <div class="gloss">笑進入夢境。<em>午夜在夢中笑</em>——這是非人類的笑。連時間都會笑。<strong>笑不再屬於主體，屬於時間本身</strong>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">20</div></div>
+        <div class="echo-content">
+          <div class="de">jedes Mal, wenn eine Taube über die Nase des Löwen huschte, schüttelte der Löwe das Haupt und wunderte sich und lachte dazu.</div>
+          <div class="zh">每次一隻鴿子掠過獅子的鼻子，獅子搖頭、驚奇，<strong>並且笑了</strong>。</div>
+          <div class="gloss">笑的終極演化——<em>動物在笑</em>。獅子不是隱喻地笑（書中明確用 <strong>lachte</strong>，動詞，第三人稱單數過去式）。<strong>笑離開了人類，到達了動物</strong>。這是 Za IV 整個「笑」隱喻的最後落腳。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thread-reading">
+      <span class="label">— Lesart · 解讀 —</span>
+      <p>五個位置的笑——<em>沒有一個是人類「正常」的笑</em>：</p>
+      <p>影子→<strong>偽裝成道德吼叫</strong>（無能力笑）<br>
+      高等人→<strong>偽裝成自我嘲笑</strong>（其實是宗教狂熱）<br>
+      最醜→<strong>武器化的笑</strong>（用笑殺）<br>
+      午夜→<strong>夢中的笑</strong>（時間在笑）<br>
+      獅子→<strong>動物的笑</strong>（離開人類）</p>
+      <p>尼采的洞察：<em>人類的笑，已經被道德污染到不能再用</em>。整套 Za IV 的最後一個笑，必須交給<strong>動物</strong>。對 21 世紀的台灣：你最近一次「真笑」是什麼時候？那是道德的笑、表演的笑、武器的笑、還是動物的笑？</p>
+    </div>
+  </section>
+
+  <!-- ===== THREAD 4: GENESENDE ===== -->
+  <section class="thread t4" id="t4">
+    <div class="thread-header">
+      <span class="thread-num">④</span>
+      <h2 class="thread-title">Genesende ｜ 康復者的時間性</h2>
+      <span class="thread-de">die Genesenden-Linie</span>
+    </div>
+
+    <div class="thread-lead">
+      「Genesende」——<strong>正在康復的人</strong>——是查拉對高等人的最高命名。但「康復」意味著「曾經病過」。整個 Za IV 不是「健康」的時間，是<em>病後的時間</em>。
+    </div>
+
+    <div class="echo-chain">
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">17</div></div>
+        <div class="echo-content">
+          <div class="de">Das nehme ich als das beste Zeichen: sie werden dankbar. Nicht lange noch, und sie denken sich Feste aus... Es sind Genesende!</div>
+          <div class="zh">我把這當作最好的徵兆：他們開始感恩。不久他們會發明節慶……<strong>他們是康復者！</strong></div>
+          <div class="gloss">第一次出現。查拉以為「感恩 + 發明節慶」= 康復。<em>他正確地預見了「發明節慶」，但完全沒料到發明的是驢子節</em>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">18</div></div>
+        <div class="echo-content">
+          <div class="de">Vergesst diese Nacht und diess Eselsfest nicht... Das nehme ich als gutes Wahrzeichen, — Solcherlei erfinden nur Genesende!</div>
+          <div class="zh">不要忘記這一夜、這場驢子節……我把它當作好兆頭——<strong>只有康復者才會發明這種東西！</strong></div>
+          <div class="gloss">第二次出現——<em>查拉收編了驢子節</em>。他用「康復者」這個命名，把他譴責過的東西<strong>合法化</strong>。康復者的權利之一：可以做出健康人不會做的怪事。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thread-reading">
+      <span class="label">— Lesart · 解讀 —</span>
+      <p>「Genesende」在原文只出現兩次，但它定義了整個 Za IV 的<em>時間性</em>。整本書不是「健康的人活著」，是「<strong>剛從某種疾病康復的人，還在搖晃地走路</strong>」。</p>
+      <p>什麼疾病？<em>「沉重精神」（Geist der Schwere）、虛無主義、上帝之死的後遺症</em>。Za IV 的所有人——包括查拉自己——都是這個疾病的康復者。所以他們才會跪在驢前、才會唱東方主義的詩、才會在午夜夢遊。<strong>這些不是健康的行為，但這是康復中的行為</strong>。</p>
+      <p>對台灣讀者：解嚴後三十多年，台灣社會也是<em>一個康復中的社會</em>。你會看到很多奇怪的儀式（政治造勢、轉型正義儀式、社運裡的某些動作）——它們不是「正常的政治」，但這是<strong>剛從威權康復的政治</strong>。查拉的態度：不要急著批判康復者的怪行為，<em>「只有康復者才會發明這種東西」</em>。</p>
+    </div>
+  </section>
+
+  <!-- ===== THREAD 5: ZEICHEN ===== -->
+  <section class="thread t5" id="t5">
+    <div class="thread-header">
+      <span class="thread-num">⑤</span>
+      <h2 class="thread-title">徵兆三度 ｜ 兩次誤認，一次到達</h2>
+      <span class="thread-de">die Zeichen-Linie</span>
+    </div>
+
+    <div class="thread-lead">
+      「Zeichen / Wahrzeichen」（徵兆／兆頭）在 Za IV 後段出現<strong>三次</strong>。前兩次是查拉自己宣稱的「徵兆」（其實是<em>誤認</em>）。第三次才是真正的徵兆——而且它<em>他不是預設要等的東西</em>。
+    </div>
+
+    <div class="echo-chain">
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">17</div></div>
+        <div class="echo-content">
+          <div class="de">Das nehme ich als das beste Zeichen: sie werden dankbar.</div>
+          <div class="zh">我把這當作<strong>最好的徵兆</strong>：他們開始感恩。</div>
+          <div class="gloss">第一次。查拉宣稱他看到了「徵兆」——他誤認了。<em>感恩</em>不是徵兆，<em>跪拜驢子</em>才是真實正在發生的事。<strong>查拉的徵兆被他自己的期待污染了</strong>。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">18</div></div>
+        <div class="echo-content">
+          <div class="de">Das nehme ich als gutes Wahrzeichen, — Solcherlei erfinden nur Genesende!</div>
+          <div class="zh">我把它當作<strong>好兆頭</strong>——只有康復者才會發明這種東西！</div>
+          <div class="gloss">第二次。查拉又宣稱看到了「兆頭」——但這次他<em>主動</em>把驢子節定義為兆頭。<strong>他在自我說服</strong>。這個徵兆是被他選擇出來的，不是被遇見的。</div>
+        </div>
+      </div>
+
+      <div class="echo-step">
+        <div class="echo-dot"><div class="circle">20</div></div>
+        <div class="echo-content">
+          <div class="de">«Das Zeichen kommt», sprach Zarathustra und sein Herz verwandelte sich.</div>
+          <div class="zh">「<strong>徵兆來了</strong>，」查拉圖斯特拉說——他的心被轉化了。</div>
+          <div class="gloss">第三次。真正的徵兆。注意關鍵差別：<em>不是「我把它當作徵兆」</em>，是「<strong>徵兆來了</strong>」。徵兆從<em>主動命名</em>變成<em>被動接受</em>。而且伴隨「心被轉化」——前兩次都沒有這種身體性的變化。<strong>真徵兆改變身體，假徵兆只改變判斷</strong>。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thread-reading">
+      <span class="label">— Lesart · 解讀 —</span>
+      <p>整套 Za IV 的最深教學藏在這三度徵兆裡。<em>前兩次徵兆都是查拉自己宣稱的</em>——他把「我希望看到的東西」命名為徵兆。第三次徵兆是<em>笑獅出現</em>——它<strong>沒有先被命名</strong>，它先在身體裡發生（觸覺、聽覺），然後查拉才認出來。</p>
+      <p>真徵兆的特徵：<em>它不符合你的預設</em>。查拉等的是「真正的人類」、「我的孩子們」——來的是<strong>獅子</strong>。徵兆超出他的詞彙。</p>
+      <p>對台灣讀者：你「等」什麼？你「期待」什麼？尼采的提醒：<em>如果你能命名你在等的東西，那它不是真正的徵兆</em>。真徵兆會超出你的預設詞彙——它<strong>來</strong>，而不是<strong>被你召喚</strong>。回頭看你的人生重要時刻——它們是你預設的，還是超出你預設的？</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="marker">— Schluss · 結語 —</div>
+    <h2>五條暗線同時收束於 IV-20 的早晨</h2>
+
+    <p>注意全圖最右側——所有五條暗線都在 IV-20 達到某種<em>終結</em>：</p>
+
+    <p style="padding-left: 20px; font-size: 16px; line-height: 2;">
+      ① 食物 → <strong>查拉停止餵養</strong>（「我追求我的事業」）<br>
+      ② 獅子 → <strong>笑獅真正出現</strong>（影子的假獅變回真獅）<br>
+      ③ 笑 → <strong>動物在笑</strong>（笑離開人類）<br>
+      ④ 康復者 → <strong>查拉超越「康復」</strong>（不再陪伴病人）<br>
+      ⑤ 徵兆 → <strong>真徵兆到達</strong>（超出預設詞彙）
+    </p>
+
+    <p>整套 Za IV 不是「五個事件」的拼貼——是<strong>五條共振線同時收束於一個早晨</strong>。讀懂了這個共振，整本書才從<em>連續劇</em>變回<em>哲學詩</em>。</p>
+
+    <p>這是給通識課大學生的最後一句話：<em>偉大的文本，讀第一遍是內容，讀第二遍是結構，讀第三遍是共振</em>。你今天讀到了第三層。回去之後，你可以用同樣的方法讀任何重要的東西——不只是尼采。</p>
+
+    <div class="signoff">
+      Die fünf Linien laufen in einem Morgen zusammen.<br>
+      五條線在同一個早晨匯合。<br>
+      你的早晨也會有它的五條線——只是你還沒看見。
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

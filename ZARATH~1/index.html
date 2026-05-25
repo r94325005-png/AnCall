@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>查拉圖斯特拉卷四 ｜ 後五章視覺化教材 ｜ 安安總召的串燒基地</title>
+<meta name="description" content="尼采《查拉圖斯特拉如是說》卷四第十六章到第二十章的視覺化教學教材，陽明交大通識課，2026 春。與 AI 共同開發，全部開放使用。">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #faf7f0;
+    --bg-soft: #f0ebdf;
+    --bg-card: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #444;
+    --ink-dim: #777;
+    --ink-faint: #aaa;
+    --accent: #c4602f;
+    --accent-soft: #a55124;
+    --accent-faint: rgba(196, 96, 47, 0.08);
+    --rule: #d8d2c0;
+    --rule-soft: #e8e2d0;
+    --serif: 'Iowan Old Style', 'Georgia', 'Palatino Linotype', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+            'PingFang TC', 'Microsoft JhengHei', '微軟正黑體',
+            'Noto Sans CJK TC', sans-serif;
+    --mono: 'SF Mono', 'Menlo', 'Consolas', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.75;
+    padding: 0;
+    min-height: 100vh;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== Top breadcrumb ===== */
+  .breadcrumb {
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 0;
+    font-size: 14px;
+  }
+  .breadcrumb .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .breadcrumb a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb .home { font-weight: 500; }
+  .breadcrumb .crumbs { color: var(--ink-dim); }
+  .breadcrumb .crumbs .current { color: var(--ink); }
+
+  /* ===== Header ===== */
+  header.hero {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 64px;
+  }
+  .meta-tag {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: 44px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    letter-spacing: -0.005em;
+  }
+  h1 .de {
+    font-style: italic;
+    color: var(--accent);
+    display: block;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  h1 .zh {
+    color: var(--ink);
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  .subtitle strong { color: var(--ink); font-weight: 500; }
+  .course-info {
+    margin-top: 28px;
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .course-info strong { color: var(--ink); font-weight: 500; }
+
+  /* ===== Section ===== */
+  section { margin-bottom: 80px; }
+  h2 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: normal;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  h2 .ord {
+    color: var(--accent);
+    font-style: italic;
+    margin-right: 12px;
+  }
+  .h2-sub {
+    color: var(--ink-dim);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+  h3 {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: normal;
+    color: var(--ink);
+    margin: 28px 0 14px;
+  }
+  p { color: var(--ink-soft); margin-bottom: 14px; line-height: 1.8; }
+  p strong { color: var(--ink); font-weight: 500; }
+  p em { color: var(--accent-soft); font-style: italic; }
+
+  /* ===== Three layers diagram ===== */
+  .layers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .layer {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 24px 22px;
+    position: relative;
+  }
+  .layer .layer-num {
+    color: var(--accent);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .layer h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+  }
+  .layer .layer-de {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .layer p {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ===== Chapter cards (level 1) ===== */
+  .chapters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 32px 0;
+  }
+  .chapter-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .chapter-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  }
+  .chapter-thumb {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #2a2723;
+    position: relative;
+  }
+  .chapter-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+  .chapter-card:hover .chapter-thumb img {
+    transform: scale(1.04);
+  }
+  .chapter-info {
+    padding: 18px 22px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .chapter-meta {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+  }
+  .chapter-card h4 {
+    font-family: var(--serif);
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .chapter-card h4 .de {
+    font-style: italic;
+    color: var(--accent-soft);
+    margin-right: 8px;
+  }
+  .chapter-card .one-liner {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin-top: 8px;
+    flex: 1;
+  }
+
+  /* ===== Special card (Layer 2 & 3) ===== */
+  .special-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 18px 0;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.25s;
+  }
+  .special-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  }
+  .special-card .sc-meta {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .special-card h4 {
+    font-family: var(--serif);
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .special-card h4 .de {
+    font-style: italic;
+    color: var(--accent-soft);
+    margin-right: 10px;
+  }
+  .special-card p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  /* ===== How to use ===== */
+  .use-blocks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .use-block {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 22px 26px;
+  }
+  .use-block h4 {
+    color: var(--ink);
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .use-block h4 .badge {
+    display: inline-block;
+    background: var(--accent-faint);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .use-block p {
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 8px;
+  }
+  .use-block p:last-child { margin-bottom: 0; }
+  .use-block ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .use-block ul li { margin-bottom: 4px; }
+  .use-block ul li strong { color: var(--ink); }
+
+  /* ===== Process / transparency ===== */
+  .process {
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 32px 0;
+  }
+  .process h3 { margin-top: 0; }
+  .process .tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .process .tool-item {
+    background: var(--bg-card);
+    padding: 14px 18px;
+    border-radius: 4px;
+    border: 1px solid var(--rule-soft);
+  }
+  .process .tool-item .tool-name {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .process .tool-item .tool-role {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .process .tool-item .tool-role strong { color: var(--ink); font-weight: 500; }
+
+  /* ===== Footer ===== */
+  footer {
+    margin-top: 80px;
+    padding: 40px 0 60px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    color: var(--ink-dim);
+    font-size: 14px;
+  }
+  footer .sig {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  footer a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 720px) {
+    .container { padding: 0 18px; }
+    header.hero { padding: 48px 0 36px; }
+    h1 { font-size: 32px; }
+    h1 .de { font-size: 22px; }
+    h2 { font-size: 24px; }
+    .layers { grid-template-columns: 1fr; }
+    .chapters { grid-template-columns: 1fr; }
+    .process .tools { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <div class="container">
+    <a href="../" class="home">← 安安總召的串燒基地</a>
+    <span class="crumbs">尼采計畫 / <span class="current">查拉卷四 · 後五章</span></span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="container">
+    <div class="meta-tag">Also sprach Zarathustra · IV · 16—20</div>
+    <h1>
+      <span class="de">Vier Anhänge ｜ Fünf Linien ｜ Fünf Kapitel</span>
+      <span class="zh">查拉圖斯特拉如是說 · 卷四後五章</span>
+    </h1>
+    <div class="subtitle">
+      從〈沙漠女兒〉到〈徵兆〉——尼采 <em>Za</em> IV 最後五章的視覺化教學教材。<strong>陽明交大通識課，2026 春</strong>，遠距 Google Meet 授課。與 AI 共同開發，<strong>全部開放使用</strong>。
+    </div>
+    <div class="course-info">
+      <strong>使用對象</strong>：通識課大學生（理工背景為主）、自學者、其他想教尼采的老師<br>
+      <strong>授權</strong>：CC BY-SA 4.0｜歡迎拿去改、拿去用、拿去接續<br>
+      <strong>聯絡</strong>：<a href="mailto:anccc@nycu.edu.tw" style="color: var(--accent);">anccc@nycu.edu.tw</a>
+    </div>
+  </div>
+</header>
+
+<!-- 計畫定位 -->
+<section>
+  <div class="container">
+    <h2><span class="ord">§ 1</span>計畫定位</h2>
+    <div class="h2-sub">why this exists</div>
+
+    <p>
+      尼采《查拉圖斯特拉》卷四是整本書最被忽略、最被誤讀、也最有當代意義的一卷。它<strong>不是教義</strong>——它是一場戲劇、一連串戲仿、一個關於「教學會失敗」的長篇實驗。卷四的最後五章——〈沙漠女兒〉、〈喚醒〉、〈驢子節〉、〈夢遊者之歌〉、〈徵兆〉——是這個實驗的高潮。
+    </p>
+    <p>
+      要把這五章教給<em>2026 年的陽明交大大學生</em>，傳統的學術註釋（即使有 Grätz NK 4/2 這樣的傑作）不夠用。學生需要看見論證的結構、聽見原文的回響、感覺到尼采為什麼<em>還沒過時</em>。
+    </p>
+    <p>
+      這套教材的設計目標：<strong>用視覺化裝置讓尼采的論證結構自己顯露</strong>。每章一個核心視覺裝置（環形劇場、八段應答禮拜、十二鐘聲、笑獅的徵兆位置），每章配一張 19 世紀末德奧象徵主義風格的 hero 圖（ChatGPT 生成），每章末尾有「對台灣」一節。
+    </p>
+    <p>
+      然後，事件之上還有共振，共振之上還有細節鑽探——這就是<em>三層構造</em>。
+    </p>
+  </div>
+</section>
+
+<!-- 三層構造 -->
+<section>
+  <div class="container">
+    <h2><span class="ord">§ 2</span>三層構造</h2>
+    <div class="h2-sub">three layers</div>
+
+    <p>八個教材檔案分成三層使用——讀第一遍、第二遍、第三遍各有不同的入口：</p>
+
+    <div class="layers">
+      <div class="layer">
+        <div class="layer-num">— Schicht I —</div>
+        <h3>事件</h3>
+        <div class="layer-de">die Ereignisse</div>
+        <p>五份視覺化教材，每章一個獨立故事。學生第一次接觸尼采的入口。</p>
+      </div>
+      <div class="layer">
+        <div class="layer-num">— Schicht II —</div>
+        <h3>共振</h3>
+        <div class="layer-de">die Resonanz</div>
+        <p>隱藏結構，五條暗線橫貫五章。讀第二遍時，五個故事變回一首詩。</p>
+      </div>
+      <div class="layer">
+        <div class="layer-num">— Schicht III —</div>
+        <h3>鑽探</h3>
+        <div class="layer-de">die vier Anhänge</div>
+        <p>四個附錄，每個是一個細節的爆炸點。給好學生、給備課老師的進階鑰匙。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVEL 1: 五份教材 -->
+<section>
+  <div class="container">
+    <h2><span class="ord">§ 3</span>第一層 ｜ 五份視覺化教材</h2>
+    <div class="h2-sub">level one · the five chapters</div>
+
+    <p>每章可以獨立使用——拖進 Google Meet 直接投影。每份檔案約 330–500 KB，含 hero 圖、原文德中對照、核心視覺裝置（SVG）、五個關鍵語句解讀、對台灣學生的提問。</p>
+
+    <div class="chapters">
+
+      <a class="chapter-card" href="za_iv16_visual_lecture.html">
+        <div class="chapter-thumb">
+          <img src="hero_iv16.png" alt="IV-16 沙漠女兒" />
+        </div>
+        <div class="chapter-info">
+          <div class="chapter-meta">Kapitel IV · 16</div>
+          <h4><span class="de">Unter Töchtern der Wüste</span></h4>
+          <h4 style="margin-top:-4px"><span>在沙漠女兒中間</span></h4>
+          <div class="one-liner">影子唱了一首東方主義詩，查拉笑了，舉起拐杖。Za IV 整卷最被誤讀的一章——尼采對「自反性東方主義」的徹底測試。</div>
+        </div>
+      </a>
+
+      <a class="chapter-card" href="za_iv17_visual_lecture.html">
+        <div class="chapter-thumb">
+          <img src="hero_iv17.png" alt="IV-17 喚醒" />
+        </div>
+        <div class="chapter-info">
+          <div class="chapter-meta">Kapitel IV · 17</div>
+          <h4><span class="de">Die Erweckung</span></h4>
+          <h4 style="margin-top:-4px"><span>喚醒</span></h4>
+          <div class="one-liner">查拉以為他們在康復——回頭一看，他們正在跪拜一頭驢。學會了笑之後，為什麼還是要造神？</div>
+        </div>
+      </a>
+
+      <a class="chapter-card" href="za_iv18_visual_lecture.html">
+        <div class="chapter-thumb">
+          <img src="hero_iv18.png" alt="IV-18 驢子節" />
+        </div>
+        <div class="chapter-info">
+          <div class="chapter-meta">Kapitel IV · 18</div>
+          <h4><span class="de">Das Eselsfest</span></h4>
+          <h4 style="margin-top:-4px"><span>驢子節</span></h4>
+          <div class="one-liner">查拉憤怒衝進去，然後——他<em>收編</em>了驢子節。教學悖論最尖銳的具現：你教的東西必然以你不認識的形式回來。</div>
+        </div>
+      </a>
+
+      <a class="chapter-card" href="za_iv19_visual_lecture.html">
+        <div class="chapter-thumb">
+          <img src="hero_iv19.png" alt="IV-19 夢遊者之歌" />
+        </div>
+        <div class="chapter-info">
+          <div class="chapter-meta">Kapitel IV · 19</div>
+          <h4><span class="de">Das Nachtwandler-Lied</span></h4>
+          <h4 style="margin-top:-4px"><span>夢遊者之歌</span></h4>
+          <div class="one-liner">最醜之人說：「這就是生命嗎？再來一次！」午夜的十二鐘聲響起。查拉像個醉漢一樣站著——他的聲音變了。</div>
+        </div>
+      </a>
+
+      <a class="chapter-card" href="za_iv20_visual_lecture.html">
+        <div class="chapter-thumb">
+          <img src="hero_iv20.png" alt="IV-20 徵兆" />
+        </div>
+        <div class="chapter-info">
+          <div class="chapter-meta">Kapitel IV · 20 · FINIS</div>
+          <h4><span class="de">Das Zeichen</span></h4>
+          <h4 style="margin-top:-4px"><span>徵兆</span></h4>
+          <div class="one-liner">笑獅來了。高等人四散逃跑。查拉認出同情是他<em>最後的罪</em>。但偉大正午沒有到達——書在它被呼喚的瞬間結束。</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- LEVEL 2: Hidden structure -->
+<section>
+  <div class="container">
+    <h2><span class="ord">§ 4</span>第二層 ｜ 隱藏結構</h2>
+    <div class="h2-sub">level two · the resonance</div>
+
+    <p>五章讀完，事情還沒結束。原文裡有<strong>五條詞語暗線</strong>——食物、獅子、笑、康復者、徵兆——它們橫貫五章，每次出現意義都微調一點。讀懂了這些暗線，五章從<em>五個故事</em>變成<em>一首詩</em>。</p>
+
+    <a class="special-card" href="za_iv_hidden_structure.html">
+      <div class="sc-meta">→ 第二層 · die verborgenen Linien</div>
+      <h4><span class="de">Die verborgenen Linien</span><span>隱藏結構 · 五條暗線</span></h4>
+      <p>每條暗線都有 4–5 個原文錨點，每條都有對台灣的應用。最讓我意外的發現：影子在 IV-16 的詩裡，已經<em>預演</em>了 IV-20 的笑獅，但他不知道。五條暗線在 IV-20 的早晨同時收束。</p>
+    </a>
+  </div>
+</section>
+
+<!-- LEVEL 3: Appendices -->
+<section>
+  <div class="container">
+    <h2><span class="ord">§ 5</span>第三層 ｜ 四個附錄</h2>
+    <div class="h2-sub">level three · the deep drilling</div>
+
+    <p>四個獨立的鑽探點，每個針對原文裡一個學生第一次讀不會注意、但對整套論證有<strong>決定性貢獻</strong>的細節。</p>
+
+    <a class="special-card" href="za_iv_appendices.html">
+      <div class="sc-meta">→ 第三層 · vier Anhänge</div>
+      <h4><span class="de">Vier Anhänge</span><span>四個附錄</span></h4>
+      <p>
+        <strong>A · 四種數列裝置</strong>（Sela 7 · I-A 8 · Bells 12 · Ringschliessung 5）——四種「讓秩序自己顯露」的方法。<br>
+        <strong>B · Manns-Kost 與女性精神</strong>——整套教材入口處的隱藏性別焦慮。<br>
+        <strong>C · 笑作為武器</strong>——五個位置的笑，對位你《鏡像的惡魔》第六章。<br>
+        <strong>D · 老鷹的呼喚</strong>——徵兆不是被收到的，是被呼喚的。
+      </p>
+    </a>
+  </div>
+</section>
+
+<!-- 怎麼用 -->
+<section>
+  <div class="container">
+    <h2><span class="ord">§ 6</span>怎麼用</h2>
+    <div class="h2-sub">how to use</div>
+
+    <div class="use-blocks">
+      <div class="use-block">
+        <h4><span class="badge">學生</span>學生 ｜ 自學者</h4>
+        <p>不用一次讀完。建議路徑：</p>
+        <ul>
+          <li><strong>課前</strong>：看每章 hero 圖、讀章節定位（最上面那一段）</li>
+          <li><strong>課中</strong>：跟著老師看，重點在 § 5 關鍵語句解讀</li>
+          <li><strong>課後</strong>：自己玩 IV-16 的 Sela 互動標記、IV-19 的十二鐘聲</li>
+          <li><strong>每章最重要的</strong>：最後一節「對台灣學生」——這是不打分數但要回答給自己的</li>
+        </ul>
+      </div>
+
+      <div class="use-block">
+        <h4><span class="badge">教師</span>其他教尼采的老師</h4>
+        <p>整套是 CC BY-SA，拿去改不用問——但有兩個建議：</p>
+        <ul>
+          <li><strong>不用全部講完</strong>。五章可以分四週講（IV-17 與 IV-18 雙聯章）。每章預計 100 分鐘</li>
+          <li><strong>第二、三層不適合通識</strong>。隱藏結構與四個附錄是給好學生或哲學系延伸用</li>
+          <li><strong>德文與原文錨點</strong>：每個原文引用都有 KSA 位置可查（依 Grätz NK 4/2）</li>
+          <li><strong>把學生對「對台灣」的回應</strong>蒐集起來——這是這套教材最有意思的副產品</li>
+        </ul>
+      </div>
+
+      <div class="use-block">
+        <h4><span class="badge">接續</span>想接續這個方法的人</h4>
+        <p>你可以拿這套方法做別的事：</p>
+        <ul>
+          <li><strong>同樣的方法可以做卷一、卷二、卷三</strong>——HTML 框架照抄即可</li>
+          <li><strong>同樣的方法可以做別的書</strong>——莊子、紅樓夢、馬克思、波蘭尼，任何值得讀第二遍的東西</li>
+          <li><strong>三層構造（事件→共振→鑽探）</strong>是<em>讀偉大文本</em>的通用方法</li>
+          <li>做了延伸請傳一份回來：<a href="mailto:anccc@nycu.edu.tw" style="color: var(--accent);">anccc@nycu.edu.tw</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 怎麼做的 / 過程公開 -->
+<section>
+  <div class="container">
+    <h2><span class="ord">§ 7</span>怎麼做的 ｜ 過程公開</h2>
+    <div class="h2-sub">how it was made · transparency</div>
+
+    <p>承接<a href="../#ai" style="color: var(--accent);">串燒基地</a>的「標註透明原則」——這套教材所有 AI 工具與資料來源全部公開：</p>
+
+    <div class="process">
+      <h3>使用的工具與分工</h3>
+
+      <div class="tools">
+        <div class="tool-item">
+          <div class="tool-name">Claude</div>
+          <div class="tool-role"><strong>主開發者</strong>。教材論點、文本分析、HTML 設計、SVG 視覺裝置、互動結構，全部由 Claude 與我共同產出。對話過程約十多輪。</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-name">ChatGPT (image)</div>
+          <div class="tool-role"><strong>視覺素材</strong>。五張 hero 圖。Claude 寫繪圖 prompt（19 世紀末德奧象徵主義風格），ChatGPT 生成。</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-name">Grätz NK 4/2 (2024)</div>
+          <div class="tool-role"><strong>學術核心依據</strong>。所有原文錨點、KSA 頁碼、戲仿來源、文獻學細節，依據 Katharina Grätz 的 De Gruyter 註釋。</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-name">KSA</div>
+          <div class="tool-role"><strong>原文底本</strong>。Colli/Montinari 編《尼采著作集校勘版》第 4 卷（dtv/de Gruyter），引用以 KSA 頁碼-行數標示。</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 28px;">人的工作與機器的工作</h3>
+      <p style="font-size: 15px;">
+        <strong>機器做的</strong>：HTML/CSS 撰寫、原文整理、互動腳本、圖像生成、版面設計、文獻檢索。
+      </p>
+      <p style="font-size: 15px;">
+        <strong>人做的</strong>：選什麼來教、為臺灣讀者怎麼框定脈絡、判斷哪些論點站得住、決定要怎麼<em>給</em>學生（給多少、給的順序、給的方式）。
+      </p>
+      <p style="font-size: 15px; margin-bottom: 0;">
+        對應我一直主張的：「人類有限，讓機器提供選擇，我們再來做出選擇，我們再修正，然後機器來評價我們的選擇，然後再建議我們選擇，然後我們再重新選擇。」這套教材就是這個方法的展示。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="sig">安勤之 ｜ 國立陽明交通大學百川學位學程 ｜ 2026 春</div>
+    <div>
+      <a href="../">← 串燒基地</a>
+      <a href="https://r94325005.blogspot.com/">日常生活實作筆記</a>
+      <a href="https://www.youtube.com/channel/UC3oJs4ZIqqM28EKAulXJH8Q">YouTube</a>
+      <a href="mailto:anccc@nycu.edu.tw">anccc@nycu.edu.tw</a>
+    </div>
+    <div style="margin-top: 20px; font-size: 12px; color: var(--ink-faint);">
+      Diese Wüste wächst, aber wir gehen.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
