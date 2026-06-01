@@ -1,0 +1,442 @@
+/* =====================================================================
+   沿線而行 — 與 Tim Ingold《Being Alive》的在地對話
+   視覺系統 style.css  v1.0
+   母題：手繪線條與網結（meshwork）｜低彩度大地色系
+   字體：Noto Serif TC（內文）／Noto Sans TC（導覽、標籤）
+   無障礙：對比達 WCAG AA、語意化、可鍵盤操作
+   ===================================================================== */
+
+/* ---------- 色彩與尺度變數 ---------- */
+:root {
+  --paper:      #F7F4EC; /* 紙白 — 底色 */
+  --ink:        #1F1B16; /* 墨黑 — 內文 */
+  --indigo:     #2A3D5C; /* 深靛藍 — 主色／連結／線條 */
+  --ochre:      #A6622E; /* 赭石 — 標題重點（大字／裝飾） */
+  --ochre-text: #955525; /* 赭石(深) — 小字標籤用，達 AA 4.5:1 */
+  --amber:      #D98A3D; /* 暖橙 — 純點綴／裝飾，不作可讀文字 */
+  --stone:      #736B5D; /* 岩灰 — 輔助文字（自 #8A8275 加深以達 AA 對比） */
+  --stone-soft: #8A8275; /* 原岩灰 — 僅供裝飾線條 */
+
+  --paper-2:    #F1ECdf; /* 略深紙色 — 卡片底 */
+  --paper-3:    #EBE4D3; /* 更深紙色 — 區塊分隔 */
+  --ink-soft:   #4A4036; /* 柔墨 — 次要內文 */
+  --line-faint: #DAD2C0; /* 細線 — 分隔 */
+  --indigo-deep:#1E2C44; /* 深靛強調 */
+
+  --maxw:       720px;   /* 內容最大寬 */
+  --maxw-wide:  1040px;  /* 寬版容器（首頁地圖） */
+
+  --serif: "Noto Serif TC", "Songti TC", Georgia, "Times New Roman", serif;
+  --sans:  "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+
+  --step--1: clamp(0.84rem, 0.80rem + 0.2vw, 0.92rem);
+  --step-0:  clamp(1.02rem, 0.98rem + 0.3vw, 1.14rem);
+  --step-1:  clamp(1.22rem, 1.12rem + 0.5vw, 1.42rem);
+  --step-2:  clamp(1.48rem, 1.30rem + 0.9vw, 1.90rem);
+  --step-3:  clamp(1.85rem, 1.55rem + 1.5vw, 2.65rem);
+  --step-4:  clamp(2.25rem, 1.80rem + 2.6vw, 3.60rem);
+
+  --shadow-soft: 0 1px 3px rgba(31,27,22,.06), 0 6px 22px rgba(31,27,22,.06);
+}
+
+/* ---------- 重置 ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.85;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--indigo); text-underline-offset: .22em; text-decoration-thickness: 1px; }
+a:hover { color: var(--ochre-text); }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------- 略過導覽（無障礙） ---------- */
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 200;
+  background: var(--indigo); color: #fff; padding: .6em 1em;
+  font-family: var(--sans); border-radius: 0 0 6px 0;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------- 容器 ---------- */
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 1.25rem; }
+.wrap-wide { width: 100%; max-width: var(--maxw-wide); margin-inline: auto; padding-inline: 1.25rem; }
+
+/* =====================================================================
+   頁首與導覽
+   ===================================================================== */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(247,244,236,.88);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--line-faint);
+}
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; min-height: 4rem;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-family: var(--sans); font-weight: 700; letter-spacing: .04em;
+  color: var(--ink); text-decoration: none; font-size: var(--step-1);
+}
+.brand:hover { color: var(--ink); }
+.brand .knot { flex: 0 0 auto; }
+.brand small {
+  display: block; font-weight: 400; font-size: .56em; letter-spacing: .02em;
+  color: var(--stone); margin-top: .1em;
+}
+.nav-links {
+  display: flex; align-items: center; gap: .25rem;
+  list-style: none; margin: 0; padding: 0;
+  font-family: var(--sans); font-size: var(--step--1);
+}
+.nav-links a {
+  display: inline-block; padding: .5em .7em; border-radius: 6px;
+  color: var(--ink-soft); text-decoration: none; letter-spacing: .03em;
+  transition: background .15s ease, color .15s ease;
+}
+.nav-links a:hover, .nav-links a[aria-current="page"] {
+  background: var(--paper-3); color: var(--indigo-deep);
+}
+.nav-toggle {
+  display: none; appearance: none; border: 1px solid var(--line-faint);
+  background: var(--paper-2); color: var(--ink); border-radius: 8px;
+  width: 2.8rem; height: 2.8rem; cursor: pointer; padding: 0;
+}
+.nav-toggle .bar { display: block; width: 1.2rem; height: 2px; margin: .28rem auto; background: var(--ink); transition: .2s; }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(.52rem) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-.52rem) rotate(-45deg); }
+
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute; inset: 4rem 0 auto 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--paper); border-bottom: 1px solid var(--line-faint);
+    padding: .5rem 1.25rem 1rem;
+    box-shadow: var(--shadow-soft);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: .8em .4em; border-bottom: 1px solid var(--line-faint); border-radius: 0; }
+  .nav-links li:last-child a { border-bottom: 0; }
+}
+
+/* =====================================================================
+   首頁 Hero（沿線而行）
+   ===================================================================== */
+.hero {
+  position: relative; overflow: hidden;
+  padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(2.5rem, 6vw, 5rem);
+  border-bottom: 1px solid var(--line-faint);
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-position: center; background-size: cover; background-repeat: no-repeat;
+  opacity: .16;
+}
+.hero-thread { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .5; }
+.hero .wrap { position: relative; z-index: 2; }
+.eyebrow {
+  font-family: var(--sans); font-size: var(--step--1); letter-spacing: .28em;
+  text-transform: uppercase; color: var(--ochre-text); margin: 0 0 1rem;
+}
+.hero h1 {
+  font-size: var(--step-4); line-height: 1.12; margin: 0 0 .4em;
+  letter-spacing: .02em; font-weight: 700; color: var(--ink);
+}
+.hero .subtitle {
+  font-size: var(--step-1); color: var(--ink-soft); margin: 0 0 1.6em;
+  font-weight: 400; max-width: 34ch;
+}
+.hero .lede { font-size: var(--step-0); max-width: 56ch; color: var(--ink); }
+
+/* =====================================================================
+   通用版式
+   ===================================================================== */
+main { display: block; }
+section { margin-block: clamp(2.5rem, 6vw, 4.5rem); }
+
+h2, h3, h4 { font-family: var(--serif); line-height: 1.28; color: var(--ink); }
+h2 { font-size: var(--step-3); margin: 0 0 .7em; letter-spacing: .01em; }
+h3 { font-size: var(--step-2); margin: 2em 0 .6em; }
+h4 { font-size: var(--step-1); margin: 1.8em 0 .5em; color: var(--ochre-text); font-weight: 500; }
+p { margin: 0 0 1.15em; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+.section-label {
+  font-family: var(--sans); font-size: var(--step--1); letter-spacing: .22em;
+  text-transform: uppercase; color: var(--ochre-text); margin: 0 0 .6rem;
+  display: flex; align-items: center; gap: .8rem;
+}
+.section-label::after {
+  content: ""; flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--amber), transparent);
+}
+
+.lead { font-size: var(--step-1); color: var(--ink-soft); line-height: 1.7; }
+
+blockquote {
+  margin: 1.6em 0; padding: .2em 0 .2em 1.4em;
+  border-left: 3px solid var(--amber);
+  color: var(--ink-soft); font-style: italic;
+}
+blockquote cite { display: block; font-style: normal; font-family: var(--sans);
+  font-size: var(--step--1); color: var(--stone); margin-top: .5em; }
+
+hr.thread {
+  border: 0; height: 28px; margin: 3rem auto;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='28' viewBox='0 0 240 28'><path d='M0 14 C 40 2, 60 26, 100 14 S 160 2, 200 14 S 240 22, 240 14' fill='none' stroke='%23A6622E' stroke-width='1.4' stroke-linecap='round'/><circle cx='100' cy='14' r='2.6' fill='%232A3D5C'/><circle cx='200' cy='14' r='2.6' fill='%232A3D5C'/></svg>");
+  background-repeat: no-repeat; background-position: center; background-size: 240px 28px;
+}
+
+/* =====================================================================
+   全書地圖（首頁總目）
+   ===================================================================== */
+.part-block { margin-block: 2.6rem; }
+.part-head {
+  display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+  padding-bottom: .6rem; margin-bottom: 1.2rem;
+  border-bottom: 2px solid var(--line-faint);
+}
+.part-head .part-no {
+  font-family: var(--sans); font-weight: 700; letter-spacing: .1em;
+  color: var(--ochre-text); font-size: var(--step--1);
+}
+.part-head h3 { margin: 0; font-size: var(--step-2); color: var(--indigo-deep); }
+.part-head .part-en { font-family: Georgia, serif; font-style: italic; color: var(--stone); font-size: var(--step-0); }
+
+.chapter-grid {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.chapter-card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--paper-2); border: 1px solid var(--line-faint);
+  border-radius: 12px; padding: 1.15rem 1.2rem 1.2rem;
+  text-decoration: none; color: var(--ink);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  overflow: hidden;
+}
+.chapter-card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(180deg, var(--amber), var(--ochre));
+  opacity: .0; transition: opacity .18s ease;
+}
+.chapter-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); border-color: var(--amber); }
+.chapter-card:hover::before { opacity: 1; }
+.chapter-card .ch-no {
+  font-family: var(--sans); font-size: var(--step--1); letter-spacing: .1em;
+  color: var(--ochre-text); font-weight: 700; margin-bottom: .3rem;
+}
+.chapter-card .ch-title { font-size: var(--step-1); line-height: 1.35; margin: 0 0 .35rem; color: var(--indigo-deep); }
+.chapter-card .ch-en { font-family: Georgia, serif; font-style: italic; font-size: var(--step--1); color: var(--stone); }
+.chapter-card[aria-disabled="true"] { opacity: .62; pointer-events: none; }
+.chapter-card .ch-soon {
+  margin-top: .6rem; font-family: var(--sans); font-size: .72rem; letter-spacing: .08em;
+  color: var(--stone); border: 1px dashed var(--line-faint); border-radius: 999px;
+  padding: .15em .7em; align-self: flex-start;
+}
+
+/* =====================================================================
+   章節頁：五段式樂章
+   ===================================================================== */
+/* 章首配圖橫幅（5:2 寬幅；缺圖時自動退回紙白，不會顯示破圖） */
+.chapter-illus {
+  width: 100%;
+  aspect-ratio: 5 / 2;
+  max-height: 360px;
+  margin: 0;
+  background-color: var(--paper-2);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--line-faint);
+}
+@media (max-width: 640px) {
+  .chapter-illus { max-height: 200px; }
+}
+/* 有配圖時，標題區上緣留白略收，讓圖與標題更連貫 */
+.chapter-illus + .chapter-hero {
+  padding-top: clamp(1.6rem, 3.5vw, 2.4rem);
+}
+
+.chapter-hero {
+  padding: clamp(2.4rem, 6vw, 4rem) 0 clamp(1.6rem, 3vw, 2.4rem);
+  border-bottom: 1px solid var(--line-faint);
+}
+.chapter-hero .ch-kicker {
+  font-family: var(--sans); font-size: var(--step--1); letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ochre-text); margin: 0 0 .8rem;
+}
+.chapter-hero h1 { font-size: var(--step-3); margin: 0 0 .3em; line-height: 1.18; }
+.chapter-hero .ch-en-title { font-family: Georgia, serif; font-style: italic; color: var(--stone); margin: 0 0 .6em; }
+.chapter-hero .ch-sub {
+  font-family: var(--sans); font-size: var(--step-0); color: var(--indigo);
+  letter-spacing: .04em; font-weight: 500;
+}
+
+/* 樂章導引（章內錨點） */
+.movement-nav {
+  position: sticky; top: 4rem; z-index: 40;
+  background: rgba(247,244,236,.9); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line-faint);
+  font-family: var(--sans); font-size: var(--step--1);
+}
+.movement-nav ol {
+  display: flex; flex-wrap: wrap; gap: .2rem .4rem; list-style: none;
+  margin: 0; padding: .6rem 0; counter-reset: mv;
+}
+.movement-nav a {
+  display: inline-block; padding: .35em .7em; border-radius: 999px;
+  color: var(--ink-soft); text-decoration: none; letter-spacing: .03em;
+}
+.movement-nav a:hover { background: var(--paper-3); color: var(--indigo-deep); }
+
+.movement {
+  scroll-margin-top: 7.5rem;
+  margin-block: clamp(2.2rem, 5vw, 3.4rem);
+}
+.movement-head { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.1rem; }
+.movement-num {
+  flex: 0 0 auto; width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--sans); font-weight: 700; font-size: var(--step-0);
+  color: var(--paper); background: var(--indigo);
+  box-shadow: 0 0 0 4px var(--paper-3);
+}
+.movement-head h2 { margin: .2rem 0 .1rem; font-size: var(--step-2); }
+.movement-head .mv-en {
+  font-family: var(--sans); font-size: var(--step--1); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ochre-text);
+}
+
+/* 原文詞標記 */
+.term {
+  font-family: Georgia, serif; font-style: italic; color: var(--indigo-deep);
+  white-space: nowrap;
+}
+.zh-term { font-weight: 700; color: var(--ochre-text); }
+
+/* 討論題綱 */
+.questions { counter-reset: q; list-style: none; margin: 1.2em 0; padding: 0; }
+.questions li {
+  position: relative; counter-increment: q;
+  background: var(--paper-2); border: 1px solid var(--line-faint);
+  border-radius: 10px; padding: 1rem 1.2rem 1rem 3.4rem; margin-bottom: .8rem;
+}
+.questions li::before {
+  content: counter(q); position: absolute; left: 1rem; top: 1rem;
+  width: 1.7rem; height: 1.7rem; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--sans); font-weight: 700; font-size: .85rem;
+  color: var(--paper); background: var(--ochre);
+}
+
+/* 關鍵詞表 */
+.terms-table { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: var(--step-0); }
+.terms-table th, .terms-table td { text-align: left; padding: .7em .8em; border-bottom: 1px solid var(--line-faint); vertical-align: top; }
+.terms-table th { font-family: var(--sans); font-size: var(--step--1); letter-spacing: .08em; color: var(--stone); font-weight: 600; }
+.terms-table .t-zh { font-weight: 700; color: var(--indigo-deep); white-space: nowrap; }
+.terms-table .t-en { font-family: Georgia, serif; font-style: italic; color: var(--ink-soft); }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1em 0; }
+.tag {
+  font-family: var(--sans); font-size: var(--step--1); letter-spacing: .04em;
+  background: var(--paper-3); color: var(--indigo-deep);
+  border-radius: 999px; padding: .35em .9em; text-decoration: none;
+  border: 1px solid var(--line-faint);
+}
+.tag:hover { background: var(--ochre-text); color: #fff; border-color: var(--ochre-text); }
+
+/* 延伸線索清單 */
+.thread-list { list-style: none; margin: 1em 0; padding: 0; }
+.thread-list li {
+  position: relative; padding-left: 1.6rem; margin-bottom: .7em;
+}
+.thread-list li::before {
+  content: ""; position: absolute; left: .15rem; top: .85em;
+  width: .8rem; height: 1px; background: var(--amber);
+}
+.thread-list .src { font-family: var(--sans); font-size: var(--step--1); color: var(--stone); }
+
+/* 在地接線「不服貼」標記 */
+.tension {
+  background: var(--paper-2); border-left: 3px solid var(--ochre);
+  border-radius: 0 10px 10px 0; padding: 1rem 1.2rem; margin: 1.4em 0;
+}
+.tension .tension-tag {
+  font-family: var(--sans); font-size: var(--step--1); letter-spacing: .12em;
+  color: var(--ochre-text); font-weight: 700; display: block; margin-bottom: .35rem;
+}
+
+/* 章節間 上一章／下一章 */
+.chapter-pager {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin: 3rem 0 1rem; padding-top: 1.6rem; border-top: 1px solid var(--line-faint);
+  font-family: var(--sans);
+}
+.chapter-pager a {
+  flex: 1 1 220px; text-decoration: none; color: var(--ink);
+  background: var(--paper-2); border: 1px solid var(--line-faint);
+  border-radius: 10px; padding: .9rem 1.1rem;
+  transition: border-color .15s, transform .15s;
+}
+.chapter-pager a:hover { border-color: var(--amber); transform: translateY(-2px); }
+.chapter-pager .dir { display: block; font-size: var(--step--1); color: var(--stone); letter-spacing: .1em; margin-bottom: .25rem; }
+.chapter-pager .t { font-family: var(--serif); font-size: var(--step-0); color: var(--indigo-deep); }
+.chapter-pager .next { text-align: right; }
+
+/* =====================================================================
+   一般卡片／關於頁
+   ===================================================================== */
+.callout {
+  background: var(--paper-2); border: 1px solid var(--line-faint);
+  border-radius: 14px; padding: 1.4rem 1.6rem; margin: 1.6em 0;
+}
+.callout h4 { margin-top: 0; }
+
+.principle-grid {
+  display: grid; gap: 1.2rem; margin: 1.6em 0;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.principle {
+  background: var(--paper-2); border: 1px solid var(--line-faint);
+  border-radius: 14px; padding: 1.4rem; position: relative;
+}
+.principle .p-no {
+  font-family: var(--sans); font-weight: 700; color: var(--ochre-text);
+  font-size: var(--step-2); line-height: 1; display: block; margin-bottom: .4rem;
+}
+.principle h4 { margin: 0 0 .5rem; color: var(--indigo-deep); }
+.principle p { margin: 0; font-size: var(--step--1); color: var(--ink-soft); line-height: 1.7; }
+
+/* =====================================================================
+   頁尾與授權
+   ===================================================================== */
+.site-footer {
+  margin-top: clamp(3rem, 7vw, 5rem);
+  background: var(--indigo-deep); color: #E9E3D6;
+  border-top: 4px solid var(--ochre);
+}
+.site-footer a { color: var(--amber); }
+.site-footer a:hover { color: #fff; }
+.footer-grid {
+  display: grid; gap: 2rem; padding: 2.6rem 0 1.4rem;
+  grid-template-columns: 1.4fr 1fr 1fr;
+}
+.footer-grid h5 { font-family: var(--sans); font-size: var(--step--1); letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin: 0
