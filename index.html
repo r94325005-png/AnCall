@@ -40,7 +40,7 @@ nav .brand {
   font-family: 'Noto Serif TC', serif;
   font-weight: 900; font-size: 1.05rem; color: var(--ember);
 }
-nav .links { display: flex; gap: 1.6rem; flex-wrap: wrap; }
+nav .links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
 nav .links a { color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
 nav .links a:hover { color: var(--ember); }
 .hero {
@@ -110,6 +110,72 @@ a:hover { color: var(--ember-glow); }
   font-family: 'Noto Serif TC', serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.4rem;
 }
 .card .card-desc { font-size: 0.9rem; color: var(--ink-light); line-height: 1.7; }
+.contrast-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0;
+}
+.contrast {
+  background: var(--paper); padding: 1.3rem 1.4rem; border-top: 3px solid var(--skewer);
+}
+.contrast .ct-label {
+  font-family: 'Noto Serif TC', serif; font-weight: 900; font-size: 1.1rem;
+  color: var(--ember); margin-bottom: 0.5rem;
+}
+.contrast .ct-body { font-size: 0.9rem; color: var(--ink-light); line-height: 1.7; }
+.pub-list { margin-top: 1.5rem; }
+.pub { padding: 1.1rem 0; border-bottom: 1px solid var(--smoke); }
+.pub:last-child { border-bottom: none; }
+.pub-meta {
+  font-size: 0.78rem; color: var(--ash);
+  letter-spacing: 0.05em; margin-bottom: 0.3rem;
+}
+.pub-title {
+  font-family: 'Noto Serif TC', serif; font-weight: 700;
+  font-size: 1.05rem; line-height: 1.5; margin-bottom: 0.35rem;
+}
+.pub-title a {
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1.5px solid var(--ember-glow); transition: color 0.2s;
+}
+.pub-title a:hover { color: var(--ember); }
+.pub-note { font-size: 0.9rem; color: var(--ink-light); line-height: 1.7; }
+.facts {
+  margin-top: 1.6rem; border-left: 3px solid var(--skewer); padding-left: 1.2rem;
+}
+.facts div { font-size: 0.92rem; color: var(--ink-light); margin-bottom: 0.45rem; }
+.facts b {
+  color: var(--ink); font-weight: 700; font-family: 'Noto Serif TC', serif;
+  margin-right: 0.5rem;
+}
+.course-list { list-style: none; margin-top: 1.5rem; }
+.course-list li {
+  padding: 0.75rem 0; border-bottom: 1px solid var(--smoke);
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem; flex-wrap: wrap;
+}
+.course-list li:last-child { border-bottom: none; }
+.course-list .c-title {
+  font-family: 'Noto Serif TC', serif; font-weight: 700;
+  font-size: 1.0rem; color: var(--ink); line-height: 1.5;
+}
+.course-list .c-tag {
+  font-size: 0.74rem; color: var(--ember); background: #fde8db;
+  padding: 0.12rem 0.6rem; border-radius: 2px; white-space: nowrap;
+}
+.more-link {
+  display: inline-block; margin-top: 0.4rem; padding: 0.5rem 1.3rem;
+  border: 1.5px solid var(--charcoal); color: var(--charcoal);
+  text-decoration: none; font-size: 0.92rem; transition: all 0.25s;
+}
+.more-link:hover { background: var(--ember); color: var(--cream); border-color: var(--ember); }
+.creed {
+  background: var(--paper); border-left: 3px solid var(--ember);
+  padding: 1.4rem 1.6rem; margin-bottom: 2rem;
+}
+.creed .creed-title {
+  font-family: 'Noto Serif TC', serif; font-weight: 900;
+  font-size: 1.1rem; color: var(--ember); margin-bottom: 0.7rem;
+}
+.creed p:last-child { margin-bottom: 0; }
 .progress-list { list-style: none; margin-top: 1.5rem; }
 .progress-list li {
   padding: 0.7rem 0 0.7rem 2rem; position: relative;
@@ -146,6 +212,7 @@ footer .footer-links {
   nav .links { gap: 0.8rem; font-size: 0.8rem; }
   section { padding: 3.5rem 1.2rem; }
   .card-grid { grid-template-columns: 1fr; }
+  .contrast-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -155,6 +222,9 @@ footer .footer-links {
   <div class="brand">串燒基地</div>
   <div class="links">
     <a href="#about">關於我</a>
+    <a href="#research">靈芝樟芝研究</a>
+    <a href="#works">學術著作</a>
+    <a href="#teaching">課程</a>
     <a href="#nodes">工作節點</a>
     <a href="#reading">讀書會</a>
     <a href="#nietzsche">尼采計畫</a>
@@ -166,9 +236,10 @@ footer .footer-links {
 <div class="hero">
   <div class="tagline">我寫筆記、做翻譯、跟 AI 一起讀書——然後把過程都放上網。</div>
   <h1><span>安安總召</span>的<br>串燒基地</h1>
-  <p class="subtitle">安勤之｜國立陽明交通大學百川學位學程教師｜台大社會學博士。研究領域：文化社會學、醫療社會學、STS（科技與社會研究）。</p>
+  <p class="subtitle">安勤之｜國立陽明交通大學 百川學士學位學程 實作級專案教師｜台大社會學博士。研究領域：文化社會學、醫療社會學、STS（科技與社會研究）。</p>
   <div class="hero-links">
-    <a href="#reading" class="primary">加入讀書會</a>
+    <a href="#works" class="primary">學術著作</a>
+    <a href="#reading">加入讀書會</a>
     <a href="https://r94325005.blogspot.com/" target="_blank">部落格</a>
     <a href="https://www.youtube.com/channel/UC3oJs4ZIqqM28EKAulXJH8Q" target="_blank">YouTube</a>
   </div>
@@ -176,11 +247,87 @@ footer .footer-links {
 
 <section id="about">
   <h2>關於我</h2>
-  <p>頭銜講不出我在做什麼。簡單說，我最常做的是：<strong>追問一個東西怎麼變成「那個東西」的。</strong></p>
-  <p>博論研究靈芝——同一朵菇，在中、日、韓、台被歸類為藥、食品、保健品、文化遺產，完全不同的東西。物的分類史就是一部記憶與權力的歷史。</p>
-  <p>過去兩年，我把 AI 當作共同研究者——不是讓它替我寫，而是讓它跟我一起讀。重要的是學會與它共同工作，並把工作過程公開，讓人可以接續、可以批判。</p>
-  <p>我同時經營三個平台：<a href="https://r94325005.blogspot.com/" target="_blank">部落格</a>是文字工作檯，<a href="https://www.youtube.com/channel/UC3oJs4ZIqqM28EKAulXJH8Q" target="_blank">YouTube 頻道</a>是口語工作檯，<a href="#reading">讀書會社群</a>是圓桌。三個平台合起來就是我的學術實踐生態系。</p>
+
+  <div class="creed">
+    <div class="creed-title">為什麼叫「串燒基地」</div>
+    <p><strong>串</strong>，是把人和書兜起來——文本兜得起來，思想才不散；<strong>燒</strong>，是一群人讀著讀著就燒起來的熱，涂爾幹說的集體歡騰；<strong>基地</strong>，是讓這件事一再發生的地方。</p>
+    <p>我追問的其實很樸素：思考、思想、思慮，到底哪裡不一樣？這問題總會繞回自己——我是在思考，還是只是在說話。</p>
+    <p>讀書會、翻譯、慢讀、課堂，都是同一件事：把書當平台，讓思考在更多人身上發生。</p>
+  </div>
+
+  <p>頭銜講不出我在做什麼。我做的就一件事：追問一樣東西怎麼變成「那個東西」。靈芝、樟芝、四物湯，問的都是這個。</p>
+  <p>這兩年我和 AI 一起讀書。有時它替我寫，更多時候是陪我讀；但有些東西，終究得自己讀、自己寫、自己試。過程全攤開，要接、要罵，都行。</p>
   <p>信箱：<a href="mailto:anccc@nycu.edu.tw">anccc@nycu.edu.tw</a></p>
+
+  <div class="facts">
+    <div><b>現職</b>國立陽明交通大學 百川學士學位學程 實作級專案教師</div>
+    <div><b>學歷</b>國立臺灣大學社會學系 博士（2016）、碩士（2008）、學士（2005）</div>
+    <div><b>研究興趣</b>文化社會學、醫療社會學、科技與社會研究（STS）；物的分類史與範疇政治、療效政治、認證科學、價值重估、社會學本土化</div>
+  </div>
+</section>
+
+<section id="research">
+  <h2>靈芝樟芝研究</h2>
+  <p>一樣東西，憑什麼被分成藥、食品、保健品、文化遺產？這些分法看似天經地義，其實是國家、科學、商人、常民，連同那東西的脾性，喬出來的。</p>
+  <p>四物湯、靈芝、牛樟芝是我反覆回去的案例。靈芝和樟芝剛好對照：</p>
+
+  <div class="contrast-grid">
+    <div class="contrast">
+      <div class="ct-label">靈芝</div>
+      <div class="ct-body">泛東亞。同一朵菇，在中、日、韓、台被當成不同的東西——分類即記憶與權力。</div>
+    </div>
+    <div class="contrast">
+      <div class="ct-label">牛樟芝</div>
+      <div class="ct-body">臺灣特有，只長在牛樟樹爛空的心裡。從原住民解酒偏方，到「國寶」，到生技資本與法規——一場國族化的分類。</div>
+    </div>
+  </div>
+
+  <p>我不拿西方理論套臺灣，而是倒過來：從這些案例長出自己的概念，回頭問普遍理論答不上來的地方。樟芝對上 Anna Tsing 的松茸——松茸是廢墟裡撿的野菇，樟芝卻是被人養大、又被捧成國寶的；這一刀，她接不住。這是我想嘗試的社會學的本土化。</p>
+  <p style="margin-top:1.2rem"><a href="#works">→ 看相關的學術著作</a></p>
+</section>
+
+<section id="works">
+  <h2>學術著作</h2>
+  <p>正式發表，連到官方典藏與 DOI。題目換來換去，問的是同一件事；工具則從「物的生命史」換成「關係論」。</p>
+
+  <h3>學位論文</h3>
+  <div class="pub-list">
+    <div class="pub">
+      <div class="pub-meta">博士論文｜國立臺灣大學社會學系｜2016</div>
+      <div class="pub-title"><a href="https://doi.org/10.6342/NTU201601133" target="_blank">救命仙草、健康食品或生技靈藥？靈芝的科學、巿場與療效政治</a></div>
+      <div class="pub-note">靈芝的博論。兩個概念：療效政治、認證科學。藥有沒有效，從不是科學說了算，是國家、科學、傳銷、資本一起喬的；神話與科學，沒那麼對立。</div>
+    </div>
+    <div class="pub">
+      <div class="pub-meta">碩士論文｜國立臺灣大學社會學系｜2008</div>
+      <div class="pub-title"><a href="https://scholars.lib.ntu.edu.tw/handle/123456789/53299" target="_blank">四物湯的保健食品化：從物的生命史看中藥在台灣的當代轉化（1990–2008）</a></div>
+      <div class="pub-note">從四物湯看：「保健食品」一出現，就鬆動了食品、藥品、健康食品的老三分。一切的地基。</div>
+    </div>
+  </div>
+
+  <h3>期刊論文</h3>
+  <div class="pub-list">
+    <div class="pub">
+      <div class="pub-meta">《人文社會與醫療學刊》第 10 期，2023，頁 75–108</div>
+      <div class="pub-title"><a href="https://doi.org/10.6279/JHSSM.202305_(10).0004" target="_blank">穿鑿附「本草綱目音樂」會？以混搭的溝通理論反思「靈芝」國樂化的組裝過程</a></div>
+      <div class="pub-note">靈芝怎麼變成一場國樂音樂會？借維根斯坦、貝特森、高夫曼、拉圖與 Small 的「音樂化」拆這場拼裝，並用在地的詞——穿鑿、附會、導聆——說人怎麼溝通。</div>
+    </div>
+    <div class="pub">
+      <div class="pub-meta">《人文社會與醫療學刊》第 9 期，2022，頁 165–204</div>
+      <div class="pub-title"><a href="https://doi.org/10.6279/JHSSM.202205_(9).0006" target="_blank">從賽荷的寄食者理論探索臺灣牛樟芝的社會文化史</a></div>
+      <div class="pub-note">借賽荷《寄食者》看樟芝——parasite 同時是寄生蟲、噪音、食客。用容中律換掉排中律，重看命名之爭、國寶化與「血樟芝」。我從「物的生命史」轉向「關係論」的一篇。</div>
+    </div>
+    <div class="pub">
+      <div class="pub-meta">《科技醫療與社會》第 11 期，2010，頁 89–148</div>
+      <div class="pub-title"><a href="https://doi.org/10.6464/TJSSTM.201010.0089" target="_blank">論中藥作為保健食品：以四物湯的生命史為例探討藥品與食品範疇的革命</a></div>
+      <div class="pub-note">靠馬克思與阿帕杜萊：一樣東西「看起來是什麼」和「其實是什麼」可以分開——臺灣「藥食如一」的混融，正好戳破這點。</div>
+    </div>
+  </div>
+</section>
+
+<section id="teaching">
+  <h2>課程</h2>
+  <p>我在百川開的課，繞著幾條線：慢讀經典（尤其尼采）、科技與社會、教育與階級、經典與 AI、學術寫作。上課、研究、讀書會，對我是同一件事。</p>
+  <p><a href="./courses/" class="more-link">→ 課程與教學一覽（含各課程大綱）</a></p>
 </section>
 
 <section id="nodes">
@@ -188,19 +335,19 @@ footer .footer-links {
   <div class="card-grid">
     <div class="card">
       <div class="card-title">① 與 AI 一起慢讀尼采</div>
-      <div class="card-desc">2024 年啟動，目標是讀完尼采全部出版著作。每本書逐節慢讀，製作德英中中對照讀本，錄影存檔於 YouTube，討論紀錄經 AI 整理後公開在部落格上。至今已完成六部著作。AI 在這裡不是代讀，而是協助製作對照本、生成討論問題、整理逐字稿——把一個人做不完的苦工變成可持續的長期計畫。</div>
+      <div class="card-desc">逐節慢讀尼采全集，製作德英中對照讀本、錄影存檔，AI 協助對照與整理——把一個人做不完的苦工，變成可持續的長期計畫。<a href="#nietzsche">→ 尼采計畫</a></div>
     </div>
     <div class="card">
       <div class="card-title">② 翻譯作為在地連結的通道</div>
-      <div class="card-desc">在部落格上持續翻譯當代批判理論的核心文本，但翻譯不只是語言轉換。每篇翻譯都附帶脈絡說明，把理論拉回臺灣的問題意識。AI 讓翻譯產能大幅提升，但選什麼來譯、怎麼為臺灣讀者重新框定脈絡，這些判斷仍然是人的工作。部落格從 2010 年寫到現在，250 篇以上，就是這條翻譯通道的累積。</div>
+      <div class="card-desc">在部落格持續翻譯當代批判理論，並為臺灣讀者重新框定脈絡；選什麼譯、怎麼框，仍是人的判斷。2010 年至今 250 篇以上。<a href="#writing">→ 翻譯與寫作</a></div>
     </div>
     <div class="card">
       <div class="card-title">③ AI 的反身性探索：映照與工夫</div>
-      <div class="card-desc">我不只「使用」AI，也把 AI 當成一面鏡子來追問：我們在跟誰說話？誰在設計這場對話？我們是使用者還是工人？正在寫的四卷書《鏡像的惡魔》，處理的就是這個問題：當 AI 越來越會模仿學術論述，人的寫作——以及人的自我認識——要怎麼辦？</div>
+      <div class="card-desc">把 AI 當成一面鏡子來追問：我們在跟誰說話？是使用者還是工人？這也是四卷書《鏡像的惡魔》的核心。<a href="#ai">→ AI 協作</a></div>
     </div>
     <div class="card">
-      <div class="card-title">④ 串燒基地：正在長出來的知識共同體</div>
-      <div class="card-desc">2023 年 9 月開始經營開放式線上讀書會社群。兩年半下來，累計讀過四十多本書，橫跨社會學、哲學、人類學、STS、原住民研究、藝術場域、數位行動主義。社群開始自己長東西——成員自發揪讀書會、整理書單、分享展覽、在群裡辯論。這個基地不只是我帶大家讀書，而是大家一起把書變成可以串起不同的人、開展各自事業的平台。</div>
+      <div class="card-title">④ 讀書會社群：正在長出來的共同體</div>
+      <div class="card-desc">2023 年起的開放式線上讀書會，兩年半讀過四十多本，橫跨社會學、哲學、人類學、STS 到原住民研究；社群開始自己長出東西——揪讀、整理書單、辯論。<a href="#reading">→ 讀書會</a></div>
     </div>
   </div>
 </section>
@@ -217,7 +364,8 @@ footer .footer-links {
     <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.88rem;">
       <a href="https://line.me/ti/g/zhSLJQd5kk" target="_blank" style="color: var(--ember);">→ 加入讀書會小群</a>
       <a href="https://drive.google.com/file/d/14J_NKVaVv8ZkoCHHmuLiHW1B4PpJ-mE3/view?usp=sharing" target="_blank" style="color: var(--ink-light);">→ 書目簡報</a>
-     <a href="./being-alive/" style="color: var(--ember);">→ 沿線而行：與 Ingold《Being Alive》的在地對話</a>　</div>
+      <a href="./being-alive/" style="color: var(--ink-light);">→ 沿線而行：與 Ingold《Being Alive》的在地對話</a>
+    </div>
   </div>
 
   <h3>哲學</h3>
@@ -283,6 +431,7 @@ footer .footer-links {
 
 <footer>
   <div class="footer-links">
+    <a href="#works">學術著作</a>
     <a href="https://r94325005.blogspot.com/" target="_blank">部落格</a>
     <a href="https://www.youtube.com/channel/UC3oJs4ZIqqM28EKAulXJH8Q" target="_blank">YouTube</a>
     <a href="https://line.me/ti/g2/QPY6UQPr-YJSuS7mlGhdIzMJKbmLhHun-Subdw" target="_blank">LINE 讀書會</a>
