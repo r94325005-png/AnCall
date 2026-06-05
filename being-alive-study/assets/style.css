@@ -1,0 +1,173 @@
+/* =====================================================================
+   走讀《Being Alive》— 視覺化教學站 style.css v1.0
+   紙白×墨線×深綠徽章（承襲章首海報的視覺語言）
+   ===================================================================== */
+:root{
+  --paper:#F7F3EA; --paper2:#F0EADC; --paper3:#E9E1CF;
+  --ink:#2B2620; --ink-soft:#4C443A; --stone:#73685A;
+  --green:#4A5D43; --green-deep:#3C4C36;
+  --indigo:#2A3D5C; --ochre:#A6622E; --ochre-text:#94551F; --amber:#D98A3D;
+  --line:#D9D0BC;
+  --serif:"Noto Serif TC","Songti TC",Georgia,serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --maxw:760px; --maxw-wide:1020px;
+  --s0:clamp(1.02rem,.98rem + .3vw,1.13rem);
+  --s1:clamp(1.2rem,1.1rem + .5vw,1.4rem);
+  --s2:clamp(1.45rem,1.28rem + .9vw,1.85rem);
+  --s3:clamp(1.8rem,1.5rem + 1.5vw,2.5rem);
+  --sm:clamp(.84rem,.8rem + .2vw,.92rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;font-family:var(--serif);font-size:var(--s0);line-height:1.85;
+  color:var(--ink);background:var(--paper)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--indigo);text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{color:var(--ochre-text)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:2px}
+.skip-link{position:absolute;left:-999px;top:0;z-index:200;background:var(--green-deep);color:#fff;padding:.6em 1em;font-family:var(--sans)}
+.skip-link:focus{left:0}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:1.25rem}
+.wrap-wide{max-width:var(--maxw-wide);margin-inline:auto;padding-inline:1.25rem}
+
+/* ---------- 頁首 ---------- */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(247,243,234,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.8rem}
+.brand{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--sans);
+  font-weight:700;color:var(--ink);text-decoration:none;font-size:var(--s1);letter-spacing:.04em}
+.brand small{display:block;font-weight:400;font-size:.55em;color:var(--stone)}
+.nav-links{display:flex;gap:.2rem;list-style:none;margin:0;padding:0;font-family:var(--sans);font-size:var(--sm)}
+.nav-links a{display:inline-block;padding:.5em .7em;border-radius:6px;color:var(--ink-soft);text-decoration:none}
+.nav-links a:hover,.nav-links a[aria-current="page"]{background:var(--paper3);color:var(--green-deep)}
+.nav-toggle{display:none;border:1px solid var(--line);background:var(--paper2);border-radius:8px;width:2.7rem;height:2.7rem;cursor:pointer}
+.nav-toggle .bar{display:block;width:1.15rem;height:2px;margin:.27rem auto;background:var(--ink)}
+@media(max-width:720px){
+  .nav-toggle{display:block}
+  .nav-links{position:absolute;inset:3.8rem 0 auto 0;flex-direction:column;background:var(--paper);
+    border-bottom:1px solid var(--line);padding:.5rem 1.25rem 1rem;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.75em .4em;border-bottom:1px solid var(--line);border-radius:0}
+}
+
+/* ---------- 章頁頭 ---------- */
+.ch-head{padding:clamp(2.2rem,5vw,3.6rem) 0 1.4rem;text-align:center}
+.ch-head .kicker{font-family:var(--sans);font-size:var(--sm);letter-spacing:.25em;color:var(--ochre-text);margin:0 0 .7rem;text-transform:uppercase}
+.ch-head h1{font-size:var(--s3);margin:0 0 .25em;line-height:1.2;color:var(--ink)}
+.ch-head .en{font-family:Georgia,serif;font-style:italic;color:var(--stone);margin:0}
+.leafline{display:flex;align-items:center;gap:.8rem;justify-content:center;margin:1rem auto;max-width:520px}
+.leafline::before,.leafline::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--green));}
+.leafline::after{background:linear-gradient(90deg,var(--green),transparent)}
+.leafline svg{flex:0 0 auto}
+.core-q{max-width:var(--maxw);margin:1.2rem auto 0;padding:.9rem 1.4rem;
+  background:var(--paper2);border:1px solid var(--line);border-radius:12px;
+  font-family:var(--sans);color:var(--green-deep);font-weight:500;text-align:center}
+.core-q b{color:var(--ochre-text)}
+
+/* ---------- 章首海報（缺檔退回紙色，不破圖） ---------- */
+.poster{max-width:560px;margin:1.8rem auto .4rem;aspect-ratio:707/1000;
+  background-color:var(--paper2);background-size:cover;background-position:top center;
+  border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 14px rgba(43,38,32,.08)}
+.poster-note{font-family:var(--sans);font-size:.78rem;color:var(--stone);text-align:center;margin:.4rem 0 0}
+
+/* ---------- 分節視覺單元 ---------- */
+section{margin-block:clamp(2rem,5vw,3.2rem)}
+.zone-label{font-family:var(--sans);font-size:var(--sm);letter-spacing:.2em;color:var(--ochre-text);
+  display:flex;align-items:center;gap:.8rem;margin:2.4rem 0 1rem}
+.zone-label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--amber),transparent)}
+.unit{position:relative;background:#FBF8F1;border:1px solid var(--line);border-radius:14px;
+  padding:1.3rem 1.4rem 1.1rem 1.4rem;margin:1.1rem 0;box-shadow:0 1px 4px rgba(43,38,32,.04)}
+.unit-head{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:.5rem}
+.unit-num{flex:0 0 auto;width:2.3rem;height:2.3rem;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--sans);font-weight:700;color:#fff;background:var(--green);
+  box-shadow:0 0 0 3px var(--paper2);font-size:1rem}
+.unit-head h3{margin:.15rem 0 0;font-size:var(--s1);line-height:1.3;color:var(--ink)}
+.unit-head .en{display:block;font-family:Georgia,serif;font-style:italic;font-size:var(--sm);color:var(--stone);font-weight:400;margin-top:.1rem}
+.unit p{margin:.4rem 0 .8rem}
+.unit-fig{float:right;margin:.2rem 0 .6rem 1rem;width:150px}
+.unit-fig svg{width:100%;height:auto;display:block}
+.unit-fig figcaption{font-family:var(--sans);font-size:.72rem;color:var(--stone);text-align:center;margin-top:.2rem}
+@media(max-width:560px){.unit-fig{float:none;margin:.4rem auto;width:170px}}
+details.deep{border-top:1px dashed var(--line);padding-top:.6rem;margin-top:.4rem;clear:both}
+details.deep summary{cursor:pointer;font-family:var(--sans);font-size:var(--sm);color:var(--green-deep);
+  font-weight:700;letter-spacing:.06em;list-style:none;display:inline-flex;align-items:center;gap:.4em}
+details.deep summary::before{content:"▸";transition:transform .15s}
+details.deep[open] summary::before{transform:rotate(90deg)}
+details.deep summary::-webkit-details-marker{display:none}
+details.deep .body{padding:.5rem .2rem 0;color:var(--ink-soft)}
+.hint{font-family:var(--sans);font-size:var(--sm);color:var(--ochre-text);margin:.6rem 0 0}
+.hint::before{content:"💡 ";font-size:.9em}
+.term{font-family:Georgia,serif;font-style:italic;color:var(--indigo)}
+.zh-term{font-weight:700;color:var(--ochre-text)}
+
+/* ---------- 學習抓手／閱讀提醒 ---------- */
+.grips{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin:1.2rem 0}
+.grip{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:1rem;text-align:center}
+.grip svg{display:block;margin:0 auto .5rem}
+.grip .t{font-family:var(--sans);font-weight:700;color:var(--green-deep);font-size:var(--sm)}
+.grip .d{font-size:.85rem;color:var(--ink-soft);line-height:1.6;margin-top:.25rem}
+.reminder{background:#FAF4E8;border:1px solid #E5D3AE;border-left:4px solid var(--amber);
+  border-radius:0 12px 12px 0;padding:1rem 1.3rem;margin:1.4rem 0;color:var(--ink-soft)}
+.reminder .rt{font-family:var(--sans);font-weight:700;color:var(--ochre-text);display:block;margin-bottom:.3rem}
+
+/* ---------- 總覽路線圖（index） ---------- */
+.route{position:relative;margin:2rem 0;padding-left:2.4rem}
+.route::before{content:"";position:absolute;left:1rem;top:.6rem;bottom:.6rem;width:2px;
+  background:repeating-linear-gradient(180deg,var(--green) 0 8px,transparent 8px 14px)}
+.stop{position:relative;margin:0 0 1.1rem}
+.stop::before{content:"";position:absolute;left:-1.93rem;top:.95rem;width:.95rem;height:.95rem;border-radius:50%;
+  background:var(--green);box-shadow:0 0 0 3px var(--paper)}
+.stop.todo::before{background:var(--paper3);border:2px solid var(--stone)}
+.stop a,.stop .card{display:block;background:#FBF8F1;border:1px solid var(--line);border-radius:12px;
+  padding:1rem 1.2rem;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.stop a:hover{border-color:var(--green);transform:translateX(3px)}
+.stop .no{font-family:var(--sans);font-size:var(--sm);letter-spacing:.12em;color:var(--ochre-text);font-weight:700}
+.stop .t{font-size:var(--s1);color:var(--ink);margin:.1rem 0}
+.stop .q{font-family:var(--sans);font-size:var(--sm);color:var(--ink-soft)}
+.stop.todo .card{opacity:.6}
+.stop .soon{font-family:var(--sans);font-size:.72rem;color:var(--stone);border:1px dashed var(--line);
+  border-radius:999px;padding:.1em .7em;display:inline-block;margin-top:.3rem}
+
+/* ---------- 導覽前後頁、頁尾 ---------- */
+.pager{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2.6rem 0 1rem;
+  padding-top:1.4rem;border-top:1px solid var(--line);font-family:var(--sans)}
+.pager a{flex:1 1 200px;text-decoration:none;background:var(--paper2);border:1px solid var(--line);
+  border-radius:10px;padding:.8rem 1rem;color:var(--ink)}
+.pager a:hover{border-color:var(--green)}
+.pager .dir{display:block;font-size:var(--sm);color:var(--stone);letter-spacing:.1em;margin-bottom:.2rem}
+.pager .t{color:var(--green-deep)}
+.pager .next{text-align:right}
+.site-footer{margin-top:3.5rem;background:var(--green-deep);color:#EAE5D6;padding:1.6rem 0 2rem;
+  font-family:var(--sans);font-size:.8rem;line-height:1.8}
+.site-footer a{color:#E8C48F}
+.note-small{font-family:var(--sans);font-size:var(--sm);color:var(--stone)}
+
+/* ---------- 列印 ---------- */
+@media print{
+  .site-header,.pager,.skip-link,.poster-note{display:none}
+  body{background:#fff;font-size:11pt}
+  .unit,.grip,.reminder{break-inside:avoid;box-shadow:none}
+  details.deep{border-top:none}
+  details.deep summary{display:none}
+  details.deep .body{padding-top:0}
+  a{color:var(--ink);text-decoration:none}
+}
+/* ---------- 手繪玩心（rough & fun） ---------- */
+.unit{border-radius:14px 22px 16px 24px / 22px 14px 24px 16px;
+  transition:transform .18s ease,box-shadow .18s ease}
+.unit:nth-of-type(odd){transform:rotate(-.35deg)}
+.unit:nth-of-type(even){transform:rotate(.3deg)}
+.unit:hover{transform:rotate(0) translateY(-3px);box-shadow:0 6px 18px rgba(43,38,32,.10)}
+.unit:hover .unit-num{animation:wiggle .5s ease 1}
+@keyframes wiggle{0%{transform:rotate(0)}30%{transform:rotate(-9deg)}60%{transform:rotate(9deg)}100%{transform:rotate(0)}}
+.grip{border-radius:10px 16px 12px 18px / 16px 10px 18px 12px;transition:transform .15s ease}
+.grip:hover{transform:rotate(-1.2deg) scale(1.02)}
+.core-q{border-radius:14px 20px 12px 22px / 20px 12px 22px 14px}
+.reminder{border-radius:0 16px 12px 20px / 0 20px 14px 16px}
+.joke{display:block;font-family:var(--sans);font-size:var(--sm);color:var(--stone);
+  margin-top:.55rem;border-top:1px dashed var(--line);padding-top:.45rem}
+.joke b{color:var(--ochre-text)}
+details.deep summary:hover{letter-spacing:.1em}
+.poster{transform:rotate(-.4deg);transition:transform .2s ease}
+.poster:hover{transform:rotate(0)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
