@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tim Ingold 與台灣學術本土化：研究資源地圖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EA; --ink:#1F2933; --indigo:#2A3D5C; --green:#4A5D43; --ochre:#A6622E;
+  --alert:#9B3A2F; --card:#FFFDF7; --line:#D9D2C2; --muted:#6E6A60;
+  --green-bg:#EDF1EA; --indigo-bg:#E9EDF4; --ochre-bg:#F8EFE5; --alert-bg:#F6E9E6;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Serif TC',serif;font-size:17px;line-height:1.85;}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px 80px;}
+header.site{padding:40px 0 10px;}
+h1{font-size:1.65rem;line-height:1.4;margin:14px 0 6px;font-weight:700;color:var(--indigo);}
+.subtitle{color:var(--muted);font-size:1rem;margin:0 0 16px;}
+.banner{width:100%;border:1px solid var(--line);border-radius:6px;display:block;}
+.dash{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;font-family:'Noto Sans TC',sans-serif;}
+.dash .cell{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 14px;}
+.dash .cell b{display:block;font-size:1.25rem;color:var(--indigo);}
+.dash .cell span{font-size:.8rem;color:var(--muted);}
+.dash .cell.warn b{color:var(--alert);}
+.notice{border-left:4px solid var(--ochre);background:var(--ochre-bg);padding:12px 16px;font-size:.9rem;font-family:'Noto Sans TC',sans-serif;line-height:1.7;border-radius:0 6px 6px 0;}
+nav.modes{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;font-family:'Noto Sans TC',sans-serif;}
+nav.modes a{background:var(--indigo);color:#fff;text-decoration:none;border-radius:20px;padding:6px 18px;font-size:.88rem;}
+nav.modes a.alt{background:var(--green);}
+nav.modes a.warn{background:var(--ochre);}
+h2{font-size:1.3rem;margin:54px 0 6px;padding-top:16px;border-top:1px solid var(--line);font-weight:700;color:var(--indigo);}
+h2 .no{color:var(--ochre);font-family:'Noto Sans TC',sans-serif;font-size:.8rem;display:block;letter-spacing:.14em;}
+h3{font-size:1.07rem;margin:28px 0 4px;color:var(--green);}
+.lead{color:var(--muted);font-size:.95rem;margin:4px 0 16px;}
+.qbox{background:var(--indigo-bg);border:1px solid var(--line);border-radius:6px;padding:12px 18px;font-size:.93rem;margin:12px 0;}
+.qbox b{color:var(--indigo);}
+.themecard{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:16px 0;align-items:flex-start;}
+.themecard img{width:170px;height:170px;object-fit:cover;border-radius:6px;flex-shrink:0;border:1px solid var(--line);}
+.themecard .tc-body{flex:1;}
+.themecard h3{margin:0 0 6px;}
+.themecard .tc-q{font-size:.92rem;}
+.themecard .tc-meta{font-family:'Noto Sans TC',sans-serif;font-size:.8rem;color:var(--muted);margin-top:8px;}
+.themecard a.go{font-family:'Noto Sans TC',sans-serif;font-size:.85rem;color:var(--green);}
+.entry{border:1px solid var(--line);border-radius:6px;padding:13px 17px;margin:13px 0;background:var(--card);}
+.entry .cite{font-weight:500;}
+.entry .anno{font-size:.92rem;margin-top:6px;}
+.entry .meta{margin-top:8px;font-family:'Noto Sans TC',sans-serif;font-size:.78rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px;align-items:center;}
+.tag{background:var(--green-bg);color:var(--green);border-radius:3px;padding:1px 8px;}
+.tag.lv{background:var(--indigo-bg);color:var(--indigo);}
+.badge{border-radius:3px;padding:1px 8px;font-weight:500;}
+.st-pending{background:var(--ochre-bg);color:var(--ochre);border:1px solid var(--ochre);}
+.st-ok{background:var(--green-bg);color:var(--green);border:1px solid var(--green);}
+.st-fixed{background:var(--indigo-bg);color:var(--indigo);border:1px solid var(--indigo);}
+.st-partial{background:#FBF6E3;color:#8A6D1B;border:1px solid #C9A93C;}
+.st-risk{background:var(--alert-bg);color:var(--alert);border:1px solid var(--alert);}
+.lk{font-family:'Noto Sans TC',sans-serif;font-size:.83rem;}
+.lk a{color:var(--green);text-decoration:underline;text-underline-offset:3px;word-break:break-all;}
+.lk .nolink{color:var(--muted);}
+a{color:var(--green);}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-family:'Noto Sans TC',sans-serif;margin:14px 0;background:var(--card);}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+th{background:var(--indigo-bg);font-weight:500;}
+.figrow{display:flex;gap:14px;margin:16px 0;flex-wrap:wrap;}
+.figrow figure{margin:0;flex:1 1 200px;max-width:280px;}
+.figrow img{width:100%;border-radius:6px;border:1px solid var(--line);display:block;}
+.figrow figcaption{font-family:'Noto Sans TC',sans-serif;font-size:.78rem;color:var(--muted);margin-top:4px;line-height:1.5;}
+.filters{font-family:'Noto Sans TC',sans-serif;font-size:.85rem;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:16px 0;position:sticky;top:0;z-index:5;}
+.filters input{width:100%;padding:8px 12px;border:1px solid var(--line);border-radius:6px;font-size:.95rem;margin-bottom:8px;background:#fff;}
+.fbtn{display:inline-block;border:1px solid var(--line);border-radius:14px;padding:2px 12px;margin:2px 3px;cursor:pointer;background:#fff;color:var(--muted);}
+.fbtn.active{background:var(--indigo);color:#fff;border-color:var(--indigo);}
+.flabel{color:var(--indigo);font-weight:500;margin-right:4px;}
+details{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 16px;margin:14px 0;font-size:.92rem;}
+summary{cursor:pointer;color:var(--indigo);font-weight:500;font-family:'Noto Sans TC',sans-serif;}
+.bars{font-family:'Noto Sans TC',sans-serif;font-size:.82rem;}
+.bar{margin:7px 0;}
+.bar .track{background:#E8E2D4;border-radius:4px;height:10px;overflow:hidden;}
+.bar .fill{background:var(--green);height:10px;border-radius:4px;}
+.bar.warn .fill{background:var(--alert);}
+ol.musts{font-size:.95rem;} ol.musts li{margin:7px 0;}
+blockquote{margin:14px 0;padding:8px 18px;border-left:3px solid var(--green);color:var(--muted);font-size:.95rem;}
+footer{margin-top:60px;border-top:1px solid var(--line);padding-top:18px;font-size:.84rem;color:var(--muted);font-family:'Noto Sans TC',sans-serif;}
+footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
+.tag.dt{background:#F0EDE4;color:#6E6A60;}
+@media (max-width:540px){body{font-size:16px;} h1{font-size:1.35rem;} .themecard{flex-direction:column;} .themecard img{width:100%;height:150px;} .wrap{padding:0 14px 60px;} .dash .cell{flex:1 1 110px;padding:8px 10px;} .dash .cell b{font-size:1.05rem;} .qbox{font-size:.88rem;padding:10px 14px;} .entry{padding:11px 13px;} table{font-size:.78rem;} th,td{padding:5px 6px;}}
+.toc{display:none;}
+@media (min-width:1280px){
+  .toc{display:block;position:fixed;top:90px;left:calc(50% + 478px);width:158px;font-family:'Noto Sans TC',sans-serif;font-size:.78rem;line-height:2.1;border-left:2px solid var(--line);padding-left:12px;z-index:4;}
+  .toc b{display:block;color:var(--indigo);font-size:.8rem;margin-bottom:2px;}
+  .toc a{color:var(--muted);text-decoration:none;display:block;}
+  .toc a:hover{color:var(--indigo);text-decoration:underline;}
+}
+@media print{nav.modes,.filters,#progress,.bars,.toc{display:none;} body{background:#fff;font-size:11pt;} .entry,.themecard,details{break-inside:avoid;border-color:#999;} a{color:#1F2933;text-decoration:none;} .lk a::after{content:" 〔" attr(href) "〕";font-size:8pt;color:#555;word-break:break-all;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">
+  <img class="banner" src="assets/title-banner.webp" alt="《Ingold 五篇》研究導讀：十張圖看懂「線如何活著」">
+  <h1>Tim Ingold 與台灣學術本土化：研究資源地圖</h1>
+  <p class="subtitle">從生命、地面、技藝、網結到天氣—世界的跨領域文獻導航｜原始出處連結與書目提要</p>
+  <div class="dash">
+    <div class="cell"><b id="dash-status">設計完成（V1.0 可引用版）</b><span>整體狀態</span></div>
+    <div class="cell"><b id="dash-verified">–</b><span>已查證／總條目</span></div>
+    <div class="cell warn"><b id="dash-risk">–</b><span>高風險疑點剩餘</span></div>
+    <div class="cell"><b id="dash-updated">2026-06-08</b><span>最後更新</span></div>
+  </div>
+  <div class="notice">
+    本地圖整理自五篇研究底稿，供有意進行學術本土化的台灣學者作為文獻探勘起點。條目標記：
+    <span class="badge st-ok">已查證</span>（書目與連結經回查）、<span class="badge st-fixed">已修正</span>（查證後修正底稿錯誤，見勘誤表）、
+    <span class="badge st-partial">部分查證</span>、<span class="badge st-pending">待查證</span>、<span class="badge st-risk">高風險疑點</span>。
+    接收層級標記：直接接收／可對話／推論性連結——僅「直接接收」表示該文獻實際徵引 Ingold，<b>引用前請回到原典</b>。
+    狀態採雙層制：「書目查證」指作者、卷期、頁碼、DOI 已核對；「詮釋待核全文」指條目中的研究判斷（如「最明確接點」）尚待全文閱讀支持。
+    <b>高風險疑點（B01）已於 2026-06-07 全數裁定（見勘誤表）；全部批次已於 2026-06-08 查證完畢。仍標「部分查證」的四筆條目（李威宜導言頁碼、Correspondences 出版年、風水篇目、杜維明 1987 論文集出處）均已逐筆載明無法核實的原因，引用前請依條目指示回查。</b>
+  </div>
+  <nav class="modes">
+    <a href="#quickstart">快速入門</a>
+    <a href="#paths" class="alt">研究路徑</a>
+    <a href="#index" class="alt">來源索引</a>
+    <a href="#errata" class="warn">待查疑點與勘誤</a>
+    <a href="#progress">工作進度</a>
+    <a href="#about">方法與聲明</a>
+  </nav>
+</header>
+
+<nav class="toc" aria-label="頁內目錄">
+  <b>頁內目錄</b>
+  <a href="#quickstart">快速入門</a>
+  <a href="#paths">五條路徑</a>
+  <a href="#web">概念蜘蛛網</a>
+  <a href="#index">來源索引</a>
+  <a href="#theme-life">T1 生命×STS</a>
+  <a href="#theme-reception">T2 接收史</a>
+  <a href="#theme-ground">T3 地面行走</a>
+  <a href="#theme-skill">T4 技藝材料</a>
+  <a href="#theme-weather">T5 天氣環境</a>
+  <a href="#theme-sinophone">漢語身體</a>
+  <a href="#theme-critique">批判視角</a>
+  <a href="#errata">勘誤</a>
+  <a href="#progress">進度</a>
+  <a href="#about">方法聲明</a>
+</nav>
+
+<h2 id="quickstart"><span class="no">入口一</span>快速入門</h2>
+<p>Tim Ingold（1948–，亞伯丁大學榮退教授）主張人類學是「對人類生命之條件與潛能持續而嚴謹的探究」。《Being Alive: Essays on Movement, Knowledge and Description》（Routledge, 2011）以 meshwork（網結）、wayfaring（行旅）、enskilment（技能習得）、weather-world（天氣—世界）、correspondence（對應）等概念，把生命放回人類學核心。本系列研究逐章探勘其與台灣／漢語學界的對話接軌處；本地圖把五場對話整理為可查證的文獻路徑。</p>
+<p>系列的統攝命題：Ingold 的 knowing from the inside（由內而知）與漢語的「體知／踐形／工夫」共享「由身體實踐而知、生命浸沒於流動介質」的存有論；但漢語傳統以「感應」與「道」賦予倫理—宇宙論的方向性，Ingold 則保留反目的、開放的生成。本土化的任務不是證明兩者相同，而是讓張力持續生產問題——並以台灣經驗（殖民史、勞動體制、毒物暴露、原住民法政主體性）反向迫使 Ingold 更政治、更歷史。</p>
+
+<div class="qbox"><b>「學術本土化」的定義</b>：本頁所謂學術本土化，不是將 Ingold 概念直接套用於台灣案例，而是考察台灣 STS、人類學、身體感、原住民研究、宗教行走、文資技藝與勞動研究如何與 Ingold 形成<b>雙向對話</b>——一方面借用其概念重新描述台灣經驗，另一方面以台灣經驗修正其現象學、去政治化或感官抽象化的侷限。</div>
+
+<h3>十篇核心必讀</h3>
+<ol class="musts">
+  <li><b>Ingold, <i>Being Alive</i> (2011)</b>——系列基準文本，緒論與第3、4、7、9章為台灣對話錨點。</li>
+  <li><b>Ingold, "Culture on the Ground" (2004)</b>——腳是知覺器官；台灣「腳的現代性」對話的起點。</li>
+  <li><b>Ingold, "Walking the Plank" (2006/2011)</b>——以鋸木板推翻形質論；技藝即沿線前行的對應。</li>
+  <li><b>Ingold, "When ANT meets SPIDER" (2008)</b>——meshwork 對抗 network，介入台灣 ANT 在地化之辯的樞紐。</li>
+  <li><b>李威宜（2021）導言</b>——台灣 Ingold 接收的策展框架：把 Ingold 當「說出微妙知覺」的方法論工具。</li>
+  <li><b>林益仁（2021）</b>——台灣最明確以 Ingold 為核心對話對象的田野研究之一；TEK 從知識論問題變成生命實作問題。</li>
+  <li><b>林文源（2007）</b>——ANT 行動本體論；與 meshwork 對讀是文獻最厚、張力最大的理論接點。</li>
+  <li><b>余舜德（2006／2013）</b>——「身體感」是台灣理論地基，能把 enskilment 感官化、在地化並回應 Howes 批判。</li>
+  <li><b>張思菁（2018）</b>——白沙屯進香的身體感知：與第三章最直接呼應的台灣文獻。</li>
+  <li><b>鄭肇祺（2021）或謝嘉心（2021）</b>——「生死網結」與「被抽取的技藝」：台灣反向修正 Ingold 的兩個原創方向。</li>
+</ol>
+
+<h3>台灣反向修正 Ingold 的概念前沿</h3>
+<p>整合各章審查回饋，本系列最具原創潛力的概念提案：<b>毒物天氣—世界</b>（toxic weather-world，大林蒲空污使 weather-world 政治化）、<b>生死網結</b>（life-death mesh，養殖漁業迫使 meshwork 面對死亡與商品化）、<b>囚腳之物的全球工廠</b>（台灣製鞋業作為「腳感現代性」的物質基礎）、<b>活技藝 vs 被抽取的技藝</b>（文資保存、技職競賽、外包體制如何抽取 correspondence）、<b>解放腳也是治理術</b>（日治放足顯示「解放」同時是殖民身體治理）。每一個概念都同時是一篇可投稿論文的種子。</p>
+
+<h2 id="paths"><span class="no">入口二</span>研究路徑：五條對話線</h2>
+<p class="lead">接收地形為「四圈交織＋STS 橫貫」：環境人類學圈、原住民／TEK 圈、地理／環境治理圈、藝術／策展圈；STS 與批判視角橫向貫穿。每張路徑卡以四個問題開頭：Ingold 的問題是什麼？台灣的接點在哪裡？台灣如何補充或反駁 Ingold？下一步研究可以怎麼做？</p>
+
+<div class="themecard">
+  <img src="assets/panel-11.webp" alt="行旅者在森林中沿生成之線行走">
+  <div class="tc-body">
+    <h3>路徑一｜生命與人類學：meshwork 對抗 network</h3>
+    <div class="tc-q"><b>Ingold 問</b>：生命如何被理論驅逐，又如何放回？<b>台灣接點</b>：林文源位移理論、楊弘任文化轉譯、傅大為的「拿來主義」診斷。<b>反向修正</b>：林文源批判 ANT 看不見弱勢者的能動，Ingold 批判 ANT 的能動概念本身——兩種批判互相照亮。<b>下一步</b>：以「位移理論 vs meshwork」寫理論對話論文，回應「東亞如何建立自己的 STS 立場」。</div>
+    <div class="tc-meta">關鍵概念：meshwork、SPIDER、行動本體論、轉譯 vs 對應｜<a class="go" href="#theme-life">進入此路徑 →</a></div>
+  </div>
+</div>
+
+<div class="themecard">
+  <img src="assets/panel-21.webp" alt="泰雅族農耕與山林實踐，路徑是人與環境共同走出來的線">
+  <div class="tc-body">
+    <h3>路徑二｜台灣人類學接收史：一次集中而非偶然的接收</h3>
+    <div class="tc-q"><b>Ingold 問</b>：如何描述無形介質與微妙知覺？<b>台灣接點</b>：《臺灣人類學刊》19(2) 專題、南藝大四講、《藝術觀點ACT》89 期。<b>反向修正</b>：接收分三種模式——方法論借用、本體論重排、批判性反向修正；Ingold 在台灣的接收本身就是一種 mediated correspondence（期刊、口譯、策展而非駐留）。<b>下一步</b>：辨明「直接接收／可對話／推論性連結」三層，寫台灣接收史。</div>
+    <div class="tc-meta">關鍵概念：走動、向世而活、呼應、選擇性挪用｜<a class="go" href="#theme-reception">進入此路徑 →</a></div>
+  </div>
+</div>
+
+<div class="themecard">
+  <img src="assets/panel-31.webp" alt="赤足踏在土地上，腳是感知世界的器官">
+  <div class="tc-body">
+    <h3>路徑三｜地面與行走：腳的台灣現代性</h3>
+    <div class="tc-q"><b>Ingold 問</b>：為何思想史獨尊腦與手而貶抑雙腳？<b>台灣接點</b>：身體感研究群（理論地基）、日治放足、媽祖徒步進香、原住民山林行走、製鞋王國。<b>反向修正</b>：三條線——被規訓的腳（放足＝解放也是治理）、神聖化與技能化的腳（鑽轎底翻轉貼地姿態的卑賤）、商品化與病理化的腳（囚腳之物的全球工廠、糖尿病足）。<b>下一步</b>：「放足＋進香＋製鞋」三案例構成歷史—宗教—資本主義三重分析。</div>
+    <div class="tc-meta">關鍵概念：ground、wayfaring、身體感、殖民身體規訓｜<a class="go" href="#theme-ground">進入此路徑 →</a></div>
+  </div>
+</div>
+
+<div class="themecard">
+  <img src="assets/panel-41.webp" alt="鋸木板不是征服材料，而是回應木紋的走向">
+  <div class="tc-body">
+    <h3>路徑四｜技藝與材料：活技藝與被抽取的技藝</h3>
+    <div class="tc-q"><b>Ingold 問</b>：技藝是設計的執行，還是與材料的對應？<b>台灣接點</b>：人間國寶傳習、達悟拼板舟、黑手師傅、製茶身體感。<b>反向修正</b>：技藝的 correspondence 不只發生在工匠—工具—材料之間，也發生在制度、族群、階級、國家與資本之間——文資制度具「支撐傳承／項目化展示」雙重效果，工業體制抽取並貶低技藝。<b>下一步</b>：「凍結還是行旅？」介入文資政策方法論；「黑手的線」補 Ingold 階級盲點。</div>
+    <div class="tc-meta">關鍵概念：enskilment、形質論、注意力的教育、去技能化｜<a class="go" href="#theme-skill">進入此路徑 →</a></div>
+  </div>
+</div>
+
+<div class="themecard">
+  <img src="assets/panel-22.webp" alt="蘭嶼拼板舟與海流、風同行，形成活的路徑">
+  <div class="tc-body">
+    <h3>路徑五｜天氣、空氣與環境政治：毒物天氣—世界</h3>
+    <div class="tc-q"><b>Ingold 問</b>：居住於開放世界，就是被捲入天氣—世界的轉化之中？<b>台灣接點</b>：大林蒲空污與「保衛西南風」、彭保羅的毒物暴露批判、氣論與風水的漢語宇宙論。<b>反向修正</b>：在台灣，風不是抽象介質，而是被工業、都市計畫、監測、抗爭、遷村政策共同構成的政治性介質——「毒物天氣—世界」。<b>下一步</b>：接 Bufe & Hovius 台灣侵蝕—碳循環資料，把 weather-world 與 Latour 臨界區並讀。</div>
+    <div class="tc-meta">關鍵概念：weather-world、medium、量體政治、暴露｜<a class="go" href="#theme-weather">進入此路徑 →</a></div>
+  </div>
+</div>
+
+<div class="qbox">
+  <b>兩條橫貫帶</b>：<a href="#theme-sinophone">漢語身體—宇宙論（整合脊椎）</a>——體知、氣論、莊子技藝、書論線條，貫穿五條路徑的漢語對手文本；
+  <a href="#theme-critique">批判視角</a>——Howes 的多感官批判、Hicks 的「網結疲勞」、性別／障礙／政治經濟，防止任何一條路徑落入去政治化與浪漫化。
+</div>
+
+<h2 id="web"><span class="no">概念層</span>概念蜘蛛網：沿 Ingold 的線進入台灣文獻</h2>
+<p class="lead">以 Ingold 原文核心概念為節點的網結圖——每個概念都是一條可以走的線，點擊節點進入對應的文獻路徑。排程任務將以 Consensus 學術搜尋與 TOAJ 持續為每個概念補入國際與台灣文獻。</p>
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ingold 核心概念蜘蛛網" style="width:100%;height:auto;background:#FFFDF7;border:1px solid #D9D2C2;border-radius:8px;">
+  <g stroke="#C9C0AC" stroke-width="1" fill="none">
+    <path d="M400 230 C 320 150, 250 130, 170 110"/>
+    <path d="M400 230 C 350 300, 280 330, 185 345"/>
+    <path d="M400 230 C 470 150, 540 130, 625 105"/>
+    <path d="M400 230 C 480 300, 560 330, 630 350"/>
+    <path d="M400 230 C 400 150, 395 120, 390 70"/>
+    <path d="M400 230 C 310 230, 220 235, 120 230"/>
+    <path d="M400 230 C 490 225, 580 222, 685 225"/>
+    <path d="M400 230 C 400 320, 400 360, 400 405"/>
+    <path d="M170 110 C 130 170, 120 195, 120 230" stroke-dasharray="3 4"/>
+    <path d="M625 105 C 660 160, 675 190, 685 225" stroke-dasharray="3 4"/>
+    <path d="M185 345 C 250 360, 330 390, 400 405" stroke-dasharray="3 4"/>
+    <path d="M630 350 C 560 370, 470 395, 400 405" stroke-dasharray="3 4"/>
+  </g>
+  <g font-family="Noto Sans TC, sans-serif" font-size="13" text-anchor="middle">
+    <a href="#quickstart"><circle cx="400" cy="230" r="34" fill="#2A3D5C"/><text x="400" y="226" fill="#fff">生命</text><text x="400" y="243" fill="#fff" font-size="10">life</text></a>
+    <a href="#theme-life"><circle cx="170" cy="110" r="28" fill="#4A5D43"/><text x="170" y="107" fill="#fff" font-size="11">網結</text><text x="170" y="121" fill="#fff" font-size="9">meshwork</text></a>
+    <a href="#theme-ground"><circle cx="120" cy="230" r="28" fill="#4A5D43"/><text x="120" y="227" fill="#fff" font-size="11">行旅</text><text x="120" y="241" fill="#fff" font-size="9">wayfaring</text></a>
+    <a href="#theme-ground"><circle cx="185" cy="345" r="28" fill="#4A5D43"/><text x="185" y="342" fill="#fff" font-size="11">棲居</text><text x="185" y="356" fill="#fff" font-size="9">dwelling</text></a>
+    <a href="#theme-reception"><circle cx="390" cy="70" r="30" fill="#A6622E"/><text x="390" y="66" fill="#fff" font-size="11">對應</text><text x="390" y="81" fill="#fff" font-size="8">correspondence</text></a>
+    <a href="#theme-skill"><circle cx="625" cy="105" r="28" fill="#4A5D43"/><text x="625" y="102" fill="#fff" font-size="11">技能習得</text><text x="625" y="116" fill="#fff" font-size="9">enskilment</text></a>
+    <a href="#theme-weather"><circle cx="685" cy="225" r="30" fill="#4A5D43"/><text x="685" y="220" fill="#fff" font-size="10">天氣—世界</text><text x="685" y="234" fill="#fff" font-size="8">weather-world</text></a>
+    <a href="#theme-skill"><circle cx="630" cy="350" r="28" fill="#4A5D43"/><text x="630" y="347" fill="#fff" font-size="11">編織性</text><text x="630" y="361" fill="#fff" font-size="9">textility</text></a>
+    <a href="#theme-sinophone"><circle cx="400" cy="405" r="30" fill="#A6622E"/><text x="400" y="401" fill="#fff" font-size="10">由內而知×體知</text><text x="400" y="416" fill="#fff" font-size="8">knowing from inside</text></a>
+  </g>
+</svg>
+
+<div class="entry" data-id="ing-late" data-status="ok" data-theme="reception life weather">
+  <div class="cite">Ingold 晚期與導讀文獻（Consensus 學術搜尋查得，連結為論文頁）：Ingold (2017). "On human correspondence." <i>JRAI</i> 23(1)。；Ingold (2022). "On not knowing and paying attention: How to walk in a possible world." <i>Irish Journal of Sociology</i>。；Ingold (2024). "How to imagine a sustainable world." <i>Acta Borealia</i>。；Ingold (2006). "Rethinking the animate, re-animating thought." <i>Ethnos</i>。；<i>Conversations with Tim Ingold</i> (2024)。</div>
+  <div class="anno">概念蜘蛛網的擴充節點：「對應」的理論宣言（lifelines 以習慣、agencing、注意性相互回應）；〈On not knowing〉與〈How to imagine a sustainable world〉分別是南藝大第三講「論非知與關注」、第四講「萬物的永續性」的論文版——查證講座內容時可直接對引；〈Rethinking the animate〉是 weather-world 的概念源頭之一；《Conversations》是 2024 年出版的訪談導讀書，適合課程入門。</div>
+  <div class="meta"><span class="tag">期刊論文＋書籍</span><span class="tag">可信度 A–B</span><span class="badge st-ok">已查證</span><span class="lk">
+    <a href="https://consensus.app/papers/details/c9ade65993425497ba75159cbc3d369a/?utm_source=claude_desktop" target="_blank">Correspondence</a>
+    <a href="https://consensus.app/papers/details/9699114488d451bdb864fef7bd6215f2/?utm_source=claude_desktop" target="_blank">Not knowing</a>
+    <a href="https://consensus.app/papers/details/0d04f808d9055997b076c534edacc7c8/?utm_source=claude_desktop" target="_blank">Sustainable world</a>
+    <a href="https://consensus.app/papers/details/08d4a48eb88552c4a31b7609d0de4a60/?utm_source=claude_desktop" target="_blank">Rethinking the animate</a>
+    <a href="https://consensus.app/papers/details/7b65d1a80c84582187f58ec58cf8f6e4/?utm_source=claude_desktop" target="_blank">Conversations</a>
+  </span></div>
+</div>
+
+<div class="entry" data-id="web-meshwork" data-status="ok" data-theme="life">
+  <div class="cite">【概念節點：meshwork（網結）】Klenk, N. (2018). "From network to meshwork." <i>Environmental Science &amp; Policy</i>（41 引用）。；Muñoz, S. (2021). "Un diálogo entre la red de Bruno Latour y la malla de Tim Ingold." <i>Cinta de Moebio</i>。；Munter, K. et al. (2024). "Correspondence and troubled meshworks of life." <i>Anuac</i>。</div>
+  <div class="anno">Consensus 擴充（<span class="tag">研究判斷</span>）：Klenk 把「網絡→網結」轉換用於跨領域環境研究的方法論（與 T1「位移理論 vs meshwork」直接相關）；Muñoz 是 Latour 網絡與 Ingold 網結的正面對勘；Munter 等以安地斯原住民田野提出「受擾的網結」——與 T2 林益仁的 TEK 路線及「生死網結」修正方向共振。</div>
+  <div class="meta"><span class="tag">概念節點文獻</span><span class="tag">可信度 B（引用前查原文）</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://consensus.app/papers/details/7d1889f59a71585dbeff7efc06084ce4/?utm_source=claude_desktop" target="_blank">Klenk 2018</a> <a href="https://consensus.app/papers/details/e0ee1932bf755583a378e9ba38ca589d/?utm_source=claude_desktop" target="_blank">Muñoz 2021</a> <a href="https://consensus.app/papers/details/375eae391e5c567abc8e1b7cf15fc34d/?utm_source=claude_desktop" target="_blank">Munter 2024</a></span></div>
+</div>
+<div class="entry" data-id="web-wayfaring" data-status="ok" data-theme="ground">
+  <div class="cite">【概念節點：wayfaring（行旅）×dwelling（棲居）】Hackett, A. (2016). "Young children as wayfarers." <i>Children &amp; Society</i>（46 引用）。；Cunliffe, A. (2018). "Wayfaring: A scholarship of possibilities"（32 引用）。；Cheng, E. S.-k. (2024). "The mobile spatialization of agriculture in Hong Kong." <i>Journal of Rural Studies</i>。｜Ingold, T. (1993). "The temporality of the landscape." <i>World Archaeology</i> 25(2): 152–174（1384 引用，dwelling／taskscape 原典）。；Cloke, P. &amp; Jones, O. (2001). <i>EPA</i> 33（255 引用）。；Cooke, B. et al. (2016). "Dwelling in the biosphere." <i>Sustainability Science</i>（90 引用）。</div>
+  <div class="anno">Consensus 擴充（<span class="tag">研究判斷</span>）：Cheng 2024 以香港「行村、行田」民族誌應用 wayfaring——華語語境的直接先例，T3 台灣行走研究的最近參照；Hackett（幼兒）與 Cunliffe（學術生涯）顯示概念輻射幅度。dwelling 組以 1993 原典為錨（地景即世代棲居的見證），Cooke 等將其接上韌性研究——與 T2 原住民韌性（小米方舟）可對讀。</div>
+  <div class="meta"><span class="tag">概念節點文獻</span><span class="tag">可信度 B（引用前查原文）</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://consensus.app/papers/details/86455c711c55519bad5562500d9719d0/?utm_source=claude_desktop" target="_blank">Hackett 2016</a> <a href="https://consensus.app/papers/details/436e68a0988f57a5bf93194f0f4493f6/?utm_source=claude_desktop" target="_blank">Cunliffe 2018</a> <a href="https://consensus.app/papers/details/86ceb6d50ca25f2e81c966da92fc7b47/?utm_source=claude_desktop" target="_blank">Cheng 2024（香港）</a> <a href="https://consensus.app/papers/details/b70d0f093bbe5bb99601e9bffe8234c7/?utm_source=claude_desktop" target="_blank">Ingold 1993</a> <a href="https://consensus.app/papers/details/91fe4410096850df803794732e42c88c/?utm_source=claude_desktop" target="_blank">Cloke &amp; Jones 2001</a> <a href="https://consensus.app/papers/details/a40893db983a584ca4aee3648ad432f4/?utm_source=claude_desktop" target="_blank">Cooke 2016</a></span></div>
+</div>
+<div class="entry" data-id="web-enskilment" data-status="ok" data-theme="skill">
+  <div class="cite">【概念節點：enskilment（技能習得）×education of attention（注意力的教育）】Woods, C. et al. (2021). "Enskilment." <i>Sports Medicine – Open</i>（42 引用）。；Churchill, E. (2022). "The education of attention in enskillment." <i>Journal of Pragmatics</i>。｜Ingold, T. (2001). "From the transmission of representations to the education of attention." In <i>The Debated Mind</i>, pp. 113–153（91 引用，概念原典）。；Gieser, T. (2008). "Embodiment, emotion and empathy." <i>Anthropological Theory</i>（85 引用）。；Harris, A. et al. (2017). "Medical education of attention." <i>Medical Teacher</i>。</div>
+  <div class="anno">Consensus 擴充（<span class="tag">研究判斷</span>）：Ingold 2001 是「從表徵傳遞到注意力教育」的原典出處（余舜德製茶條目的理論對口）；Gieser 以情緒與同感補「觀察—模仿如何轉成知覺轉變」的機制空缺——可回應 Howes 的感官社會性批判；Churchill 以日本親子鋼琴練習做微觀互動分析，是東亞脈絡的實證範例；Harris 連到醫學的聽診感官訓練——與台灣身體感研究的醫療人類學線可對接。</div>
+  <div class="meta"><span class="tag">概念節點文獻</span><span class="tag">可信度 B（引用前查原文）</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://consensus.app/papers/details/11cf0e6049a650c3a9250789823d54ed/?utm_source=claude_desktop" target="_blank">Woods 2021</a> <a href="https://consensus.app/papers/details/1f6f7cbbac115dc89b841c19d8918cc1/?utm_source=claude_desktop" target="_blank">Churchill 2022（日本）</a> <a href="https://consensus.app/papers/details/3c255a4d5f0a50f9b1bd788dfe741cff/?utm_source=claude_desktop" target="_blank">Ingold 2001</a> <a href="https://consensus.app/papers/details/6560d961873f5597a859c12f1746d376/?utm_source=claude_desktop" target="_blank">Gieser 2008</a> <a href="https://consensus.app/papers/details/ddf511a5ee7b502589ad94e68aef6294/?utm_source=claude_desktop" target="_blank">Harris 2017</a></span></div>
+</div>
+<div class="entry" data-id="web-taskscape" data-status="ok" data-theme="skill">
+  <div class="cite">【概念節點：taskscape（任務景）×textility（編織性）】Gruppuso, P. &amp; Whitehouse, A. (2020). "Exploring taskscapes: An introduction." <i>Social Anthropology</i>（29 引用）。｜Taylor, A. S. (2017). "What lines, rats, and sheep can tell us." <i>Design Issues</i>（17 引用）。；Paavolainen, T. (2017). "Fabric philosophy: The 'texture' of theatricality and performativity."</div>
+  <div class="anno">Consensus 擴充（<span class="tag">研究判斷</span>）：Gruppuso 與 Whitehouse 的專題導言重估 taskscape 在人類世的分析潛力（含政治張力）——T4 文資制度分析可借此框架；Taylor 把線與網結帶進設計研究（與大木作「持篙」對話）；Paavolainen 以「織理」重讀劇場性與展演性——藝術圈接收（T2 路徑）的延伸參照。</div>
+  <div class="meta"><span class="tag">概念節點文獻</span><span class="tag">可信度 B（引用前查原文）</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://consensus.app/papers/details/9ca02d81bd925701b327b8472e7d79b1/?utm_source=claude_desktop" target="_blank">Gruppuso 2020</a> <a href="https://consensus.app/papers/details/aa8c541ca4d75058b6843f11104d6a09/?utm_source=claude_desktop" target="_blank">Taylor 2017</a> <a href="https://consensus.app/papers/details/2a8a4c8e720e5f43979800d5cf3f7c75/?utm_source=claude_desktop" target="_blank">Paavolainen 2017</a></span></div>
+</div>
+<div class="entry" data-id="web-weatherworld" data-status="ok" data-theme="weather">
+  <div class="cite">【概念節點：weather-world（天氣—世界）】Bell, S. et al. (2019). "Negotiating nature's weather worlds in the context of life with sight impairment." <i>Transactions of the IBG</i>（36 引用）。；Dransart, P. et al. (2021). "When the winds run with the earth." <i>Current Anthropology</i>。；Engelmann, S. (2023). "Weathering three storms: Experiments in an elemental geohumanities." <i>GeoHumanities</i>。</div>
+  <div class="anno">Consensus 擴充（<span class="tag">研究判斷</span>）：Bell 等以視障者經驗讓 weather-world 與障礙研究相遇——正是橫貫帶二要求的健全主義校準；Dransart 的智利風民族誌示範「weather-worlding」的世代知識分析；Engelmann 處理「天氣作為資料」（測量、開放氣象資料）——與大林蒲空污監測、「量體政治」的台灣線最接近。原典〈Earth, sky, wind, and weather〉Consensus 載 275 次引用（見 ing-weather 條目）。</div>
+  <div class="meta"><span class="tag">概念節點文獻</span><span class="tag">可信度 B（引用前查原文）</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://consensus.app/papers/details/52d76fe7e845587cae52436cfaade05e/?utm_source=claude_desktop" target="_blank">Bell 2019</a> <a href="https://consensus.app/papers/details/9b3530be02d4548d88c9a5b1e444dd46/?utm_source=claude_desktop" target="_blank">Dransart 2021</a> <a href="https://consensus.app/papers/details/b29f14b96ad55c2ea381c0cdf0b1d51f/?utm_source=claude_desktop" target="_blank">Engelmann 2023</a></span></div>
+</div>
+
+<h2 id="index"><span class="no">入口三</span>來源索引：可查證書目層</h2>
+<div class="filters">
+  <input id="q" type="search" placeholder="搜尋作者、概念、關鍵詞（如：林文源、meshwork、身體感、進香、文資）" aria-label="搜尋條目">
+  <span class="flabel">狀態</span>
+  <span class="fbtn" data-f="status" data-v="ok">已查證</span>
+  <span class="fbtn" data-f="status" data-v="fixed">已修正</span>
+  <span class="fbtn" data-f="status" data-v="partial">部分查證</span>
+  <span class="fbtn" data-f="status" data-v="pending">待查證</span>
+  <br><span class="flabel">路徑</span>
+  <span class="fbtn" data-f="theme" data-v="life">生命×STS</span>
+  <span class="fbtn" data-f="theme" data-v="reception">人類學接收</span>
+  <span class="fbtn" data-f="theme" data-v="ground">地面行走</span>
+  <span class="fbtn" data-f="theme" data-v="skill">技藝材料</span>
+  <span class="fbtn" data-f="theme" data-v="weather">天氣環境</span>
+  <span class="fbtn" data-f="theme" data-v="sinophone">漢語思想</span>
+  <span class="fbtn" data-f="theme" data-v="critique">批判視角</span>
+  <span class="fbtn" data-f="theme" data-v="database">資料庫</span>
+</div>
+
+<!-- ============ T1 生命與人類學 ============ -->
+<h3 id="theme-life">T1｜生命與人類學（緒論 × 台灣 STS）</h3>
+<div class="figrow">
+  <figure><img src="assets/panel-12.webp" alt="網絡與網結的對比圖：節點連結 vs 生命的編織"><figcaption>與 Latour 的網絡不同，Ingold 的 meshwork 是生命的編織，而非節點的連結。</figcaption></figure>
+</div>
+
+<div class="entry" data-id="ing-ba" data-status="ok" data-theme="life reception">
+  <div class="cite">Ingold, T. (2011). <i>Being Alive: Essays on Movement, Knowledge and Description</i>. London: Routledge.</div>
+  <div class="anno">系列核心文本。緒論〈Anthropology comes to life〉主張以生命的開放運動取代目的論；第3章（pp. 33–50）、第4章（pp. 51–62）、第7章、第9章（pp. 115–125）為台灣對話的章節錨點。引用時注意多章存在期刊原版與書中修訂版之別。書目核對：Routledge，2011，270 頁，平裝 ISBN 978-0-415-57684-0、精裝 978-0-415-57683-3。</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag">全系列</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://abdn.elsevierpure.com/en/publications/being-alive-essays-on-movement-knowledge-and-description" target="_blank">亞伯丁大學典藏</a></span></div>
+</div>
+<div class="entry" data-id="ing-spider" data-status="ok" data-theme="life">
+  <div class="cite">Ingold, T. (2008). "When ANT meets SPIDER: Social theory for arthropods." In C. Knappett &amp; L. Malafouris (eds.), <i>Material Agency: Towards a Non-Anthropocentric Approach</i>, pp. 209–215. Boston: Springer. DOI: 10.1007/978-0-387-74711-8_11（修訂版收入《Being Alive》第7章）</div>
+  <div class="anno">以蜘蛛（SPIDER＝Skilled Practice Involves Developmentally Embodied Responsiveness）對抗螞蟻（ANT）：行動非分布於網絡節點的 agency，而是「沿網結之線傳導的力的互動中湧現」。介入台灣 ANT 在地化之辯的樞紐文本；引用須註明 2008／2011 版本。書目經 Springer 章節頁與亞伯丁典藏交叉確認。</div>
+  <div class="meta"><span class="tag">專章</span><span class="tag">meshwork</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://link.springer.com/chapter/10.1007/978-0-387-74711-8_11" target="_blank">Springer 章節頁</a> <a href="https://abdn.elsevierpure.com/en/publications/when-ant-meets-spider-social-theory-for-arthropods/" target="_blank">亞伯丁典藏</a></span></div>
+</div>
+<div class="entry" data-id="sts-lin2007" data-status="ok" data-theme="life">
+  <div class="cite">林文源（2007）。〈論行動者網絡理論的行動本體論〉。《科技、醫療與社會》4: 65–108。</div>
+  <div class="anno">主張 ANT 浮現「行動本體論」——being-in-action 之關係性湧現的、被中介的、異質的構成。與 Ingold 的關係性本體論共享「關係先於實體」前提，但路徑有別，是「位移理論 vs meshwork」對話的起點。卷期頁碼與 DOI（10.6464/TJSSTM.200704.0065）經華藝條目與作者清大教師頁交叉確認。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.airitilibrary.com/Article/Detail/16805585-200704-201301070014-201301070014-65-108" target="_blank">華藝條目</a> <a href="https://doi.org/10.6464/TJSSTM.200704.0065" target="_blank">DOI</a></span></div>
+</div>
+<div class="entry" data-id="sts-lin2006" data-status="ok" data-theme="life">
+  <div class="cite">林文源（2006）。〈漂移之作：由血液透析病患的存在與行動談社會本體論〉。《台灣社會學》12: 69–140。（OpenAccess）</div>
+  <div class="anno">提出「漂移之作」（driftworks）社會本體論。其透析病患案例若以 meshwork 重讀，「弱勢者施為能力」會從「多重霸權網絡中的位移」被重新描述為「沿生命之線的對應與成長」——兩種批判的政治後果比較即是一篇論文。卷期頁碼（12: 69–140）經作者清大教師頁與華藝《台灣社會學》期刊目錄交叉確認；《台灣社會學》TOAJ 收錄狀態未能自動核實（見資料庫條目說明），請以華藝或期刊官網為準。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="http://cge.nthu.edu.tw/faculty/wylin/" target="_blank">作者著作目錄（清大）</a> <a href="https://www.airitilibrary.com/Publication/Information/P20161123001" target="_blank">華藝期刊目錄</a></span></div>
+</div>
+<div class="entry" data-id="sts-lin2014" data-status="ok" data-theme="life">
+  <div class="cite">林文源（2014）。《看不見的行動能力：從行動者網絡到位移理論》。臺北：中央研究院社會學研究所。</div>
+  <div class="anno">三層理論（漂移實作本體論、位移行動理論、體制分析）修補 ANT 的「霸權」性質。林文源批判 ANT 看不見弱勢者的能動，Ingold 批判 ANT 的能動概念本身——兩種批判可互相照亮。注意：2014 書中是否實質對話 Mol 的多重本體論須查原書正文；推薦序評語不可逕引為其本人主張。（自合併條目拆分；經博客來與作者清大教師頁交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="badge st-pending">詮釋待核全文</span><span class="lk"><a href="https://www.books.com.tw/products/0010624763" target="_blank">博客來</a> <a href="http://cge.nthu.edu.tw/faculty/wylin/" target="_blank">作者著作目錄（清大）</a></span></div>
+</div>
+<div class="entry" data-id="sts-lin2013" data-status="ok" data-theme="life">
+  <div class="cite">Lin, W.-Y. (2013). "Displacement of agency: The enactment of patients' agency in and beyond haemodialysis practices." <i>Science, Technology, &amp; Human Values</i> 38(3): 421–443. DOI: 10.1177/0162243912443717</div>
+  <div class="anno">位移理論的英文版主論文：批判 ANT 轉譯框架的「帝國主義、管理主義、單一化」性質，以透析病患的問題化—分布—混生—再穩定化過程提出替代框架。（自 sts-lin2014 合併條目拆分；經 SAGE 原文頁與 Semantic Scholar 交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://journals.sagepub.com/doi/10.1177/0162243912443717" target="_blank">SAGE 原文頁</a></span></div>
+</div>
+<div class="entry" data-id="sts-yang-book" data-status="ok" data-theme="life skill">
+  <div class="cite">楊弘任（2007；2014 增訂版）。《社區如何動起來？：黑珍珠之鄉的派系、在地師傅與社區總體營造》。新北：左岸文化。（增訂版 ISBN 978-986-6525-83-4）</div>
+  <div class="anno">「文化轉譯」與「在地師傅」概念出處：區分「認知化的常識」與「身體化的技術」，後者與 enskilment 高度親近。可發展論點：以 wayfaring／correspondence 重新描述在地師傅的技藝傳承，使「轉譯」從端點—連結語意轉向「沿著實作之線的相互成長」。（自合併條目拆分；經博客來增訂版頁與讀冊交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag lv">推論性連結</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.books.com.tw/products/0010641869" target="_blank">博客來（增訂版）</a></span></div>
+</div>
+<div class="entry" data-id="sts-yang2011" data-status="ok" data-theme="life skill">
+  <div class="cite">楊弘任（2011）。〈何謂在地性？：從地方知識與在地範疇出發〉。《思與言》49(4): 5–29。（2011 年 12 月）</div>
+  <div class="anno">「在地性」的理論化：地方知識與在地範疇如何面對專家知識與外來範疇，提出「文化轉譯」作為克服「邊界維繫／社會改革」矛盾的方案。（自 sts-yang 合併條目拆分。）頁碼以作者中研院社會所著作目錄與全文 PDF 為準（5–29）；華藝 DocID 尾碼作 10–34，與作者來源不符，引用時請以全文 PDF 確認。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">推論性連結</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.ios.sinica.edu.tw/people/personal/hjyang/%E6%A5%8A%E5%BC%98%E4%BB%BB_%E6%9C%9F%E5%88%8A%E8%AB%96%E6%96%8705_%E4%BD%95%E8%AC%82%E5%9C%A8%E5%9C%B0%E6%80%A7.pdf" target="_blank">作者全文 PDF（中研院社會所）</a> <a href="https://www.ios.sinica.edu.tw/fellow/hungjenyang" target="_blank">作者著作目錄</a></span></div>
+</div>
+<div class="entry" data-id="sts-fu2019" data-status="ok" data-theme="life reception">
+  <div class="cite">傅大為（2019）。《STS 的緣起與多重建構：橫看近代科學的一種編織與打造》。臺北：國立臺灣大學出版中心。（624 頁，ISBN 978-986-350-339-2）</div>
+  <div class="anno">理解台灣 ANT 接收系譜的脈絡文獻。傅大為直言台灣對 ANT 多是「拿來主義」——這個診斷正是 Ingold 作為「外部對話者」介入的理由，也回應「東亞如何建立自己的 STS 立場」之問。（自合併條目拆分；經臺大出版中心官方頁與博客來交叉確認，書名副標一併補全。）</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag">接收史</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="badge st-pending">詮釋待核全文</span><span class="lk"><a href="https://www.press.ntu.edu.tw/tw/publish/show.php?act=book&amp;refer=ntup_book01203" target="_blank">臺大出版中心</a> <a href="https://www.books.com.tw/products/0010819404" target="_blank">博客來</a></span></div>
+</div>
+<div class="entry" data-id="sts-latour" data-status="ok" data-theme="life reception">
+  <div class="cite">拉圖（Bruno Latour）著，余曉嵐、林文源、許全義譯（2012）。《我們從未現代過》。臺北：群學。（336 頁，2012 年 10 月）</div>
+  <div class="anno">台灣 ANT 接收的譯介里程碑（譯者群即在地 STS 社群核心成員）。與 Ingold 對 Latour 的批判並讀，可看出台灣讀者同時接收了「網絡」與「網結」兩種本體論方案。（自 sts-fu 合併條目拆分；經博客來與群學出版公告交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍（譯本）</span><span class="tag">接收史</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.books.com.tw/products/0010560457" target="_blank">博客來</a> <a href="https://socio123.pixnet.net/blog/post/38160419" target="_blank">群學出版公告</a></span></div>
+</div>
+
+<!-- ============ T2 台灣人類學接收史 ============ -->
+<h3 id="theme-reception">T2｜台灣人類學接收史：《臺灣人類學刊》19(2) 專題與藝術圈擴散</h3>
+<p class="lead">2021 年 12 月，李威宜客座策劃「環境人類學方法論的探索：與 Tim Ingold 對話」專題——台灣最集中、最可引用的正式對話場域。注意：民族所官網目次頁曾有作者—題名對位錯誤，以華藝與機構典藏交叉確認為準。Ingold 著作目前未見台灣繁體譯本體系，接收主要經期刊、線上講座口譯、簡體譯本與藝術評論轉介——這個「翻譯空白」本身即值得研究。</p>
+<div class="figrow">
+  <figure><img src="assets/panel-21.webp" alt="泰雅農耕與山林實踐"><figcaption>泰雅農耕與山林實踐：路徑是人與環境共同走出來的線（林益仁）。</figcaption></figure>
+  <figure><img src="assets/panel-22.webp" alt="蘭嶼與雅浦的航海經驗"><figcaption>蘭嶼與雅浦：海流、風與人同行，形成活的路徑（黃郁茜）。</figcaption></figure>
+</div>
+
+<div class="entry" data-id="tja-lee" data-status="partial" data-theme="reception">
+  <div class="cite">李威宜（2021）。〈導言：環境人類學方法論的探索：與 Tim Ingold 對話〉。《臺灣人類學刊》19(2): 1–8。</div>
+  <div class="anno">理解專題問題意識的關鍵：以學術史重建 Ingold 三階段思路，歸納兩個對話節點與兩點方法論啟示（探問無形世界、說出微妙知覺）。其性質是編輯性、策展性框架——把 Ingold 當「方法論修補工具」而非範式皈依，不宜過度理論化為「接收綱領」。專題出處已由民族所官方頁確認；官網目次的作者—題名對位亦經月旦逐篇交叉核對無誤。頁碼 1–8 為推定（次篇起頁為 9），引用前請以全文 PDF 確認。TOAJ 收錄查證（B18）：《臺灣人類學刊》確認有 TOAJ 期刊頁（期刊層級），文章層級連結因平台採前端動態載入、無法自動核實，請自期刊頁進入檢索。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">接收史</span><span class="tag lv">直接接收</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-partial">部分查證</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_PDF&amp;CNV=PDF&amp;Pname=TJA19-2_S0.pdf&amp;MSID=2" target="_blank">民族所官方 PDF</a> <a href="https://www.ioe.sinica.edu.tw/Content/Periodicals/content.aspx?SiteID=530164240637641451&amp;MSID=1161507152067240304&amp;MenuID=530167100636226027" target="_blank">19(2) 目次頁</a> <a href="https://toaj.stpi.narl.org.tw/index/journal/4b1141f97ce46933017ce469b61e0001" target="_blank">TOAJ 期刊頁（臺灣人類學刊）</a></span></div>
+</div>
+<div class="entry" data-id="tja-lin" data-status="ok" data-theme="reception ground">
+  <div class="cite">林益仁（2021）。〈我在泰雅生態農耕敘事中的走動：對 Tim Ingold 的呼應〉。《臺灣人類學刊》19(2): 9–55。</div>
+  <div class="anno">台灣最明確以 Ingold 為核心對話對象的田野研究之一（直接以 walking、dwelling、lines、correspondence 重讀尖石後山泰雅農耕），提出「照顧」的生態新解。其關鍵推進：TEK 從「知識論問題」轉化為「生命實作問題」——知識不是被保存的，而是被走出來、照顧出來的。頁碼疑點已裁定為 9–55（北醫機構典藏＋專題四篇頁碼連續性 9–55、57–106、107–145、147–188 交叉印證；383–416 說不成立，見勘誤表）。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">直接接收</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="badge st-pending">詮釋待核全文</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_PDF&amp;CNV=PDF&amp;Pname=TJA19-2_S1.pdf&amp;MSID=3" target="_blank">民族所官方 PDF 全文</a> <a href="https://hub.tmu.edu.tw/zh/publications/%E6%88%91%E5%9C%A8%E6%B3%B0%E9%9B%85%E7%94%9F%E6%85%8B%E8%BE%B2%E8%80%95%E6%95%98%E4%BA%8B%E4%B8%AD%E7%9A%84%E8%B5%B0%E5%8B%95%E5%B0%8Dtim-ingold%E7%9A%84%E5%91%BC%E6%87%89" target="_blank">北醫典藏</a></span></div>
+</div>
+<div class="entry" data-id="tja-huang" data-status="ok" data-theme="reception">
+  <div class="cite">黃郁茜（2021）。〈論路徑、行走，與創造路徑——從雅浦與蘭嶼的村落路徑談起〉。《臺灣人類學刊》19(2): 57–106。</div>
+  <div class="anno">以雅浦與蘭嶼村落路徑比較，把南島比較研究從「分類式比較」推進到「同行式（corresponding）比較」：研究者不是處於河流兩岸，而是與研究對象共同置身河流之中。專題中理論密度最高、最直接觸及「人類學 vs 民族誌」之分的一篇，可回接《Being Alive》第12、13章。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">直接接收</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_PDF&amp;CNV=PDF&amp;Pname=TJA19-2_S2_20220128153920.pdf&amp;MSID=4" target="_blank">民族所官方 PDF 全文</a></span></div>
+</div>
+<div class="entry" data-id="tja-cheng" data-status="ok" data-theme="reception skill">
+  <div class="cite">鄭肇祺（2021）。〈魚蝦豐收：臺灣養殖產業的漁具、生死網目與技藝體現〉。《臺灣人類學刊》19(2): 107–145。</div>
+  <div class="anno">提出「經由漁具思考」與「生死網目」（life-death mesh）——專題中正面處理「向死」難題的代表性論文。其修正力道應精準表述：並非「Ingold 忽略死亡」，而是養殖民族誌迫使 meshwork 面對其生命論語彙中較不突出的面向——養成、捕獲、死亡與商品化如何構成同一張網結。頁碼經月旦知識庫 citation 詮釋資料確認為 107–145。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">直接接收</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_PDF&amp;CNV=PDF&amp;Pname=TJA19-2_S3.pdf&amp;MSID=5" target="_blank">民族所官方 PDF 全文</a> <a href="https://lawdata.com.tw/tw/detail.aspx?no=458537" target="_blank">月旦條目</a></span></div>
+</div>
+<div class="entry" data-id="tja-chang" data-status="ok" data-theme="reception weather">
+  <div class="cite">張怡婷、簡旭伸（2021）。〈量體流動與風的時空政治——以大林蒲的空氣污染為例〉。《臺灣人類學刊》19(2): 147–188。</div>
+  <div class="anno">把 weather-world 改造成有政治經濟厚度的「量體政治」分析：大林蒲居民以感官辨認空氣品質，催生以「保護風」為宗旨的社會運動（保衛西南風）。不是「運用 Ingold」，而是處理其未曾關注的通量流動時空性——「毒物天氣—世界」概念的經驗基礎，也是連回 STS 的橋。頁碼經月旦知識庫 citation 詮釋資料確認為 147–188。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">直接接收</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_PDF&amp;CNV=PDF&amp;Pname=TJA19-2_S4.pdf&amp;MSID=6" target="_blank">民族所官方 PDF 全文</a> <a href="https://lawdata.com.tw/tw/detail.aspx?no=458538" target="_blank">月旦條目</a></span></div>
+</div>
+<div class="entry" data-id="ing-poe-book" data-status="ok" data-theme="reception ground skill">
+  <div class="cite">Ingold, T. (2000). <i>The Perception of the Environment: Essays on Livelihood, Dwelling and Skill</i>. London: Routledge.（482 頁，平裝 ISBN 978-0-415-22832-9；2011 年再版）</div>
+  <div class="anno">dwelling perspective 與 enskilment 的集大成，台灣接收最常徵引的奠基文本（自合併條目拆分，依「一筆條目一個可查證物件」規則）。</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://philpapers.org/rec/INGTPO" target="_blank">PhilPapers 條目</a></span></div>
+</div>
+<div class="entry" data-id="ing-bindings" data-status="ok" data-theme="reception weather">
+  <div class="cite">Ingold, T. (2008). "Bindings against boundaries: Entanglements of life in an open world." <i>Environment and Planning A</i> 40(8): 1796–1810. DOI: 10.1068/a40156</div>
+  <div class="anno">「開放世界之交纏」：棲居世界即生活於開放之中。台灣接收的關鍵錨點——鄭肇祺與張怡婷／簡旭伸兩篇的概念起點。（自合併條目 ing-poe 拆分，依「一筆條目一個可查證物件」規則；書目經 SAGE 原文頁與亞伯丁典藏交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://journals.sagepub.com/doi/abs/10.1068/a40156" target="_blank">SAGE 原文頁</a> <a href="https://abdn.elsevierpure.com/en/publications/bindings-against-boundaries-entanglements-of-life-in-an-open-worl/" target="_blank">亞伯丁典藏</a></span></div>
+</div>
+<div class="entry" data-id="ing-ecomat" data-status="ok" data-theme="reception skill">
+  <div class="cite">Ingold, T. (2012). "Toward an ecology of materials." <i>Annual Review of Anthropology</i> 41: 427–442. DOI: 10.1146/annurev-anthro-081309-145920</div>
+  <div class="anno">材料生態學綱領：批評物質文化研究偏重成品而忽略材料性質與能量流動，主張關注材料被捲入形式生成過程的方式。T4 技藝路徑的理論支點之一。（自 ing-poe 拆分；經 Annual Reviews 官方頁與亞伯丁典藏交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-anthro-081309-145920" target="_blank">Annual Reviews 原文頁</a> <a href="https://abdn.elsevierpure.com/en/publications/toward-an-ecology-of-materials/" target="_blank">亞伯丁典藏</a></span></div>
+</div>
+<div class="entry" data-id="ing-hau" data-status="ok" data-theme="reception">
+  <div class="cite">Ingold, T. (2014). "That's enough about ethnography!" <i>HAU: Journal of Ethnographic Theory</i> 4(1): 383–395. DOI: 10.14318/hau4.1.021</div>
+  <div class="anno">「人類學≠民族誌」之爭的宣言：民族誌一詞被過度使用而失義，把田野工作「民族誌化」會傷害人類學的存有論承諾與教育目的。黃郁茜（2021）「同行式比較」的對話文本。（自 ing-poe 拆分；經 HAU 期刊官方頁與亞伯丁典藏交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.haujournal.org/index.php/hau/article/view/hau4.1.021" target="_blank">HAU 原文頁（OA）</a> <a href="https://abdn.elsevierpure.com/en/publications/thats-enough-about-ethnography/" target="_blank">亞伯丁典藏</a></span></div>
+</div>
+<div class="entry" data-id="ing-corr" data-status="ok" data-theme="reception life">
+  <div class="cite">Ingold, T. (2017). "On human correspondence." <i>Journal of the Royal Anthropological Institute</i> 23(1): 9–27. DOI: 10.1111/1467-9655.12541</div>
+  <div class="anno">「對應」的理論宣言：每一生命都是線束而非團塊；對應立基於習慣（而非意志）、agencing（而非 agency）、注意性（而非意向性）三原則。（自 ing-poe 拆分；經 Wiley 原文頁與亞伯丁 AURA 典藏交叉確認；另見 ing-late 條目之 Consensus 連結。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://rai.onlinelibrary.wiley.com/doi/10.1111/1467-9655.12541" target="_blank">Wiley 原文頁</a> <a href="https://abdn.elsevierpure.com/en/publications/on-human-correspondence/" target="_blank">亞伯丁典藏</a></span></div>
+</div>
+<div class="entry" data-id="rec-gong2022" data-status="ok" data-theme="reception sinophone">
+  <div class="cite">龔卓軍（2022）。〈從身體現象學到毡團存有學：提姆．英格德南藝大講座的哲學反思〉。《藝術觀點ACT》89（2022 年 4 月，「毡團存有・流域織造」專題）。；蔡翔任（2022）。〈生命線條的交纏共生〉。《藝術觀點ACT》89: 21–24（頁碼待同期目次確認）。</div>
+  <div class="anno">藝術／策展圈是 Ingold「4As」在台灣最活躍的接收場域：2022 年 2–3 月龔卓軍策劃「星球生命的四層反省」四場線上講座——四場日期已全數經南藝大官方頁確認：2/24 第一講「大地、天空與其間的地表」、3/3 第二講「籃中世界」、3/10 第三講「論非知與關注」、3/17 第四講「萬物的永續性」（YouTube 直播存檔可查；Ingold 未曾實體訪台——此事實宜作接收史註腳而非重點），成果見 89 期專題，專題名稱經 ACT 官網與唐山書店頁交叉確認為「毡團存有・流域織造——大地術的境身力與群構造」。龔卓軍全文見 ACT 官方網站。（自 rec-gong 合併條目拆分。）</div>
+  <div class="meta"><span class="tag">期刊專題</span><span class="tag">藝術圈接收</span><span class="tag lv">直接接收</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="http://act.tnnua.edu.tw/?p=8896" target="_blank">ACT 官網全文</a> <a href="https://tonsanbookstore.cyberbiz.co/products/4712977743373-89" target="_blank">89 期書目頁（唐山）</a> <a href="https://hesp.tnnua.edu.tw/p/406-1065-37701,r1935.php?Lang=zh-tw" target="_blank">南藝大講座官方頁</a></span></div>
+</div>
+<div class="entry" data-id="rec-gong2006" data-status="ok" data-theme="reception sinophone">
+  <div class="cite">龔卓軍（2006）。《身體部署：梅洛龐蒂與現象學之後》。臺北：心靈工坊。（320 頁，ISBN 978-986-7574-84-8；2007 年中研院年輕學者研究著作獎）</div>
+  <div class="anno">把書寫現象學接上 Ingold 線條理論的本土理論中介：以梅洛龐蒂晚期思想為線索、傅柯的現象學批判為終點。（自 rec-gong 拆分；經豆瓣、金石堂與天地圖書書目交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag">藝術圈接收</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.kingstone.com.tw/basic/2011460011589/" target="_blank">金石堂</a> <a href="https://book.douban.com/subject/2000261/" target="_blank">豆瓣</a></span></div>
+</div>
+<div class="entry" data-id="ing-lines" data-status="ok" data-theme="reception sinophone">
+  <div class="cite">Ingold, T. (2007). <i>Lines: A Brief History</i>. London: Routledge.（xii+186 頁，平裝 ISBN 978-0-415-42427-1）；簡體譯本：《線的文化史》，張曉佳譯，北京聯合出版公司／明室Lucida，2023 年 5 月，288 頁，ISBN 978-7-5596-6742-7。</div>
+  <div class="anno">wayfaring／transport、meshwork／network 之分的奠基文本。簡體譯本存在已確認（豆瓣＋出版社資訊；目前通路顯示已絕版）。就目前可見出版資訊而言，Ingold 主要著作尚未形成台灣繁體譯本體系；中譯書名也未統一——翻譯空白與譯名分歧是本土化須正面處理的基礎工程。</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag">翻譯政治</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://book.douban.com/subject/36333954/" target="_blank">豆瓣（簡體版）</a></span></div>
+</div>
+<div class="entry" data-id="ing-trilogy" data-status="partial" data-theme="reception skill">
+  <div class="cite">Ingold, T. (2013). <i>Making: Anthropology, Archaeology, Art and Architecture</i>. London: Routledge.（平裝 ISBN 978-0-415-56723-7）；(2015). <i>The Life of Lines</i>. London: Routledge.（平裝 ISBN 978-0-415-57686-4）；<i>Correspondences</i>. Cambridge: Polity.（ISBN 978-1-5095-4410-3；通路著錄出版日 2020 年 12 月，部分書目作 2021——引用時依所用版本版權頁為準）</div>
+  <div class="anno">《Lines》之後的三部曲（自合併條目拆分）：製作、線的生命、對應。《Correspondences》出版年在 2020／2021 間著錄歧異，本地圖暫並列兩說，正式引用前請核對版權頁。</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag">可信度 A–B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-partial">部分查證</span><span class="lk"><a href="https://www.taylorfrancis.com/books/mono/10.4324/9780203559055/making-tim-ingold" target="_blank">Making（T&amp;F）</a> <a href="https://www.routledge.com/The-Life-of-Lines/Ingold/p/book/9780415576864" target="_blank">Life of Lines（Routledge）</a> <a href="https://www.politybooks.com/bookdetail?book_slug=correspondences--9781509544103" target="_blank">Correspondences（Polity）</a></span></div>
+</div>
+
+<div class="qbox" data-theme="reception">
+  <b>可發展論文題目（<span class="tag">研究判斷</span>，依審查回饋增補）</b><br>
+  本路徑的接收史可辨明<b>三種接收模式</b>：<b>描述性／方法論接收</b>（把 Ingold 當「說出微妙知覺」的工具，如李威宜導言）、<b>生成本體論接收</b>（以 walking、correspondence 重排研究的存有論前提，如林益仁、黃郁茜）、<b>批判性接收</b>（以台灣經驗反向修正其去政治化侷限，如鄭肇祺、張怡婷／簡旭伸）。三題：<br>
+  1.〈從 TEK 到 dwelling〉——核心問題：當 TEK 從「知識論問題」變成「生命實作問題」，原住民知識的法政主體性如何不被 dwelling 語彙稀釋？（對應 T2 林益仁 2021、T3 官大偉／林益仁諸條目）<br>
+  2.〈毒物天氣—世界〉——核心問題：weather-world 在何種理論改造下能承載工業空污的政治經濟厚度？（對應 T2 張怡婷／簡旭伸 2021、T5 全線）<br>
+  3.〈向死的網結〉——核心問題：以養殖漁業的養成—捕獲—死亡—商品化鏈重寫 meshwork，生命論語彙需要付出什麼代價？（對應 T2 鄭肇祺 2021、概念節點 meshwork）
+</div>
+
+<!-- ============ T3 地面與行走 ============ -->
+<h3 id="theme-ground">T3｜地面與行走：腳的台灣現代性</h3>
+<p class="lead">三條線：被規訓的腳（放足／學校體育／殖民現代性）、神聖化與技能化的腳（進香／山林行走）、商品化與病理化的腳（製鞋王國／糖尿病足）。身體感研究是整條路徑的理論地基——腳的感知不是單一觸覺，而是痛、痠、麻、穩、沉、神聖感與環境感交織的身體感。</p>
+<div class="figrow">
+  <figure><img src="assets/panel-31.webp" alt="赤足踏在泥土上"><figcaption>腳是感知世界的器官：透過接觸、壓力與紋理認識環境。</figcaption></figure>
+  <figure><img src="assets/panel-32.webp" alt="白沙屯媽祖進香隊伍蜿蜒於田野道路"><figcaption>白沙屯媽祖進香：身體行走，信仰與路徑共同生成。</figcaption></figure>
+</div>
+
+<div class="entry" data-id="ing-cog" data-status="ok" data-theme="ground">
+  <div class="cite">Ingold, T. (2004). "Culture on the ground: The world perceived through the feet." <i>Journal of Material Culture</i> 9(3): 315–340. DOI: 10.1177/1359183504046896</div>
+  <div class="anno">第三章期刊原版。批判西方思想「頭重腳輕」、以穿靴歐洲人為人之黃金標準；主張腳是知覺器官、行走是接地的認識方式。台灣的回應方向：腳也是歷史器官、政治器官、宗教器官、勞動器官與醫療器官。書目經 SAGE DOI 與 Consensus（236 次引用）交叉確認。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://doi.org/10.1177/1359183504046896" target="_blank">SAGE DOI</a> <a href="https://consensus.app/papers/details/1004b1c35e6e59f38efc150cf9d932ba/?utm_source=claude_desktop" target="_blank">Consensus 論文頁</a></span></div>
+</div>
+<div class="entry" data-id="bg-yu2006" data-status="ok" data-theme="ground skill">
+  <div class="cite">余舜德（2006）。〈物與身體感的歷史：一個研究取向之探索〉。《思與言》44(1): 5–47。</div>
+  <div class="anno">「身體感」研究取向奠基文獻：身體作為經驗主體感知內外世界的知覺項目；批評感官人類學困於西方五官分類，難以處理「氣」「虛」等經驗——恰可補 Ingold 接地知覺、又挑戰其感官抹平傾向（回應 Howes）。「身體感」刻意不英譯、以拼音 shenti-gan 保留，是華語人類學少數具典範企圖的本土概念。頁碼疑點裁定為 5–47（華藝 DocID 載 44-1-5-47；與同期龔卓軍 49–100 起迄相容）；篇名末字經查為「之探索」非「的探索」，已一併修正。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-fixed">已修正</span><span class="lk"><a href="https://www.airitilibrary.com/Article/Detail?DocID=02588412-200603-44-1-5-47-a" target="_blank">華藝條目</a> <a href="https://tpl.ncl.edu.tw/NclService/JournalContentDetail?SysId=A06057844" target="_blank">國圖期刊索引</a></span></div>
+</div>
+<div class="entry" data-id="bg-tiwu" data-status="fixed" data-theme="ground skill sinophone">
+  <div class="cite">余舜德主編（2008）。《體物入微：物與身體感的研究》。新竹：國立清華大學出版社。（480 頁，ISBN 978-986-84011-3-6）</div>
+  <div class="anno">身體感研究群第一本代表論文集（中研院民族所「身體經驗」研究群成員合著），收入李尚仁〈腐物與骯髒感〉、郭奇正論衛生與城市基礎設施等篇。<b>勘誤：底稿誤植出版者為「中研院民族所」，經查為國立清華大學出版社（2008 年 12 月）。</b>（自合併條目 bg-books 拆分。）</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag">理論地基</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-fixed">已修正</span><span class="lk"><a href="https://www.books.com.tw/products/0010422575" target="_blank">博客來</a> <a href="https://book.douban.com/subject/3788644/" target="_blank">豆瓣</a></span></div>
+</div>
+<div class="entry" data-id="bg-turn" data-status="ok" data-theme="ground skill sinophone">
+  <div class="cite">余舜德主編（2015）。《身體感的轉向》。臺北：國立臺灣大學出版中心。（308 頁，ISBN 978-986-350-119-0；2015 年 12 月，出版中心頁載已絕版）</div>
+  <div class="anno">主張繼「文本轉向」「身體轉向」「感官轉向」之後須有「身體感的轉向」。收入蔡璧名處理莊子工夫與焦點／支援意識（Polanyi 架構）的篇章；「身體與自然」叢書序由楊儒賓撰寫——研究群在系譜上與儒家身體觀／體知傳統交織，是連接漢語思想橫貫帶的橋樑。（自 bg-books 拆分；經臺大出版中心官方頁與博客來交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag">理論地基</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://press.ntu.edu.tw/tw/publish/show.php?act=book&amp;refer=ntup_book00840&amp;page=10&amp;field=bdom" target="_blank">臺大出版中心</a> <a href="https://www.books.com.tw/products/0010703466/" target="_blank">博客來</a></span></div>
+</div>
+<div class="entry" data-id="bg-jaa74" data-status="ok" data-theme="ground skill">
+  <div class="cite">《考古人類學刊》74 期「感同身受：日常生活的身體感」專號（2011 年 6 月，國立臺灣大學人類學系）。另有 65 期「物與身體感」專號（2006 年 6 月，顏學誠導言〈體物入微〉）。</div>
+  <div class="anno">身體感研究群在台灣期刊的兩個發表軌道專號（自 bg-books 拆分）。74 期導言全文見臺大人類學系官方頁。65 期專號為「有機增補」：查證 74 期時於期刊目錄索引發現，顯示「體物入微」一詞最早作為 2006 年專號導言標題出現——研究群系譜可前推至 2006。<span class="tag">研究判斷</span></div>
+  <div class="meta"><span class="tag">期刊專號</span><span class="tag">有機增補（65期）</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="http://homepage.ntu.edu.tw/~anthro/download/journal/74-1.pdf" target="_blank">74 期導言 PDF（臺大）</a> <a href="https://www.airitilibrary.com/Publication/PublicationIndex/00775843" target="_blank">華藝期刊目錄</a></span></div>
+</div>
+<div class="entry" data-id="walk-chang" data-status="ok" data-theme="ground">
+  <div class="cite">張思菁（2018）。〈白沙屯媽祖徒步進香客的身體感知與實踐〉。《大專體育學刊》20(4): 295–308。DOI: 10.5297/ser.201812_20(4).0001（2018 年 12 月）</div>
+  <div class="anno">以現象學式民族誌深描長程徒步中「踩踏入地的腳步、重心移轉、肌肉緊繃與疼痛」，援引動覺共感與「身踏入地」（grounding）——與第三章最直接呼應的台灣文獻。卷期頁碼與 DOI 經華藝條目交叉確認。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.airitilibrary.com/Article/Detail/15633470-201812-201901230007-201901230007-295-308" target="_blank">華藝條目</a> <a href="https://doi.org/10.5297/ser.201812_20(4).0001" target="_blank">DOI</a></span></div>
+</div>
+<div class="entry" data-id="walk-lu2007" data-status="ok" data-theme="ground">
+  <div class="cite">呂玫鍰（2007）。〈傳統的再製與創新：白沙屯媽祖進香「行轎」儀式與徒步體驗之分析〉。《民俗曲藝》158: 39–100。（2007 年 12 月）</div>
+  <div class="anno">徒步體驗與「將身體交付給媽祖」的儀式分析。核心翻轉：媽祖進香把 Ingold 所批判的「貼地低姿態」重新神聖化——鑽轎底的伏地不是退化而是接觸，疼痛不是失敗而是感應，腳是宗教經驗的生成器官。（自合併條目拆分；經華藝條目與作者清大人類所頁交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="badge st-pending">詮釋待核全文</span><span class="lk"><a href="https://www.airitilibrary.com/Article/Detail/10251383-200712-x-158-39-100-a" target="_blank">華藝條目</a> <a href="https://www.anth.nthu.edu.tw/%E5%B0%88%E4%BB%BB%E5%B8%AB%E8%B3%87/%E5%91%82%E7%8E%AB%E9%8D%B0/" target="_blank">作者清大人類所頁</a></span></div>
+</div>
+<div class="entry" data-id="walk-lu2008" data-status="ok" data-theme="ground">
+  <div class="cite">呂玫鍰（2008）。〈社群建構與浮動的邊界：以白沙屯媽祖進香為例〉。《臺灣人類學刊》6(1): 31–76。</div>
+  <div class="anno">進香社群的建構與浮動邊界——共享的徒步經驗與情感如何生成認同。與 wayfaring 的「同行社會性」可直接對話。（自 walk-lu 合併條目拆分；篇名副標補全；經民族所官方摘要頁確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_Abstract&amp;CNV=Abstract&amp;Pname=7ce87c9b-5db9.pdf&amp;MSID=3" target="_blank">民族所摘要頁</a></span></div>
+</div>
+<div class="entry" data-id="walk-changhsun" data-status="ok" data-theme="ground">
+  <div class="cite">張珣（2003）。《文化媽祖：臺灣媽祖信仰研究論文集》。臺北：中央研究院民族學研究所。</div>
+  <div class="anno">進香研究奠基系譜的代表作擇定（<span class="tag">研究判斷</span>）：本論文集彙整作者大甲媽祖進香系列研究，是進入「香火、割火、身體實踐」問題群的標準入口；單篇引用請回到原刊。（自 walk-lu 合併條目拆分；經民族所研究人員頁與 Google Books 交叉確認。）官方資料補充：「大甲媽祖遶境進香」已列國家「重要民俗」，官方登錄資訊見文資局國家文化資產網（二手來源所載指定年代有 2008／2011 等不同說法，引用前以官方頁公告欄位為準）。</div>
+  <div class="meta"><span class="tag">書籍（論文集）</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/Researcher/Detail?id=480615D7-EF8D-4E44-A2FD-C034385D2639&amp;filter=AF0F4F36-5948-4D38-A3EB-7533EDF78E6C&amp;SiteID=6d0e3b6b-4623-45b4-ba6e-395e3b79eae0" target="_blank">民族所研究人員頁</a> <a href="https://books.google.com/books/about/%E6%96%87%E5%8C%96%E5%AA%BD%E7%A5%96.html?id=-RBvLzJQPn0C" target="_blank">Google Books</a> <a href="https://nchdb.boch.gov.tw/assets/overview/folklore/20100618000008" target="_blank">文資局重要民俗登錄頁</a></span></div>
+</div>
+<div class="entry" data-id="grd-hong" data-status="ok" data-theme="ground critique">
+  <div class="cite">洪郁如著，吳佩珍、吳亦昕譯（2017[2001]）。《近代台灣女性史：日治時期新女性的誕生》。臺北：國立臺灣大學出版中心。（2017 年 6 月）</div>
+  <div class="anno">「被規訓的腳」文獻群核心：從末代纏足世代、解纏足世代到新式女子教育世代——「解放腳」同時是殖民身體治理的具體歷史。纏足統計查證結果：1905 年臨時臺灣戶口調查載纏足者 80 萬 616 人、約佔女性人口 56.9%（有權威依據）；1915 年比例則有 17.36% 與約 21% 兩說（可能因「纏足／解纏足」分類與分母定義不同），引用前須以《臨時臺灣戶口調查》原始報告或本書核對。（自 grd-colonial 合併條目拆分；經臺大出版中心官方頁與博客來交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍（譯本）</span><span class="tag">殖民身體</span><span class="tag lv">推論性連結</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://press.ntu.edu.tw/tw/publish/show.php?act=book&amp;refer=ntup_book00962&amp;field=bser" target="_blank">臺大出版中心</a> <a href="https://www.books.com.tw/products/0010755348" target="_blank">博客來</a></span></div>
+</div>
+<div class="entry" data-id="grd-yu2000" data-status="ok" data-theme="ground critique">
+  <div class="cite">游鑑明（2000）。〈日治時期臺灣學校女子體育的發展〉。《中央研究院近代史研究所集刊》33: 1–75。（2000 年 6 月）</div>
+  <div class="anno">學校體育如何把女學生的身體（包括腳與步態）納入殖民現代性的訓練體系。（自 grd-colonial 拆分；刊名全銜補正。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">殖民身體</span><span class="tag lv">推論性連結</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://modernchina.org/scholar/youjianming" target="_blank">作者著作目錄</a></span></div>
+</div>
+<div class="entry" data-id="grd-lin2018" data-status="ok" data-theme="ground critique">
+  <div class="cite">林玫君（2018）。〈日治時期的臺灣高等女學校學生與臨海教育〉。《師大臺灣史學報》11: 55–97。（2018 年 12 月 31 日出刊）</div>
+  <div class="anno">臨海教育（遠泳會、臨海學校）中的身體訓練——殖民身體工程的海濱版本。原疑點已裁定：卷期頁碼與臺史所官方全文 PDF 完全相符。（自 grd-colonial 拆分。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">殖民身體</span><span class="tag lv">推論性連結</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.taih.ntnu.edu.tw/wp-content/uploads/2020/06/%E6%9E%97%E7%8E%AB%E5%90%9B%EF%BC%8C%E3%80%88%E6%97%A5%E6%B2%BB%E6%99%82%E6%9C%9F%E7%9A%84%E8%87%BA%E7%81%A3%E2%BE%BC%E7%AD%89%E2%BC%A5%E5%AD%B8%E6%A0%A1%E5%AD%B8%E7%94%9F%E8%88%87%E8%87%A8%E6%B5%B7%E6%95%99%E8%82%B2%E3%80%89%E3%80%8A%E5%B8%AB%E5%A4%A7%E8%87%BA%E7%81%A3%E5%8F%B2%E5%AD%B8%E5%A0%B1%E3%80%8B%EF%BC%8C11%EF%BC%882018.12%EF%BC%89%EF%BC%8C%E9%A0%8155-97.pdf" target="_blank">臺史所官方 PDF 全文</a></span></div>
+</div>
+<div class="entry" data-id="grd-ko" data-status="fixed" data-theme="ground critique sinophone">
+  <div class="cite">高彥頤（Dorothy Ko）著，苗延威譯（2007）。《纏足：「金蓮崇拜」盛極而衰的演變》。臺北：左岸文化。（原著 <i>Cinderella's Sisters: A Revisionist History of Footbinding</i>, 2005）</div>
+  <div class="anno">纏足史的修正主義經典：金蓮崇拜的盛衰不是「落後→解放」直線敘事。<b>勘誤：底稿將左岸中譯版年代誤植為 2005（實為原著英文版年代）；中譯版經查為 2007 年 5 月。</b>（自 grd-colonial 拆分；經博客來與豆瓣交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍（譯本）</span><span class="tag">殖民身體</span><span class="tag lv">推論性連結</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-fixed">已修正</span><span class="lk"><a href="https://www.books.com.tw/products/0010368056" target="_blank">博客來</a> <a href="https://book.douban.com/subject/2143188/" target="_blank">豆瓣</a></span></div>
+</div>
+<div class="entry" data-id="grd-shoe" data-status="fixed" data-theme="ground critique skill">
+  <div class="cite">謝國雄（1989）。〈黑手變頭家：台灣製造業中的階級流動〉。《台灣社會研究季刊》2(2): 11–54。＋ 製鞋產業（寶成等）與全球商品鏈研究（潘美玲）。</div>
+  <div class="anno">「商品化的腳」與「囚腳之物的全球工廠」命題的文獻基礎：Ingold 把鞋視為囚禁腳的文明技術物，台灣則是為全世界生產此技術物的代工基地——製鞋勞動身體與被生產的鞋構成「以腳造囚腳之物」的雙重身體政治，把現象學批判拉進全球資本主義與勞動史。出版年疑點裁定：作者本人著作目錄自引為 1989（第2卷，11–54）；華藝出版資料載該期（2:2）實際出版於 1990 年 10 月。建議引用作 1989，必要時加註「實際出版 1990」。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">推論性連結</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-fixed">已修正</span><span class="lk"><a href="https://www.ios.sinica.edu.tw/people/personal/etshieh/%E9%BB%91%E6%89%8B%E8%AE%8A%E9%A0%AD%E5%AE%B6.pdf" target="_blank">中研院社會所作者全文 PDF</a> <a href="https://www.airitilibrary.com/Publication/alDetailedMesh?docid=10219528-199010-2-2-11-54-a" target="_blank">華藝條目</a></span></div>
+</div>
+<div class="entry" data-id="ind-kuan2013" data-status="ok" data-theme="ground reception">
+  <div class="cite">官大偉（2013）。〈原住民生態知識與流域治理——以泰雅族 Mrqwang 群之人河關係為例〉。《地理學報》70: 69–105。DOI: 10.6161/jgs.2013.70.04（2013 年 9 月）</div>
+  <div class="anno">石門水庫上游泰雅族 Mrqwang 群的人河關係與流域治理研究，與 dwelling 高度共振。理論張力：gaga 的「規範性」與 dwelling 的「生成性」之間如何互相校準；原住民山林行走不是「天生接地」，而是在殖民、狩獵禁制、土地權與國家林業治理中被學習、壓抑、重啟與再政治化的技能——dwelling 必須面對殖民史與法政主體性。（自合併條目拆分；經華藝條目與政大學術集成交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="badge st-pending">詮釋待核全文</span><span class="lk"><a href="https://doi.org/10.6161/jgs.2013.70.04" target="_blank">DOI</a> <a href="https://www.airitilibrary.com/Publication/alDetailedMesh?docid=04945387-201309-201311060002-201311060002-69-105" target="_blank">華藝條目</a> <a href="https://ah.nccu.edu.tw/item?item_id=71720" target="_blank">政大學術集成</a></span></div>
+</div>
+<div class="entry" data-id="ind-kuan2008" data-status="ok" data-theme="ground reception">
+  <div class="cite">官大偉、林益仁（2008）。〈什麼傳統？誰的領域？：從泰雅族馬里光流域傳統領域調查經驗談空間知識的轉譯〉。《考古人類學刊》69: 109–142。（2008 年 12 月「當代南島社會的地景批判研究」專號）</div>
+  <div class="anno">傳統領域調查中的空間知識轉譯問題——TEK 與國家製圖技術相遇的第一手反省。（自 ind-kuan 合併條目拆分；篇名副標補全；經期刊目錄索引與專號頁碼連續性〔9–44／45–107／109–142〕交叉檢核。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.douban.com/note/769865492/" target="_blank">期刊 1–90 期目錄索引</a> <a href="https://www.airitilibrary.com/Publication/PublicationIndex/00775843" target="_blank">華藝期刊目錄</a></span></div>
+</div>
+<div class="entry" data-id="ind-wang2003" data-status="ok" data-theme="ground reception">
+  <div class="cite">王梅霞（2003）。〈從 gaga 的多義性看泰雅族的社會性質〉。《臺灣人類學刊》1(1): 77–104。（2003 年 6 月）</div>
+  <div class="anno">以「gaga 為觀念的實踐過程」整合既有研究的不同解釋——泰雅研究的基準文獻，為「gaga × dwelling」對話提供民族誌地基。（自 ind-kuan 合併條目拆分；經華藝條目與 NTU Scholars 交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">推論性連結</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.airitilibrary.com/Publication/alDetailedMesh?docid=P20140616002-200306-201406190013-201406190013-77-104" target="_blank">華藝條目</a> <a href="https://scholars.lib.ntu.edu.tw/handle/123456789/302446" target="_blank">NTU Scholars</a></span></div>
+</div>
+<div class="entry" data-id="ind-kao2014" data-status="ok" data-theme="ground skill">
+  <div class="cite">高信傑（2014）。〈「康莊大道」：雅美文化中的人與「勞動」〉。《臺灣人類學刊》12(2): 1–52。（2014 年 12 月；國圖期刊篇目載「頁 1 及 3–52」）</div>
+  <div class="anno">雅美（達悟）人觀與勞動的民族誌。達悟拼板舟「無設計圖、依木材特性選料、父祖種樹兒孫取材」與 correspondence／taskscape 高度貼合——但正因太貼合，更須追問：誰有資格造舟？觀光、補助、部落權威與文化代表權如何介入？避免本質化、去歷史化。（自 ind-tao 合併條目拆分；經國圖期刊篇目與月旦條目交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="badge st-pending">詮釋待核全文</span><span class="lk"><a href="http://lawdata.com.tw/tw/detail.aspx?no=217375" target="_blank">月旦條目</a></span></div>
+</div>
+<div class="entry" data-id="ind-hu2008" data-status="ok" data-theme="ground skill">
+  <div class="cite">胡正恆（2008）。"'Spirits Fly Slow' (pahapahad no anito): Traditional Ecological Knowledge and Cultural Revivalism in Lan-Yu."《考古人類學刊》69: 45–107。（2008 年 12 月專號）</div>
+  <div class="anno">蘭嶼傳統生態知識與文化復振的代表性研究。（自 ind-tao 拆分；經期刊目錄索引與專號頁碼連續性檢核。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.douban.com/note/769865492/" target="_blank">期刊 1–90 期目錄索引</a></span></div>
+</div>
+<div class="entry" data-id="ind-taiban2008" data-status="ok" data-theme="ground">
+  <div class="cite">台邦・撒沙勒（2008）。〈傳統領域的裂解與重構：kucapungane 人地圖譜與空間變遷的再檢視〉。《考古人類學刊》69: 9–44。（2008 年 12 月專號）</div>
+  <div class="anno">魯凱 kucapungane（好茶）人地關係與傳統領域空間變遷——「行走的領域」如何被殖民與遷村裂解、又如何重構。（自 ind-tao 拆分；篇名補全；經期刊目錄索引與專號頁碼連續性檢核。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.douban.com/note/769865492/" target="_blank">期刊 1–90 期目錄索引</a></span></div>
+</div>
+<div class="entry" data-id="ind-lin2020" data-status="ok" data-theme="ground reception weather">
+  <div class="cite">Lin, Y.-R., et al. (2020). "Situating Indigenous Resilience: Climate Change and Tayal's 'Millet Ark' Action in Taiwan." <i>Sustainability</i> 12(24): 10676. DOI: 10.3390/su122410676</div>
+  <div class="anno">小米方舟：泰雅原住民食物韌性與氣候變遷的協作研究，林益仁「照顧」生態學的英文發表軌道，連接 TEK 與永續論述。（自 ind-tao 拆分；經 MDPI 官方頁〔開放取用〕與 RePEc 交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">直接接收</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.mdpi.com/2071-1050/12/24/10676" target="_blank">MDPI 原文頁（OA）</a></span></div>
+</div>
+
+<div class="qbox" data-theme="ground">
+  <b>可發展論文題目（<span class="tag">研究判斷</span>，依審查回饋增補）</b><br>
+  建議以「<b>放足＋進香＋製鞋</b>」為三案例組合，構成歷史—宗教—資本主義的三重分析。三題：<br>
+  1.〈囚腳與放腳：腳的殖民現代性〉——核心問題：日治放足運動同時是身體解放與殖民治理，「被解放的腳」如何成為國家可測量、可動員的對象？（對應本路徑洪郁如、游鑑明、林玫君、高彥頤諸條目）<br>
+  2.〈遶境腳：神聖接地〉——核心問題：徒步進香與鑽轎底如何翻轉「貼地姿態的卑賤」，把 wayfaring 神聖化為台灣特有的接地技能？（對應張思菁 2018、呂玫鍰 2007／2008、張珣條目）<br>
+  3.〈囚腳之物的全球工廠〉——核心問題：製鞋王國的生產線與「腳的感知」處於什麼物質—政治關係？台灣如何同時是 Ingold 式赤足知覺的反面教材與物質基礎？（對應 grd-shoe 條目與 T4 勞動批判線）
+</div>
+
+<!-- ============ T4 技藝與材料 ============ -->
+<h3 id="theme-skill">T4｜技藝與材料：活技藝與被抽取的技藝</h3>
+<p class="lead">四種技藝政治：保存化（文資傳習）、族群化（達悟造舟）、階級化（黑手師傅）、感官化（製茶身體感）。統攝問題：技藝在什麼條件下仍能作為 correspondence 活著？又在什麼條件下被制度、資本或評分系統抽取成可計量、可展示、可交易的能力？</p>
+<div class="figrow">
+  <figure><img src="assets/panel-41.webp" alt="鋸木板，鋸子沿木紋線前進"><figcaption>鋸木板不是征服材料，而是回應木紋的走向。</figcaption></figure>
+  <figure><img src="assets/panel-42.webp" alt="工匠專注於手中的工件"><figcaption>技藝是與材料的「對應」（correspondence），而非單向控制。</figcaption></figure>
+</div>
+
+<div class="entry" data-id="ing-textility" data-status="ok" data-theme="skill">
+  <div class="cite">Ingold, T. (2010). "The textility of making." <i>Cambridge Journal of Economics</i> 34(1): 91–102. DOI: 10.1093/cje/bep042（線上先行出版 2009 年 7 月；收入《Being Alive》第17章；第4章原版見 Dakers 編 <i>Defining Technological Literacy</i>, Palgrave, 2006）</div>
+  <div class="anno">第四章論證的本體論升級版：反對形質論，主張形式生成於力場與材料流動，提出 textility 對抗 architectonic。台灣詰問：大木匠「持篙落篙」既設計又現場施作，恰可修正其過於二元的歷史敘事。書目經牛津學術（OUP）官方頁與亞伯丁典藏交叉確認。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://academic.oup.com/cje/article-abstract/34/1/91/1696932" target="_blank">OUP 原文頁</a> <a href="https://abdn.elsevierpure.com/en/publications/the-textility-of-making/" target="_blank">亞伯丁典藏</a></span></div>
+</div>
+<div class="entry" data-id="ing-plank" data-status="ok" data-theme="skill">
+  <div class="cite">Ingold, T. (2011). "Walking the plank: Meditations on a process of skill." In <i>Being Alive</i>, ch. 4. London: Routledge. 章節 DOI: 10.4324/9780203818336-11（原版：In J. R. Dakers (ed.), <i>Defining Technological Literacy</i>, pp. 65–80. New York: Palgrave Macmillan, 2006. DOI: 10.1057/9781403983053_6）</div>
+  <div class="anno">第四章：以鋸木板說明技術技能的三個根本主題——工具使用的行進性、實作者—工具—材料的協同、知覺與行動的耦合；並論技藝在技術工程化世界中的命運。十篇核心必讀之一，章節頁與原版出處經 T&amp;F 與 Springer 官方頁交叉確認。</div>
+  <div class="meta"><span class="tag">專章</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.taylorfrancis.com/chapters/mono/10.4324/9780203818336-11/walking-plank-meditations-process-skill-tim-ingold" target="_blank">T&amp;F 章節頁</a> <a href="https://link.springer.com/chapter/10.1057/9781403983053_6" target="_blank">Springer（2006 原版）</a></span></div>
+</div>
+<div class="entry" data-id="bg-tea" data-status="ok" data-theme="skill ground">
+  <div class="cite">余舜德（2013）。〈台灣凍頂烏龍茶之工匠技藝、科技與現代性〉。《臺灣人類學刊》11(1): 123–153。（2013 年 7 月）</div>
+  <div class="anno">參考書目經底稿核實徵引 Ingold（1997），是「本地研究已援引 Ingold」的可靠案例。「看天做茶、看茶做茶」：濕度、茶菁含水、發酵氣味、手觸質感都在回話——身體感把「注意力的教育」具體化為味覺、嗅覺、火候與材料回話的複合感知，是 enskilment 的台灣化擴充而非翻譯。卷期頁碼經華藝條目與民族所官方摘要頁（TJA11-1-5）交叉確認。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">直接接收</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="badge st-pending">詮釋待核全文</span><span class="lk"><a href="https://www.airitilibrary.com/Publication/alDetailedMesh?docid=P20140616002-201307-201406160006-201406160006-123-153" target="_blank">華藝條目</a> <a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_Abstract&amp;CNV=Abstract&amp;Pname=C_ABS_TJA11-1-5_20131003104014.pdf&amp;MSID=7" target="_blank">民族所摘要頁</a></span></div>
+</div>
+<div class="entry" data-id="skill-craft" data-status="ok" data-theme="skill">
+  <div class="cite">文化部（2022/01/10 新聞稿）：國家級重要傳統工藝 21 項 29 位保存者、重要傳統表演藝術 19 項 30 位保存者（截至 2021/12）；「重要傳統藝術保存者傳習計畫」（師徒制）。＋ 國立臺灣工藝研究發展中心（NTCRI）；顏水龍《臺灣工藝》（1952）。</div>
+  <div class="anno">「保存化的技藝」制度場域。Ingold 式問題：若技藝是沿材料與情境不斷生成的能力，「保存技藝」究竟在保存什麼？須公允表述：文資制度同時具有支撐活技藝與將技藝項目化、成果化、展示化的雙重效果——不是技藝的敵人，而是技藝被重新制度化的環境。數字經文化部官方新聞稿（2022/01/10）與中央社報導交叉確認：截至 2021 年 12 月，重要傳統工藝 21 項 29 位、重要傳統表演藝術 19 項 30 位保存者。</div>
+  <div class="meta"><span class="tag">官方資料</span><span class="tag">文資</span><span class="tag lv">推論性連結</span><span class="tag">可信度 C（官方公告）</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.moc.gov.tw/information_250_142414.html" target="_blank">文化部新聞稿</a> <a href="https://www.cna.com.tw/news/acul/202201100093.aspx" target="_blank">中央社</a> <a href="https://www.ntcri.gov.tw/" target="_blank">NTCRI 工藝中心</a></span></div>
+</div>
+<div class="entry" data-id="skill-labor" data-status="ok" data-theme="skill critique">
+  <div class="cite">謝嘉心（2021）。《我的黑手父親：港都拖車師傅的工作與生命》。臺北：游擊文化。（2021 年 11 月，ISBN 978-986-06604-4-9；改寫自碩論《「做師傅就好」：港都黑手師傅的生命、工作與社會流動》，清華社會所 2014——碩論 DOI 引用前請於 NDLTD 確認）＋ 謝國雄《純勞動》（1997）、林崇熙拼裝車研究、侯念祖鹿港小木工匠研究（台灣工匠研究譜系，待逐筆查證）。</div>
+  <div class="anno">「階級化的技藝」核心文獻。關鍵論點：Ingold 說技藝不是規則的執行；黑手師傅讓我們進一步看到，技藝也不是純粹自由的對應，而是在階級、學歷污名、外包與工業風險中被承認、貶低、使用與剝削的身體能力——「被抽取的技藝」，Ingold 的階級盲點由此補上。專書經游擊文化官方頁與博客來交叉確認，碩論題名補全（曾獲台灣社會學會碩士論文佳作等三獎）。</div>
+  <div class="meta"><span class="tag">書籍＋學位論文</span><span class="tag lv">推論性連結</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://guerrillalibratory.wordpress.com/2021/10/26/%e3%80%8a%e6%88%91%e7%9a%84%e9%bb%91%e6%89%8b%e7%88%b6%e8%a6%aa%ef%bc%9a%e6%b8%af%e9%83%bd%e6%8b%96%e8%bb%8a%e5%b8%ab%e5%82%85%e7%9a%84%e5%b7%a5%e4%bd%9c%e8%88%87%e7%94%9f%e5%91%bd%e3%80%8b/" target="_blank">游擊文化官方頁</a> <a href="https://www.books.com.tw/products/0010906624" target="_blank">博客來</a></span></div>
+</div>
+<div class="entry" data-id="skill-shieh1992" data-status="ok" data-theme="skill critique">
+  <div class="cite">謝國雄（1992）。〈隱形工廠：台灣的外包點與家庭代工〉。《台灣社會研究季刊》13: 137–190。</div>
+  <div class="anno">【查證過程中有機增補】查證〈黑手變頭家〉時，於作者著作目錄發現本篇（附作者提供之全文 PDF）。「隱形工廠」描繪外包點與家庭代工如何承接彈性生產——正是「被抽取的技藝」命題的制度面前史：技藝在外包網絡中被切割為可發包、可計件的勞動，與 correspondence 的整全工匠圖像形成最尖銳的對照。可與謝嘉心（2021）並讀，構成「黑手技藝的政治經濟學」文獻軸線。<span class="tag">研究判斷</span></div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">有機增補</span><span class="tag lv">推論性連結</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.ios.sinica.edu.tw/people/personal/etshieh/%E9%9A%B1%E5%BD%A2%E5%B7%A5%E5%BB%A0.pdf" target="_blank">中研院社會所作者全文 PDF</a></span></div>
+</div>
+<div class="entry" data-id="skill-arch" data-status="ok" data-theme="skill">
+  <div class="cite">徐明福、蔡侑樺（2020）。《大木作：臺灣傳統漢式建築——類型・計畫・施作》。臺中：文化部文化資產局。＋ 勞動部勞動力發展署（2022/11/26 新聞稿）：第 46 屆國際技能競賽 6 金 13 銀 6 銅 17 優勝。</div>
+  <div class="anno">大木作「持篙測畫」是 textility vs architecture 最直接的台灣對話場。技職競賽則須兩面並陳：一方面把技藝轉化為可評分的標準化任務，另一方面也迫使選手在高壓時間與材料條件中養成精密注意力——不能只當反例。《大木作》經文資局官方出版頁與 GPI 政府出版品網確認（2020 年 7 月出版）；競賽獎牌數（6 金 13 銀 6 銅 17 優勝，獎牌積分世界第三）經勞動力發展署官方新聞稿確認。</div>
+  <div class="meta"><span class="tag">書籍＋官方資料</span><span class="tag lv">推論性連結</span><span class="tag">可信度 B–C</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.boch.gov.tw/bochpublication_195_306.html" target="_blank">文資局出版頁</a> <a href="https://gpi.culture.tw/books/1010900639" target="_blank">GPI 書目</a> <a href="https://www.wda.gov.tw/News_Content.aspx?n=31&amp;s=4198" target="_blank">勞動力發展署新聞稿</a></span></div>
+</div>
+
+<div class="qbox" data-theme="skill">
+  <b>可發展論文題目（<span class="tag">研究判斷</span>，依審查回饋增補）</b><br>
+  本路徑的主對立是「<b>活技藝 vs 被抽取的技藝</b>」：技藝作為與材料持續對應的生命能力（Ingold 的 correspondence），與技藝被制度、資本、評分系統抽取為可計量、可展示、可交易的能力——文資保存、技職競賽、外包體制是三個抽取現場，但每個現場同時也支撐技藝存續，須兩面並陳。三題：<br>
+  1.〈保存活技藝：人間國寶傳習〉——核心問題：若技藝是沿材料與情境生成的，傳習計畫「保存」的是技藝本身，還是技藝的制度化替身？（對應 skill-craft 條目與 taskscape 概念節點）<br>
+  2.〈沒有設計圖的造舟〉——核心問題：達悟拼板舟與大木作「持篙」如何修正 textility vs architecture 的二元敘事——設計與對應可以共存於同一雙手？（對應 skill-arch 條目、T2 黃郁茜 2021）<br>
+  3.〈被抽取的技藝：黑手與階級盲點〉——核心問題：當技藝在階級污名、外包與工業風險中被承認又被貶低，Ingold 的工匠圖像缺了什麼？（對應 skill-labor、skill-shieh1992 條目）
+</div>
+
+<!-- ============ T5 天氣與環境政治 ============ -->
+<h3 id="theme-weather">T5｜天氣、空氣與環境政治：毒物天氣—世界</h3>
+<p class="lead">把 weather-world 從哲學概念落實為政治分析：風是被工業、治理、風向與居民感官共同構成的政治性介質。大林蒲研究（見 T2 張怡婷／簡旭伸條目）是經驗基礎。</p>
+
+<div class="entry" data-id="ing-weather" data-status="ok" data-theme="weather sinophone">
+  <div class="cite">Ingold, T. (2007). "Earth, sky, wind, and weather." <i>Journal of the Royal Anthropological Institute</i> 13(S1): S19–S38. DOI: 10.1111/j.1467-9655.2007.00401.x（改寫為《Being Alive》第9章，pp. 115–125）</div>
+  <div class="anno">weather-world 與 medium 概念出處：人與物憑藉共同浸沒於介質的生成流動而相關連，生命的根本是呼吸。漢語對話面：氣論「流行之存在」幾乎是其漢語對應。頁碼經 Wiley 官方頁與亞伯丁典藏交叉確認為 S19–S38；部分聚合資料庫誤植為 128–138，請勿沿用。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://rai.onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9655.2007.00401.x" target="_blank">Wiley 原文頁</a> <a href="https://abdn.elsevierpure.com/en/publications/earth-sky-wind-and-weather" target="_blank">亞伯丁典藏</a></span></div>
+</div>
+<div class="entry" data-id="wx-jobin" data-status="ok" data-theme="weather critique reception">
+  <div class="cite">彭保羅（Paul Jobin）著，郭育安譯（2022）。〈往復書簡：Ingold 與台灣的生態對話〉。科技．人文．涵多路（STS 部落格）。</div>
+  <div class="anno">南藝大講座第三講對話人的一手紀錄。以 RCA 電子廠女工訴訟、蘭嶼核廢、亞泥礦場等案例，質疑 Ingold 詩意的「暴露」（exposure）如何整合工業毒害的現實風險——「把政治經濟織回 meshwork」路線的範本。二手詮釋性質，正式引用應回到一手論文。實際網址已查得並確認可達。</div>
+  <div class="meta"><span class="tag">部落格（一手對話紀錄）</span><span class="tag lv">直接接收</span><span class="tag">可信度 C</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://stshandoru.tw/ingold_ecology_correspondence/" target="_blank">科技．人文．涵多路 原文</a></span></div>
+</div>
+<div class="entry" data-id="wx-fengshui" data-status="pending" data-theme="weather sinophone">
+  <div class="cite">Maurice Freedman 與 Emily Ahern 的風水—宗族經典人類學論辯；台灣風水民族誌（「風水與報應」一文作者卷期查證中）。</div>
+  <div class="anno">「風水」字面即 wind-water，與 medium、weather-world 有結構對應；但 Freedman 以降的辯論顯示風水之氣有方位吉凶、道德報應、可被操弄以謀私利，深嵌宗族政治經濟——恰是 weather-world 所缺、Howes 式批判要補的「感官／環境的社會政治性」。<b>查證註記：「風水與報應」一文經多次檢索未能查得確切篇目，該說法未能核實，引用前請回查；另查得相關線索〈風水作為一種空間的實踐：一個人類學的反思〉（民族所數位典藏 PDF，作者卷期請依全文首頁確認）。</b></div>
+  <div class="meta"><span class="tag">書籍＋期刊論文</span><span class="tag lv">推論性連結</span><span class="tag">可信度 D（未能核實）</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-partial">部分查證</span><span class="lk"><a href="https://ianthro.ioe.sinica.edu.tw/wp-content/uploads/2017/07/ettja005-2-003-1.pdf" target="_blank">民族所典藏 PDF（線索）</a></span></div>
+</div>
+<div class="entry" data-id="wx-bufe" data-status="ok" data-theme="weather">
+  <div class="cite">Bufe, A., Hovius, N., et al. (2021). "Co-variation of silicate, carbonate and sulfide weathering drives CO₂ release with erosion." <i>Nature Geoscience</i> 14(4): 211–216. DOI: 10.1038/s41561-021-00714-3（注意：本文於 2024 年發布作者更正，引用時應一併註明）</div>
+  <div class="anno">台灣南部頁岩—砂岩侵蝕梯度的一手地球科學證據：硫化物與碳酸鹽風化隨侵蝕加速，快速侵蝕地形的 CO₂ 淨排放可達慢侵蝕地形封存速率的兩倍以上——使台灣成為檢驗 weather-world 與 Latour 臨界區（critical zone）對讀的地質場域。注意：Ingold 與 Latour 是否曾正面互引此二概念，未能證實。書目經 Nature 官方頁與 GFZ 機構典藏交叉確認。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">地球科學</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.nature.com/articles/s41561-021-00714-3" target="_blank">Nature 原文頁</a> <a href="https://www.nature.com/articles/s41561-024-01426-0" target="_blank">2024 作者更正</a></span></div>
+</div>
+
+<!-- ============ X1 漢語身體—宇宙論 ============ -->
+<h3 id="theme-sinophone">橫貫帶一｜漢語身體—宇宙論：整合脊椎</h3>
+<p class="lead">前四場對話繞過的「漢語理論大陸」。會通與張力並陳：漢語身體觀承載「感應」的倫理—宇宙論秩序與「道」的目的性，Ingold 刻意反目的論——這個張力才是最有理論生產力之處。</p>
+<div class="figrow">
+  <figure><img src="assets/panel-51.webp" alt="庖丁解牛水墨畫"><figcaption>庖丁解牛：順著筋理的線，技進於道。</figcaption></figure>
+  <figure><img src="assets/panel-52.webp" alt="書法筆勢與山水中的墨線"><figcaption>書法的「筆勢」：一筆未完，氣脈連綿，線在過程中生生不息。</figcaption></figure>
+</div>
+
+<div class="entry" data-id="sin-yang1996" data-status="ok" data-theme="sinophone">
+  <div class="cite">楊儒賓（1996）。《儒家身體觀》。臺北：中央研究院中國文哲研究所籌備處。（462 頁，ISBN 957-671-470-2；2019 年上海古籍出版社出簡體版）</div>
+  <div class="anno">中文學界從身體觀進入中國哲學的開創之作：身體是「形、氣、神（心）一元三相」構造，以孟子「踐形」觀為核心。注意：楊本人原文表述為身體觀「原型有三」＋社會面相，「四體一體」是學界歸納；且楊自陳對梅洛龐蒂「了解相當有限」——漢語身體觀是獨立發展的傳統而非西方現象學注腳，這恰呼應 Ingold 反對把非西方知識化約為西方理論在地版本的立場。（自合併條目拆分；經國圖臺灣華文電子書庫〔可線上閱覽全文〕與豆瓣交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://taiwanebook.ncl.edu.tw/zh-tw/book/NCL-001613403" target="_blank">國圖電子書庫（全文）</a></span></div>
+</div>
+<div class="entry" data-id="sin-yang1993" data-status="ok" data-theme="sinophone">
+  <div class="cite">楊儒賓主編（1993）。《中國古代思想中的氣論及身體觀》。臺北：巨流。（1993 年 3 月，ISBN 978-957-732-003-2）</div>
+  <div class="anno">氣論與身體觀研究的奠基論文集，第一篇「氣與身體觀的理論構造」由楊儒賓導論。（自 sin-yang 拆分；經華藝電子書與身體史文獻書目〔史語所〕交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍（論文集）</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.airitibooks.com/detail.aspx?PublicationID=P20110413055" target="_blank">華藝電子書</a></span></div>
+</div>
+<div class="entry" data-id="sin-chi" data-status="ok" data-theme="sinophone weather">
+  <div class="cite">楊儒賓（2017）。〈氣的考古學——風、風氣與瑪納〉。《臺大中文學報》57: 59–104。DOI: 10.6281/NTUCL.2017.06.57.03</div>
+  <div class="anno">以知識考古學考掘「氣」：風是原始之氣，氣是「流行之存在／存在之流行」。與 weather-world 的會通：兩者都拒斥封閉身體、都以呼吸為生命範式；根本差異：氣承載「感應」倫理—宇宙論秩序，Ingold 反目的論——系列最值得書寫的理論交火點。卷期頁碼（57: 59–104，2017 年 6 月）經臺大中文系官網全文 PDF 與國圖引文索引交叉確認。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.cl.ntu.edu.tw/uploads/root/%E8%87%BA%E5%A4%A7%E4%B8%AD%E6%96%87%E5%AD%B8%E5%A0%B1/%E7%AC%AC%E4%BA%94%E5%8D%81%E4%B8%83%E6%9C%9F/%E6%B0%A3%E7%9A%84%E8%80%83%E5%8F%A4%E5%AD%B8_%E9%A2%A8%E9%A2%A8%E6%B0%A3%E8%88%87%E7%91%AA%E7%B4%8D.pdf" target="_blank">臺大中文系官方 PDF 全文</a></span></div>
+</div>
+<div class="entry" data-id="sin-lai2012" data-status="ok" data-theme="sinophone skill">
+  <div class="cite">賴錫三（2012）。〈《莊子》身體觀的三維辯證：符號解構、技藝融入、氣化交換〉。《清華學報》新42(1): 1–43。（2012 年 3 月）</div>
+  <div class="anno">莊子技藝論的當代詮釋資源。庖丁解牛「依乎天理、因其固然」與 Ingold「順材料紋理而行」逐句對應；輪扁斲輪「得之於手而應於心，口不能言」是默會知識的兩千年先聲。關鍵差異：莊子「技進於道」仍有「道」的嚮往，Ingold 只有技（過程）而無道（目的）。（自合併條目拆分；經清華學報官網全文 PDF 與月旦條目交叉確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">可對話</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://thjcs.site.nthu.edu.tw/var/file/452/1452/img/1577/THJCS421-1.pdf" target="_blank">清華學報官方 PDF 全文</a> <a href="http://lawdata.com.tw/tw/detail.aspx?no=269833" target="_blank">月旦條目</a></span></div>
+</div>
+<div class="entry" data-id="sin-xu" data-status="ok" data-theme="sinophone skill">
+  <div class="cite">徐復觀（1966 初版）。《中國藝術精神》。臺中：中央書局（初版）；通行版：臺北：臺灣學生書局（1966 起多次再版）。</div>
+  <div class="anno">版本擇定（<span class="tag">研究判斷</span>）：初版 1966 年 2 月於臺中出版，其後以臺灣學生書局版通行（1966–1998 多刷）；引用建議用學生書局版並註明初版年。以莊子為「中國藝術精神」主體、終於山水畫——「技進於道」論的現代詮釋起點。（自 sin-lai 拆分；經學生書局官方頁與東海大學徐復觀研究資料彙編交叉確認。）</div>
+  <div class="meta"><span class="tag">書籍</span><span class="tag lv">可對話</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="http://www.studentbook.com.tw/Product_Detail.aspx?BigClassID=e6afe000-1082-4f91-815d-df2f274fd0bc&amp;ClassID=2a9c1407-0339-4a40-a831-53139fbf5111&amp;ID=b85ce0b1-981c-4204-8fa9-d9ec3fe01995" target="_blank">學生書局書目頁</a></span></div>
+</div>
+<div class="entry" data-id="sin-tu" data-status="pending" data-theme="sinophone">
+  <div class="cite">杜維明「體知」（embodied knowing）相關著述及黃勇、王順然之詮釋。；孫過庭《書譜》、衛夫人《筆陣圖》等書論文獻（建議用《歷代書法論文選》點校本）。；劉禾《跨語際實踐》（Stanford UP, 1995）；Said "Traveling Theory"。</div>
+  <div class="anno">「體知」幾乎可與 knowing from the inside 直接互譯，但多經二手詮釋轉述。<b>查證註記（2026-06-07 二次回查）：「體知」原始出處通說為杜維明〈論儒家的「體知」——德性之知的涵義〉，收入劉述先主編《儒家倫理研討會論文集》（新加坡：東亞哲學研究所，1987）——此說僅見於二手徵引，多次檢索均未能取得第一手書目頁面，維持「未能核實，引用前請回查」。</b>可核實的替代入口（藤蔓增補 #4）：<b>杜維明〈身體與體知〉，《當代》第 35 期（臺北，1989），頁 46–52</b>——此筆為台灣刊行的 1980 年代杜維明「體知」一手文獻，書目經賴錫三（2012）官方全文 PDF 註 34 著錄交叉確認，可作為「體知」的可引用起點；另有〈儒家「體知」傳統的現代詮釋〉（1997，收入《十年機緣待儒學》，香港：牛津大學出版社，1999）、〈從「體知」看人的尊嚴〉（《國際儒學研究》第 6 輯，1999）；當代詮釋以黃勇（2020）〈作為動力之知的儒家「體知」論〉（《哲學分析》2020 年第 3 期）最系統，官方刊物頁已連結。書論的「線」承載氣韻與人格，反向挑戰 Ingold 去主體的線。劉禾與 Said 提供反身理解「翻譯 Ingold」的框架：譯註本身是 correspondence 的痕跡。</div>
+  <div class="meta"><span class="tag">書籍＋古典文獻</span><span class="tag lv">推論性連結</span><span class="tag">可信度 C–D（原始出處未能核實）</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-partial">部分查證</span><span class="lk"><a href="https://ip.sass.org.cn/2020/1225/c5781a101015/page.htm" target="_blank">黃勇 2020（《哲學分析》官方頁）</a> <a href="https://www.academia.edu/44900303/_2020e_%E4%BD%9C%E4%B8%BA%E5%8A%A8%E5%8A%9B%E4%B9%8B%E7%9F%A5%E7%9A%84%E5%84%92%E5%AE%B6_%E4%BD%93%E7%9F%A5_%E8%AE%BA_%E6%9D%9C%E7%BB%B4%E6%98%8E%E5%AF%B9%E5%BD%93%E4%BB%A3%E9%81%93%E5%BE%B7%E8%AE%A4%E8%AF%86%E8%AE%BA%E7%9A%84%E8%B4%A1%E7%8C%AE" target="_blank">黃勇 2020（Academia）</a></span></div>
+</div>
+
+<!-- ============ X2 批判視角 ============ -->
+<h3 id="theme-critique">橫貫帶二｜批判視角：防止去政治化與浪漫化</h3>
+<p class="lead">三個必守底線：不要把感官抽象化；不要把生命詩化而忘記死亡與毒物；不要把原住民 dwelling 去歷史化而忽略國家、殖民、土地權與法政主體性。</p>
+
+<div class="entry" data-id="cri-howes" data-status="fixed" data-theme="critique">
+  <div class="cite">Howes, D. (2022). "The misperception of the environment: A critical evaluation of the work of Tim Ingold and an alternative guide to the use of the senses in anthropological theory." <i>Anthropological Theory</i> 22(4): 443–466. DOI: 10.1177/14634996211067307</div>
+  <div class="anno">對 Ingold 最系統的批判：肯定其對 skill、movement、process 的強調，但批評其將感官抽象化、互換化，把人化約為通用個體（generic individuals），未能處理感覺的社會性與知覺的文化中介；主張全方位的「多感官人類學」。使用「新自由主義氣味」一語時須置於其整體論證中，避免變成攻擊性標籤。<b>勘誤：底稿曾誤植刊名為《The Senses and Society》／《Social Anthropology》，經查證為《Anthropological Theory》。</b></div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-fixed">已修正</span><span class="lk"><a href="https://journals.sagepub.com/doi/10.1177/14634996211067307" target="_blank">SAGE 原文頁</a></span></div>
+</div>
+<div class="entry" data-id="cri-howes2" data-status="ok" data-theme="critique">
+  <div class="cite">Howes, D. (2022). "In defense of materiality: Attending to the sensori-social life of things." <i>Journal of Material Culture</i> 27(3): 313–335.；Ingold, T. (2022). "Response to David Howes." <i>Journal of Material Culture</i>. DOI: 10.1177/13591835221092084</div>
+  <div class="anno">Howes 的物質文化批判（批 Ingold 抹除物的感官—社會生命）與 Ingold 本人的回應——完整的「批判—回應」組合，引用時兩篇不可與〈Misperception〉混淆。Ingold 回應文已查得 SAGE 頁面。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://journals.sagepub.com/doi/10.1177/13591835221092084" target="_blank">Ingold 回應（SAGE）</a></span></div>
+</div>
+<div class="entry" data-id="cri-hicks" data-status="ok" data-theme="critique life">
+  <div class="cite">Hicks, D. (2016). "Reply to comments: Meshwork fatigue." <i>Norwegian Archaeological Review</i> 49(1): 33–39. DOI: 10.1080/00293652.2016.1170722</div>
+  <div class="anno">考古學界對 meshwork 的尖銳批評：診斷學界染上「網結疲勞」。本文是 Hicks〈The Temporality of the Landscape Revisited〉引發的回應組之回覆篇（回應人含 Ingold 本人）——引用時宜將整組「主文—評論—回覆」並讀。與 Howes 並用可避免單向頌揚。</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.tandfonline.com/doi/full/10.1080/00293652.2016.1170722" target="_blank">T&amp;F 原文頁</a></span></div>
+</div>
+<div class="entry" data-id="cri-young" data-status="ok" data-theme="critique ground">
+  <div class="cite">楊（Iris Marion Young）著，何定照譯（2007）。《像女孩那樣丟球：論女性身體經驗》。臺北：商周。（352 頁；2023 年再版）</div>
+  <div class="anno">Young 指出行走、步態與空間性是父權規訓的結果，直接挑戰第三章隱含的中性普遍身體。（自 cri-gender 合併條目拆分；經博客來與城邦書目頁交叉確認，譯者補全。）</div>
+  <div class="meta"><span class="tag">書籍（譯本）</span><span class="tag">可信度 B</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.books.com.tw/products/0010948745" target="_blank">博客來（再版）</a> <a href="https://www.cite.com.tw/book?id=95114" target="_blank">城邦書目頁</a></span></div>
+</div>
+<div class="entry" data-id="cri-disability" data-status="ok" data-theme="critique ground">
+  <div class="cite">林駿杰、張恒豪（2020）。〈什麼是「障礙研究」？英美的理論發展、建制化與臺灣本土化歷程〉。《人文及社會科學集刊》32(4): 645–691。</div>
+  <div class="anno">障礙研究與 crip theory 挑戰「行走／直立／雙足」的健全主義常模——「透過雙腳感知世界」必須被在地化、多元化。（自 cri-gender 拆分；篇名副標補全；經人社中心官方全文 PDF 確認。）</div>
+  <div class="meta"><span class="tag">期刊論文</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.rchss.sinica.edu.tw/files_news/32-04-2020/4.pdf" target="_blank">人社中心官方 PDF 全文</a></span></div>
+</div>
+
+<!-- ============ 資料庫 ============ -->
+<h3 id="theme-database">來源入口｜資料庫與機構</h3>
+<div class="entry" data-id="db-tw" data-status="ok" data-theme="database">
+  <div class="cite">台灣學術資料庫：<b>臺灣學術期刊開放取用平台（TOAJ，國科會支持，收錄約 180 餘種人文社會 OA 期刊，免費全文）</b>、Airiti 華藝線上圖書館、國家圖書館期刊文獻資訊網、臺灣博碩士論文知識加值系統（NDLTD）、月旦知識庫。</div>
+  <div class="anno">本地圖中文書目的查證與全文取得入口。查證順位：TOAJ／期刊官網／DOI（A，開放取用優先）→ 華藝等資料庫條目（B）→ 機構公告（C）→ 二手轉述（D，僅作線索）。<b>TOAJ 收錄查證結果（B18，2026-06-07）</b>：平台採前端動態載入，無法以自動化方式逐刊核實；本地圖八種台灣期刊中僅《臺灣人類學刊》查得 TOAJ 期刊頁（已連結至該條目），其餘七刊（考古人類學刊、思與言、台灣社會學、科技醫療與社會、地理學報、民俗曲藝、人文及社會科學集刊）收錄狀態未能核實，不杜撰連結——讀者可自 TOAJ 平台入口手動檢索；本地圖各該條目均已備官方 PDF 或資料庫連結，可信度不受影響。</div>
+  <div class="meta"><span class="tag">資料庫入口</span><span class="tag">可信度 A</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://toaj.stpi.narl.org.tw/index" target="_blank">TOAJ 平台</a> <a href="https://www.airitilibrary.com/" target="_blank">Airiti 華藝</a> <a href="https://tpl.ncl.edu.tw/" target="_blank">國圖期刊文獻網</a> <a href="https://ndltd.ncl.edu.tw/" target="_blank">博碩士論文系統</a> <a href="https://www.lawdata.com.tw/" target="_blank">月旦知識庫</a></span></div>
+</div>
+<div class="entry" data-id="db-inst" data-status="ok" data-theme="database">
+  <div class="cite">機構：中研院民族所（《臺灣人類學刊》《考古人類學刊》）、中研院文哲所、臺史所檔案館（日治影像）、文化部文化資產局、國立臺灣工藝研究發展中心、台灣科技與社會研究學會（《科技、醫療與社會》）。</div>
+  <div class="anno">一手出版與檔案的機構入口，連結可達性已於本日確認。公共學術書寫平台（芭樂人類學、巷仔口社會學、科技．人文．涵多路、《藝術觀點ACT》）屬 C–D 級線索來源，引用時回溯原始期刊。</div>
+  <div class="meta"><span class="tag">機構頁</span><span class="tag">可信度 C</span><span class="tag dt">查證日 2026-06-07</span><span class="badge st-ok">已查證</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/" target="_blank">中研院民族所</a> <a href="https://sts.org.tw/" target="_blank">台灣 STS 學會</a> <a href="https://stmjournal.tw/" target="_blank">STM 期刊官網</a> <a href="https://nchdb.boch.gov.tw/" target="_blank">國家文化資產網</a> <a href="https://www.ntcri.gov.tw/" target="_blank">NTCRI</a> <a href="https://guavanthropology.tw/" target="_blank">芭樂人類學</a> <a href="http://act.tnnua.edu.tw/" target="_blank">藝術觀點ACT</a></span></div>
+</div>
+<div class="entry" data-id="db-intl" data-status="ok" data-theme="database">
+  <div class="cite">國際環境人類學資源：Penn Libraries 環境人類學研究指南；<i>Environmental Humanities</i>（Duke，開放取用）；<i>Anthropocenes</i>（開放取用）；<i>Environment and Society</i>（Berghahn Open Anthro）；Society for Cultural Anthropology 進步環境人類學書單。</div>
+  <div class="anno">與國際環境人類學接軌的當代入口：開放取用期刊可直接取得全文，SCA 書單提供引用政治（citation matters）視角——與本系列「批判性接收」的方法論立場互補。</div>
+  <div class="meta"><span class="tag">資料庫入口</span><span class="tag">可信度 A–B</span><span class="badge st-ok">已查證</span><span class="lk">
+    <a href="https://guides.library.upenn.edu/anthropology/environmental" target="_blank">Penn 指南</a>
+    <a href="https://doaj.org/toc/2201-1919" target="_blank">Env. Humanities</a>
+    <a href="https://doaj.org/toc/2633-4321" target="_blank">Anthropocenes</a>
+    <a href="https://www.berghahnjournals.com/view/journals/environment-and-society/environment-and-society-overview.xml" target="_blank">Environment &amp; Society</a>
+    <a href="https://www.culanth.org/fieldsights/citation-matters-an-updated-reading-list-for-a-progressive-environmental-anthropology" target="_blank">SCA 書單</a>
+  </span></div>
+</div>
+
+<h2 id="errata"><span class="no">查證</span>待查疑點與勘誤紀錄</h2>
+<h3>已裁定／待裁定之高風險疑點</h3>
+<table>
+  <tr><th>疑點</th><th>底稿原寫法</th><th>查證後寫法</th><th>依據</th><th>狀態</th></tr>
+  <tr><td>Howes〈Misperception〉刊名</td><td>《The Senses and Society》／《Social Anthropology》（報告間不一）</td><td><i>Anthropological Theory</i> 22(4): 443–466, 2022</td><td><a href="https://journals.sagepub.com/doi/10.1177/14634996211067307" target="_blank">SAGE 原文頁</a></td><td>已裁定</td></tr>
+  <tr><td>林益仁（2021）頁碼</td><td>9–55 vs 383–416 兩說</td><td>9–55（北醫典藏＋專題四篇頁碼連續性交叉印證）</td><td><a href="https://hub.tmu.edu.tw/zh/publications/%E6%88%91%E5%9C%A8%E6%B3%B0%E9%9B%85%E7%94%9F%E6%85%8B%E8%BE%B2%E8%80%95%E6%95%98%E4%BA%8B%E4%B8%AD%E7%9A%84%E8%B5%B0%E5%8B%95%E5%B0%8Dtim-ingold%E7%9A%84%E5%91%BC%E6%87%89" target="_blank">北醫典藏</a></td><td>已裁定</td></tr>
+  <tr><td>謝國雄〈黑手變頭家〉出版年</td><td>1989 夏季號 vs 1990</td><td>引用作 1989（作者自引）；該期實際出版 1990/10（華藝）</td><td><a href="https://www.ios.sinica.edu.tw/fellow/gwoshyongshieh" target="_blank">作者著作目錄</a></td><td>已裁定</td></tr>
+  <tr><td>鄭肇祺、張怡婷／簡旭伸兩篇起訖頁碼</td><td>未載</td><td>鄭：107–145；張／簡：147–188</td><td><a href="https://lawdata.com.tw/tw/detail.aspx?no=458537" target="_blank">月旦 458537</a>、<a href="https://lawdata.com.tw/tw/detail.aspx?no=458538" target="_blank">458538</a></td><td>已裁定</td></tr>
+  <tr><td>余舜德（2006）頁碼</td><td>5–47 vs 5–49 兩說</td><td>5–47（與同期龔卓軍 49–100 相容）；篇名為「之探索」</td><td><a href="https://www.airitilibrary.com/Article/Detail?DocID=02588412-200603-44-1-5-47-a" target="_blank">華藝</a></td><td>已裁定</td></tr>
+</table>
+<details>
+  <summary>勘誤表（查證後與底稿原文不符者，逐筆記錄）</summary>
+  <table>
+    <tr><th>#</th><th>位置</th><th>原文</th><th>修正</th><th>依據</th><th>日期</th></tr>
+    <tr><td>1</td><td>報告二、三：Howes 批判文獻出處</td><td>刊名誤植為《The Senses and Society》（報告二）、《Social Anthropology》（報告三）</td><td><i>Anthropological Theory</i> 22(4): 443–466（DOI: 10.1177/14634996211067307）</td><td><a href="https://journals.sagepub.com/doi/10.1177/14634996211067307" target="_blank">SAGE</a></td><td>2026-06-07</td></tr>
+    <tr><td>2</td><td>林益仁（2021）頁碼</td><td>一說 383–416</td><td>9–55（383–416 說不成立）</td><td><a href="https://hub.tmu.edu.tw/zh/publications/%E6%88%91%E5%9C%A8%E6%B3%B0%E9%9B%85%E7%94%9F%E6%85%8B%E8%BE%B2%E8%80%95%E6%95%98%E4%BA%8B%E4%B8%AD%E7%9A%84%E8%B5%B0%E5%8B%95%E5%B0%8Dtim-ingold%E7%9A%84%E5%91%BC%E6%87%89" target="_blank">北醫典藏</a></td><td>2026-06-07</td></tr>
+    <tr><td>3</td><td>余舜德（2006）頁碼與篇名</td><td>頁碼一說 5–49；篇名作「的探索」</td><td>5–47；篇名為〈物與身體感的歷史：一個研究取向之探索〉</td><td><a href="https://www.airitilibrary.com/Article/Detail?DocID=02588412-200603-44-1-5-47-a" target="_blank">華藝</a></td><td>2026-06-07</td></tr>
+    <tr><td>4</td><td>謝國雄〈黑手變頭家〉出版年</td><td>1989／1990 兩說並存、未注明卷期出版落差</td><td>引用作 1989（作者自引，2(2): 11–54）；該期實際出版 1990 年 10 月</td><td><a href="https://www.ios.sinica.edu.tw/fellow/gwoshyongshieh" target="_blank">作者著作目錄</a>、<a href="https://www.airitilibrary.com/Publication/alDetailedMesh?docid=10219528-199010-2-2-11-54-a" target="_blank">華藝</a></td><td>2026-06-07</td></tr>
+    <tr><td>5</td><td>《體物入微》出版者</td><td>臺北：中研院民族所</td><td>新竹：國立清華大學出版社（2008 年 12 月，ISBN 978-986-84011-3-6）</td><td><a href="https://www.books.com.tw/products/0010422575" target="_blank">博客來</a>、<a href="https://book.douban.com/subject/3788644/" target="_blank">豆瓣</a></td><td>2026-06-07</td></tr>
+    <tr><td>6</td><td>高彥頤《纏足》左岸中譯版出版年</td><td>2005</td><td>2007 年 5 月（2005 為原著英文版年代）</td><td><a href="https://www.books.com.tw/products/0010368056" target="_blank">博客來</a>、<a href="https://book.douban.com/subject/2143188/" target="_blank">豆瓣</a></td><td>2026-06-07</td></tr>
+  </table>
+</details>
+
+<h2 id="progress"><span class="no">入口四</span>工作進度（排程任務自動更新）</h2>
+<p class="lead">本地圖由每小時排程任務逐批查證建置，已於 2026-06-08 完成最終校對（V1.0 可引用版），排程已停止。完成定義：取得穩定來源連結＋書目欄位核對＋疑點記入勘誤表＋條目狀態同步；無法核實者一律標註原因，不杜撰連結或頁碼。</p>
+<div class="bars" id="bars"></div>
+
+<script id="batch-data" type="application/json">
+{"updated":"2026-06-08","batches":[
+ {"id":"B01","name":"高風險疑點裁定","done":5,"total":5},
+ {"id":"B02","name":"Ingold 原典（書；Correspondences 出版年歧異已標註結案）","done":7,"total":7},
+ {"id":"B03","name":"Ingold 期刊論文","done":8,"total":8},
+ {"id":"B04","name":"臺灣人類學刊 19(2)（導言頁碼推定已標註）","done":6,"total":6},
+ {"id":"B06","name":"身體感研究群","done":4,"total":4},
+ {"id":"B05","name":"台灣 STS 文獻","done":6,"total":6},
+ {"id":"B08","name":"原住民研究／TEK","done":6,"total":6},
+ {"id":"B07","name":"進香與行走","done":3,"total":3},
+ {"id":"B11","name":"性別／障礙／勞動批判","done":7,"total":7},
+ {"id":"B12","name":"文資／工藝／技職","done":4,"total":4},
+ {"id":"B10","name":"美學／書論／現象學","done":3,"total":3},
+ {"id":"B13","name":"其他待核資料點","done":5,"total":5},
+ {"id":"B09","name":"漢語身體—宇宙論（杜維明補〈身體與體知〉1989）","done":5,"total":5},
+ {"id":"B14","name":"機構與資料庫入口（含 TOAJ）","done":4,"total":4},
+ {"id":"B17","name":"概念蜘蛛網：Consensus 文獻擴充","done":9,"total":9},
+ {"id":"B18","name":"TOAJ 收錄查證（1 刊補連結、7 刊標未能核實）","done":8,"total":8},
+ {"id":"B19","name":"路徑論文題目增補（三區）","done":3,"total":3},
+ {"id":"B15","name":"視覺與介面細修","done":4,"total":4},
+ {"id":"B16","name":"最終校對","done":6,"total":6}
+]}
+</script>
+
+<h2 id="about"><span class="no">透明</span>方法與 AI 協作聲明</h2>
+<p>這張研究地圖是一次「AI 輔助研究」的方法實驗，產製流程全程留有紀錄，分四個階段。<b>第一階段（深度研究）</b>：以 AI 深度研究產出五篇研究底稿，逐章細讀《Being Alive》並探勘台灣對話領域，每篇均附 Caveats（須核實事項）標明不確定之處。<b>第二階段（對抗性審查）</b>：底稿經多輪外部 AI 審查（章節論證、資訊架構、介面設計三個層次），審查意見經人工擇取後整合進本地圖——例如「接收層級三分」「雙層狀態」「語氣降調」皆來自審查回饋。<b>第三階段（自動化查證）</b>：由排程任務每小時逐批查證書目，連結順位為 TOAJ／期刊官網／DOI → 華藝 → 機構頁，輔以 Consensus 學術搜尋；查證結果即時反映於各條目狀態徽章、儀表板與勘誤表。<b>第四階段（人工把關）</b>：研究者本人對所有「研究詮釋」負最終責任，正式引用前回到原典。</p>
+<p>AI 在本專案中做的是：文獻探勘、結構化整理、交叉查證、勘誤追蹤、介面建置。AI 不做的是：替代全文閱讀、替代田野、替代研究判斷的最終裁量。所有不確定之處一律標示而不掩飾——我們相信，<b>誠實標示「不知道」與「待查證」，正是 AI 輔助研究值得信任的起點</b>。</p>
+<p><b>有機增補（藤蔓規則）</b>：本地圖不是封閉清單，而是會生長的網結。排程查證過程中若發現值得納入的新文獻（例如在作者著作目錄、期刊同期目次、引用鏈中偶遇的相關研究），即以「有機增補」標籤補入對應主題區，並掛「研究判斷」標示——如同藤蔓沿著查證的支架攀附生長，每一次回查都是一次學習。增補紀錄見各條目標籤與狀態檔執行紀錄。</p>
+<p>發現錯誤？歡迎來信回報勘誤：<a href="mailto:anccc@nycu.edu.tw">anccc@nycu.edu.tw</a>（請註明條目編號或文獻名）。已修正的錯誤一律保留紀錄於勘誤表，不無痕抹除。</p>
+
+<footer>
+  <img src="assets/footer-line.webp" alt="五篇文章共同指向一個核心：世界不是既成的東西，而是人與環境在時間中共同生成的線。">
+  <b>學術使用警語</b>：本頁區分「書目事實」與「研究詮釋」——書目事實以 DOI、期刊官網、TOAJ、Airiti、機構頁為準；研究詮釋（如「對話接點」「反向修正」）為本計畫對文獻的整理與判斷，供研究構想使用，不等同於原作者主張。<br>
+  本地圖為研究底稿之衍生資源整理（AI 協作產出），書目查證進行中；引用前請回到原典與權威資料庫。
+  視覺素材：《Ingold 五篇》研究導讀合成圖（本專案 AI 生成）切割壓縮版。<br>
+  最後更新：<span id="f-updated">2026-06-08</span>｜整體狀態：<span id="f-status">設計完成（V1.0 可引用版）</span>
+</footer>
+
+</div>
+<script>
+(function(){
+  const entries=[...document.querySelectorAll('.entry')];
+  // 儀表板
+  const okN=entries.filter(e=>['ok','fixed'].includes(e.dataset.status)).length;
+  const riskN=entries.filter(e=>e.dataset.risk==='high'&&!['ok','fixed'].includes(e.dataset.status)).length;
+  document.getElementById('dash-verified').textContent=okN+' / '+entries.length;
+  document.getElementById('dash-risk').textContent=riskN;
+  // 篩選
+  function apply(){
+    const q=document.getElementById('q').value.trim().toLowerCase();
+    const st=document.querySelector('.fbtn.active[data-f="status"]');
+    const th=document.querySelector('.fbtn.active[data-f="theme"]');
+    entries.forEach(e=>{
+      const okq=!q||e.textContent.toLowerCase().includes(q);
+      const oks=!st||e.dataset.status===st.dataset.v;
+      const okt=!th||(e.dataset.theme||'').split(' ').includes(th.dataset.v);
+      e.style.display=(okq&&oks&&okt)?'':'none';
+    });
+  }
+  document.getElementById('q').addEventListener('input',apply);
+  document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
+    const grp=b.dataset.f, was=b.classList.contains('active');
+    document.querySelectorAll('.fbtn[data-f="'+grp+'"]').forEach(x=>x.classList.remove('active'));
+    if(!was)b.classList.add('active');
+    apply();
+  }));
+  // 進度條
+  try{
+    const d=JSON.parse(document.getElementById('batch-data').textContent);
+    const el=document.getElementById('bars');
+    d.batches.forEach(b=>{
+      const pct=Math.round(100*b.done/b.total);
+      const div=document.createElement('div');
+      div.className='bar'+(b.id==='B01'&&b.done<b.total?' warn':'');
+      div.innerHTML='<div>'+b.id+'｜'+b.name+'：'+b.done+' / '+b.total+'</div><div class="track"><div class="fill" style="width:'+pct+'%"></div></div>';
+      el.appendChild(div);
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
