@@ -90,6 +90,11 @@ kbd{background:#fff;border:1px solid var(--line);border-radius:4px;padding:0 6px
 .map-tools button{border:1px solid var(--line);border-radius:14px;padding:2px 12px;background:#fff;color:var(--green);cursor:pointer;margin-right:6px;}
 .map-tools button:hover{background:var(--green-bg);}
 .toc a.active{color:var(--indigo);font-weight:700;}
+.filters{transition:padding .15s;}
+.filters.compact{padding-top:8px;padding-bottom:8px;box-shadow:0 2px 6px rgba(31,41,51,.06);}
+.filters.compact input{margin-bottom:0;}
+.filters.compact .fextra{display:none;}
+.filters.compact:hover .fextra,.filters.compact:focus-within .fextra{display:block;margin-top:9px;}
 ol.musts{font-size:.95rem;} ol.musts li{margin:7px 0;}
 blockquote{margin:14px 0;padding:8px 18px;border-left:3px solid var(--green);color:var(--muted);font-size:.95rem;}
 footer{margin-top:60px;border-top:1px solid var(--line);padding-top:18px;font-size:.84rem;color:var(--muted);font-family:'Noto Sans TC',sans-serif;}
@@ -300,6 +305,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 <h2 id="index"><span class="no">入口三</span>來源索引：可查證書目層</h2>
 <div class="filters">
   <input id="q" type="search" placeholder="搜尋作者、概念、關鍵詞（如：林文源、meshwork、身體感、進香、文資）" aria-label="搜尋條目">
+  <div class="fextra">
   <span class="flabel">路徑</span>
   <span class="fbtn" data-f="theme" data-v="life">生命×STS</span>
   <span class="fbtn" data-f="theme" data-v="reception">人類學接收</span>
@@ -310,6 +316,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
   <span class="fbtn" data-f="theme" data-v="critique">批判視角</span>
   <span class="fbtn" data-f="theme" data-v="database">資料庫</span>
   <div class="fmeta"><button class="fclear" id="fclear" type="button">清除篩選</button><span class="fcount" id="fcount"></span><span class="fhint">提示：按 <kbd>/</kbd> 鍵可快速聚焦搜尋框</span></div>
+  </div>
 </div>
 
 <!-- ============ T1 生命與人類學 ============ -->
@@ -1818,9 +1825,14 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
     },{rootMargin:'-8% 0px -82% 0px',threshold:0});
     spyTargets.forEach(t=>io.observe(t));
   }
-  // 回到頂端浮動鈕
+  // 篩選列：捲動置頂後收合為精簡列（只留搜尋框，滑入或點搜尋框展開），減少遮擋
+  const filters=document.querySelector('.filters');
   const totop=document.querySelector('.totop');
-  if(totop) window.addEventListener('scroll',()=>{totop.classList.toggle('show',window.scrollY>500);},{passive:true});
+  function onScroll(){
+    if(filters){ const ftop=filters.offsetTop; filters.classList.toggle('compact', window.scrollY>ftop+8); }
+    if(totop) totop.classList.toggle('show', window.scrollY>500);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
 })();
 </script>
 </body>
