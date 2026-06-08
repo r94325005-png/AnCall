@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tim Ingold 與台灣學術本土化：研究資源地圖</title>
+<meta name="description" content="Tim Ingold《Being Alive》與台灣／漢語學界對話的研究資源地圖：依全書五部逐章整理 meshwork（網結）、wayfaring（行旅）、weather-world（天氣—世界）、correspondence（對應）等概念的國際與台灣延伸文獻，附原始出處連結與可發展論文題目。">
+<meta name="author" content="ANCCC">
+<meta name="theme-color" content="#2A3D5C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tim Ingold 與台灣學術本土化：研究資源地圖">
+<meta property="og:description" content="依《Being Alive》五部逐章整理國際與台灣延伸文獻，附原始出處連結與可發展論文題目。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -13,17 +19,14 @@
   --green-bg:#EDF1EA; --indigo-bg:#E9EDF4; --ochre-bg:#F8EFE5; --alert-bg:#F6E9E6;
 }
 *{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+[id]{scroll-margin-top:18px;}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Serif TC',serif;font-size:17px;line-height:1.85;}
 .wrap{max-width:920px;margin:0 auto;padding:0 20px 80px;}
 header.site{padding:40px 0 10px;}
 h1{font-size:1.65rem;line-height:1.4;margin:14px 0 6px;font-weight:700;color:var(--indigo);}
 .subtitle{color:var(--muted);font-size:1rem;margin:0 0 16px;}
 .banner{width:100%;border:1px solid var(--line);border-radius:6px;display:block;}
-.dash{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;font-family:'Noto Sans TC',sans-serif;}
-.dash .cell{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 14px;}
-.dash .cell b{display:block;font-size:1.25rem;color:var(--indigo);}
-.dash .cell span{font-size:.8rem;color:var(--muted);}
-.dash .cell.warn b{color:var(--alert);}
 .notice{border-left:4px solid var(--ochre);background:var(--ochre-bg);padding:12px 16px;font-size:.9rem;font-family:'Noto Sans TC',sans-serif;line-height:1.7;border-radius:0 6px 6px 0;}
 nav.modes{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;font-family:'Noto Sans TC',sans-serif;}
 nav.modes a{background:var(--indigo);color:#fff;text-decoration:none;border-radius:20px;padding:6px 18px;font-size:.88rem;}
@@ -48,12 +51,6 @@ h3{font-size:1.07rem;margin:28px 0 4px;color:var(--green);}
 .entry .meta{margin-top:8px;font-family:'Noto Sans TC',sans-serif;font-size:.78rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px;align-items:center;}
 .tag{background:var(--green-bg);color:var(--green);border-radius:3px;padding:1px 8px;}
 .tag.lv{background:var(--indigo-bg);color:var(--indigo);}
-.badge{border-radius:3px;padding:1px 8px;font-weight:500;}
-.st-pending{background:var(--ochre-bg);color:var(--ochre);border:1px solid var(--ochre);}
-.st-ok{background:var(--green-bg);color:var(--green);border:1px solid var(--green);}
-.st-fixed{background:var(--indigo-bg);color:var(--indigo);border:1px solid var(--indigo);}
-.st-partial{background:#FBF6E3;color:#8A6D1B;border:1px solid #C9A93C;}
-.st-risk{background:var(--alert-bg);color:var(--alert);border:1px solid var(--alert);}
 .lk{font-family:'Noto Sans TC',sans-serif;font-size:.83rem;}
 .lk a{color:var(--green);text-decoration:underline;text-underline-offset:3px;word-break:break-all;}
 .lk .nolink{color:var(--muted);}
@@ -72,17 +69,32 @@ th{background:var(--indigo-bg);font-weight:500;}
 .flabel{color:var(--indigo);font-weight:500;margin-right:4px;}
 details{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 16px;margin:14px 0;font-size:.92rem;}
 summary{cursor:pointer;color:var(--indigo);font-weight:500;font-family:'Noto Sans TC',sans-serif;}
-.bars{font-family:'Noto Sans TC',sans-serif;font-size:.82rem;}
-.bar{margin:7px 0;}
-.bar .track{background:#E8E2D4;border-radius:4px;height:10px;overflow:hidden;}
-.bar .fill{background:var(--green);height:10px;border-radius:4px;}
-.bar.warn .fill{background:var(--alert);}
+.guide{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:0 6px 6px 0;padding:14px 18px;margin:18px 0;font-family:'Noto Sans TC',sans-serif;font-size:.9rem;line-height:1.7;}
+.guide>b{color:var(--green);font-size:.98rem;}
+.guide ol{margin:8px 0 0;padding-left:1.4em;}
+.guide li{margin:5px 0;}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2px 0;}
+.chmap{min-width:700px;}
+.totop{position:fixed;right:18px;bottom:18px;z-index:20;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--indigo);color:#fff;font-size:1.15rem;line-height:1;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 2px 8px rgba(0,0,0,.18);font-family:'Noto Sans TC',sans-serif;}
+.totop.show{opacity:.92;pointer-events:auto;}
+.totop:hover{background:var(--green);}
+.fmeta{margin-top:9px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.fclear{border:1px solid var(--line);border-radius:14px;padding:2px 12px;background:#fff;color:var(--muted);cursor:pointer;font-family:'Noto Sans TC',sans-serif;font-size:.85rem;}
+.fclear:hover{border-color:var(--ochre);color:var(--ochre);}
+.fcount{color:var(--indigo);font-weight:500;}
+.fhint{color:var(--muted);}
+kbd{background:#fff;border:1px solid var(--line);border-radius:4px;padding:0 6px;font-family:'Noto Sans TC',sans-serif;font-size:.85em;}
+.entry{transition:border-color .15s,box-shadow .15s;}
+.entry:hover{border-color:var(--green);box-shadow:0 1px 6px rgba(74,93,67,.12);}
+.map-tools{font-family:'Noto Sans TC',sans-serif;font-size:.85rem;margin:6px 0 10px;color:var(--muted);}
+.map-tools button{border:1px solid var(--line);border-radius:14px;padding:2px 12px;background:#fff;color:var(--green);cursor:pointer;margin-right:6px;}
+.map-tools button:hover{background:var(--green-bg);}
+.toc a.active{color:var(--indigo);font-weight:700;}
 ol.musts{font-size:.95rem;} ol.musts li{margin:7px 0;}
 blockquote{margin:14px 0;padding:8px 18px;border-left:3px solid var(--green);color:var(--muted);font-size:.95rem;}
 footer{margin-top:60px;border-top:1px solid var(--line);padding-top:18px;font-size:.84rem;color:var(--muted);font-family:'Noto Sans TC',sans-serif;}
 footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
-.tag.dt{background:#F0EDE4;color:#6E6A60;}
-@media (max-width:540px){body{font-size:16px;} h1{font-size:1.35rem;} .themecard{flex-direction:column;} .themecard img{width:100%;height:150px;} .wrap{padding:0 14px 60px;} .dash .cell{flex:1 1 110px;padding:8px 10px;} .dash .cell b{font-size:1.05rem;} .qbox{font-size:.88rem;padding:10px 14px;} .entry{padding:11px 13px;} table{font-size:.78rem;} th,td{padding:5px 6px;}}
+@media (max-width:540px){body{font-size:16px;} h1{font-size:1.35rem;} .themecard{flex-direction:column;} .themecard img{width:100%;height:150px;} .wrap{padding:0 14px 60px;} .qbox{font-size:.88rem;padding:10px 14px;} .entry{padding:11px 13px;} table{font-size:.78rem;} th,td{padding:5px 6px;}}
 .toc{display:none;}
 @media (min-width:1280px){
   .toc{display:block;position:fixed;top:90px;left:calc(50% + 478px);width:158px;font-family:'Noto Sans TC',sans-serif;font-size:.78rem;line-height:2.1;border-left:2px solid var(--line);padding-left:12px;z-index:4;}
@@ -90,7 +102,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
   .toc a{color:var(--muted);text-decoration:none;display:block;}
   .toc a:hover{color:var(--indigo);text-decoration:underline;}
 }
-@media print{nav.modes,.filters,#progress,.bars,.toc{display:none;} body{background:#fff;font-size:11pt;} .entry,.themecard,details{break-inside:avoid;border-color:#999;} a{color:#1F2933;text-decoration:none;} .lk a::after{content:" 〔" attr(href) "〕";font-size:8pt;color:#555;word-break:break-all;}}
+@media print{nav.modes,.filters,.toc{display:none;} body{background:#fff;font-size:11pt;} .entry,.themecard,details{break-inside:avoid;border-color:#999;} a{color:#1F2933;text-decoration:none;} .lk a::after{content:" 〔" attr(href) "〕";font-size:8pt;color:#555;word-break:break-all;}}
 </style>
 </head>
 <body>
@@ -127,8 +139,19 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
   <a href="#theme-sinophone">漢語身體</a>
   <a href="#theme-critique">批判視角</a>
   <a href="#chapters">逐章對話</a>
+  <a href="#chapter-map">　└ 章節地圖</a>
   <a href="#about">方法聲明</a>
 </nav>
+
+<section class="guide" aria-label="閱讀指引">
+  <b>如何使用這張地圖</b>
+  <ol>
+    <li><b>想認識 Ingold</b>：先看「入口一 快速入門」。</li>
+    <li><b>想依主題探索</b>：看「入口二 研究路徑」的五條對話線（生命×STS、接收史、地面行走、技藝材料、天氣環境）；或用「入口三 來源索引」上方的搜尋框與「路徑」按鈕，依作者／關鍵詞篩選。</li>
+    <li><b>想依章節查延伸文獻</b>：到「入口五 逐章對話 › 全書章節導覽地圖」，依《Being Alive》五部展開，點任一章即跳到該章的延伸文獻、四維對話與可發展論文題目。</li>
+    <li><b>看懂標記</b>：可信度 A–D（A 最可查證）；接收層級分「直接接收／可對話／推論性連結」，僅「直接接收」表示該文獻實際徵引 Ingold；標「研究判斷」者為本計畫的整理與推論——<b>正式引用前一律回到原典</b>。</li>
+  </ol>
+</section>
 
 <h2 id="quickstart"><span class="no">入口一</span>快速入門</h2>
 <p>Tim Ingold（1948–，亞伯丁大學榮退教授）主張人類學是「對人類生命之條件與潛能持續而嚴謹的探究」。《Being Alive: Essays on Movement, Knowledge and Description》（Routledge, 2011）以 meshwork（網結）、wayfaring（行旅）、enskilment（技能習得）、weather-world（天氣—世界）、correspondence（對應）等概念，把生命放回人類學核心。本系列研究逐章探勘其與台灣／漢語學界的對話接軌處；本地圖把五場對話整理為可查證的文獻路徑。</p>
@@ -157,7 +180,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 <p class="lead">接收地形為「四圈交織＋STS 橫貫」：環境人類學圈、原住民／TEK 圈、地理／環境治理圈、藝術／策展圈；STS 與批判視角橫向貫穿。每張路徑卡以四個問題開頭：Ingold 的問題是什麼？台灣的接點在哪裡？台灣如何補充或反駁 Ingold？下一步研究可以怎麼做？</p>
 
 <div class="themecard">
-  <img src="assets/panel-11.webp" alt="行旅者在森林中沿生成之線行走">
+  <img loading="lazy" src="assets/panel-11.webp" alt="行旅者在森林中沿生成之線行走">
   <div class="tc-body">
     <h3>路徑一｜生命與人類學：meshwork 對抗 network</h3>
     <div class="tc-q"><b>Ingold 問</b>：生命如何被理論驅逐，又如何放回？<b>台灣接點</b>：林文源位移理論、楊弘任文化轉譯、傅大為的「拿來主義」診斷。<b>反向修正</b>：林文源批判 ANT 看不見弱勢者的能動，Ingold 批判 ANT 的能動概念本身——兩種批判互相照亮。<b>下一步</b>：以「位移理論 vs meshwork」寫理論對話論文，回應「東亞如何建立自己的 STS 立場」。</div>
@@ -166,7 +189,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 </div>
 
 <div class="themecard">
-  <img src="assets/panel-21.webp" alt="泰雅族農耕與山林實踐，路徑是人與環境共同走出來的線">
+  <img loading="lazy" src="assets/panel-21.webp" alt="泰雅族農耕與山林實踐，路徑是人與環境共同走出來的線">
   <div class="tc-body">
     <h3>路徑二｜台灣人類學接收史：一次集中而非偶然的接收</h3>
     <div class="tc-q"><b>Ingold 問</b>：如何描述無形介質與微妙知覺？<b>台灣接點</b>：《臺灣人類學刊》19(2) 專題、南藝大四講、《藝術觀點ACT》89 期。<b>反向修正</b>：接收分三種模式——方法論借用、本體論重排、批判性反向修正；Ingold 在台灣的接收本身就是一種 mediated correspondence（期刊、口譯、策展而非駐留）。<b>下一步</b>：辨明「直接接收／可對話／推論性連結」三層，寫台灣接收史。</div>
@@ -175,7 +198,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 </div>
 
 <div class="themecard">
-  <img src="assets/panel-31.webp" alt="赤足踏在土地上，腳是感知世界的器官">
+  <img loading="lazy" src="assets/panel-31.webp" alt="赤足踏在土地上，腳是感知世界的器官">
   <div class="tc-body">
     <h3>路徑三｜地面與行走：腳的台灣現代性</h3>
     <div class="tc-q"><b>Ingold 問</b>：為何思想史獨尊腦與手而貶抑雙腳？<b>台灣接點</b>：身體感研究群（理論地基）、日治放足、媽祖徒步進香、原住民山林行走、製鞋王國。<b>反向修正</b>：三條線——被規訓的腳（放足＝解放也是治理）、神聖化與技能化的腳（鑽轎底翻轉貼地姿態的卑賤）、商品化與病理化的腳（囚腳之物的全球工廠、糖尿病足）。<b>下一步</b>：「放足＋進香＋製鞋」三案例構成歷史—宗教—資本主義三重分析。</div>
@@ -184,7 +207,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 </div>
 
 <div class="themecard">
-  <img src="assets/panel-41.webp" alt="鋸木板不是征服材料，而是回應木紋的走向">
+  <img loading="lazy" src="assets/panel-41.webp" alt="鋸木板不是征服材料，而是回應木紋的走向">
   <div class="tc-body">
     <h3>路徑四｜技藝與材料：活技藝與被抽取的技藝</h3>
     <div class="tc-q"><b>Ingold 問</b>：技藝是設計的執行，還是與材料的對應？<b>台灣接點</b>：人間國寶傳習、達悟拼板舟、黑手師傅、製茶身體感。<b>反向修正</b>：技藝的 correspondence 不只發生在工匠—工具—材料之間，也發生在制度、族群、階級、國家與資本之間——文資制度具「支撐傳承／項目化展示」雙重效果，工業體制抽取並貶低技藝。<b>下一步</b>：「凍結還是行旅？」介入文資政策方法論；「黑手的線」補 Ingold 階級盲點。</div>
@@ -193,7 +216,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 </div>
 
 <div class="themecard">
-  <img src="assets/panel-22.webp" alt="蘭嶼拼板舟與海流、風同行，形成活的路徑">
+  <img loading="lazy" src="assets/panel-22.webp" alt="蘭嶼拼板舟與海流、風同行，形成活的路徑">
   <div class="tc-body">
     <h3>路徑五｜天氣、空氣與環境政治：毒物天氣—世界</h3>
     <div class="tc-q"><b>Ingold 問</b>：居住於開放世界，就是被捲入天氣—世界的轉化之中？<b>台灣接點</b>：大林蒲空污與「保衛西南風」、彭保羅的毒物暴露批判、氣論與風水的漢語宇宙論。<b>反向修正</b>：在台灣，風不是抽象介質，而是被工業、都市計畫、監測、抗爭、遷村政策共同構成的政治性介質——「毒物天氣—世界」。<b>下一步</b>：接 Bufe & Hovius 台灣侵蝕—碳循環資料，把 weather-world 與 Latour 臨界區並讀。</div>
@@ -286,12 +309,13 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
   <span class="fbtn" data-f="theme" data-v="sinophone">漢語思想</span>
   <span class="fbtn" data-f="theme" data-v="critique">批判視角</span>
   <span class="fbtn" data-f="theme" data-v="database">資料庫</span>
+  <div class="fmeta"><button class="fclear" id="fclear" type="button">清除篩選</button><span class="fcount" id="fcount"></span><span class="fhint">提示：按 <kbd>/</kbd> 鍵可快速聚焦搜尋框</span></div>
 </div>
 
 <!-- ============ T1 生命與人類學 ============ -->
 <h3 id="theme-life">T1｜生命與人類學（緒論 × 台灣 STS）</h3>
 <div class="figrow">
-  <figure><img src="assets/panel-12.webp" alt="網絡與網結的對比圖：節點連結 vs 生命的編織"><figcaption>與 Latour 的網絡不同，Ingold 的 meshwork 是生命的編織，而非節點的連結。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-12.webp" alt="網絡與網結的對比圖：節點連結 vs 生命的編織"><figcaption>與 Latour 的網絡不同，Ingold 的 meshwork 是生命的編織，而非節點的連結。</figcaption></figure>
 </div>
 
 <div class="entry" data-id="ing-ba" data-status="ok" data-theme="life reception">
@@ -349,18 +373,18 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 <h3 id="theme-reception">T2｜台灣人類學接收史：《臺灣人類學刊》19(2) 專題與藝術圈擴散</h3>
 <p class="lead">2021 年 12 月，李威宜客座策劃「環境人類學方法論的探索：與 Tim Ingold 對話」專題——台灣最集中、最可引用的正式對話場域。注意：民族所官網目次頁曾有作者—題名對位錯誤，以華藝與機構典藏交叉確認為準。Ingold 著作目前未見台灣繁體譯本體系，接收主要經期刊、線上講座口譯、簡體譯本與藝術評論轉介——這個「翻譯空白」本身即值得研究。</p>
 <div class="figrow">
-  <figure><img src="assets/panel-21.webp" alt="泰雅農耕與山林實踐"><figcaption>泰雅農耕與山林實踐：路徑是人與環境共同走出來的線（林益仁）。</figcaption></figure>
-  <figure><img src="assets/panel-22.webp" alt="蘭嶼與雅浦的航海經驗"><figcaption>蘭嶼與雅浦：海流、風與人同行，形成活的路徑（黃郁茜）。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-21.webp" alt="泰雅農耕與山林實踐"><figcaption>泰雅農耕與山林實踐：路徑是人與環境共同走出來的線（林益仁）。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-22.webp" alt="蘭嶼與雅浦的航海經驗"><figcaption>蘭嶼與雅浦：海流、風與人同行，形成活的路徑（黃郁茜）。</figcaption></figure>
 </div>
 
 <div class="entry" data-id="tja-lee" data-status="partial" data-theme="reception">
   <div class="cite">李威宜（2021）。〈導言：環境人類學方法論的探索：與 Tim Ingold 對話〉。《臺灣人類學刊》19(2): 1–8。</div>
-  <div class="anno">理解專題問題意識的關鍵：以學術史重建 Ingold 三階段思路，歸納兩個對話節點與兩點方法論啟示（探問無形世界、說出微妙知覺）。其性質是編輯性、策展性框架——把 Ingold 當「方法論修補工具」而非範式皈依，不宜過度理論化為「接收綱領」。專題出處已由民族所官方頁確認；官網目次的作者—題名對位亦經月旦逐篇交叉核對無誤。頁碼 1–8 為推定（次篇起頁為 9），引用前請以全文 PDF 確認。TOAJ 收錄查證（B18）：《臺灣人類學刊》確認有 TOAJ 期刊頁（期刊層級），文章層級連結因平台採前端動態載入、無法自動核實，請自期刊頁進入檢索。</div>
+  <div class="anno">理解專題問題意識的關鍵：以學術史重建 Ingold 三階段思路，歸納兩個對話節點與兩點方法論啟示（探問無形世界、說出微妙知覺）。其性質是編輯性、策展性框架——把 Ingold 當「方法論修補工具」而非範式皈依，不宜過度理論化為「接收綱領」。專題出處已由民族所官方頁確認；官網目次的作者—題名對位亦經月旦逐篇交叉核對無誤。頁碼 1–8 為推定（次篇起頁為 9），引用前請以全文 PDF 確認。TOAJ 收錄查證：《臺灣人類學刊》確認有 TOAJ 期刊頁（期刊層級），文章層級連結因平台採前端動態載入、無法自動核實，請自期刊頁進入檢索。</div>
   <div class="meta"><span class="tag">期刊論文</span><span class="tag">接收史</span><span class="tag lv">直接接收</span><span class="tag">可信度 A</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_PDF&amp;CNV=PDF&amp;Pname=TJA19-2_S0.pdf&amp;MSID=2" target="_blank">民族所官方 PDF</a> <a href="https://www.ioe.sinica.edu.tw/Content/Periodicals/content.aspx?SiteID=530164240637641451&amp;MSID=1161507152067240304&amp;MenuID=530167100636226027" target="_blank">19(2) 目次頁</a> <a href="https://toaj.stpi.narl.org.tw/index/journal/4b1141f97ce46933017ce469b61e0001" target="_blank">TOAJ 期刊頁（臺灣人類學刊）</a></span></div>
 </div>
 <div class="entry" data-id="tja-lin" data-status="ok" data-theme="reception ground">
   <div class="cite">林益仁（2021）。〈我在泰雅生態農耕敘事中的走動：對 Tim Ingold 的呼應〉。《臺灣人類學刊》19(2): 9–55。</div>
-  <div class="anno">台灣最明確以 Ingold 為核心對話對象的田野研究之一（直接以 walking、dwelling、lines、correspondence 重讀尖石後山泰雅農耕），提出「照顧」的生態新解。其關鍵推進：TEK 從「知識論問題」轉化為「生命實作問題」——知識不是被保存的，而是被走出來、照顧出來的。頁碼疑點已裁定為 9–55（北醫機構典藏＋專題四篇頁碼連續性 9–55、57–106、107–145、147–188 交叉印證；383–416 說不成立，見勘誤表）。</div>
+  <div class="anno">台灣最明確以 Ingold 為核心對話對象的田野研究之一（直接以 walking、dwelling、lines、correspondence 重讀尖石後山泰雅農耕），提出「照顧」的生態新解。其關鍵推進：TEK 從「知識論問題」轉化為「生命實作問題」——知識不是被保存的，而是被走出來、照顧出來的。頁碼疑點已裁定為 9–55（北醫機構典藏＋專題四篇頁碼連續性 9–55、57–106、107–145、147–188 交叉印證；383–416 說不成立）。</div>
   <div class="meta"><span class="tag">期刊論文</span><span class="tag lv">直接接收</span><span class="tag">可信度 A</span><span class="lk"><a href="https://www.ioe.sinica.edu.tw/WebTools/FilesDownload.ashx?Siteid=530164240637641451&amp;Menuid=530167100636226027&amp;TB=PeriodicalsContent&amp;CN=PCID&amp;fd=Periodicals_PDF&amp;CNV=PDF&amp;Pname=TJA19-2_S1.pdf&amp;MSID=3" target="_blank">民族所官方 PDF 全文</a> <a href="https://hub.tmu.edu.tw/zh/publications/%E6%88%91%E5%9C%A8%E6%B3%B0%E9%9B%85%E7%94%9F%E6%85%8B%E8%BE%B2%E8%80%95%E6%95%98%E4%BA%8B%E4%B8%AD%E7%9A%84%E8%B5%B0%E5%8B%95%E5%B0%8Dtim-ingold%E7%9A%84%E5%91%BC%E6%87%89" target="_blank">北醫典藏</a></span></div>
 </div>
 <div class="entry" data-id="tja-huang" data-status="ok" data-theme="reception">
@@ -436,8 +460,8 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 <h3 id="theme-ground">T3｜地面與行走：腳的台灣現代性</h3>
 <p class="lead">三條線：被規訓的腳（放足／學校體育／殖民現代性）、神聖化與技能化的腳（進香／山林行走）、商品化與病理化的腳（製鞋王國／糖尿病足）。身體感研究是整條路徑的理論地基——腳的感知不是單一觸覺，而是痛、痠、麻、穩、沉、神聖感與環境感交織的身體感。</p>
 <div class="figrow">
-  <figure><img src="assets/panel-31.webp" alt="赤足踏在泥土上"><figcaption>腳是感知世界的器官：透過接觸、壓力與紋理認識環境。</figcaption></figure>
-  <figure><img src="assets/panel-32.webp" alt="白沙屯媽祖進香隊伍蜿蜒於田野道路"><figcaption>白沙屯媽祖進香：身體行走，信仰與路徑共同生成。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-31.webp" alt="赤足踏在泥土上"><figcaption>腳是感知世界的器官：透過接觸、壓力與紋理認識環境。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-32.webp" alt="白沙屯媽祖進香隊伍蜿蜒於田野道路"><figcaption>白沙屯媽祖進香：身體行走，信仰與路徑共同生成。</figcaption></figure>
 </div>
 
 <div class="entry" data-id="ing-cog" data-status="ok" data-theme="ground">
@@ -558,8 +582,8 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 <h3 id="theme-skill">T4｜技藝與材料：活技藝與被抽取的技藝</h3>
 <p class="lead">四種技藝政治：保存化（文資傳習）、族群化（達悟造舟）、階級化（黑手師傅）、感官化（製茶身體感）。統攝問題：技藝在什麼條件下仍能作為 correspondence 活著？又在什麼條件下被制度、資本或評分系統抽取成可計量、可展示、可交易的能力？</p>
 <div class="figrow">
-  <figure><img src="assets/panel-41.webp" alt="鋸木板，鋸子沿木紋線前進"><figcaption>鋸木板不是征服材料，而是回應木紋的走向。</figcaption></figure>
-  <figure><img src="assets/panel-42.webp" alt="工匠專注於手中的工件"><figcaption>技藝是與材料的「對應」（correspondence），而非單向控制。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-41.webp" alt="鋸木板，鋸子沿木紋線前進"><figcaption>鋸木板不是征服材料，而是回應木紋的走向。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-42.webp" alt="工匠專注於手中的工件"><figcaption>技藝是與材料的「對應」（correspondence），而非單向控制。</figcaption></figure>
 </div>
 
 <div class="entry" data-id="ing-textility" data-status="ok" data-theme="skill">
@@ -635,8 +659,8 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 <h3 id="theme-sinophone">橫貫帶一｜漢語身體—宇宙論：整合脊椎</h3>
 <p class="lead">前四場對話繞過的「漢語理論大陸」。會通與張力並陳：漢語身體觀承載「感應」的倫理—宇宙論秩序與「道」的目的性，Ingold 刻意反目的論——這個張力才是最有理論生產力之處。</p>
 <div class="figrow">
-  <figure><img src="assets/panel-51.webp" alt="庖丁解牛水墨畫"><figcaption>庖丁解牛：順著筋理的線，技進於道。</figcaption></figure>
-  <figure><img src="assets/panel-52.webp" alt="書法筆勢與山水中的墨線"><figcaption>書法的「筆勢」：一筆未完，氣脈連綿，線在過程中生生不息。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-51.webp" alt="庖丁解牛水墨畫"><figcaption>庖丁解牛：順著筋理的線，技進於道。</figcaption></figure>
+  <figure><img loading="lazy" src="assets/panel-52.webp" alt="書法筆勢與山水中的墨線"><figcaption>書法的「筆勢」：一筆未完，氣脈連綿，線在過程中生生不息。</figcaption></figure>
 </div>
 
 <div class="entry" data-id="sin-yang1996" data-status="ok" data-theme="sinophone">
@@ -704,7 +728,7 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 <h3 id="theme-database">來源入口｜資料庫與機構</h3>
 <div class="entry" data-id="db-tw" data-status="ok" data-theme="database">
   <div class="cite">台灣學術資料庫：<b>臺灣學術期刊開放取用平台（TOAJ，國科會支持，收錄約 180 餘種人文社會 OA 期刊，免費全文）</b>、Airiti 華藝線上圖書館、國家圖書館期刊文獻資訊網、臺灣博碩士論文知識加值系統（NDLTD）、月旦知識庫。</div>
-  <div class="anno">本地圖中文書目的查證與全文取得入口。查證順位：TOAJ／期刊官網／DOI（A，開放取用優先）→ 華藝等資料庫條目（B）→ 機構公告（C）→ 二手轉述（D，僅作線索）。<b>TOAJ 收錄查證結果（B18，2026-06-07）</b>：平台採前端動態載入，無法以自動化方式逐刊核實；本地圖八種台灣期刊中僅《臺灣人類學刊》查得 TOAJ 期刊頁（已連結至該條目），其餘七刊（考古人類學刊、思與言、台灣社會學、科技醫療與社會、地理學報、民俗曲藝、人文及社會科學集刊）收錄狀態未能核實，不杜撰連結——讀者可自 TOAJ 平台入口手動檢索；本地圖各該條目均已備官方 PDF 或資料庫連結，可信度不受影響。</div>
+  <div class="anno">本地圖中文書目的查證與全文取得入口。查證順位：TOAJ／期刊官網／DOI（A，開放取用優先）→ 華藝等資料庫條目（B）→ 機構公告（C）→ 二手轉述（D，僅作線索）。<b>TOAJ 收錄查證結果</b>：平台採前端動態載入，無法以自動化方式逐刊核實；本地圖八種台灣期刊中僅《臺灣人類學刊》查得 TOAJ 期刊頁（已連結至該條目），其餘七刊（考古人類學刊、思與言、台灣社會學、科技醫療與社會、地理學報、民俗曲藝、人文及社會科學集刊）收錄狀態未能核實，不杜撰連結——讀者可自 TOAJ 平台入口手動檢索；本地圖各該條目均已備官方 PDF 或資料庫連結，可信度不受影響。</div>
   <div class="meta"><span class="tag">資料庫入口</span><span class="tag">可信度 A</span><span class="lk"><a href="https://toaj.stpi.narl.org.tw/index" target="_blank">TOAJ 平台</a> <a href="https://www.airitilibrary.com/" target="_blank">Airiti 華藝</a> <a href="https://tpl.ncl.edu.tw/" target="_blank">國圖期刊文獻網</a> <a href="https://ndltd.ncl.edu.tw/" target="_blank">博碩士論文系統</a> <a href="https://www.lawdata.com.tw/" target="_blank">月旦知識庫</a></span></div>
 </div>
 <div class="entry" data-id="db-inst" data-status="ok" data-theme="database">
@@ -726,6 +750,63 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 
 <h2 id="chapters"><span class="no">入口五</span>逐章對話：第二輪深度研究</h2>
 <p class="lead">第一輪地圖以「主題」為單位（五條路徑＋兩條橫貫帶）；第二輪改以《Being Alive》的「章」為單位，逐章完成：論證提要、台灣在地思想的<b>接軌／挑戰／回應／共鳴</b>四維研究判斷、經查證的國際與台灣書目條目、可發展論文題目。四維判斷均屬<span class="tag">研究判斷</span>，引用前請回到原典。各章不重複第一輪既有條目，僅以導引連結指回對應主題區。</p>
+
+<h3 id="chapter-map">全書章節導覽地圖</h3>
+<p class="lead">依《Being Alive》原書「五部＋緒論＋結語」的架構排列全書章節——<b>點各部標題可展開／收合</b>該部的章節清單，再由任一章跳至延伸文獻或論文題目。全書共 <b>122 筆</b>延伸文獻、<b>32 個</b>可發展論文題目（每章 2 題）。CH02、CH05–CH18、結語為第二輪逐章深度研究；CH01／CH03／CH04 尚未獨立成章，其文獻見第一輪主題區，以指路卡（→）連結。</p>
+<p class="map-tools"><button id="map-expand" type="button">全部展開</button><button id="map-collapse" type="button">全部收合</button>（亦可單獨點各部標題）</p>
+<details><summary>緒論　Prologue（1 章｜文獻見 T1｜全書總綱）</summary>
+<div class="tablewrap"><table class="chmap">
+  <tr><th style="width:3.2em">章</th><th>章名（中／英）</th><th>核心概念</th><th>四維對話重點（台灣）</th><th style="width:6.5em">延伸文獻</th><th style="width:5em">論文題目</th></tr>
+  <tr><td>CH01</td><td>人類學活起來<br><span style="color:var(--muted);font-size:.85em">Anthropology comes to life</span></td><td>以生命的開放運動取代目的論；「讓人類學活起來」的總綱</td><td>—（見 T1 生命×STS）</td><td><a href="#theme-life">見 T1 →</a></td><td>—</td></tr>
+</table></div></details>
+
+<details><summary>第一部　廓清基礎　Clearing the Ground（3 章｜延伸文獻 8 筆＋2 章見主題區｜論文題目 2）</summary>
+<div class="tablewrap"><table class="chmap">
+  <tr><th style="width:3.2em">章</th><th>章名（中／英）</th><th>核心概念</th><th>四維對話重點（台灣）</th><th style="width:6.5em">延伸文獻</th><th style="width:5em">論文題目</th></tr>
+  <tr><td>CH02</td><td>材料對抗物質性<br><span style="color:var(--muted);font-size:.85em">Materials against materiality</span></td><td>材料 vs 物質性、追隨材料、特性即故事</td><td>身體感研究 vs Howes 批判；《考工記》「特性即歷史」</td><td><a href="#ch02">8 筆 →</a></td><td><a href="#ch02">2 題 →</a></td></tr>
+  <tr><td>CH03</td><td>在地面上的文化<br><span style="color:var(--muted);font-size:.85em">Culture on the ground</span></td><td>行走、足部與地面的現代性、鋪面與棲居</td><td>—（見 T3 地面行走：腳的台灣現代性）</td><td><a href="#theme-ground">見 T3 →</a></td><td>—</td></tr>
+  <tr><td>CH04</td><td>走木板<br><span style="color:var(--muted);font-size:.85em">Walking the plank</span></td><td>鋸木、技能過程、工具—材料—知覺的耦合</td><td>—（見 T4 技藝材料：製茶、大木作、黑手）</td><td><a href="#theme-skill">見 T4 →</a></td><td>—</td></tr>
+</table></div></details>
+
+<details><summary>第二部　網結　The Meshwork（4 章｜延伸文獻 29 筆｜論文題目 8）</summary>
+<div class="tablewrap"><table class="chmap">
+  <tr><th style="width:3.2em">章</th><th>章名（中／英）</th><th>核心概念</th><th>四維對話重點（台灣）</th><th style="width:6.5em">延伸文獻</th><th style="width:5em">論文題目</th></tr>
+  <tr><td>CH05</td><td>重新思考生靈性<br><span style="color:var(--muted);font-size:.85em">Rethinking the animate</span></td><td>生靈性、泛靈論翻案、關係場域先於區分</td><td>布農 hanitu 反例；劉璧榛十六族多樣性</td><td><a href="#ch05">9 筆 →</a></td><td><a href="#ch05">2 題 →</a></td></tr>
+  <tr><td>CH06</td><td>點、線、對位<br><span style="color:var(--muted);font-size:.85em">Point, line, counterpoint</span></td><td>網結 vs 網絡、生成之線、流動空間</td><td>龔卓軍毡團存有；台灣 ANT 已建制化</td><td><a href="#ch06">8 筆 →</a></td><td><a href="#ch06">2 題 →</a></td></tr>
+  <tr><td>CH07</td><td>當螞蟻遇見蜘蛛<br><span style="color:var(--muted);font-size:.85em">When ANT meets SPIDER</span></td><td>SPIDER vs ANT、能動性、技藝即發展</td><td>兩種反 ANT（王志弘政經 vs Ingold 生命論）；莊子庖丁</td><td><a href="#ch07">5 筆 →</a></td><td><a href="#ch07">2 題 →</a></td></tr>
+  <tr><td>CH08</td><td>大地的形狀<br><span style="color:var(--muted);font-size:.85em">The shape of the earth</span></td><td>全球視角 vs 棲居視角、概念演化</td><td>台灣科教概念演化樹；蓋天說宇宙論</td><td><a href="#ch08">7 筆 →</a></td><td><a href="#ch08">2 題 →</a></td></tr>
+</table></div></details>
+
+<details><summary>第三部　大地與天空　Earth and Sky（4 章｜延伸文獻 31 筆｜論文題目 8）</summary>
+<div class="tablewrap"><table class="chmap">
+  <tr><th style="width:3.2em">章</th><th>章名（中／英）</th><th>核心概念</th><th>四維對話重點（台灣）</th><th style="width:6.5em">延伸文獻</th><th style="width:5em">論文題目</th></tr>
+  <tr><td>CH09</td><td>大地、天空、風與天氣<br><span style="color:var(--muted);font-size:.85em">Earth, sky, wind and weather</span></td><td>天氣—世界、呼吸、棲居於敞開、風土論</td><td>洪耀勳風土論（1936）；颱風治理 vs 棲居</td><td><a href="#ch09">5 筆 →</a></td><td><a href="#ch09">2 題 →</a></td></tr>
+  <tr><td>CH10</td><td>地景或天氣—世界？<br><span style="color:var(--muted);font-size:.85em">Landscape or weather-world?</span></td><td>scape/scope 詞源、氛圍、以海觀陸</td><td>大林蒲量體政治；山水煙雲留白</td><td><a href="#ch10">8 筆 →</a></td><td><a href="#ch10">2 題 →</a></td></tr>
+  <tr><td>CH11</td><td>對音景概念的四項異議<br><span style="color:var(--muted);font-size:.85em">Four objections to the concept of soundscape</span></td><td>反音景、聲音是媒介、enwinded/ensounded</td><td>台灣聲景建制 vs 反音景；莊子三籟</td><td><a href="#ch11">9 筆 →</a></td><td><a href="#ch11">2 題 →</a></td></tr>
+  <tr><td>CH12</td><td>反對空間<br><span style="color:var(--muted);font-size:.85em">Against space</span></td><td>場所如結、行旅 vs 交通、沿途整合</td><td>內本鹿路徑 vs 劃設語言；「道行之而成」</td><td><a href="#ch12">9 筆 →</a></td><td><a href="#ch12">2 題 →</a></td></tr>
+</table></div></details>
+
+<details><summary>第四部　故事性世界　A Storied World（4 章｜延伸文獻 31 筆｜論文題目 8）</summary>
+<div class="tablewrap"><table class="chmap">
+  <tr><th style="width:3.2em">章</th><th>章名（中／英）</th><th>核心概念</th><th>四維對話重點（台灣）</th><th style="width:6.5em">延伸文獻</th><th style="width:5em">論文題目</th></tr>
+  <tr><td>CH13</td><td>故事對抗分類<br><span style="color:var(--muted);font-size:.85em">Stories against classification</span></td><td>故事性 vs 分類式知識、譜系模型批判</td><td>達悟飛魚分類即故事；章學誠六經皆史</td><td><a href="#ch13">8 筆 →</a></td><td><a href="#ch13">2 題 →</a></td></tr>
+  <tr><td>CH14</td><td>命名即說故事<br><span style="color:var(--muted);font-size:.85em">Naming as storytelling</span></td><td>名字是動詞、生命線故事、命名政治</td><td>達悟白鼻心命名；正名運動與命名政治</td><td><a href="#ch14">8 筆 →</a></td><td><a href="#ch14">2 題 →</a></td></tr>
+  <tr><td>CH15</td><td>關於字母 A 的七段變奏<br><span style="color:var(--muted);font-size:.85em">Seven variations on the letter A</span></td><td>姿態 vs 形狀、書寫現象學、線與表面</td><td>吳俊業書法舉止意義；筆順國家標準化</td><td><a href="#ch15">8 筆 →</a></td><td><a href="#ch15">2 題 →</a></td></tr>
+  <tr><td>CH16</td><td>心靈行走的方式<br><span style="color:var(--muted);font-size:.85em">Ways of mind-walking</span></td><td>想像地形、閱讀／書寫／繪畫、中國畫論</td><td>石守謙移動桃花源；宗炳臥遊</td><td><a href="#ch16">7 筆 →</a></td><td><a href="#ch16">2 題 →</a></td></tr>
+</table></div></details>
+
+<details><summary>第五部　繪製、製作、書寫　Drawing, Making, Writing（2 章｜延伸文獻 14 筆｜論文題目 4）</summary>
+<div class="tablewrap"><table class="chmap">
+  <tr><th style="width:3.2em">章</th><th>章名（中／英）</th><th>核心概念</th><th>四維對話重點（台灣）</th><th style="width:6.5em">延伸文獻</th><th style="width:5em">論文題目</th></tr>
+  <tr><td>CH17</td><td>製作的紋理性<br><span style="color:var(--muted);font-size:.85em">The textility of making</span></td><td>質料形式論批判、追隨材料、紋理 vs 建構</td><td>大木作持篙修正二元；莊子以天合天</td><td><a href="#ch17">5 筆 →</a></td><td><a href="#ch17">2 題 →</a></td></tr>
+  <tr><td>CH18</td><td>共同繪製<br><span style="color:var(--muted);font-size:.85em">Drawing together</span></td><td>圖繪人類學、觀察即描述、與而非關於</td><td>龔卓軍共繪策展 vs 影像建制；石濤一畫</td><td><a href="#ch18">9 筆 →</a></td><td><a href="#ch18">2 題 →</a></td></tr>
+</table></div></details>
+
+<details><summary>結語　Epilogue（1 章｜延伸文獻 9 筆｜論文題目 2）</summary>
+<div class="tablewrap"><table class="chmap">
+  <tr><th style="width:3.2em">章</th><th>章名（中／英）</th><th>核心概念</th><th>四維對話重點（台灣）</th><th style="width:6.5em">延伸文獻</th><th style="width:5em">論文題目</th></tr>
+  <tr><td>CH19</td><td>人類學不是民族誌<br><span style="color:var(--muted);font-size:.85em">Anthropology is not ethnography</span></td><td>對應 vs 描述、方法的暴政、教學即實踐</td><td>林開世田野反思；王陽明知行合一</td><td><a href="#ch19">9 筆 →</a></td><td><a href="#ch19">2 題 →</a></td></tr>
+</table></div></details>
 
 <h3 id="teaching-track">教學接收軌道（跨章彙整中）</h3>
 <div class="qbox"><b>什麼是教學接收</b>（<span class="tag">研究判斷</span>）：Ingold 概念出現在台灣大專課程的指定閱讀，是「接收史」的第三條證據軌（期刊論文、講座策展之外）。本小節隨各章批次累積課綱證據（可信度 C：註明授課者、課名、學期，引用前回查課程網）。<b>CH05 查證結果</b>：本回合檢索台大、清大、政大課程網與課綱系統，尚未尋獲將〈Rethinking the animate〉列為指定閱讀的可查證課綱；政大民族學系「民族學方法」（劉子愷，110-2）課綱涵蓋「本體論轉向」單元但未列 Ingold——顯示「本體論轉向」教學已在地建制化，Ingold 是否經此進入課堂仍待後續章節批次累積證據。目前在地接點以期刊與研究文獻為主。<br><b>CH06 新增（兩條教學軌證據）</b>：(1) Ingold 曾於南藝大進行「星球生命的四重反省」四場講座（龔卓軍 2022 紀錄），是 Ingold 親身在台灣課堂／講堂現場的直接證據；(2) 陳怡君（2021）為某校「地景、文化與權力」課程的學生期末報告，循線可推知該課程曾把 Ingold（環境感知／寓居／製作）列為閱讀材料——課程名稱與授課單位仍待回查課程網以補齊授課者與學期欄位。<br><b>CH10 新增（兩條教學軌證據）</b>：(1) 徐振輔（2021）為同一「地景、文化與權力」課程產出系列的另一篇學生期末報告（介紹 Lorimer 的非再現地理學，文中並提及 Lorimer 曾為 Ingold 作介紹、Wylie 的後現象學行走研究）——與陳怡君（2021）合併觀察，可確認該課程把「Ingold—Lorimer—Wylie」這條地景感知系譜列入教學材料，且為台大地理所碩士班課程（作者自署）；(2) 聯經《思想空間》（2022/06）刊出 Ingold 南藝大「星球生命的四層反省」第三講〈論非知與關注〉之獲授權講座紀要，確證該系列講座為南藝大藝術創作理論研究所博士班之正式課堂活動——系列第一講「天空、大地及其間的地表」正是 CH10「天氣—世界」主題的親身在台開講。<br><b>CH11 新增（一條教學軌證據）</b>：臺大音樂學研究所 99-2 學期「聲景與聲音藝術」（Music5083，楊建章與聲音藝術家澎葉生合開，英語授課）課綱經臺大課程網直接查證——參考書目完整建置 Schafer、Feld、López、Thompson 的聲景論爭場域，並含戶外錄音與現地創作單元；惟書單未列 Ingold，顯示台灣聲音課堂的接收軸線是 Schafer–Feld，Ingold 的反音景論（CH11）在台灣課堂尚屬「缺席的對造」。<br><b>CH12 新增（一條教學軌證據）</b>：政大中文系碩博班「視覺文化專題研究」（鄭文惠，113-1）課綱經政大教學大綱系統直接查證——設「地景認同與空間政治」「性別與地理」單元，書目完整建置 Cresswell《地方》、段義孚《空間與地方》、Soja、Lefebvre、夏鑄九等空間理論譯介線，未列 Ingold——與 CH11 同一模式：台灣課堂的空間／地方教學接收的是 Tuan–Cresswell–Lefebvre–Soja 軸線，Ingold 的反空間論（CH12）是「缺席的對造」；且空間理論課程已跨出地理學建制（本例為中文系）。<br><b>CH13 新增（一條教學軌證據）</b>：政大民族學系碩士班核心課「民族學方法」（劉子愷，110-2）課綱經政大教學大綱系統直接查證——設「敘事分析」「本體論轉向」「多物種民族誌」單元，指定閱讀含 Geertz、Kirksey &amp; Helmreich、Briggs 等，並訓練「以說故事的方式書寫民族誌」；惟書單未列 Ingold——與 CH11、CH12 同一「缺席的對造」模式：敘事與本體論轉向已在地建制化，Ingold 本人尚未經此正式進入課堂。<br><b>CH14 新增（一條教學軌證據）</b>：政大民族學系大一必修「民族語言學概論」（劉子愷，113-1）課綱經政大教學大綱系統全文直讀——書單完整建置 Ahearn《活出語言來》、Salzmann 等語言人類學教科書、Hymes 溝通民族誌，第 4 週單元正是 Sapir 與 Whorf「語言與思考」——CH14 引用的 Sapir 本人在台灣課堂「在場」，但 Ingold 的 languaging／「名字是動詞」線未列入。「缺席的對造」模式至此跨越聲音（CH11）、空間（CH12）、敘事（CH13）、語言（CH14）四個領域一致成立：Ingold 所對話的經典作者群已在台灣課堂建制化，Ingold 本人始終缺席——這本身即是接收史的重要發現。<br><b>CH15 新增（一條教學軌證據＋一條誠實留白）</b>：(1) 臺大人類學系「身體人類學」（顏學誠，103-2，Anth2038）課綱經臺大課程網直接查證——課程以身體感研究、知覺現象學、「身體作為認知的基礎」為主軸（含余舜德演講週），正是本章「手是姿態的總匯」的理論鄰區；惟課綱「指定閱讀」欄未公開（載「待補」），無法確認是否含 Ingold，僅列為主題親近的課堂建制證據。(2) 檢索台大、政大課程網以「書寫／文字／書法」為題之課程，未尋獲將 Ingold《Lines》或本章列為指定閱讀的可查證課綱——書寫研究在台灣課堂分屬中文系書法課程與設計學院字體課程兩個建制，Ingold 的線條人類學在兩者之間仍是「缺席的對造」。<br><b>CH16 新增（一條教學軌證據）</b>：臺大藝史所「中國書畫鑑賞研究」（傅申，98-1，ARHY7065，於故宮博物院上課）課綱經臺大課程網全文直讀——近百筆參考書目構成以鑑定與畫史為軸的完整知識體制（徐邦達、方聞、石守謙等），訓練目標是「具有書畫史基礎的鑑賞家」；荊浩式的「圖真」之氣韻問題在此體制中經由畫史處理，Ingold 的人類學讀法（藝術結構＝世界結構）未列入——台灣的中國畫課堂以「真偽之真」為核心，與本章「存有之真」分屬不同知識體制，「缺席的對造」模式延續至中國藝術領域。<br><b>CH18 新增（一條領域級證據＋一條主題親近課程）</b>：(1) 傅可恩（2018，芭樂人類學，全文直讀）盤點全台六門視覺人類學課程（清大胡台麗、陽明交大林文玲、東華傅可恩、台東大蔡政良、政大藍美華、暨南梅慧玉）——全部以民族誌影片的製作與分析為核心，繪製（drawing）作為方法完全缺席：CH18「視覺人類學忽視鉛筆」的觀察在台灣課堂版圖逐字成立，「缺席的對造」自單一課綱升級為整個次領域的結構證據。(2) 林文琪（北醫大）「藝術與身體知覺」（111-1 教育部示範課程）與臺大通識「古琴與哲學實踐」以技藝實作＋隨作手寫反思日誌為核心——與 CH18「描述不脫離觀察實作」主題親近；惟課程是否引用 Ingold 未能確認，僅列為主題親近的課堂建制證據（其 2005 年書畫行動論見 ch18-lin2005 條目）。<br><b>結語新增（一條收束性證據）</b>：政大民族所碩士班核心課「民族學方法（I）」（劉子愷，111-1）課綱經政大教學大綱系統全文直讀——與 110-2 版（CH13 批次已錄）同課程的延續觀察：指定／參考書單完整建置「民族誌方法」建制（Writing Culture、合作民族誌、Faubion &amp; Marcus《Fieldwork is Not What It Used to Be》、郭佩宜與王宏仁 2006、謝國雄 2007、呂欣怡 2012〈課堂如田野〉），且課程骨架正是結語批判的「方法的暴政」項目（研究計畫書、知情同意書、研究倫理審查）——而 Ingold 的民族誌批判（2008／2014）未列入。「缺席的對造」模式至此取得收束性證據：台灣方法論課堂完整建置了 Ingold 批判對象的全套文獻，批判者本人缺席；耐人尋味的是，書單中的呂欣怡（2012）與謝國雄（2007）恰是「與學生共作」的在地實作文獻——結語的關切已在台灣課堂以另一個系譜「在場」。<br><b>CH02 新增（一條突破性證據）</b>：臺大人類學研究所「物質文化與人類學理論」（張正衡，112-2，Anth7123）課綱經臺大課程網全文直讀——指定閱讀以 11 本專書為骨架，<b>《Being Alive》（2022 年再版）整本列入</b>，與 Miller《Materiality》、Appadurai《The Social Life of Things》、Latour、Harman &amp; Witmore（物導向哲學）、Küchler &amp; Carroll（重返 Gell）並列。「缺席的對造」模式在物質文化領域首度被打破：Ingold 與其批判對象（Miller 的 materiality 綱領）在同一張書單上同台，由修課者自行裁決論戰——這是本軌道目前唯一一筆把 Ingold 列為指定閱讀的可查證研究所課綱，也印證本章（CH02）論戰已進入台灣課堂的建制核心（詳見 ch02-ntucourse2024 條目）。<br><b>CH07 （補強）</b>：本回合檢索台大、清大、政大、陽明交大課程網與課綱系統，未尋獲將〈When ANT meets SPIDER〉或 SPIDER／meshwork 概念列為指定閱讀的可查證課綱。台灣 STS 與人類學課堂的 ANT 教學以 Latour、Law、Callon 與在地的林文源、傅大為文獻為軸（ANT 已建制化，見 sts-fu2019），Ingold 對 ANT 的對話／批判尚未經課綱正式進入課堂——與 CH11–CH16 各章「缺席的對造」同一模式，惟此處缺席的是 Ingold 的「反 ANT」聲音而非其經典對話者。目前在地接點以林文源等 STS 研究文獻為主（見 T1）。<br><b>CH09 （補強）</b>：本回合未尋獲將〈Earth, sky, wind, and weather〉或 weather-world 列為指定閱讀的可查證課綱；惟「風土」（和辻哲郎、洪耀勳）在台灣哲學系所的日本哲學／台灣哲學課程中有穩定的教學傳統（洪子偉、鄧敦民編《洪耀勳文獻選輯》2019 即為教學與研究用選輯）——weather-world 若要進入台灣課堂，「風土論」是現成的接榫單元，惟目前兩者尚未在同一課綱並置（推論，未立目）。<br><b>CH17 （補強）</b>：本回合未尋獲將〈The textility of making〉列為指定閱讀的可查證課綱；惟「技藝／工藝」相關教學在台灣分布於人類學（身體感、物質文化）、建築與文資（大木作、傳統工藝傳習）、哲學（莊子技藝論）三個建制，各有現成的對話入口（余舜德製茶見 T4、徐明福《大木作》見 T4、張育誠 2024 莊子技藝臺大碩論見 ch17-chang2024）。Ingold 的 textility 論若要進課堂，最可能的接點是物質文化與設計人類學課程（參 ch02-ntucourse2024 臺大「物質文化與人類學理論」已將《Being Alive》整本列入，該課即為跨入點）。</div>
@@ -1662,13 +1743,13 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 
 
 <h2 id="about"><span class="no">透明</span>方法與 AI 協作聲明</h2>
-<p>這張研究地圖是一次「AI 輔助研究」的方法實驗，產製流程全程留有紀錄，分四個階段。<b>第一階段（深度研究）</b>：以 AI 深度研究產出五篇研究底稿，逐章細讀《Being Alive》並探勘台灣對話領域，每篇均附 Caveats（須核實事項）標明不確定之處。<b>第二階段（對抗性審查）</b>：底稿經多輪外部 AI 審查（章節論證、資訊架構、介面設計三個層次），審查意見經人工擇取後整合進本地圖——例如「接收層級三分」「雙層狀態」「語氣降調」皆來自審查回饋。<b>第三階段（自動化查證）</b>：由排程任務每小時逐批查證書目，連結順位為 TOAJ／期刊官網／DOI → 華藝 → 機構頁，輔以 Consensus 學術搜尋；查證結果反映於各條目的來源連結、可信度與接收層級標示。<b>第四階段（人工把關）</b>：研究者本人對所有「研究詮釋」負最終責任，正式引用前回到原典。</p>
+<p>這張研究地圖是一次「AI 輔助研究」的方法實驗，產製流程全程留有紀錄，分四個階段。<b>第一階段（深度研究）</b>：以 AI 深度研究產出五篇研究底稿，逐章細讀《Being Alive》並探勘台灣對話領域，每篇均附 Caveats（須核實事項）標明不確定之處。<b>第二階段（對抗性審查）</b>：底稿經多輪外部 AI 審查（章節論證、資訊架構、介面設計三個層次），審查意見經人工擇取後整合進本地圖——例如「接收層級三分」「語氣降調」「研究判斷與原典回查提醒」皆來自審查回饋。<b>第三階段（自動化查證）</b>：由排程任務每小時逐批查證書目，連結順位為 TOAJ／期刊官網／DOI → 華藝 → 機構頁，輔以 Consensus 學術搜尋；查證結果反映於各條目的來源連結、可信度與接收層級標示。<b>第四階段（人工把關）</b>：研究者本人對所有「研究詮釋」負最終責任，正式引用前回到原典。</p>
 <p>AI 在本專案中做的是：文獻探勘、結構化整理、交叉查證、勘誤追蹤、介面建置。AI 不做的是：替代全文閱讀、替代田野、替代研究判斷的最終裁量。所有不確定之處一律標示而不掩飾——我們相信，<b>誠實標示「不知道」與「待查證」，正是 AI 輔助研究值得信任的起點</b>。</p>
 <p><b>有機增補（藤蔓規則）</b>：本地圖不是封閉清單，而是會生長的網結。排程查證過程中若發現值得納入的新文獻（例如在作者著作目錄、期刊同期目次、引用鏈中偶遇的相關研究），即以「有機增補」標籤補入對應主題區，並掛「研究判斷」標示——如同藤蔓沿著查證的支架攀附生長，每一次回查都是一次學習。增補紀錄保留於本計畫的工作紀錄。</p>
 <p>發現錯誤？歡迎來信回報勘誤：<a href="mailto:anccc@nycu.edu.tw">anccc@nycu.edu.tw</a>（請註明條目編號或文獻名）。已修正的錯誤一律保留於本計畫的工作紀錄，不無痕抹除。</p>
 
 <footer>
-  <img src="assets/footer-line.webp" alt="五篇文章共同指向一個核心：世界不是既成的東西，而是人與環境在時間中共同生成的線。">
+  <img loading="lazy" src="assets/footer-line.webp" alt="五篇文章共同指向一個核心：世界不是既成的東西，而是人與環境在時間中共同生成的線。">
   <b>學術使用警語</b>：本頁區分「書目事實」與「研究詮釋」——書目事實以 DOI、期刊官網、TOAJ、Airiti、機構頁為準；研究詮釋（如「對話接點」「反向修正」）為本計畫對文獻的整理與判斷，供研究構想使用，不等同於原作者主張。<br>
   本地圖為研究底稿之衍生資源整理（AI 協作產出），書目查證進行中；引用前請回到原典與權威資料庫。
   視覺素材：《Ingold 五篇》研究導讀合成圖（本專案 AI 生成）切割壓縮版。<br>
@@ -1676,20 +1757,24 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
 </footer>
 
 </div>
+<button class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到頂端" title="回到頂端">↑</button>
 <script>
 (function(){
   const entries=[...document.querySelectorAll('.entry')];
-  // 篩選
+  const fcount=document.getElementById('fcount');
+  // 篩選＋即時筆數
   function apply(){
     const q=document.getElementById('q').value.trim().toLowerCase();
-    const st=document.querySelector('.fbtn.active[data-f="status"]');
     const th=document.querySelector('.fbtn.active[data-f="theme"]');
+    let n=0;
     entries.forEach(e=>{
       const okq=!q||e.textContent.toLowerCase().includes(q);
-      const oks=!st||e.dataset.status===st.dataset.v;
       const okt=!th||(e.dataset.theme||'').split(' ').includes(th.dataset.v);
-      e.style.display=(okq&&oks&&okt)?'':'none';
+      const show=okq&&okt;
+      e.style.display=show?'':'none';
+      if(show)n++;
     });
+    if(fcount) fcount.textContent=(q||th)?('符合 '+n+'／共 '+entries.length+' 筆書目'):('共 '+entries.length+' 筆書目');
   }
   document.getElementById('q').addEventListener('input',apply);
   document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
@@ -1698,6 +1783,44 @@ footer img{width:100%;max-width:560px;display:block;margin:8px 0;opacity:.85;}
     if(!was)b.classList.add('active');
     apply();
   }));
+  // 清除篩選
+  const fclear=document.getElementById('fclear');
+  if(fclear) fclear.addEventListener('click',()=>{
+    document.getElementById('q').value='';
+    document.querySelectorAll('.fbtn.active').forEach(x=>x.classList.remove('active'));
+    apply();
+  });
+  apply(); // 載入時顯示總筆數
+  // 「/」鍵聚焦搜尋
+  document.addEventListener('keydown',e=>{
+    if(e.key==='/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault(); document.getElementById('q').focus();
+    }
+  });
+  // 章節地圖：全部展開／收合
+  const allDetails=document.querySelectorAll('details');
+  const me=document.getElementById('map-expand'), mc=document.getElementById('map-collapse');
+  if(me) me.addEventListener('click',()=>allDetails.forEach(d=>d.open=true));
+  if(mc) mc.addEventListener('click',()=>allDetails.forEach(d=>d.open=false));
+  // 右側目錄隨捲動高亮（scrollspy）
+  const tocLinks=[...document.querySelectorAll('.toc a')];
+  const idMap={};
+  tocLinks.forEach(a=>{const id=(a.getAttribute('href')||'').slice(1); if(id) idMap[id]=a;});
+  const spyTargets=Object.keys(idMap).map(id=>document.getElementById(id)).filter(Boolean);
+  if('IntersectionObserver' in window && spyTargets.length){
+    const io=new IntersectionObserver(ents=>{
+      ents.forEach(en=>{
+        if(en.isIntersecting){
+          tocLinks.forEach(a=>a.classList.remove('active'));
+          if(idMap[en.target.id]) idMap[en.target.id].classList.add('active');
+        }
+      });
+    },{rootMargin:'-8% 0px -82% 0px',threshold:0});
+    spyTargets.forEach(t=>io.observe(t));
+  }
+  // 回到頂端浮動鈕
+  const totop=document.querySelector('.totop');
+  if(totop) window.addEventListener('scroll',()=>{totop.classList.toggle('show',window.scrollY>500);},{passive:true});
 })();
 </script>
 </body>
