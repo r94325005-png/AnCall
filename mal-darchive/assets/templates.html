@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【內部模板】燼與痕 — 共用 HTML 模板 v2「焦夜公文」（非站內頁面）</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="--ghost-word:'exergue'">
+<!-- =====================================================================
+     燼與痕 — 共用 HTML 模板 v2「焦夜公文」（Nocturne × Bureau of Traces）
+     使用者於 2026/06/10 選定：A 焦夜檔案 × B 痕跡科 混血，互動機關全力做。
+
+     視覺邏輯（建頁時務必遵守）：
+     · 頁面底＝焦黑檔案室之夜（暗語境）：hero、導言、章節導讀正文、頁尾
+     · 內容物＝從火場搶救出的公文（紙語境）：.sheet 公文紙、.chapter-card
+       索引卡、.trilingual-block 三聯單、.principle 原則卡、.questions 題卡
+     · 幽靈字：body::before 顯示 --ghost-word，各頁以
+       <body style="--ghost-word:'exergue'"> 覆寫為該章關鍵法文詞
+     · 互動機關（nav.js 已支援，每章至少用一種）：
+       - .redacted 塗黑顯影（hover／focus／點按解密）
+       - .stamp.stamp-in 戳記捲動入場（暗底加 .on-dark）
+       - hr.cinder 餘燼裂縫（自帶呼吸動畫）
+     · 字體載入須含 IBM Plex Mono（檔號、戳記、樂章標籤用）
+
+     區塊索引：
+     【A】共用 header（根目錄頁）【B】chapters/ 子目錄 header 路徑規則
+     【C】共用 footer【D】章節頁五段樂章骨架
+     ===================================================================== -->
+
+<!-- ============【A】共用 HEADER（根目錄頁）============ -->
+<a class="skip-link" href="#main">跳至主要內容</a>
+
+<header class="site-header">
+  <div class="wrap-wide nav">
+    <a class="brand" href="index.html" aria-label="燼與痕 首頁">
+      <svg class="cinder-mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <!-- 灰燼殘片印記（暗底亮色版）：一圈將熄的痕跡與一點餘燼 -->
+        <path d="M17 4 C 25 4, 30 10, 29.5 17 C 29 24, 24 29, 17 29.5" fill="none" stroke="#d9d1c0" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 29 C 7.5 27.5, 4.5 22.5, 4.5 17 C 4.5 13.5, 6 10.5, 8.5 8.2" fill="none" stroke="#9a9082" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="3 4"/>
+        <circle cx="17" cy="17" r="3" fill="#d4622a"/>
+        <circle cx="11" cy="6.5" r="1.1" fill="#f08a4b" opacity=".85"/>
+      </svg>
+      <span>燼與痕<small>與德希達《Mal d'archive》在地對話</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">全書地圖</a></li>
+      <li><a href="about.html">關於本站</a></li>
+      <li><a href="glossary.html">術語表</a></li>
+      <li><a href="excerpts.html">精選段落</a></li>
+      <li><a href="genealogy.html">概念系譜</a></li>
+      <li><a href="taiwan.html">臺灣脈絡</a></li>
+      <li><a href="trilingual.html">翻譯方法論</a></li>
+      <li><a href="reading-guide.html">讀書會指南</a></li>
+      <li><a href="resources.html">延伸資源</a></li>
+    </ul>
+  </div>
+</header>
+<!-- 【B】chapters/ 子目錄頁：brand href 與所有 nav 連結前綴 ../，
+     並將該頁連結標 aria-current="page"；頁尾 script 為 ../assets/nav.js -->
+
+<main id="main">
+
+<!-- ============【D】章節頁五段樂章骨架（以 Exergue 為例）============ -->
+
+<!-- 章首（暗語境）：含檔號與解密戳記 -->
+<div class="chapter-hero">
+  <p class="docno" style="position:absolute;right:1.5rem;top:.5rem;text-align:right;color:var(--ash-dim)" aria-hidden="true">檔號：MD-01 EXERGUE<br>頁碼：pp. 19–44<br>密等：解密</p>
+  <div class="wrap">
+    <p class="ch-kicker">Dossier MD-01 · Exergue</p>
+    <h1>題銘：印在 archive 之前</h1>
+    <p class="ch-fr-title">Mal d'archive : une impression freudienne</p>
+    <p class="ch-sub">§1–§14 ｜ 在地接線：臺灣的命名政治與 arkheîon　<span class="stamp stamp-in on-dark" style="font-size:.78rem">已解密<small>DÉCLASSIFIÉ</small></span></p>
+  </div>
+</div>
+
+<!-- 樂章導引（sticky 錨點列，暗語境） -->
+<nav class="movement-nav" aria-label="本章樂章導引">
+  <div class="wrap">
+    <ol>
+      <li><a href="#mv1">① 論旨精煉</a></li>
+      <li><a href="#mv2">② 在地接線</a></li>
+      <li><a href="#mv3">③ 交錯提問</a></li>
+      <li><a href="#mv4">④ 三語窗口</a></li>
+      <li><a href="#mv5">⑤ 術語與延伸</a></li>
+    </ol>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ① 論旨精煉：一張公文紙 -->
+  <section class="movement" id="mv1" aria-labelledby="mv1-h">
+    <div class="sheet">
+      <p class="docno" aria-hidden="true">MD-01 / MV-①</p>
+      <div class="movement-head">
+        <span class="movement-num" aria-hidden="true">①</span>
+        <div>
+          <p class="mv-en">Following Derrida's argument</p>
+          <h2 id="mv1-h">論旨精煉</h2>
+        </div>
+      </div>
+      <p>（800–1500 字導讀。法文關鍵詞以 <span class="term">mal d'archive</span> 標記；
+         中文關鍵概念以 <span class="zh-term">檔案熱</span> 標記；
+         段落出處以 <span class="para-ref">§3</span> 標記。
+         可節制使用塗黑機關強調「檔案的遮蔽」：<span class="redacted">這句話要靠近才能讀到</span>。）</p>
+    </div>
+  </section>
+
+  <hr class="cinder" aria-hidden="true">
+
+  <!-- ② 在地接線：公文紙＋燒穿處 -->
+  <section class="movement" id="mv2" aria-labelledby="mv2-h">
+    <div class="sheet">
+      <p class="docno" aria-hidden="true">MD-01 / MV-②</p>
+      <div class="movement-head">
+        <span class="movement-num" aria-hidden="true">②</span>
+        <div>
+          <p class="mv-en">Tying in local lines</p>
+          <h2 id="mv2-h">在地接線</h2>
+        </div>
+      </div>
+      <p>（600–1200 字臺灣對話。）</p>
+      <div class="tension">
+        <span class="tension-tag">不服貼之處 · 文件在此燒穿</span>
+        <p>（臺灣經驗溢出或抵抗 Derrida 框架的地方，每章至少一處。
+           此區塊是「公文紙上的破洞」——透出底下的焦黑。）</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="cinder" aria-hidden="true">
+
+  <!-- ③ 交錯提問 -->
+  <section class="movement" id="mv3" aria-labelledby="mv3-h">
+    <div class="sheet">
+      <p class="docno" aria-hidden="true">MD-01 / MV-③</p>
+      <div class="movement-head">
+        <span class="movement-num" aria-hidden="true">③</span>
+        <div>
+          <p class="mv-en">Questions where the lines cross</p>
+          <h2 id="mv3-h">交錯提問</h2>
+        </div>
+      </div>
+      <ol class="questions">
+        <li>（問題一……5–7 題。）</li>
+        <li>（問題二……）</li>
+      </ol>
+    </div>
+  </section>
+
+  <hr class="cinder" aria-hidden="true">
+
+  <!-- ④ 三語窗口：三聯單（正本／副本／存查） -->
+  <section class="movement" id="mv4" aria-labelledby="mv4-h">
+    <div class="sheet">
+      <p class="docno" aria-hidden="true">MD-01 / MV-④</p>
+      <div class="movement-head">
+        <span class="movement-num" aria-hidden="true">④</span>
+        <div>
+          <p class="mv-en">Trilingual window</p>
+          <h2 id="mv4-h">三語窗口</h2>
+        </div>
+      </div>
+      <div class="trilingual-block">
+        <div class="tri-head">
+          <span class="tri-loc">FICHE TRILINGUE · EXERGUE §3</span>
+          <span class="tri-theme">arkheîon：檔案的居所與執政官</span>
+        </div>
+        <p class="tri-fr"><span class="tri-label">FR · 正本</span>（法文原文……）</p>
+        <p class="tri-en"><span class="tri-label">EN · 副本</span>（Prenowitz 英譯……）</p>
+        <p class="tri-cn"><span class="tri-label">中 · 存查</span>（本站中譯……）</p>
+        <div class="tri-note">
+          <span class="tri-note-tag">譯注</span>（為什麼選這段、翻譯取捨。）
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="cinder" aria-hidden="true">
+
+  <!-- ⑤ 術語與延伸 -->
+  <section class="movement" id="mv5" aria-labelledby="mv5-h">
+    <div class="sheet">
+      <p class="docno" aria-hidden="true">MD-01 / MV-⑤</p>
+      <div class="movement-head">
+        <span class="movement-num" aria-hidden="true">⑤</span>
+        <div>
+          <p class="mv-en">Key terms &amp; extensions</p>
+          <h2 id="mv5-h">術語與延伸</h2>
+        </div>
+      </div>
+      <table class="terms-table">
+        <caption class="visually-hidden">本章核心術語法英中對照</caption>
+        <thead>
+          <tr><th scope="col">法文</th><th scope="col">英文</th><th scope="col">中文</th><th scope="col">註記</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="t-fr">mal d'archive</td>
+            <td class="t-en">archive fever</td>
+            <td class="t-zh"><a href="../glossary.html#mal-darchive">檔案熱／檔案之惡</a></td>
+            <td class="t-note">（一詞多義的取捨……）</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>延伸閱讀</h4>
+      <ul class="thread-list">
+        <li>（書目／論文／影音）<span class="src">（出處）</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 章節 pager（暗語境） -->
+  <nav class="chapter-pager" aria-label="章節導覽">
+    <a href="../index.html"><span class="dir">↩ 回全書地圖</span><span class="t">燼與痕</span></a>
+    <a class="next" href="preambule.html"><span class="dir">下一卷 →</span><span class="t">Préambule 序曲</span></a>
+  </nav>
+
+</div>
+<!-- ============ 五段樂章骨架結束 ============ -->
+
+</main>
+
+<!-- ============【C】共用 FOOTER（根目錄頁；章節頁連結前綴 ../）============ -->
+<footer class="site-footer">
+  <div class="wrap-wide footer-grid">
+    <div>
+      <p class="footer-brand">燼與痕</p>
+      <p class="footer-note">與德希達《Mal d'archive》的在地對話。一個非營利讀書會的在地詮釋與推廣計畫——在檔案的灰燼處，接上臺灣的記憶政治、轉型正義與數位典藏的線索。</p>
+    </div>
+    <div>
+      <h5>導覽</h5>
+      <ul>
+        <li><a href="index.html">全書地圖</a></li>
+        <li><a href="about.html">關於本站</a></li>
+        <li><a href="glossary.html">術語表</a></li>
+        <li><a href="excerpts.html">精選段落</a></li>
+        <li><a href="genealogy.html">概念系譜</a></li>
+        <li><a href="taiwan.html">臺灣脈絡</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>聯絡與授權</h5>
+      <ul>
+        <li><a href="trilingual.html">翻譯方法論</a></li>
+        <li><a href="reading-guide.html">讀書會指南</a></li>
+        <li><a href="resources.html">延伸資源</a></li>
+        <li><a href="license.html">著作權與授權聲明</a></li>
+        <li><a href="mailto:anccc@nycu.edu.tw">anccc@nycu.edu.tw</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="license-bar">
+    <div class="wrap-wide">
+      原書版權 © Jacques Derrida, <em>Mal d'archive : une impression freudienne</em>（Éditions Galilée, 1995）；
+      英譯 © Eric Prenowitz, <em>Archive Fever: A Freudian Impression</em>（University of Chicago Press, 1996）。
+      本站為<strong>非營利讀書會之在地詮釋與評論</strong>，呈現原創摘要、導讀與在地對話；直接引用以精選短句與研究性對照為限並標明出處，中譯全文不公開。
+      © <span data-year>2026</span> 燼與痕讀書會。
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
