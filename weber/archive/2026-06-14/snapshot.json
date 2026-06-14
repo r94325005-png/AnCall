@@ -1,0 +1,153 @@
+{
+ "version": "2026-06-14",
+ "generated": "2026-06-14",
+ "license": "CC BY-NC-SA 4.0 (translation); Weber German text public domain",
+ "file_count": 29,
+ "files": [
+  {
+   "path": "about.html",
+   "bytes": 6776,
+   "sha256": "cdca8b361b7ed038cb9b596d5e726ac986c86ec54aaa245de825d862b4177338"
+  },
+  {
+   "path": "archive/2026-06-14/index.html",
+   "bytes": 2080,
+   "sha256": "897f5b093a9c60112fc8bc5e3e8d33eea72a9401c142b58e2be267201d652ed1"
+  },
+  {
+   "path": "assets/app.js",
+   "bytes": 24285,
+   "sha256": "f2c7dd4b578278c0d063811488facb4a8554e65faa6206d80bf5079f044eebc5"
+  },
+  {
+   "path": "assets/favicon.svg",
+   "bytes": 692,
+   "sha256": "41de5a27b2f8af9ba0aed2f17cc2686d048779b560e767815e31d56a41d05277"
+  },
+  {
+   "path": "assets/og-share.png",
+   "bytes": 75711,
+   "sha256": "ecbed8c9071453f6ae3004b95df5c0263c8ec4d8693c8ec701440bd215ac658f"
+  },
+  {
+   "path": "assets/search-index.js",
+   "bytes": 804976,
+   "sha256": "af81979389bab17258c5e23ed29d738f8003a6db40717a16082e477e8e3ab8e3"
+  },
+  {
+   "path": "assets/style.css",
+   "bytes": 33943,
+   "sha256": "d8de1e8904d3d3625549ac1b9906e8101690fe7f4b35fa94bf840352835f8d4f"
+  },
+  {
+   "path": "assets/xref.js",
+   "bytes": 49013,
+   "sha256": "790fb5e499ce9742e48582cc66b6aa91c27f83f468733b9b902f6eb25c839779"
+  },
+  {
+   "path": "changelog.html",
+   "bytes": 6506,
+   "sha256": "12580731bd372f4c200478b72fb717b2ae0562e96dccac5de9043361c6b846c4"
+  },
+  {
+   "path": "data/diffs.json",
+   "bytes": 62546,
+   "sha256": "5ea62b6060b5a4c5f58c9b78733eef09b40d58eab651fa8492dec85d0156fb1c"
+  },
+  {
+   "path": "data/glossary.json",
+   "bytes": 683461,
+   "sha256": "7df7d3a13f8f5e825bca876ec1d3572c4da9d13fc97338a4f0d494434bb59419"
+  },
+  {
+   "path": "data/translation.json",
+   "bytes": 414486,
+   "sha256": "c12fa58c0a062a623bb583b54447ba24356d7d4e51c94031ef61e4aa47c876a7"
+  },
+  {
+   "path": "decisions.html",
+   "bytes": 788526,
+   "sha256": "adcf9e9846a718722e76d8e6af4d6e6d6bdc6577e1f408af8665fabcdae8664c"
+  },
+  {
+   "path": "ed1904-1.html",
+   "bytes": 139152,
+   "sha256": "e33c75956b0e6f974f2787d41a493406241b8e7ebca78a8749acd964b57a52de"
+  },
+  {
+   "path": "ed1904-2.html",
+   "bytes": 139048,
+   "sha256": "add36917e0d3dd528d2c379f2dde5afec213cf93f7b6714bb09dc6d3b5ec2af6"
+  },
+  {
+   "path": "glossary.html",
+   "bytes": 963906,
+   "sha256": "3fd6c9a022fcab35d35126710e5a48ad7b68d8d8b4e809cc908eae40052f6138"
+  },
+  {
+   "path": "index.html",
+   "bytes": 8110,
+   "sha256": "7edefd6c3bca23f77a8ef9b63c516d6d9e7d7ef38916d07a677bd2e0729b901d"
+  },
+  {
+   "path": "search.html",
+   "bytes": 4269,
+   "sha256": "587ad9eda685949cdff68069547472202af272483cc2686bb27fe90c19b3fb94"
+  },
+  {
+   "path": "sec-i1.html",
+   "bytes": 51427,
+   "sha256": "2a56c53d2c960f02ac0d5b72b007beb778a9cfc789641ed76b152e45020337a3"
+  },
+  {
+   "path": "sec-i2.html",
+   "bytes": 161462,
+   "sha256": "b5e581923165fbac3b387a88608c69bde197381898409d6029d98f48522848a6"
+  },
+  {
+   "path": "sec-i3.html",
+   "bytes": 62247,
+   "sha256": "3eaae1a1ab21abc0e248649cb24787cf2a40f373d7ccb44713ea1eb19d7601b3"
+  },
+  {
+   "path": "sec-ii1.html",
+   "bytes": 186249,
+   "sha256": "ebd405966d2db4c7c99b364707d9e160913d00bd379bec4c08f096d8a08bd530"
+  },
+  {
+   "path": "sec-ii2.html",
+   "bytes": 161745,
+   "sha256": "3d65c7e3fe0a4ac159a036e83d3335af4a5e01094d3ffae25efbc6d71b658f0d"
+  },
+  {
+   "path": "sec-ii3.html",
+   "bytes": 25846,
+   "sha256": "2c50ad5ba3e039f319d5f1d90a2b53b326aa96b61de8c3a6665943f0fbd917fe"
+  },
+  {
+   "path": "sec-ii4.html",
+   "bytes": 47268,
+   "sha256": "a71f02cbd311029bc5da99dee85f27d164ebd2ea1cbb79a52451c57a711a0cf8"
+  },
+  {
+   "path": "sec-sekten.html",
+   "bytes": 87743,
+   "sha256": "53d21c613bce61d3c7737cac6208bf02b5e7d68ae146d9366ec89c4a09e321e3"
+  },
+  {
+   "path": "siglen.html",
+   "bytes": 38227,
+   "sha256": "2bac0350664ab5d4b3d3b13be5f0fcc15bc7bda35308f4064a48876789f67735"
+  },
+  {
+   "path": "synopsis.html",
+   "bytes": 326335,
+   "sha256": "62fac8a6fe7a3e0001a67759360844e478feb321905878044f702dbb0e780dc1"
+  },
+  {
+   "path": "version.html",
+   "bytes": 447056,
+   "sha256": "dcab5c7c58591aad3bf314a6f0aa08d7848b1cfcdad335a03ce1eb3a36ca9f57"
+  }
+ ]
+}

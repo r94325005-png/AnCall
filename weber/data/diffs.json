@@ -1,0 +1,3353 @@
+{
+ "license": {
+  "name": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
+  "id": "CC BY-NC-SA 4.0",
+  "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "translator": "ANCCC",
+  "work": "Max Weber, Die protestantische Ethik und der „Geist“ des Kapitalismus (MWG I/18)",
+  "version": "2026-06-14",
+  "note": "韋伯德文原文屬公共領域；繁體中文新譯、術語與譯註 © ANCCC，採 CC BY-NC-SA 4.0。"
+ },
+ "count": 477,
+ "diffs": [
+  {
+   "index": 1,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 123,
+   "maps_to_1920": "§I.1 R1"
+  },
+  {
+   "index": 2,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 123,
+   "maps_to_1920": "§I.1 R1"
+  },
+  {
+   "index": 3,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 125,
+   "maps_to_1920": "§I.1 R1"
+  },
+  {
+   "index": 4,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 127,
+   "maps_to_1920": "§I.1 R1"
+  },
+  {
+   "index": 5,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 128,
+   "maps_to_1920": "§I.1 R1"
+  },
+  {
+   "index": 6,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 129,
+   "maps_to_1920": "§I.1 R1"
+  },
+  {
+   "index": 7,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 130,
+   "maps_to_1920": "§I.1 R2"
+  },
+  {
+   "index": 8,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 130,
+   "maps_to_1920": "§I.1 R2"
+  },
+  {
+   "index": 9,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 133,
+   "maps_to_1920": "§I.1 R2"
+  },
+  {
+   "index": 10,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 134,
+   "maps_to_1920": "§I.1 R3"
+  },
+  {
+   "index": 11,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 134,
+   "maps_to_1920": "§I.1 R3"
+  },
+  {
+   "index": 12,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 134,
+   "maps_to_1920": "§I.1 R3"
+  },
+  {
+   "index": 13,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 134,
+   "maps_to_1920": "§I.1 R3"
+  },
+  {
+   "index": 14,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 136,
+   "maps_to_1920": "§I.1 R3"
+  },
+  {
+   "index": 15,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 139,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 16,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 139,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 17,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 141,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 18,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 141,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 19,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 140,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 20,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 143,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 21,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 142,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 22,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 142,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 23,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 140,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 24,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 140,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 25,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 140,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 26,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 140,
+   "maps_to_1920": "§I.1 R4"
+  },
+  {
+   "index": 27,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 146,
+   "maps_to_1920": "§I.1 R5"
+  },
+  {
+   "index": 28,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 146,
+   "maps_to_1920": "§I.1 R5"
+  },
+  {
+   "index": 29,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 147,
+   "maps_to_1920": "§I.1 R5"
+  },
+  {
+   "index": 30,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 146,
+   "maps_to_1920": "§I.1 R5"
+  },
+  {
+   "index": 31,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 147,
+   "maps_to_1920": "§I.1 R5"
+  },
+  {
+   "index": 32,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 147,
+   "maps_to_1920": "§I.1 R5"
+  },
+  {
+   "index": 33,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 148,
+   "maps_to_1920": "§I.2 R6"
+  },
+  {
+   "index": 34,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 150,
+   "maps_to_1920": "§I.2 R6"
+  },
+  {
+   "index": 35,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 150,
+   "maps_to_1920": "§I.2 R6"
+  },
+  {
+   "index": 36,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 150,
+   "maps_to_1920": "§I.2 R6"
+  },
+  {
+   "index": 37,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 154,
+   "maps_to_1920": "§I.2 R8"
+  },
+  {
+   "index": 38,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 150,
+   "maps_to_1920": "§I.2 R6"
+  },
+  {
+   "index": 39,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 155,
+   "maps_to_1920": "§I.2 R8"
+  },
+  {
+   "index": 40,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 154,
+   "maps_to_1920": "§I.2 R8"
+  },
+  {
+   "index": 41,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 152,
+   "maps_to_1920": "§I.2 R7"
+  },
+  {
+   "index": 42,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 157,
+   "maps_to_1920": "§I.2 R8"
+  },
+  {
+   "index": 43,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 159,
+   "maps_to_1920": "§I.2 R9"
+  },
+  {
+   "index": 44,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 159,
+   "maps_to_1920": "§I.2 R9"
+  },
+  {
+   "index": 45,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 163,
+   "maps_to_1920": "§I.2 R13"
+  },
+  {
+   "index": 46,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 163,
+   "maps_to_1920": "§I.2 R13"
+  },
+  {
+   "index": 47,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 168,
+   "maps_to_1920": "§I.2 R15"
+  },
+  {
+   "index": 48,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 169,
+   "maps_to_1920": "§I.2 R15"
+  },
+  {
+   "index": 49,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 173,
+   "maps_to_1920": "§I.2 R16"
+  },
+  {
+   "index": 50,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 173,
+   "maps_to_1920": "§I.2 R16"
+  },
+  {
+   "index": 51,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 174,
+   "maps_to_1920": "§I.2 R16"
+  },
+  {
+   "index": 52,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 175,
+   "maps_to_1920": "§I.2 R16"
+  },
+  {
+   "index": 53,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 172,
+   "maps_to_1920": "§I.2 R16"
+  },
+  {
+   "index": 54,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 177,
+   "maps_to_1920": "§I.2 R17"
+  },
+  {
+   "index": 55,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 179,
+   "maps_to_1920": "§I.2 R18"
+  },
+  {
+   "index": 56,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 181,
+   "maps_to_1920": "§I.2 R18"
+  },
+  {
+   "index": 57,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 181,
+   "maps_to_1920": "§I.2 R18"
+  },
+  {
+   "index": 58,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 182,
+   "maps_to_1920": "§I.2 R18"
+  },
+  {
+   "index": 59,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 185,
+   "maps_to_1920": "§I.2 R19"
+  },
+  {
+   "index": 60,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 185,
+   "maps_to_1920": "§I.2 R19"
+  },
+  {
+   "index": 61,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 185,
+   "maps_to_1920": "§I.2 R19"
+  },
+  {
+   "index": 62,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 185,
+   "maps_to_1920": "§I.2 R19"
+  },
+  {
+   "index": 63,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 186,
+   "maps_to_1920": "§I.2 R19"
+  },
+  {
+   "index": 64,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 186,
+   "maps_to_1920": "§I.2 R19"
+  },
+  {
+   "index": 65,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 186,
+   "maps_to_1920": "§I.2 R19"
+  },
+  {
+   "index": 66,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 186,
+   "maps_to_1920": "§I.2 R19"
+  },
+  {
+   "index": 67,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 189,
+   "maps_to_1920": "§I.2 R20"
+  },
+  {
+   "index": 68,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 189,
+   "maps_to_1920": "§I.2 R20"
+  },
+  {
+   "index": 69,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 190,
+   "maps_to_1920": "§I.2 R20"
+  },
+  {
+   "index": 70,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 189,
+   "maps_to_1920": "§I.2 R20"
+  },
+  {
+   "index": 71,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 190,
+   "maps_to_1920": "§I.2 R20"
+  },
+  {
+   "index": 72,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 189,
+   "maps_to_1920": "§I.2 R20"
+  },
+  {
+   "index": 73,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 191,
+   "maps_to_1920": "§I.2 R20"
+  },
+  {
+   "index": 74,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 191,
+   "maps_to_1920": "§I.2 R20"
+  },
+  {
+   "index": 75,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 192,
+   "maps_to_1920": "§I.2 R21"
+  },
+  {
+   "index": 76,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 193,
+   "maps_to_1920": "§I.2 R21"
+  },
+  {
+   "index": 77,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 195,
+   "maps_to_1920": "§I.2 R23"
+  },
+  {
+   "index": 78,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 196,
+   "maps_to_1920": "§I.2 R23"
+  },
+  {
+   "index": 79,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 192,
+   "maps_to_1920": "§I.2 R21"
+  },
+  {
+   "index": 80,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 198,
+   "maps_to_1920": "§I.2 R23"
+  },
+  {
+   "index": 81,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 195,
+   "maps_to_1920": "§I.2 R23"
+  },
+  {
+   "index": 82,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 203,
+   "maps_to_1920": "§I.2 R25"
+  },
+  {
+   "index": 83,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 202,
+   "maps_to_1920": "§I.2 R25"
+  },
+  {
+   "index": 84,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 203,
+   "maps_to_1920": "§I.2 R25"
+  },
+  {
+   "index": 85,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 203,
+   "maps_to_1920": "§I.2 R25"
+  },
+  {
+   "index": 86,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 205,
+   "maps_to_1920": "§I.2 R26"
+  },
+  {
+   "index": 87,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 207,
+   "maps_to_1920": "§I.2 R27"
+  },
+  {
+   "index": 88,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 208,
+   "maps_to_1920": "§I.2 R27"
+  },
+  {
+   "index": 89,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 209,
+   "maps_to_1920": "§I.3 R28"
+  },
+  {
+   "index": 90,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 209,
+   "maps_to_1920": "§I.3 R28"
+  },
+  {
+   "index": 91,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 211,
+   "maps_to_1920": "§I.3 R29"
+  },
+  {
+   "index": 92,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 213,
+   "maps_to_1920": "§I.3 R29"
+  },
+  {
+   "index": 93,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 214,
+   "maps_to_1920": "§I.3 R29"
+  },
+  {
+   "index": 94,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 214,
+   "maps_to_1920": "§I.3 R29"
+  },
+  {
+   "index": 95,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 215,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 96,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 210,
+   "maps_to_1920": "§I.3 R28"
+  },
+  {
+   "index": 97,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 216,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 98,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 217,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 99,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 218,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 100,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 218,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 101,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 216,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 102,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 219,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 103,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 220,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 104,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 220,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 105,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 221,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 106,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 222,
+   "maps_to_1920": "§I.3 R31"
+  },
+  {
+   "index": 107,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 222,
+   "maps_to_1920": "§I.3 R31"
+  },
+  {
+   "index": 108,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 223,
+   "maps_to_1920": "§I.3 R32"
+  },
+  {
+   "index": 109,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 213,
+   "maps_to_1920": "§I.3 R29"
+  },
+  {
+   "index": 110,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 222,
+   "maps_to_1920": "§I.3 R31"
+  },
+  {
+   "index": 111,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 224,
+   "maps_to_1920": "§I.3 R32"
+  },
+  {
+   "index": 112,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 224,
+   "maps_to_1920": "§I.3 R32"
+  },
+  {
+   "index": 113,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 227,
+   "maps_to_1920": "§I.3 R34"
+  },
+  {
+   "index": 114,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 225,
+   "maps_to_1920": "§I.3 R33"
+  },
+  {
+   "index": 115,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 214,
+   "maps_to_1920": "§I.3 R29"
+  },
+  {
+   "index": 116,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 225,
+   "maps_to_1920": "§I.3 R33"
+  },
+  {
+   "index": 117,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 219,
+   "maps_to_1920": "§I.3 R30"
+  },
+  {
+   "index": 118,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 227,
+   "maps_to_1920": "§I.3 R34"
+  },
+  {
+   "index": 119,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 227,
+   "maps_to_1920": "§I.3 R34"
+  },
+  {
+   "index": 120,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 227,
+   "maps_to_1920": "§I.3 R34"
+  },
+  {
+   "index": 121,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 233,
+   "maps_to_1920": "§I.3 R37"
+  },
+  {
+   "index": 122,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 232,
+   "maps_to_1920": "§I.3 R37"
+  },
+  {
+   "index": 123,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 227,
+   "maps_to_1920": "§I.3 R34"
+  },
+  {
+   "index": 124,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 233,
+   "maps_to_1920": "§I.3 R37"
+  },
+  {
+   "index": 125,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 233,
+   "maps_to_1920": "§I.3 R37"
+  },
+  {
+   "index": 126,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 234,
+   "maps_to_1920": "§I.3 R39"
+  },
+  {
+   "index": 127,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 234,
+   "maps_to_1920": "§I.3 R39"
+  },
+  {
+   "index": 128,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 237,
+   "maps_to_1920": "§I.3 R40"
+  },
+  {
+   "index": 129,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 238,
+   "maps_to_1920": "§I.3 R41"
+  },
+  {
+   "index": 130,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 238,
+   "maps_to_1920": "§I.3 R41"
+  },
+  {
+   "index": 131,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 239,
+   "maps_to_1920": "§I.3 R41"
+  },
+  {
+   "index": 132,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 240,
+   "maps_to_1920": "§I.3 R42"
+  },
+  {
+   "index": 133,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 241,
+   "maps_to_1920": "§I.3 R42"
+  },
+  {
+   "index": 134,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 241,
+   "maps_to_1920": "§I.3 R42"
+  },
+  {
+   "index": 135,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 247,
+   "maps_to_1920": "§I.3 R45"
+  },
+  {
+   "index": 136,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 255,
+   "maps_to_1920": "§I.3 R50"
+  },
+  {
+   "index": 137,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 255,
+   "maps_to_1920": "§I.3 R50"
+  },
+  {
+   "index": 138,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 255,
+   "maps_to_1920": "§I.3 R50"
+  },
+  {
+   "index": 139,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 255,
+   "maps_to_1920": "§I.3 R50"
+  },
+  {
+   "index": 140,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 255,
+   "maps_to_1920": "§I.3 R50"
+  },
+  {
+   "index": 141,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 255,
+   "maps_to_1920": "§I.3 R50"
+  },
+  {
+   "index": 142,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 255,
+   "maps_to_1920": "§I.3 R50"
+  },
+  {
+   "index": 143,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 256,
+   "maps_to_1920": "§I.3 R50"
+  },
+  {
+   "index": 144,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 257,
+   "maps_to_1920": "§II.1 R51"
+  },
+  {
+   "index": 145,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 257,
+   "maps_to_1920": "§II.1 R51"
+  },
+  {
+   "index": 146,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 257,
+   "maps_to_1920": "§II.1 R51"
+  },
+  {
+   "index": 147,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 257,
+   "maps_to_1920": "§II.1 R51"
+  },
+  {
+   "index": 148,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 257,
+   "maps_to_1920": "§II.1 R51"
+  },
+  {
+   "index": 149,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 257,
+   "maps_to_1920": "§II.1 R51"
+  },
+  {
+   "index": 150,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 260,
+   "maps_to_1920": "§II.1 R53"
+  },
+  {
+   "index": 151,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 260,
+   "maps_to_1920": "§II.1 R53"
+  },
+  {
+   "index": 152,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 261,
+   "maps_to_1920": "§II.1 R53"
+  },
+  {
+   "index": 153,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 261,
+   "maps_to_1920": "§II.1 R53"
+  },
+  {
+   "index": 154,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 261,
+   "maps_to_1920": "§II.1 R53"
+  },
+  {
+   "index": 155,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 263,
+   "maps_to_1920": "§II.1 R54"
+  },
+  {
+   "index": 156,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 263,
+   "maps_to_1920": "§II.1 R54"
+  },
+  {
+   "index": 157,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 264,
+   "maps_to_1920": "§II.1 R54"
+  },
+  {
+   "index": 158,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 264,
+   "maps_to_1920": "§II.1 R54"
+  },
+  {
+   "index": 159,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 264,
+   "maps_to_1920": "§II.1 R54"
+  },
+  {
+   "index": 160,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 264,
+   "maps_to_1920": "§II.1 R54"
+  },
+  {
+   "index": 161,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 267,
+   "maps_to_1920": "§II.1 R54"
+  },
+  {
+   "index": 162,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 264,
+   "maps_to_1920": "§II.1 R54"
+  },
+  {
+   "index": 163,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 269,
+   "maps_to_1920": "§II.1 R55"
+  },
+  {
+   "index": 164,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 269,
+   "maps_to_1920": "§II.1 R55"
+  },
+  {
+   "index": 165,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 269,
+   "maps_to_1920": "§II.1 R55"
+  },
+  {
+   "index": 166,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 269,
+   "maps_to_1920": "§II.1 R55"
+  },
+  {
+   "index": 167,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 273,
+   "maps_to_1920": "§II.1 R59"
+  },
+  {
+   "index": 168,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 272,
+   "maps_to_1920": "§II.1 R58"
+  },
+  {
+   "index": 169,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 273,
+   "maps_to_1920": "§II.1 R59"
+  },
+  {
+   "index": 170,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 278,
+   "maps_to_1920": "§II.1 R62"
+  },
+  {
+   "index": 171,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 279,
+   "maps_to_1920": "§II.1 R63"
+  },
+  {
+   "index": 172,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 279,
+   "maps_to_1920": "§II.1 R63"
+  },
+  {
+   "index": 173,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 280,
+   "maps_to_1920": "§II.1 R64"
+  },
+  {
+   "index": 174,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 280,
+   "maps_to_1920": "§II.1 R64"
+  },
+  {
+   "index": 175,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 281,
+   "maps_to_1920": "§II.1 R65"
+  },
+  {
+   "index": 176,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 282,
+   "maps_to_1920": "§II.1 R65"
+  },
+  {
+   "index": 177,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 278,
+   "maps_to_1920": "§II.1 R62"
+  },
+  {
+   "index": 178,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 284,
+   "maps_to_1920": "§II.1 R66"
+  },
+  {
+   "index": 179,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 284,
+   "maps_to_1920": "§II.1 R66"
+  },
+  {
+   "index": 180,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 285,
+   "maps_to_1920": "§II.1 R67"
+  },
+  {
+   "index": 181,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 285,
+   "maps_to_1920": "§II.1 R67"
+  },
+  {
+   "index": 182,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 285,
+   "maps_to_1920": "§II.1 R67"
+  },
+  {
+   "index": 183,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 285,
+   "maps_to_1920": "§II.1 R67"
+  },
+  {
+   "index": 184,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 285,
+   "maps_to_1920": "§II.1 R67"
+  },
+  {
+   "index": 185,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 285,
+   "maps_to_1920": "§II.1 R67"
+  },
+  {
+   "index": 186,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 286,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 187,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 286,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 188,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 286,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 189,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 286,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 190,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 191,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 192,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 193,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 194,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 195,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 196,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 197,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 290,
+   "maps_to_1920": "§II.1 R69"
+  },
+  {
+   "index": 198,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 199,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 288,
+   "maps_to_1920": "§II.1 R68"
+  },
+  {
+   "index": 200,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 290,
+   "maps_to_1920": "§II.1 R69"
+  },
+  {
+   "index": 201,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 289,
+   "maps_to_1920": "§II.1 R69"
+  },
+  {
+   "index": 202,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 289,
+   "maps_to_1920": "§II.1 R69"
+  },
+  {
+   "index": 203,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 289,
+   "maps_to_1920": "§II.1 R69"
+  },
+  {
+   "index": 204,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 289,
+   "maps_to_1920": "§II.1 R69"
+  },
+  {
+   "index": 205,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 289,
+   "maps_to_1920": "§II.1 R69"
+  },
+  {
+   "index": 206,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 292,
+   "maps_to_1920": "§II.1 R70"
+  },
+  {
+   "index": 207,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 292,
+   "maps_to_1920": "§II.1 R70"
+  },
+  {
+   "index": 208,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 292,
+   "maps_to_1920": "§II.1 R70"
+  },
+  {
+   "index": 209,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 292,
+   "maps_to_1920": "§II.1 R70"
+  },
+  {
+   "index": 210,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 292,
+   "maps_to_1920": "§II.1 R70"
+  },
+  {
+   "index": 211,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 293,
+   "maps_to_1920": "§II.1 R71"
+  },
+  {
+   "index": 212,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 293,
+   "maps_to_1920": "§II.1 R71"
+  },
+  {
+   "index": 213,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 293,
+   "maps_to_1920": "§II.1 R71"
+  },
+  {
+   "index": 214,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 215,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 216,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 217,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 218,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 219,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 220,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 221,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 222,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 223,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 224,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 295,
+   "maps_to_1920": "§II.1 R72"
+  },
+  {
+   "index": 225,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 298,
+   "maps_to_1920": "§II.1 R74"
+  },
+  {
+   "index": 226,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 302,
+   "maps_to_1920": "§II.1 R80"
+  },
+  {
+   "index": 227,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 303,
+   "maps_to_1920": "§II.1 R82"
+  },
+  {
+   "index": 228,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 303,
+   "maps_to_1920": "§II.1 R82"
+  },
+  {
+   "index": 229,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 304,
+   "maps_to_1920": "§II.1 R83"
+  },
+  {
+   "index": 230,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 306,
+   "maps_to_1920": "§II.1 R84"
+  },
+  {
+   "index": 231,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 304,
+   "maps_to_1920": "§II.1 R83"
+  },
+  {
+   "index": 232,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 304,
+   "maps_to_1920": "§II.1 R83"
+  },
+  {
+   "index": 233,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 307,
+   "maps_to_1920": "§II.1 R85"
+  },
+  {
+   "index": 234,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 308,
+   "maps_to_1920": "§II.1 R86"
+  },
+  {
+   "index": 235,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 308,
+   "maps_to_1920": "§II.1 R86"
+  },
+  {
+   "index": 236,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 308,
+   "maps_to_1920": "§II.1 R86"
+  },
+  {
+   "index": 237,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 308,
+   "maps_to_1920": "§II.1 R86"
+  },
+  {
+   "index": 238,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 308,
+   "maps_to_1920": "§II.1 R86"
+  },
+  {
+   "index": 239,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 308,
+   "maps_to_1920": "§II.1 R86"
+  },
+  {
+   "index": 240,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 308,
+   "maps_to_1920": "§II.1 R86"
+  },
+  {
+   "index": 241,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 307,
+   "maps_to_1920": "§II.1 R85"
+  },
+  {
+   "index": 242,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 313,
+   "maps_to_1920": "§II.1 R88"
+  },
+  {
+   "index": 243,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 313,
+   "maps_to_1920": "§II.1 R88"
+  },
+  {
+   "index": 244,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 317,
+   "maps_to_1920": "§II.1 R91"
+  },
+  {
+   "index": 245,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 315,
+   "maps_to_1920": "§II.1 R89"
+  },
+  {
+   "index": 246,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 315,
+   "maps_to_1920": "§II.1 R89"
+  },
+  {
+   "index": 247,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 315,
+   "maps_to_1920": "§II.1 R89"
+  },
+  {
+   "index": 248,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 317,
+   "maps_to_1920": "§II.1 R91"
+  },
+  {
+   "index": 249,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 315,
+   "maps_to_1920": "§II.1 R89"
+  },
+  {
+   "index": 250,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 317,
+   "maps_to_1920": "§II.1 R91"
+  },
+  {
+   "index": 251,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 315,
+   "maps_to_1920": "§II.1 R89"
+  },
+  {
+   "index": 252,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 319,
+   "maps_to_1920": "§II.1 R93"
+  },
+  {
+   "index": 253,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 319,
+   "maps_to_1920": "§II.1 R93"
+  },
+  {
+   "index": 254,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 319,
+   "maps_to_1920": "§II.1 R93"
+  },
+  {
+   "index": 255,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 319,
+   "maps_to_1920": "§II.1 R93"
+  },
+  {
+   "index": 256,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 319,
+   "maps_to_1920": "§II.1 R93"
+  },
+  {
+   "index": 257,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 319,
+   "maps_to_1920": "§II.1 R93"
+  },
+  {
+   "index": 258,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 320,
+   "maps_to_1920": "§II.1 R94"
+  },
+  {
+   "index": 259,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 320,
+   "maps_to_1920": "§II.1 R94"
+  },
+  {
+   "index": 260,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 321,
+   "maps_to_1920": "§II.1 R95"
+  },
+  {
+   "index": 261,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 328,
+   "maps_to_1920": "§II.1 R102"
+  },
+  {
+   "index": 262,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 319,
+   "maps_to_1920": "§II.1 R93"
+  },
+  {
+   "index": 263,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 321,
+   "maps_to_1920": "§II.1 R95"
+  },
+  {
+   "index": 264,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 323,
+   "maps_to_1920": "§II.1 R97"
+  },
+  {
+   "index": 265,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 323,
+   "maps_to_1920": "§II.1 R97"
+  },
+  {
+   "index": 266,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 318,
+   "maps_to_1920": "§II.1 R91"
+  },
+  {
+   "index": 267,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 324,
+   "maps_to_1920": "§II.1 R99"
+  },
+  {
+   "index": 268,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 324,
+   "maps_to_1920": "§II.1 R99"
+  },
+  {
+   "index": 269,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 324,
+   "maps_to_1920": "§II.1 R99"
+  },
+  {
+   "index": 270,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 324,
+   "maps_to_1920": "§II.1 R99"
+  },
+  {
+   "index": 271,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 324,
+   "maps_to_1920": "§II.1 R99"
+  },
+  {
+   "index": 272,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 325,
+   "maps_to_1920": "§II.1 R100"
+  },
+  {
+   "index": 273,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 318,
+   "maps_to_1920": "§II.1 R91"
+  },
+  {
+   "index": 274,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 318,
+   "maps_to_1920": "§II.1 R91"
+  },
+  {
+   "index": 275,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 329,
+   "maps_to_1920": "§II.1 R104"
+  },
+  {
+   "index": 276,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 330,
+   "maps_to_1920": "§II.1 R104"
+  },
+  {
+   "index": 277,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 331,
+   "maps_to_1920": "§II.1 R105"
+  },
+  {
+   "index": 278,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 331,
+   "maps_to_1920": "§II.1 R105"
+  },
+  {
+   "index": 279,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 331,
+   "maps_to_1920": "§II.1 R105"
+  },
+  {
+   "index": 280,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 332,
+   "maps_to_1920": "§II.1 R107"
+  },
+  {
+   "index": 281,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 333,
+   "maps_to_1920": "§II.1 R108"
+  },
+  {
+   "index": 282,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 333,
+   "maps_to_1920": "§II.1 R108"
+  },
+  {
+   "index": 283,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 334,
+   "maps_to_1920": "§II.1 R110"
+  },
+  {
+   "index": 284,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 336,
+   "maps_to_1920": "§II.1 R112"
+  },
+  {
+   "index": 285,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 336,
+   "maps_to_1920": "§II.1 R112"
+  },
+  {
+   "index": 286,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 337,
+   "maps_to_1920": "§II.1 R113"
+  },
+  {
+   "index": 287,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 337,
+   "maps_to_1920": "§II.1 R113"
+  },
+  {
+   "index": 288,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 337,
+   "maps_to_1920": "§II.1 R113"
+  },
+  {
+   "index": 289,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 337,
+   "maps_to_1920": "§II.1 R113"
+  },
+  {
+   "index": 290,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 338,
+   "maps_to_1920": "§II.1 R114"
+  },
+  {
+   "index": 291,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 338,
+   "maps_to_1920": "§II.1 R114"
+  },
+  {
+   "index": 292,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 339,
+   "maps_to_1920": "§II.1 R115"
+  },
+  {
+   "index": 293,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 341,
+   "maps_to_1920": "§II.1 R117"
+  },
+  {
+   "index": 294,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 344,
+   "maps_to_1920": "§II.1 R118"
+  },
+  {
+   "index": 295,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 344,
+   "maps_to_1920": "§II.1 R118"
+  },
+  {
+   "index": 296,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 345,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 297,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 345,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 298,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 346,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 299,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 348,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 300,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 348,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 301,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 346,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 302,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 346,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 303,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 351,
+   "maps_to_1920": "§II.1 R120"
+  },
+  {
+   "index": 304,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 353,
+   "maps_to_1920": "§II.1 R121"
+  },
+  {
+   "index": 305,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 350,
+   "maps_to_1920": "§II.1 R120"
+  },
+  {
+   "index": 306,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 356,
+   "maps_to_1920": "§II.1 R124"
+  },
+  {
+   "index": 307,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 356,
+   "maps_to_1920": "§II.1 R124"
+  },
+  {
+   "index": 308,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 346,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 309,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 346,
+   "maps_to_1920": "§II.1 R119"
+  },
+  {
+   "index": 310,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 356,
+   "maps_to_1920": "§II.1 R124"
+  },
+  {
+   "index": 311,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 355,
+   "maps_to_1920": "§II.1 R123"
+  },
+  {
+   "index": 312,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 355,
+   "maps_to_1920": "§II.1 R123"
+  },
+  {
+   "index": 313,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 355,
+   "maps_to_1920": "§II.1 R123"
+  },
+  {
+   "index": 314,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 356,
+   "maps_to_1920": "§II.1 R124"
+  },
+  {
+   "index": 315,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 357,
+   "maps_to_1920": "§II.1 R125"
+  },
+  {
+   "index": 316,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 360,
+   "maps_to_1920": "§II.1 R126"
+  },
+  {
+   "index": 317,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 363,
+   "maps_to_1920": "§II.2 R129"
+  },
+  {
+   "index": 318,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 366,
+   "maps_to_1920": "§II.2 R132"
+  },
+  {
+   "index": 319,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 368,
+   "maps_to_1920": "§II.2 R135"
+  },
+  {
+   "index": 320,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 372,
+   "maps_to_1920": "§II.2 R138"
+  },
+  {
+   "index": 321,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 375,
+   "maps_to_1920": "§II.2 R140"
+  },
+  {
+   "index": 322,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 377,
+   "maps_to_1920": "§II.2 R141"
+  },
+  {
+   "index": 323,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 368,
+   "maps_to_1920": "§II.2 R135"
+  },
+  {
+   "index": 324,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 375,
+   "maps_to_1920": "§II.2 R140"
+  },
+  {
+   "index": 325,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 378,
+   "maps_to_1920": "§II.2 R143"
+  },
+  {
+   "index": 326,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 388,
+   "maps_to_1920": "§II.3 R150"
+  },
+  {
+   "index": 327,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 388,
+   "maps_to_1920": "§II.3 R150"
+  },
+  {
+   "index": 328,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 381,
+   "maps_to_1920": "§II.3 R144"
+  },
+  {
+   "index": 329,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 381,
+   "maps_to_1920": "§II.3 R144"
+  },
+  {
+   "index": 330,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 383,
+   "maps_to_1920": "§II.3 R146"
+  },
+  {
+   "index": 331,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 380,
+   "maps_to_1920": "§II.3 R144"
+  },
+  {
+   "index": 332,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 384,
+   "maps_to_1920": "§II.3 R147"
+  },
+  {
+   "index": 333,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 385,
+   "maps_to_1920": "§II.3 R148"
+  },
+  {
+   "index": 334,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 385,
+   "maps_to_1920": "§II.3 R148"
+  },
+  {
+   "index": 335,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 385,
+   "maps_to_1920": "§II.3 R148"
+  },
+  {
+   "index": 336,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 387,
+   "maps_to_1920": "§II.3 R150"
+  },
+  {
+   "index": 337,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 387,
+   "maps_to_1920": "§II.3 R150"
+  },
+  {
+   "index": 338,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 388,
+   "maps_to_1920": "§II.3 R150"
+  },
+  {
+   "index": 339,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 389,
+   "maps_to_1920": "§II.4 R151"
+  },
+  {
+   "index": 340,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 389,
+   "maps_to_1920": "§II.4 R151"
+  },
+  {
+   "index": 341,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 388,
+   "maps_to_1920": "§II.3 R150"
+  },
+  {
+   "index": 342,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 391,
+   "maps_to_1920": "§II.4 R152"
+  },
+  {
+   "index": 343,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 392,
+   "maps_to_1920": "§II.4 R153"
+  },
+  {
+   "index": 344,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 392,
+   "maps_to_1920": "§II.4 R153"
+  },
+  {
+   "index": 345,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 391,
+   "maps_to_1920": "§II.4 R152"
+  },
+  {
+   "index": 346,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 391,
+   "maps_to_1920": "§II.4 R152"
+  },
+  {
+   "index": 347,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 393,
+   "maps_to_1920": "§II.4 R153"
+  },
+  {
+   "index": 348,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 388,
+   "maps_to_1920": "§II.3 R150"
+  },
+  {
+   "index": 349,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 398,
+   "maps_to_1920": "§II.4 R158"
+  },
+  {
+   "index": 350,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 398,
+   "maps_to_1920": "§II.4 R158"
+  },
+  {
+   "index": 351,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 394,
+   "maps_to_1920": "§II.4 R155"
+  },
+  {
+   "index": 352,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 402,
+   "maps_to_1920": "§II.4 R162"
+  },
+  {
+   "index": 353,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 402,
+   "maps_to_1920": "§II.4 R162"
+  },
+  {
+   "index": 354,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 402,
+   "maps_to_1920": "§II.4 R162"
+  },
+  {
+   "index": 355,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 402,
+   "maps_to_1920": "§II.4 R162"
+  },
+  {
+   "index": 356,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 408,
+   "maps_to_1920": "§II.4 R166"
+  },
+  {
+   "index": 357,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 408,
+   "maps_to_1920": "§II.4 R166"
+  },
+  {
+   "index": 358,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 403,
+   "maps_to_1920": "§II.4 R163"
+  },
+  {
+   "index": 359,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 403,
+   "maps_to_1920": "§II.4 R163"
+  },
+  {
+   "index": 360,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 408,
+   "maps_to_1920": "§II.4 R166"
+  },
+  {
+   "index": 361,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 407,
+   "maps_to_1920": "§II.4 R165"
+  },
+  {
+   "index": 362,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 408,
+   "maps_to_1920": "§II.4 R166"
+  },
+  {
+   "index": 363,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 409,
+   "maps_to_1920": "§II.1 R168"
+  },
+  {
+   "index": 364,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 411,
+   "maps_to_1920": "§II.2 R174"
+  },
+  {
+   "index": 365,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 411,
+   "maps_to_1920": "§II.2 R174"
+  },
+  {
+   "index": 366,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 410,
+   "maps_to_1920": "§II.1 R172"
+  },
+  {
+   "index": 367,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 410,
+   "maps_to_1920": "§II.1 R172"
+  },
+  {
+   "index": 368,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 410,
+   "maps_to_1920": "§II.1 R172"
+  },
+  {
+   "index": 369,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 411,
+   "maps_to_1920": "§II.2 R174"
+  },
+  {
+   "index": 370,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 411,
+   "maps_to_1920": "§II.2 R174"
+  },
+  {
+   "index": 371,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 421,
+   "maps_to_1920": "§II.2 R180"
+  },
+  {
+   "index": 372,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 414,
+   "maps_to_1920": "§II.2 R175"
+  },
+  {
+   "index": 373,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 414,
+   "maps_to_1920": "§II.2 R175"
+  },
+  {
+   "index": 374,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 421,
+   "maps_to_1920": "§II.2 R180"
+  },
+  {
+   "index": 375,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 417,
+   "maps_to_1920": "§II.2 R177"
+  },
+  {
+   "index": 376,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 417,
+   "maps_to_1920": "§II.2 R177"
+  },
+  {
+   "index": 377,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 421,
+   "maps_to_1920": "§II.2 R180"
+  },
+  {
+   "index": 378,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 422,
+   "maps_to_1920": "§II.2 R182"
+  },
+  {
+   "index": 379,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 422,
+   "maps_to_1920": "§II.2 R182"
+  },
+  {
+   "index": 380,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 425,
+   "maps_to_1920": "§II.2 R182"
+  },
+  {
+   "index": 381,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 422,
+   "maps_to_1920": "§II.2 R182"
+  },
+  {
+   "index": 382,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 422,
+   "maps_to_1920": "§II.2 R182"
+  },
+  {
+   "index": 383,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 423,
+   "maps_to_1920": "§II.2 R182"
+  },
+  {
+   "index": 384,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 426,
+   "maps_to_1920": "§II.2 R184"
+  },
+  {
+   "index": 385,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 428,
+   "maps_to_1920": "§II.2 R186"
+  },
+  {
+   "index": 386,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 428,
+   "maps_to_1920": "§II.2 R186"
+  },
+  {
+   "index": 387,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 428,
+   "maps_to_1920": "§II.2 R186"
+  },
+  {
+   "index": 388,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 428,
+   "maps_to_1920": "§II.2 R186"
+  },
+  {
+   "index": 389,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 430,
+   "maps_to_1920": "§II.2 R188"
+  },
+  {
+   "index": 390,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 430,
+   "maps_to_1920": "§II.2 R188"
+  },
+  {
+   "index": 391,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 435,
+   "maps_to_1920": "§II.2 R193"
+  },
+  {
+   "index": 392,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 435,
+   "maps_to_1920": "§II.2 R193"
+  },
+  {
+   "index": 393,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 435,
+   "maps_to_1920": "§II.2 R193"
+  },
+  {
+   "index": 394,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 435,
+   "maps_to_1920": "§II.2 R193"
+  },
+  {
+   "index": 395,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 435,
+   "maps_to_1920": "§II.2 R193"
+  },
+  {
+   "index": 396,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 437,
+   "maps_to_1920": "§II.2 R193"
+  },
+  {
+   "index": 397,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 438,
+   "maps_to_1920": "§II.2 R195"
+  },
+  {
+   "index": 398,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 438,
+   "maps_to_1920": "§II.2 R195"
+  },
+  {
+   "index": 399,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 440,
+   "maps_to_1920": "§II.2 R196"
+  },
+  {
+   "index": 400,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 440,
+   "maps_to_1920": "§II.2 R196"
+  },
+  {
+   "index": 401,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 440,
+   "maps_to_1920": "§II.2 R196"
+  },
+  {
+   "index": 402,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 443,
+   "maps_to_1920": "§II.2 R199"
+  },
+  {
+   "index": 403,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 444,
+   "maps_to_1920": "§II.2 R200"
+  },
+  {
+   "index": 404,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 442,
+   "maps_to_1920": "§II.2 R197"
+  },
+  {
+   "index": 405,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 445,
+   "maps_to_1920": "§II.2 R202"
+  },
+  {
+   "index": 406,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 445,
+   "maps_to_1920": "§II.2 R202"
+  },
+  {
+   "index": 407,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 446,
+   "maps_to_1920": "§II.2 R202"
+  },
+  {
+   "index": 408,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 445,
+   "maps_to_1920": "§II.2 R202"
+  },
+  {
+   "index": 409,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 445,
+   "maps_to_1920": "§II.2 R202"
+  },
+  {
+   "index": 410,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 450,
+   "maps_to_1920": "§II.2 R205"
+  },
+  {
+   "index": 411,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 449,
+   "maps_to_1920": "§II.2 R203"
+  },
+  {
+   "index": 412,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 451,
+   "maps_to_1920": "§II.2 R207"
+  },
+  {
+   "index": 413,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 451,
+   "maps_to_1920": "§II.2 R207"
+  },
+  {
+   "index": 414,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 415,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 451,
+   "maps_to_1920": "§II.2 R207"
+  },
+  {
+   "index": 416,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 417,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 454,
+   "maps_to_1920": "§II.2 R209"
+  },
+  {
+   "index": 418,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 419,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 455,
+   "maps_to_1920": "§II.2 R209"
+  },
+  {
+   "index": 420,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 455,
+   "maps_to_1920": "§II.2 R209"
+  },
+  {
+   "index": 421,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 422,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 423,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 424,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 425,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 426,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 427,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 460,
+   "maps_to_1920": "§II.2 R212"
+  },
+  {
+   "index": 428,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 460,
+   "maps_to_1920": "§II.2 R212"
+  },
+  {
+   "index": 429,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 460,
+   "maps_to_1920": "§II.2 R212"
+  },
+  {
+   "index": 430,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 462,
+   "maps_to_1920": "§II.2 R214"
+  },
+  {
+   "index": 431,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 460,
+   "maps_to_1920": "§II.2 R212"
+  },
+  {
+   "index": 432,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 460,
+   "maps_to_1920": "§II.2 R212"
+  },
+  {
+   "index": 433,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 460,
+   "maps_to_1920": "§II.2 R212"
+  },
+  {
+   "index": 434,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 460,
+   "maps_to_1920": "§II.2 R212"
+  },
+  {
+   "index": 435,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 453,
+   "maps_to_1920": "§II.2 R208"
+  },
+  {
+   "index": 436,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 464,
+   "maps_to_1920": "§II.2 R215"
+  },
+  {
+   "index": 437,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 464,
+   "maps_to_1920": "§II.2 R215"
+  },
+  {
+   "index": 438,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 464,
+   "maps_to_1920": "§II.2 R215"
+  },
+  {
+   "index": 439,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 467,
+   "maps_to_1920": "§II.2 R218"
+  },
+  {
+   "index": 440,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 468,
+   "maps_to_1920": "§II.2 R218"
+  },
+  {
+   "index": 441,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 469,
+   "maps_to_1920": "§II.2 R219"
+  },
+  {
+   "index": 442,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 467,
+   "maps_to_1920": "§II.2 R218"
+  },
+  {
+   "index": 443,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 467,
+   "maps_to_1920": "§II.2 R218"
+  },
+  {
+   "index": 444,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 467,
+   "maps_to_1920": "§II.2 R218"
+  },
+  {
+   "index": 445,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 467,
+   "maps_to_1920": "§II.2 R218"
+  },
+  {
+   "index": 446,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 467,
+   "maps_to_1920": "§II.2 R218"
+  },
+  {
+   "index": 447,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 470,
+   "maps_to_1920": "§II.2 R220"
+  },
+  {
+   "index": 448,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 470,
+   "maps_to_1920": "§II.2 R220"
+  },
+  {
+   "index": 449,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 473,
+   "maps_to_1920": "§II.2 R223"
+  },
+  {
+   "index": 450,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 473,
+   "maps_to_1920": "§II.2 R223"
+  },
+  {
+   "index": 451,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 473,
+   "maps_to_1920": "§II.2 R223"
+  },
+  {
+   "index": 452,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 473,
+   "maps_to_1920": "§II.2 R223"
+  },
+  {
+   "index": 453,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 475,
+   "maps_to_1920": "§II.2 R226"
+  },
+  {
+   "index": 454,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 475,
+   "maps_to_1920": "§II.2 R226"
+  },
+  {
+   "index": 455,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 475,
+   "maps_to_1920": "§II.2 R226"
+  },
+  {
+   "index": 456,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 475,
+   "maps_to_1920": "§II.2 R226"
+  },
+  {
+   "index": 457,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 479,
+   "maps_to_1920": "§II.2 R229"
+  },
+  {
+   "index": 458,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 480,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 459,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 481,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 460,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 481,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 461,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 482,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 462,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 482,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 463,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 483,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 464,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 484,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 465,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 484,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 466,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 485,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 467,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 486,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 468,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 486,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 469,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 487,
+   "maps_to_1920": "§II.2 R238"
+  },
+  {
+   "index": 470,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 488,
+   "maps_to_1920": "§II.4 R239"
+  },
+  {
+   "index": 471,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 488,
+   "maps_to_1920": "§II.4 R239"
+  },
+  {
+   "index": 472,
+   "type": "a",
+   "type_label": "1920 替換",
+   "page_mwg": 488,
+   "maps_to_1920": "§II.4 R239"
+  },
+  {
+   "index": 473,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 489,
+   "maps_to_1920": "§II.4 R239"
+  },
+  {
+   "index": 474,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 488,
+   "maps_to_1920": "§II.4 R239"
+  },
+  {
+   "index": 475,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 489,
+   "maps_to_1920": "§II.4 R239"
+  },
+  {
+   "index": 476,
+   "type": "b",
+   "type_label": "1920 正文增補",
+   "page_mwg": 491,
+   "maps_to_1920": "§II.4 R239"
+  },
+  {
+   "index": 477,
+   "type": "g",
+   "type_label": "1920 註釋增補",
+   "page_mwg": 491,
+   "maps_to_1920": "§II.4 R239"
+  }
+ ]
+}

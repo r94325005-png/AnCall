@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="新教倫理與資本主義精神">
+  <rect width="512" height="512" fill="#8a3a34"/>
+  <g fill="none" stroke="#fdf6ea" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M256 150C218 124 168 121 124 134V378c44-13 94-10 132 14 38-24 88-27 132-14V134c-44-13-94-10-132 16z"/>
+    <path d="M256 150V392"/>
+  </g>
+  <g stroke="#e7b873" stroke-width="12" stroke-linecap="round" opacity=".92">
+    <path d="M160 200h56"/><path d="M160 240h56"/><path d="M160 280h56"/>
+    <path d="M296 200h56"/><path d="M296 240h56"/><path d="M296 280h56"/>
+  </g>
+</svg>
