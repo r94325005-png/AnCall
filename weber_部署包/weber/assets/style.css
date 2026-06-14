@@ -1,0 +1,105 @@
+/* 新教倫理 公開站 — 風格：當代編輯雅緻（Editorial / web-native）
+   思源宋體 × Fraunces / Spectral × Inter。留白、細線、現代襯線、克制的酒紅點綴。 */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --bg:#fdfcfa; --ink:#1c1b18; --soft:#6d685f; --faint:#a39c8e;
+  --line:#eae6dd; --line2:#f2efe8; --hair:#e0dbd0;
+  --accent:#8a3a34; --accent-ink:#6f2e29; --slate:#3b4654; --de-ink:#4b463c;
+  --maxr:1180px; --read:760px;
+  --sans:"Inter",system-ui,-apple-system,"Noto Sans TC",sans-serif;
+  --disp:"Fraunces","Noto Serif TC","Source Han Serif TC",serif;
+  --han:"Noto Serif TC","Source Han Serif TC","Songti TC",serif;
+  --lat:"Spectral","Noto Serif TC",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--han);
+  font-size:18px;line-height:1.85;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:var(--maxr);margin:0 auto;padding:0 30px}
+a{color:var(--accent);text-decoration:none;transition:color .18s}
+a:hover{color:var(--accent-ink)}
+::selection{background:#efe1d2}
+
+/* ---------- header ---------- */
+header.top{position:sticky;top:0;z-index:50;background:rgba(253,252,250,.86);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:66px}
+.brand{font-family:var(--disp);font-weight:500;font-size:20px;color:var(--ink);line-height:1.12;letter-spacing:.01em}
+.brand span{display:block;font-family:var(--sans);font-weight:400;font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+nav.main{display:flex;gap:26px;font-family:var(--sans);font-size:13.5px;font-weight:500}
+nav.main a{color:var(--soft)}
+nav.main a.on,nav.main a:hover{color:var(--accent)}
+.secbar{display:flex;gap:20px;flex-wrap:wrap;align-items:center;padding-bottom:11px;margin-top:-3px}
+.snav{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--faint)}
+.snav.on,.snav:hover{color:var(--accent)}
+
+/* ---------- home ---------- */
+.hero{text-align:center;padding:96px 0 30px;max-width:840px;margin:0 auto}
+.hero .ec{font-family:var(--sans);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint)}
+.hero h1{font-family:var(--disp);font-weight:500;font-size:clamp(36px,6.2vw,60px);line-height:1.08;
+  margin:.32em 0 .26em;letter-spacing:.005em}
+.hero .sub{font-family:var(--han);color:var(--soft);font-size:18.5px;line-height:1.8;font-weight:300}
+.hero .by{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin-top:26px}
+.intro{max-width:var(--read);margin:34px auto 10px;font-size:19px;line-height:1.95;color:#2b2924}
+.intro p{margin:.85em 0;text-align:justify;text-justify:inter-character}
+.th{font-family:var(--sans);font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--faint);text-align:center;margin:64px 0 22px}
+.toc{display:block;max-width:var(--read);margin:0 auto 36px;border-top:1px solid var(--line)}
+.tocitem{display:flex;align-items:baseline;gap:1rem;padding:18px 6px;border-bottom:1px solid var(--line);
+  color:var(--ink);transition:padding .18s,background .18s}
+.tocitem:hover{background:#f7f3ec;padding-left:16px}
+.tocitem .tt{font-family:var(--disp);font-size:21px;font-weight:500}
+.tocitem:hover .tt{color:var(--accent)}
+.tocitem .tr{font-family:var(--sans);font-size:12.5px;letter-spacing:.03em;color:var(--faint);margin-left:auto;white-space:nowrap}
+.note{max-width:var(--read);margin:30px auto 14px;padding-top:20px;border-top:1px solid var(--line)}
+.note h3{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--soft);margin:0 0 .6em}
+.note p{margin:0;font-size:16px;color:var(--soft);line-height:1.85;text-align:justify}
+
+/* ---------- reading ---------- */
+.reading{max-width:var(--maxr);margin:0 auto}
+.readhead{text-align:center;padding:54px 0 8px;max-width:760px;margin:0 auto}
+.readhead .ec{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.readhead h1{font-family:var(--disp);font-weight:500;font-size:clamp(28px,4vw,40px);line-height:1.12;margin:.26em 0 .2em}
+.readhead .rng{font-family:var(--sans);font-size:12.5px;letter-spacing:.05em;color:var(--faint)}
+.viewtoggle{display:inline-flex;gap:24px;margin:24px 0 6px}
+.viewtoggle button{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  border:0;background:none;color:var(--faint);padding:5px 0;cursor:pointer;
+  border-bottom:1.5px solid transparent;transition:color .18s,border-color .18s}
+.viewtoggle button:hover{color:var(--soft)}
+.viewtoggle button.on{color:var(--accent);border-bottom-color:var(--accent)}
+
+.locus{margin:40px 0 6px}
+.locus .loc{display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+  border-top:1px solid var(--line);padding-top:13px}
+.locus .anchor{color:var(--hair);font-weight:600;text-decoration:none;transition:color .18s}
+.locus:hover .anchor{color:var(--accent)}
+.topic{font-family:var(--lat);font-style:italic;font-size:16.5px;color:var(--slate);margin:5px 0 6px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:18px 0 26px;padding-bottom:24px;
+  border-bottom:1px solid var(--line2)}
+.seg .zh{font-family:var(--han);font-size:18px;line-height:1.95;text-align:justify;text-justify:inter-character}
+.seg .de{font-family:var(--lat);font-size:17.5px;line-height:1.74;color:var(--de-ink);text-align:justify;hyphens:auto;font-weight:400}
+.seg em{font-style:italic}
+.prevnext{display:flex;justify-content:space-between;margin:48px 0 18px;font-family:var(--sans);
+  font-size:13px;font-weight:500;letter-spacing:.03em}
+
+body.viewzh .seg{grid-template-columns:1fr} body.viewzh .seg .de{display:none}
+body.viewde .seg{grid-template-columns:1fr} body.viewde .seg .zh{display:none}
+body.viewzh .reading,body.viewde .reading{max-width:var(--read)}
+body.viewzh .seg .zh,body.viewde .seg .de{font-size:19px}
+
+/* ---------- glossary / search / about ---------- */
+.gloss h1,.searchp h1,.about h1{font-family:var(--disp);font-weight:500;font-size:clamp(30px,4vw,40px);margin:48px 0 .2em}
+.lead{color:var(--soft);max-width:680px;font-size:17px;font-weight:300}
+.gfilter,.qbox{width:100%;max-width:520px;font-family:var(--han);font-size:17px;padding:12px 16px;
+  border:1px solid var(--line);border-radius:2px;background:#fff;margin:14px 0 22px;color:var(--ink)}
+.gfilter:focus,.qbox:focus{outline:none;border-color:var(--accent)}
+.gsec{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--soft);margin:38px 0 8px;border-bottom:1px solid var(--line);padding-bottom:8px}
+table.gt{width:100%;border-collapse:collapse;font-size:16px;margin-bottom:6px}
+table.gt th{font-family:var(--sans);font-size:11
